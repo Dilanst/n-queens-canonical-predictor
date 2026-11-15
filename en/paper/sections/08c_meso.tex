@@ -1,0 +1,78 @@
+\subsection{Masses, the stationary child, and cubic remainders}\label{sec:B5T03}
+We write $|X|_\Sigma=\sum_{ij}|X_{ij}|$ for matrices and
+$|x|_1=\sum_i|x_i|$ for vectors. These quantities control mass independently of dimension.
+The incidence identities are
+\[
+ \begin{gathered}
+ \sum_ep_e=k,\qquad\sum_d m_d=2k,\qquad
+ m_{r,a}=\sum_{e\ni a}p_e^r,\\
+ \sum_a m_{2,a}=4\sum_ep_e^2=O(1),\qquad
+ \max_a m_{2,a}=O(k^{-1}).
+ \end{gathered}
+\]
+Inserting $c$ removes its four lines, $J$, and the squares in their union, $F$.
+Each retained line loses at most three squares. Hence
+\[
+ |F|\le4k-3,\quad\sum_Fp=O(1),\quad\sum_Fp^3=O(k^{-2}),
+ \quad d_a\le3C/k,\quad |d|_1=O(1).
+\]
+
+\paragraph{Rebalancing and the Newton step.}
+The RC rebalancing of Section~\ref{sec:B3T07} uses only $2k$ lines. Restricting
+the parent reduces the gap by at most $6C/k$. Solving the corresponding Laplacian system gives
+\[
+ w=p|_{E'},\quad\bar p=w+z,\quad B\bar p=\mathbf1,
+ \quad z/w\in\operatorname{im}B^T,\quad\|z/w\|_\infty=O(k^{-1}).
+\]
+Here $B$ is the RC incidence matrix and $D$ is the diagonal incidence matrix of the child.
+With $u=d-D^Tz$ we obtain
+\[
+ |z|_1=O(1),\quad\|u\|_\infty=O(k^{-1}),\quad|u|_1=O(1),
+ \quad\sum u^2=O(k^{-1}),\quad\sum|u|^3=O(k^{-2}).
+\]
+The vacancies along the entire segment in question are at least $\eta/2$.
+Modulo RC functions, the KKT residual is
+\[
+ e=D(u/h)+O_\infty(k^{-2})=O_\infty(k^{-1}).
+\]
+Section~\ref{sec:B5T02} gives a tangent response $\bar{\mathcal R}$ with bounded relative norm.
+For $\|v/\bar p\|_\infty\le r$,
+\[
+ \nabla H(\bar p+v)=\nabla H(\bar p)-Kv+\mathcal N(v),\quad
+ \|\mathcal N(v)\|_\infty\le Cr^2,
+\]
+and its relative Lipschitz constant is $Cr$.
+The equation $v=\bar{\mathcal R}e+\bar{\mathcal R}\mathcal N(v)$
+defines a contraction on a ball of radius $O(k^{-1})$. This local Newton argument gives a unique
+stationary child on the small branch, satisfying
+\[
+ \|(p'-\bar p)/\bar p\|_\infty=O(k^{-1}),\quad
+ \|(p'-\bar p-\bar{\mathcal R}e)/\bar p\|_\infty=O(k^{-2}).
+\]
+In particular, $y=p'-w$ satisfies $y/p=O(k^{-1})$ and $|y|_1=O(1)$.
+The child inherits membership in an outer class from a parent in an inner class, with a margin.
+Iterating this statement does not prove that a trajectory remains in a fixed class.
+
+\paragraph{Cubic remainders without counting diagonals.}
+If $|v_e|\le rp_e$, then
+\[
+ \sum_d\frac{|(D^Tv)_d|^3}{h_d^2}
+ \le\eta^{-2}r^3\sum_d m_d^3
+ \le2\eta^{-2}\varepsilon^2kr^3.
+\]
+The contribution from the squares satisfies $\sum|v|^3/p^2\le kr^3$.
+For $r=O(k^{-1})$, both remainders are $O(k^{-2})$.
+The removed squares do not enter this Taylor expansion. For them we use the exact
+boundary identity of Section~\ref{sec:B4T04}.
+
+\paragraph{Full Schur difference.}
+With $Q=S_{IJ}S_{JJ}^{-1}S_{JI}$ and $U=A_{F,I}^TT_FA_{F,I}$,
+the exact difference is $\mathcal E=Q+\operatorname{diag}_D d-U+\Xi$,
+where $\Xi$ corresponds to the rebalancing $z$.
+Each column of $S_{IJ}$ has mass $O(1)$, and there are only four columns.
+It follows that $|\mathcal E|_\Sigma=O(1)$ and $\|\mathcal E\|_\infty=O(k^{-1})$,
+and hence $\|\mathcal E\|_{HS}^2=O(k^{-1})$.
+Moreover, $\sum_a|\mathcal E_{aa}|=O(k^{-1})$, since
+the diagonal entries at a feasible point have the form $1+3m_{2,a}+O(m_{3,a})$,
+and we have $\sum_a|\Delta m_{2,a}|=O(k^{-1})$ and $\operatorname{tr}Q=O(k^{-1})$.
+Thus the linear trace estimate is also independent of the dimension.

@@ -1,0 +1,66 @@
+\subsection{The unit-diagonal matrix and the optimal response of the child}\label{sec:B4T06}
+With the preceding notation, define
+\[
+ S_0=\operatorname{diag}(0_{RC},h)+A^TP_pA,\quad
+ P_p=\operatorname{diag}p,\quad \Gamma=S_0^+,\quad K_0=\Gamma-I.
+\]
+Every diagonal entry of $S_0$ equals one. The proof of Section~\ref{sec:B3T05} applies directly with weights $p$ and gives a uniform gap, kernel spanned by $v$, and
+\[
+ \Gamma_{ab}=\delta_{ab}+O(k^{-1}),\quad \|\Gamma\|_\infty=O(1).
+\]
+Let $a_i=A_i^T$ be the indicator vector of the four lines through square $i$. For retained squares, we implicitly restrict $a_i$ to $I$.
+
+\paragraph{Displacement energy.}
+Write $y=p^*_{\rm hijo}-w$ and consider
+\[
+ \mathcal Q(t)=\sum_{E'}t_i^2/p_i+
+ \sum_{D\cap I}(d_D-D'^Tt)_D^2/h_D,
+ \qquad A'_{RC}{}^Tt=d_{RC}.
+\]
+The energy is strictly convex. Its minimizer $y_0$ has the representation
+\[
+ \mathcal S\zeta=d,\quad
+ \mathcal S=S_{0,II}-A_{F,I}^TP_{p_F}A_{F,I},\quad
+ y_0=P_{p_{E'}}A'\zeta,\quad d_D-D'^Ty_0=h\zeta_D.
+\]
+In $\mathcal S$ we retain the parent vacancies $h$ without replacing them by $h+d$.
+The source $d$ is compatible with the kernel spanned by $v_I$ because the RC deficits have equal totals. Let $H$ be the Schur complement of $S_0$. Section~\ref{sec:B4T04}, applied to $S_0$, yields $\|H^+\|_\infty=O(1)$. Both $H$ and $\mathcal S$ annihilate $v_I$ and, by symmetry, leave $v_I^\perp$ invariant.
+On that complement $H$ is invertible, and $\|\mathcal S-H\|_\infty=O(k^{-1})$ follows from uniqueness of intersections.
+For large $k$ the Neumann series for $I+H^+(\mathcal S-H)$ converges in the infinity norm.
+Hence $\mathcal S$ is invertible on $v_I^\perp$, its kernel is exactly $\operatorname{span}(v_I)$, and $\|\mathcal S^+\|_\infty=O(1)$.
+
+\paragraph{Identification with the parent response.}
+Set $\beta=\Gamma a_c$. By uniqueness of intersections,
+\[
+ S_{0,IJ}\mathbf1=d,\quad \beta_J=\mathbf1+O_\infty(k^{-1}),
+ \quad \beta_I=O_\infty(k^{-1}),\quad
+ \mathcal S\beta_I=-d+O_\infty(k^{-2}).
+\]
+The residuals are compatible. Fixing the gauge of $\beta_I$ changes its entries by only $O(k^{-2})$ because $v_I^T\beta_I=-v_J^T\beta_J=O(k^{-1})$.
+Therefore
+\[
+ \zeta=-\beta_I+O_\infty(k^{-2}),\qquad
+ \boxed{y_{0,i}/p_i=-a_i^T\Gamma a_c+O(k^{-2}).}
+\]
+Stationarity of the child and the Bregman identity of Section~\ref{sec:B4T04} give a residual of order $O_\infty(k^{-2})$ in the quadratic equation. To see this, expand $\log(1+y/p)$ and $\log(1+(d-D'^Ty)/h)$ using Section~\ref{sec:B4T02}.
+The term $3\log(1-y/(1-p))$ is also $O(k^{-2})$. The weighted tangent inverse for this energy has uniformly bounded norm by the same representation using $\mathcal S^+$.
+Consequently,
+\[
+ \boxed{(y-y_0)/p=O_\infty(k^{-2}).}
+\]
+
+\paragraph{Value of the energy.}
+We have $\mathcal Q(y_0)=d^T\zeta=-d^T\beta_I+O(k^{-2})$ since $\|d\|_1=O(1)$. The four equations of $S_0\beta=a_c$ give
+\[
+ -d^T\beta_I=\mathbf1^TS_{0,JJ}\beta_J-4.
+\]
+Every pair of lines in $J$ intersects at the same square $c$, so $S_{0,JJ}=I+p_c(\mathbf1\mathbf1^T-I)$ and
+\[
+ \boxed{\mathcal Q(y_0)=a_c^T\Gamma a_c-4+12p_c+O(k^{-2}).}
+\]
+We may replace $y$ by $y_0$ in the linear terms of order $1/k$ below, since the $1$-norm of the difference is $O(k^{-1})$.
+By Section~\ref{sec:B4T04}, the actual action satisfies
+\[
+ H_{\rm hijo}-H_{\rm padre}-\log p_c
+ =\tfrac32\sum_Fp_i^2-\tfrac12\mathcal Q(y_0)+O(k^{-2}).
+\]

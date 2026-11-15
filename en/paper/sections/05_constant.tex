@@ -1,0 +1,19 @@
+\section{The constant term}\label{sec:constante}
+
+The terms in the formula for the predictor have very different magnitudes. To identify the
+constant, we must retain every contribution from each term that survives after subtracting $\log n!+n\Phi$.
+For example, the preceding section gives $\pi_{ij}\le M/n$. Since each row has mass one,
+$\sum_{ij}\pi_{ij}=n$, and by Cauchy--Schwarz
+\[
+ 1=\frac{(\sum_{ij}\pi_{ij})^2}{n^2}
+ \le \sum_{ij}\pi_{ij}^2
+ \le \frac{M}{n}\sum_{ij}\pi_{ij}=M .
+\]
+Thus the sum of the squared weights stays on the constant scale.
+Passing to the profile in (LC3)--(LC4) identifies its limit as $I_2$ and hence gives the limit $3I_2$ of the local term.
+
+Sections~\ref{sec:D01} and~\ref{sec:D02} calculate the entropy contribution using its
+dual formulation. For the pseudodeterminant, we must identify both the limit of the operator
+(Section~\ref{sec:D03}) and the limit of its trace. For this purpose, we use the regularized determinant
+$\det_2$ of~\cite[Ch.~9]{Simon} (Section~\ref{sec:D04}). Section~\ref{sec:D05} combines these
+contributions and applies Stirling's formula.

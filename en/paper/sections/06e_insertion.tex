@@ -1,0 +1,49 @@
+\subsection{Gap inheritance and rebalancing for all children}\label{sec:B3T07}
+Assume the hypotheses of Section~\ref{sec:B3T04} and suppose that the parent RC Laplacian $\mathscr L_p$ corresponds to a connected graph with gap $\gamma>0$. The parent has $k$ empty rows.
+Let $w=p^-$ denote the vector restricted to the child support and $\mathscr L_w$ its weighted Laplacian on the $2(k-1)$ retained RC lines.
+
+\paragraph{Gap inheritance for the restricted child.}
+The matrix
+\[
+ Q=\mathscr L_p[\mathrm{rest},\mathrm{rest}]-\mathscr L_w
+\]
+is the sum of the diagonal matrix of weights to the two removed RC vertices and the Laplacian of the removed edges between retained vertices. It is positive semidefinite, and the sum of the absolute values in row $v$ is at most $2d_v\le6C/k$. Thus $\|Q\|_2\le6C/k$.
+Extending a vector perpendicular to $\mathbf1_{\rm rest}$ by zero gives a vector perpendicular to $\mathbf1_{\rm parent}$.
+By the parent gap,
+\[
+ x^T\mathscr L_wx\ge(\gamma-6C/k)\|x\|_2^2
+ \quad(x\perp\mathbf1_{\rm rest}).
+\]
+For $k>12C/\gamma$, every restricted child is connected and has gap at least $\gamma/2$. This holds uniformly for all legal insertions in the parent, with the same constants.
+
+\paragraph{Explicit correction of the RC masses.}
+Let $B_f$ denote the full RC incidence matrix of the child and set $b=\mathbf1-B_fw$, with $0\le b_v\le\beta/k$ and $\beta=3C$.
+Let $J$ denote the diagonal matrix that reverses the sign of the column constraints, and set $A_o=JB_f$ and $f=Jb$.
+The global compatibility condition of Section~\ref{sec:B3T04} gives $f\perp\mathbf1$.
+With $P_w=\operatorname{diag}w$, define
+\[
+ \phi=\mathscr L_w^+f,\qquad z=P_wA_o^T\phi,
+ \qquad \bar p=w+z.
+\]
+Then $B_fz=b$, so $B_f\bar p=\mathbf1$ holds exactly.
+The gap gives $\|\phi\|_2=O(k^{-1/2})$. In the Laplacian equation for vertex $v$, its degree satisfies $a_v=1-b_v\ge1/2$ for large $k$ and
+\[
+ a_v|\phi_v|\le |f_v|+
+ \left(\sum_jw_{vj}^2\right)^{1/2}\|\phi\|_2,
+ \quad \sum_jw_{vj}^2\le(C/k)a_v.
+\]
+Consequently $\|\phi\|_\infty=O(k^{-1})$ and
+\[
+ \boxed{|z_e|/w_e=O(k^{-1}),\qquad |z_e|=O(k^{-2}).}
+\]
+This preserves the positivity of $\bar p$ without requiring a quantitative lower bound on $w_e$. For large $k$ we also have $\bar p_e<1$.
+Since the diagonal masses of $w$ are at most one,
+\[
+ |(D^Tz)_\alpha|\le\sup_e|z_e|/w_e=O(k^{-1}),
+\]
+and the vacancies of $\bar p$ are at least $\eta/2$.
+The multiplicative comparison of weights preserves a uniform gap in $\mathscr L_{\bar p}$ for this step.
+
+\paragraph{Scope.}
+For each child, the construction above gives a nearby RC-feasible point.
+Sections~\ref{sec:B4T02} through~\ref{sec:B4T09} compare both the child's stationary point and the full predictor with this feasible point. We do not assert uniformity along a trajectory here.

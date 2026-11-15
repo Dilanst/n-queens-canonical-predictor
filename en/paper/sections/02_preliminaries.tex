@@ -1,0 +1,82 @@
+\section{Preliminaries}\label{sec:preliminares}
+
+\paragraph{Board and lines.}
+The squares of the board are the pairs $(i,j)$ with $1\le i,j\le n$; $i$ is the row and $j$ the column.
+There are four families of lines: the rows $R_i$, the columns $C_j$, the diagonals
+$D_k=\{i-j=k\}$, $-n<k<n$, and the antidiagonals $A_l=\{i+j-1=l\}$, $0<l<2n$. The families have $n$, $n$,
+$2n-1$ and $2n-1$ lines, respectively, for a total of $6n-2$. Each square lies on exactly four lines, one from each
+family, and two lines from different families meet in at most one square.
+We number rows and columns from one rather than from zero as in~\cite{Perfil}
+and~\cite{Completabilidad}: our square $(i,j)$ is their square $(i-1,j-1)$, our diagonal
+$D_k$ has difference $k$ in their notation, and our antidiagonal $A_l$ has sum $l-1$.
+Figure~\ref{fig:incidencia} shows how to read all four labels for a single square.
+\input{figures/incidence}
+
+We write $A$ for the incidence matrix, with one row per square and one column per line.
+For $p\in\mathbb R^{n^2}$ and a line $L$, set
+\[
+ m_L(p)=\sum_{c\in L}p_c,\qquad h_L(p)=1-m_L(p).
+\]
+
+The quantity $m_L$ is the mass assigned to $L$, and the amount $h_L$ by which it falls short of one is its vacancy.
+For example, if we assign $1/5$ to every square of the board in the figure, each row sums to one,
+whereas diagonal $D_{-1}$ sums to $4/5$: its vacancy is $1/5$.
+
+\paragraph{The continuous profile of mass one.}
+To compare boards of different sizes, we divide each coordinate by $n$ and work on a fixed square.
+The discrete lines then give projections of the profile.
+We follow the notation of~\cite{Perfil}. On the square $[0,1]^2$ with coordinates $(r,c)$, the
+projections for the four families are $\ell_R=r$, $\ell_C=c$, $\ell_D=r-c$ and $\ell_A=r+c$, with
+values in $I_R=I_C=[0,1]$, $I_D=[-1,1]$ and $I_A=[0,2]$. For a density $\nu\ge0$, $m_f$ is its
+projection onto family $f$ and $u_f=1-m_f$ its vacancy. The admissible class at mass one,
+$\mathcal A_1$, consists of densities of mass one with $m_f\le1$ almost everywhere, and
+\[
+ s[\nu]=-3-\int_{[0,1]^2}\nu\log\nu-\sum_{f}\int_{I_f}u_f\log u_f
+\]
+is the functional of~\cite[(1.1)]{Perfil} at mass one. By~\cite[Theorem~1.1]{Perfil}, $s$ attains its
+supremum on $\mathcal A_1$ at a unique density $\nu=\nu_1$. We define the optimal value at mass
+one, written in~\cite{Perfil} as $s^*(1)$ and here, as in~\cite{Completabilidad}, as $s_1$, and two
+associated quantities:
+\begin{equation}\label{eq:s1}
+ s_1=s[\nu_1]=\sup_{\nu\in\mathcal A_1}s[\nu],\qquad \Phi=s_1+1,\qquad I_2=\int_{[0,1]^2}\nu_1^2 .
+\end{equation}
+At mass one the row and column vacancies vanish, so only the diagonal vacancies contribute.
+According to~\cite[Remark~2.3]{Perfil}, $s$ then has, on admissible densities, the same expression as the entropy
+in Simkin's variational problem~\cite[Definition~2.9]{Simkin}. In~\cite{Simkin}, $-\alpha$ is the maximum of that entropy over
+a class of measures defined by closure (Theorem~2.24 and Lemma~2.22); Remark~2.7 of that paper specifies,
+for absolutely continuous measures, the relation between this class and the class defined by the projection
+constraints. The correspondence above and that remark would give $\alpha=-s_1$, that is, $\Phi=1-\alpha$ and $\log Q(n)=\log n!+n\Phi+o(n)$. We call this
+the identification with Simkin's problem. We do not use it in any proof: the definition
+$\Phi=s_1+1$ and the theorems on the predictor are independent of it.
+
+By~\cite[Theorems~1.2 and~1.3 and Proposition~5.2]{Perfil}, the profile of mass one factors as
+\begin{equation}\label{eq:factorizacion}
+ \nu_1(r,c)=b_0\,r_R(r)\,r_C(c)\,u_D(r-c)\,u_A(r+c),
+\end{equation}
+with $b_0>0$ and continuous, positive Lipschitz functions $r_R,r_C,u_D,u_A$, $\int_0^1r_R=\int_0^1r_C=1$.
+In those results, these factors are the limits of the rescaled profile at the full board and
+are written $b_0$, $r_{R,0}$, $r_{C,0}$, $u_{D,0}$ and $u_{A,0}$; as in~\cite{Completabilidad},
+we omit the subscript except in the constant $b_0$.
+The row and column marginals of $\nu_1$ equal one, and $u_f+m_f=1$ for $f=D,A$, where
+$m_f$ is the projection of $\nu_1$ onto family $f$. There are positive constants
+$c_\nu\le C_\nu$, $\kappa_\nu\le1$ and $L_\nu$ such that
+\[
+ c_\nu\le\nu_1\le C_\nu,\qquad \kappa_\nu\le u_D,u_A\le1,
+\]
+and $L_\nu$ is a Lipschitz constant for $\nu_1$ with respect to the maximum metric. Sections~\ref{sec:perfil}
+and~\ref{sec:constante} use only these properties of the continuous profile. In those sections we write $\nu$
+for $\nu_1$.
+
+\paragraph{Conventions.}
+The constants $C,c,M,\eta,\kappa,\dots$ do not depend on $n$ unless stated otherwise;
+$O(\cdot)$ and $o(\cdot)$ refer to $n\to\infty$. In Sections~\ref{sec:insercion}
+to~\ref{sec:meso} the parameter is the number $k$ of empty rows: there $O(\cdot)$ refers to
+$k\to\infty$, and each section specifies what the constants depend on. The letter $h$, which
+denotes that number in~\cite{Completabilidad}, is used here for vacancies. In Sections~\ref{sec:perfil}
+and~\ref{sec:constante} the equations have labels specific to each subsection, such as (P1.3) or (D2.5).
+In the normalization logarithms $\log(4\pi n)$ and $\log(2\pi)$, in Stirling's formula, in the
+Slater point of Section~\ref{sec:P01} and in Appendix~\ref{sec:torres}, $\pi$ denotes
+$3.14159\ldots$; elsewhere, $\pi=\pi^{(n)}$ is the canonical maximizer and $\pi_c$ the weight of
+square $c$. Some letters that have a fixed meaning in~\cite{Perfil}, such as $\rho$, $x$, $\lambda$,
+$\ell$, $u$, $F$, $J$, $L$ or $\mathcal H$, denote other objects in some sections of this paper.
+We define them where they occur; for example, $\rho(B)$ is not a mass.

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper on the predictor and this package."
+title: "Numerical verification of the canonical predictor for the n-queens problem"
+version: "2.1.0"
+license: MIT
+authors:
+  - family-names: "Mejia"
+    given-names: "Dilan Steven"
+references:
+  - type: article
+    title: "The canonical predictor for the n-queens problem: constant term and consistency"
+    authors:
+      - family-names: "Mejia"
+        given-names: "Dilan Steven"
+    year: 2026
+    doi: "10.5281/zenodo.24241043"
+    url: "https://github.com/Dilanst/n-queens-canonical-predictor"
+  - type: article
+    title: "The variational profile of partial queen placements: existence, Euler equations, and regularity up to the full board"
+    authors:
+      - family-names: "Mejia"
+        given-names: "Dilan Steven"
+    year: 2026
+    doi: "10.5281/zenodo.24220042"
+    url: "https://github.com/Dilanst/n-queens-variational-profile"

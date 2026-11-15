@@ -1,0 +1,104 @@
+\subsection{A Slater point and a bound on the cap multipliers}\label{sec:P01}
+From Lemma~\ref{lem:maximizador} we use only the existence and uniqueness of the canonical maximizer.
+We neither assume that it lies in the interior nor assert that its weights coincide with the square
+occupancy probabilities in a solution chosen uniformly at random.
+Recall that $\mathcal D$ is the union of the two diagonal families of the board,
+with $|\mathcal D|=4n-2$, and that
+\[
+ m_d(p)=\sum_{c\in d}p_c,\qquad h_d(p)=1-m_d(p).
+\]
+The polytope $K_n$ and the functional $H_n$ are those of~\eqref{eq:Kn} and~\eqref{eq:Hn}, with the convention
+$0\log0=0$. We denote by $p=\pi^{(n)}$ the unique maximizer of $H_n$ on $K_n$.
+
+\paragraph{A Slater point for $n\ge32$.}
+Let $r_i=(i-1/2)/n$ and
+\[
+ q_{ij}=\frac1n\left[1-\frac15\cos(2\pi r_i)\cos(2\pi r_j)\right].
+\]
+The sum of the cosines at the $n$ midpoints is zero for $n\ge2$.
+Thus the row and column sums of $q$ are exactly one, and
+$4/(5n)\le q_{ij}\le6/(5n)$.
+The strictly admissible density $\nu^\sharp(r,c)=1-\frac15\cos(2\pi r)\cos(2\pi c)$
+from~\cite[Remark~2.4]{Perfil} has, for $0\le d\le1$, the marginal
+\[
+ m_D[\nu^\sharp](d)=1-d-\frac15\left[
+       \frac{1-d}{2}\cos(2\pi d)-\frac{\sin(2\pi d)}{4\pi}\right].
+\]
+Its derivative is at most $-1+(1+\pi)/5<0$, so $m_D[\nu^\sharp]\le9/10$.
+By symmetry, the same bound holds throughout both families.
+Each diagonal sum of $q$ is a midpoint quadrature for
+$\nu^\sharp$ on the corresponding fiber, whose endpoints are multiples of $1/n$.
+The parameter length of the fiber is at most one, and the Lipschitz constant along it
+is at most $4\pi/5$. The quadrature error is thus
+at most $(4\pi/5)/(2n)\le1/20$ for $n\ge32$, using $\pi<4$.
+Consequently, with $M_0=6/5$ and $\kappa=1/20$,
+\[
+ q_{ij}\le M_0/n<1/8,\qquad h_d(q)\ge\kappa.       \tag{P1.1}
+\]
+This gives a Slater point in the affine space defined by the row and column sums.
+
+\paragraph{Positivity in the presence of the cap.}
+Take $p(t)=(1-t)p+tq$. If $p_c=0$, its spatial entropy contributes
+$-q_c t\log t+O(t)$ to $H_n(p(t))-H_n(p)$. If $h_d(p)=0$, its
+diagonal entropy contributes $-h_d(q)t\log t+O(t)$. The other entropy terms
+contribute $O(t)$, as does $3(1-p)\log(1-p)$, whose derivative
+is bounded on $[0,1/4]$. If any of these equalities holds, the
+difference is $-At\log t+O(t)>0$ for small $t>0$, with $A>0$,
+contradicting maximality. Hence
+\[
+ p_{ij}>0,\qquad h_d(p)>0.                         \tag{P1.2}
+\]
+
+\paragraph{Optimality conditions with cap multipliers.}
+By (P1.2), the functional is differentiable near $p$, and the only potentially
+active inequalities are $p_{ij}\le1/4$.
+Slater's condition gives finite multipliers $\alpha_i,\beta_j$ and
+$\mu_{ij}\ge0$. One of the row and column equalities is redundant and is omitted
+when applying the Karush--Kuhn--Tucker (KKT) conditions. If $D(i,j),A(i,j)$ are the
+two diagonals through the square, we obtain
+\[
+ -\log p_{ij}-3\log(1-p_{ij})+\log h_{D(i,j)}+\log h_{A(i,j)}-2
+ =\alpha_i+\beta_j+\mu_{ij},\quad
+ \mu_{ij}(1/4-p_{ij})=0.                          \tag{P1.3}
+\]
+Let $x_{ij}=np_{ij}$, $\ell_d=-\log h_d(p)\ge0$, and
+$d_0=3\log(4/3)$. Multiplying (P1.3) by $q_{ij}-p_{ij}$ and
+summing cancels the terms from the equality constraints and the constant $-2$. This gives
+\[
+ 0=E+F+Q+U,                                      \tag{P1.4}
+\]
+\[
+ E=\sum_{ij}(p_{ij}-q_{ij})\log x_{ij},\qquad
+ F=3\sum_{ij}(p_{ij}-q_{ij})\log(1-p_{ij}),
+\]
+\[
+ Q=\sum_{d\in\mathcal D}(h_d(q)-h_d(p))\ell_d,\qquad
+ U=\sum_{ij}\mu_{ij}(1/4-q_{ij}).
+\]
+In particular, $U$ enters with a plus sign: by complementarity, the derivative in the direction $q-p$
+is $-U$.
+
+\paragraph{A global bound including the cap multipliers.}
+Convexity gives $\sum p_{ij}\log(np_{ij})\ge0$. Moreover,
+\[
+ \sum q_{ij}\log x_{ij}\le\frac{M_0}{n}\sum\log^+x_{ij}
+ \le\frac{M_0}{n}\sum x_{ij}=M_0n,
+\]
+so $E\ge-M_0n$. Since $\log(1-p)\le0$,
+\[
+ F\ge3\sum p_{ij}\log(1-p_{ij})\ge-d_0n.
+\]
+The inequality $h(-\log h)\le1/e$ and (P1.1) give
+\[
+ Q\ge\kappa\sum_d\ell_d-4n/e,\qquad
+ U\ge\frac18\sum_{ij}\mu_{ij}.
+\]
+By (P1.4), setting $C_0=M_0+d_0+4/e$ yields
+\[
+ \kappa\sum_d\ell_d+\frac18\sum_{ij}\mu_{ij}\le C_0n.
+\]
+Since $\kappa\le1/8$, setting $T=C_0/\kappa$ gives
+\[
+ \frac1n\left(\sum_d\ell_d+\sum_{ij}\mu_{ij}\right)\le T.    \tag{P1.5}
+\]
+This estimate does not assume that any multiplier $\mu$ vanishes.

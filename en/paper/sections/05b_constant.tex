@@ -1,0 +1,67 @@
+\subsection{Expansion of the entropy through the constant term}\label{sec:D02}
+Recall that $I_2=\int_{[0,1]^2}\nu^2$.
+We use the factorization of the continuous profile of mass one,
+\[
+ \nu(r,c)=b_0 r_R(r)r_C(c)u_D(r-c)u_A(r+c),
+\]
+with row and column marginals equal to one and $m_D+u_D=m_A+u_A=1$.
+Define $z_R=\tfrac12\log b_0+\log r_R$, define $z_C$ analogously, and set
+$z_D=\log u_D$ and $z_A=\log u_A$.
+In~\cite[Section~5]{Perfil}, $z_R=\log r_R$ and the logarithm of the constant is a separate unknown.
+Here $z_R$ and $z_C$ each include $\tfrac12\log b_0$.
+All these fields are Lipschitz by uniform positivity.
+The discrete gauge change preserves $\sum_Lz_L^0$.
+
+\paragraph{Expansion of the antiderivative.}
+For $t$ in a fixed compact subset of the positive real axis, the small root satisfies
+\[
+ \chi_n(t)=t+3t^2/n+O(n^{-2}),\qquad
+ A_n(\chi_n(t))=t+\frac{3t^2}{2n}+O(n^{-2}),          \tag{D2.1}
+\]
+uniformly. It suffices to expand $q(1-q/n)^3=t$ and the logarithm
+for bounded $q$. The derivative of the first function is bounded away
+from zero in this range for large $n$.
+At the sampling points $x_i=(i-1/2)/n$, we have $e^{\mathcal Tz^0}_{ij}=\nu(x_i,x_j)$.
+Lemma~\ref{lem:puntosmedios} and $\int\nu=1$ give
+\[
+ \frac1n\sum_{ij}A_n(\chi_n(\nu(x_i,x_j)))
+      =n+\frac32 I_2+o(1).                         \tag{D2.2}
+\]
+The uniform remainder $O(n^{-2})$ in (D2.1) contributes only $O(n^{-1})$.
+
+\paragraph{The endpoint constants.}
+The diagonals have parameters $k/n$, $-n<k<n$, and the antidiagonals have parameters $l/n$,
+$0<l<2n$. At all four endpoints, $u=1$ because the fiber has
+length zero, and therefore $\log u=0$.
+Moreover, $\int_{I_D}u_D+\int_{I_A}u_A=4-2=2$.
+Formula (D1.1), together with midpoint quadrature for the rows and columns, implies
+\[
+ \sum_{D,A}u_L^0=2n-2+o(1),\qquad
+ \sum_{\text{all }L}z_L^0=n\sum_f\int_{I_f}z_f+o(1).   \tag{D2.3}
+\]
+The four endpoint contributions of $-1/2$ give the term $-2$.
+No parity terms are omitted or added.
+By (D1.2) and (D2.2)--(D2.3),
+\[
+ E_n(z^0)=n\left(3-\sum_f\int z_f\right)-2
+                                    +\frac32I_2+o(1).    \tag{D2.4}
+\]
+
+\begin{teorema}[Entropy constant]\label{thm:entropia}
+Under the results of Section~\ref{sec:perfil},
+\[
+ H(\pi^{(n)})=n\log n+n s_1+\frac32I_2+o(1),       \tag{D2.5}
+\]
+where $s_1$ is the optimal value at mass one in the continuous problem.
+\end{teorema}
+\begin{proof}
+The marginal identities give
+\[
+ \int\nu\log\nu+\sum_{D,A}\int u\log u
+        =\sum_f\int_{I_f}z_f.
+\]
+Thus $s_1=-3-\sum_f\int z_f$ by the definition~\eqref{eq:s1} of $s_1$.
+Substituting (D2.4) into (D1.3)--(D1.4) proves (D2.5):
+the $-2$ from quadrature cancels with the $+2$ in (D1.4).
+\end{proof}
+This result concerns the Bethe entropy, not $\log Q(n)$.

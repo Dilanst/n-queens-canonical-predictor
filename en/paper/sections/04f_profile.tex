@@ -1,0 +1,122 @@
+\subsection{Comparison with the continuous profile: a uniform inverse bound and conclusion}\label{sec:P06}
+We use (TR1)--(TR9). The constants depend on the bounds in Section~\ref{sec:P02} and
+on the continuous profile, but are independent of $n$.
+
+\paragraph{The exact averaged Jacobian.}
+Differentiating the root in (TR5) gives, for each square,
+\[
+ w(z)_{ij}=\frac{\partial\rho(z)_{ij}}{\partial(\mathcal Tz)_{ij}}
+ =\frac{\rho(z)_{ij}(1-\rho(z)_{ij}/n)}{1-4\rho(z)_{ij}/n}.
+\]
+On the segment in (TR9), $a\le w(z)\le C_w:=2Q$. The Jacobian is
+\[
+ J(z)h=\operatorname{diag}(0_R,0_C,u_D(z),u_A(z))h
+                         +\mathcal R(w(z)\mathcal T h).
+                                                        \tag{TP1}
+\]
+Its average along $z(t)=(1-t)z^0+tz^*$ has exactly the same form:
+\[
+ \overline J=\int_0^1J(z(t))\,dt
+ =\operatorname{diag}(0_R,0_C,\overline u_D,\overline u_A)
+                              +\mathcal R(\overline w\mathcal T),
+ \quad a\le\overline w\le C_w,\quad\zeta\le\overline u_D,\overline u_A\le1.
+                                                        \tag{TP2}
+\]
+It is self-adjoint with respect to the inner products defined between (TR3) and (TR4), annihilates $v_0$, and
+preserves $E_n$.
+
+\paragraph{Coercivity in the chosen gauge.}
+We prove the estimate directly for the operator (TP2), which differs from the matrix evaluated at the
+maximizer. The argument is that of Section~\ref{sec:P03}.
+If $h\in E_n$, the means of $h_R$ and $h_C$ are equal. Hence
+\[
+ \|h_R\circ R+h_C\circ C\|_\square^2
+ =\|h_R\|_{2,R}^2+\|h_C\|_{2,C}^2+2\overline h_R\overline h_C
+ \ge\|h_R\|_{2,R}^2+\|h_C\|_{2,C}^2.
+\]
+Each diagonal lifting has $L^2$ norm at most one, since
+a diagonal contains at most $n$ squares. Writing
+$h_R\circ R+h_C\circ C=\mathcal T h-h_D\circ D-h_A\circ A$
+and using $(s-d-a)^2\le2s^2+4(d^2+a^2)$ gives
+\[
+ \|h\|_\ell^2\le2\|\mathcal T h\|_\square^2
+                    +5(\|h_D\|_{2,D}^2+\|h_A\|_{2,A}^2).
+\]
+Since $\mathcal R^*=\mathcal T$, (TP2) implies
+\[
+ \langle h,\overline Jh\rangle_\ell
+ \ge a\|\mathcal T h\|_\square^2
+             +\zeta(\|h_D\|_{2,D}^2+\|h_A\|_{2,A}^2)
+ \ge\lambda\|h\|_\ell^2,
+ \quad\lambda=\min(a/2,\zeta/5)>0.
+                                                        \tag{TP3}
+\]
+By finite dimensionality, $\overline J:E_n\to E_n$ is invertible and
+$\|\overline J^{-1}k\|_\ell\le\lambda^{-1}\|k\|_\ell$.
+
+\paragraph{From $L^2$ to the supremum norm by discrete transversality.}
+Let $\overline Jh=k\in E_n$. The equation for a line $\ell$ in family
+$f$ is
+\[
+ \left(d_{f,\ell}+\frac1n\sum_{ij\in\ell}\overline w_{ij}\right)h_{f,\ell}
+ +\sum_{g\ne f}\frac1n\sum_{ij\in\ell}\overline w_{ij}h_{g,\ell_g(i,j)}
+ =k_{f,\ell},
+                                                        \tag{TP4}
+\]
+with $d_R=d_C=0$, $d_D=\overline u_D$, and $d_A=\overline u_A$.
+The coefficient of the line's own component is at least $a_0:=\min(a,\zeta)>0$:
+rows and columns contain exactly $n$ squares, and diagonals and antidiagonals satisfy
+$d_{f,\ell}\ge\zeta$.
+Two lines from distinct families meet in at most one square.
+Thus, for $g\ne f$, the indices $\ell_g(i,j)$ encountered along $\ell$
+are all distinct. Cauchy--Schwarz gives
+\[
+ \frac1n\sum_{ij\in\ell}|h_{g,\ell_g(i,j)}|
+ \le\sqrt{\frac{|\ell|}{n}}
+       \left(\frac1n\sum_{\ell'\text{ visited}}|h_{g,\ell'}|^2\right)^{1/2}
+ \le\|h_g\|_{2,g}.
+                                                        \tag{TP5}
+\]
+In the coupling between diagonals and antidiagonals, only indices of one parity are encountered,
+but they are still distinct, so the same bound holds without any additional factor.
+By (TP4)--(TP5), summing over the three transverse families yields
+\[
+ \|h\|_\infty\le a_0^{-1}
+       (\|k\|_\infty+\sqrt3 C_w\|h\|_\ell).
+\]
+Since there are $6n-2$ lines, $\|k\|_\ell\le\sqrt6\|k\|_\infty$.
+Together with (TP3), this gives the required uniform inverse bound:
+\[
+ \|\overline J^{-1}k\|_\infty\le K\|k\|_\infty,
+ \qquad K=a_0^{-1}(1+\sqrt{18}C_w/\lambda).
+                                                        \tag{TP6}
+\]
+The estimate holds for arbitrary data in $E_n$, including oscillatory data.
+
+\begin{proposicion}
+For all sufficiently large $n$, the canonical maximizer satisfies
+\[
+ \max_{ij}|n\pi_{ij}-\nu_1(x_i,x_j)|\le C/n,
+ \quad C=4C_wKC_0+12C_\nu^2,
+                                                        \tag{TP7}
+\]
+\[
+ \max_k|h^*_{D,k}-u_D(k/n)|\le KC_0/n,\qquad
+ \max_l|h^*_{A,l}-u_A(l/n)|\le KC_0/n.
+                                                        \tag{TP8}
+\]
+\end{proposicion}
+\begin{proof}
+By the fundamental theorem of calculus and (TR5), we have the exact identity
+$-F_n(z^0)=F_n(z^*)-F_n(z^0)=\overline J(z^*-z^0)$.
+Both potentials belong to $E_n$. By (TR8) and (TP6),
+$\|z^*-z^0\|_\infty\le KC_0/n$.
+Along the segment, $d\rho/d(\mathcal Tz)=w\le C_w$ and
+$\|\mathcal T\|_{\infty\to\infty}\le4$. Hence
+$\|\rho(z^*)-\rho(z^0)\|_\infty\le4C_wKC_0/n$.
+Now (TR7) and the identity $\rho(z^*)=n\pi$ prove (TP7).
+The exponential vacancies are at most one along the segment,
+so the scalar mean value theorem gives (TP8).
+\end{proof}
+
+Thus (TP7) establishes (LC3) with the same midpoint sampling.

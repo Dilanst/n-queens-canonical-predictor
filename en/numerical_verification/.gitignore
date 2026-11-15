@@ -1,0 +1,6 @@
+# Outputs of reproducir.mjs
+corrida_*/
+# Python
+__pycache__/
+# Node.js
+node_modules/

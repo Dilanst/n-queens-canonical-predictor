@@ -1,0 +1,30 @@
+\begin{abstract}
+\noindent When counting placements of $n$ nonattacking queens, the row and column constraints leave
+$n!$ candidate permutations, and the diagonals reduce this number to $Q(n)$.
+We construct a deterministic predictor $Q_{\rm pred}(n)$ from a Bethe entropy on square weights.
+We prove that its constant term is given by
+\[
+\begin{aligned}
+ \log Q_{\rm pred}(n)-\log n!-n\Phi &\longrightarrow C_{\rm pred},\\
+ C_{\rm pred} &=\tfrac12\log2-\tfrac12-\tfrac32I_2-\tfrac12\log{\det}_2(I+J).
+\end{aligned}
+\]
+Here $\Phi=s_1+1$, where $s_1$ is the optimal value at mass one, attained by the profile of mass one;
+$I_2$ is the integral of the square of that profile, and $J$ is the Hilbert--Schmidt operator constructed from it.
+
+\smallskip\noindent When a queen is placed in an empty row, the possible choices split the count
+into a sum of residual counts. We prove that the predictor satisfies this recursion up to a factor
+$e^{O(k^{-2})}$ in two explicit classes of boards with $k$ empty rows, defined by bounds on the weights,
+the diagonal vacancies, and a spectral gap: when $k\ge\delta_0 n$ and, with constants independent of $n/k$,
+under a small diagonal mass hypothesis.
+Identifying $C_{\rm pred}$ as the constant of the exact count would also require $\log Q(n)-\log Q_{\rm pred}(n)\to0$; this question remains open.
+
+\smallskip\noindent Numerically, $C_{\rm pred}\approx0.9401$: extrapolating the predictor on finite boards gives $0.9401$ and a direct evaluation of the formula gives $0.94014$, both with no certified error bound. In an appendix we prove that, in the rook model, a formula with the same ingredients approximates the logarithm of the count with error $O(1/k)$, uniformly from positive densities up to the full board.
+
+\medskip\noindent
+\textbf{Keywords:} $n$-queens problem; asymptotic enumeration; Bethe approximation;
+regularized determinant; constant term; consistency.
+
+\noindent
+\textbf{MSC 2020:} 05A16; 05A05; 47B10; 82B20.
+\end{abstract}

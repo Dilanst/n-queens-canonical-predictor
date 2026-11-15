@@ -1,0 +1,50 @@
+\subsection{The local term in the canonical formula}\label{sec:P04}
+Take $n$ sufficiently large, in particular $n\ge8M$.
+We distinguish a consequence of Section~\ref{sec:P02} from one that requires
+comparison with the continuous profile (Sections~\ref{sec:P05} and~\ref{sec:P06}).
+The local term is
+\[
+ L_n=-\frac12\sum_{ij}
+       [\log(1-4\pi_{ij})-4\log(1-\pi_{ij})].       \tag{LC1}
+\]
+For $0\le t\le1/8$, the convergent scalar series give
+\[
+ -\tfrac12[\log(1-4t)-4\log(1-t)]
+   =\frac12\sum_{m\ge2}\frac{4^m-4}{m}t^m.
+\]
+The quadratic term is $3t^2$, and the remaining terms are positive.
+Their sum is bounded by
+\[
+ \frac12\sum_{m\ge3}(4t)^m
+       =\frac{32t^3}{1-4t}\le64t^3.
+\]
+Using $\pi\le M/n$ and $\sum\pi=n$ gives
+\[
+ 0\le L_n-3\sum_{ij}\pi_{ij}^2
+       \le64\sum\pi_{ij}^3\le\frac{64M^2}{n}.      \tag{LC2}
+\]
+Estimate (LC2) is a local expansion on the scale $\pi=O(1/n)$.
+
+\paragraph{From the local term to the continuous profile.}
+If $\nu_1$ is the bounded Lipschitz continuous profile and
+\[
+ \max_{ij}|n\pi_{ij}-\nu_1((i-1/2)/n,(j-1/2)/n)|=O(1/n),
+                                                        \tag{LC3}
+\]
+then
+\[
+ \sum_{ij}\pi_{ij}^2
+       =\int_{[0,1]^2}\nu_1(r,c)^2\,dr\,dc+O(1/n).
+\]
+Indeed, the difference between the squares of the profiles
+is uniformly $O(1/n)$, and the two-dimensional quadrature
+of a Lipschitz function has error $O(1/n)$.
+By (LC2),
+\[
+ L_n=3\int_{[0,1]^2}\nu_1^2+O(1/n).               \tag{LC4}
+\]
+This is only one of the summands in $\log Q_{\rm pred}$. The contributions of the entropy and
+the pseudodeterminant are studied in Section~\ref{sec:constante}.
+
+Sections~\ref{sec:P05} and~\ref{sec:P06} prove (LC3) for the canonical maximizer,
+so (LC4) applies to it.

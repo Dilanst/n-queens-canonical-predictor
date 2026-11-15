@@ -1,0 +1,75 @@
+\subsection{A uniform inverse independent of the number of diagonals}\label{sec:B5T02}
+With $\tau=p(1-p)/(1-4p)$, we separate the RC lines from the diagonals and write
+\[
+ S=\begin{pmatrix}R&V\\V^T&I+A_D\end{pmatrix},\quad
+ R=A_R^T\operatorname{diag}(\tau)A_R,\quad G=S^+.
+\]
+The only gauge is $v=(\mathbf1_R,-\mathbf1_C,0_D)$.
+On the $2k$ RC lines, the gap and $p_{\max}\le C/k$ give
+\[
+ R^+=I+O_{\max}(k^{-1}),\qquad \|R^+\|_\infty\le M.
+\]
+Indeed, $R=I-W$ has diagonal entries $1+O(k^{-1})$, the rows of $W$
+have Euclidean norm $O(k^{-1/2})$, and the kernel is known.
+The identity $R^+=I+W-2\Pi+WR^+W$ gives the entrywise bound.
+Summing $2k$ entries gives the infinity norm. This is the only place where the dimension
+is counted, and it is exactly $2k$, independently of the diagonals.
+
+\paragraph{Weak blocks.}
+Each square is incident to two RC lines and two diagonals, and the intersections
+are unique. With constants depending only on $C,\eta,\gamma$, we have
+\[
+ \|V\|_\infty=O(1),\quad \|V^T\|_\infty=O(\varepsilon),
+ \quad \|V\|_{\max}=O(k^{-1}),
+\]
+\[
+ \|A_D\|_\infty=O(\varepsilon),\quad \|A_D\|_{\max}=O(k^{-1}).
+\]
+The diagonal entries of $A_D$ are $\sum_{e\in d}(\tau_e-p_e)$.
+The off-diagonal part connects the two diagonal families.
+Set $W_0=R^+V$, $E=A_D-V^TR^+V$, and $U=I+E$.
+We have
+\[
+ \|W_0\|_\infty=O(1),\quad\|W_0^T\|_\infty=O(\varepsilon),
+ \quad\|W_0\|_{\max}=O(k^{-1}),
+\]
+\[
+ \|E\|_\infty=O(\varepsilon),\qquad\|E\|_{\max}=O(k^{-1}).
+\]
+For the entrywise bound we use
+$\|(R^+-I)V\|_{\max}\le\|R^+-I\|_{\max}\|V^T\|_\infty$.
+Choose $\varepsilon_0$ so that $\|E\|_\infty\le1/2$.
+The Neumann series gives $\|U^{-1}\|_\infty\le2$ and, by symmetry, the same bound on column sums.
+From $U^{-1}-I=-EU^{-1}$ we obtain $U^{-1}=I+O_{\max}(k^{-1})$.
+
+\paragraph{Schur complement with the exact gauge.}
+Since $V^Tv_R=0$, the pseudoinverse is
+\[
+ G=\begin{pmatrix}
+ R^++W_0U^{-1}W_0^T&-W_0U^{-1}\\
+ -U^{-1}W_0^T&U^{-1}
+ \end{pmatrix}.
+\]
+The preceding bounds, with absolute row and column sums, prove
+\[
+ \boxed{\|G\|_\infty\le M_*,\qquad G=I+O_{\max}(k^{-1}).}
+\]
+The Schur factorization also gives a uniform gap on the orthogonal complement of the gauge.
+All of the above holds with $\tau=p$, that is, for the unit-diagonal matrix $S_0$ and for $\Gamma=S_0^+$.
+It also holds in small relative neighborhoods with row and column masses equal to one,
+gap at least $\gamma/2$, and diagonal masses at most $2\varepsilon_0$,
+after reducing the initial threshold once if necessary.
+
+\paragraph{Weighted response.}
+With $P=\operatorname{diag}p$, the tangent response is
+\[
+ \mathcal R=T-TAG A^TT,
+ \quad\|P^{-1}\mathcal R\|_\infty
+ \le2(1+8\|G\|_\infty)=O(1).
+\]
+Here $\|A\|_\infty=4$ and $\|A^TT\|_\infty=O(1)$.
+The constant does not involve $n/k$, and no lower bound on $p_e$ is required.
+
+\paragraph{Scope.}
+This estimate replaces the count of the $O(n)$ lines in Section~\ref{sec:B3T05} with an estimate on the
+weak diagonal block, so the constants do not depend on $n/k$.

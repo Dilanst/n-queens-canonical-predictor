@@ -1,0 +1,24 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=6.9mm,y=6.9mm]
+ \bcuadricula{5}
+ \draw[btinta,thin] (0,3.5)--(5,3.5);
+ \draw[btinta,thin] (2.5,0)--(2.5,5);
+ \draw[btinta,line width=1.2pt] (1,5)--(5,1);
+ \draw[btinta,densely dashed,line width=1.1pt] (0,1)--(4,5);
+ \fill[bpapel] (2.5,3.5) circle[radius=.26];
+ \draw[btinta,line width=.85pt] (2.5,3.5) circle[radius=.24];
+ \fill[btinta] (2.5,3.5) circle[radius=.075];
+ \node[anchor=west,font=\small] at (6.1,4.25) {Marked square: $(2,3)$};
+ \draw[btinta] (6.2,3.35)--(7.1,3.35);
+ \node[anchor=west,font=\small] at (7.4,3.35) {Row $R_2$ and column $C_3$};
+ \draw[btinta,line width=1.2pt] (6.2,2.35)--(7.1,2.35);
+ \node[anchor=west,font=\small] at (7.4,2.35) {Diagonal $D_{-1}$};
+ \draw[btinta,densely dashed,line width=1.1pt] (6.2,1.35)--(7.1,1.35);
+ \node[anchor=west,font=\small] at (7.4,1.35) {Antidiagonal $A_4$};
+\end{tikzpicture}
+\caption{The four lines through $(2,3)$. The diagonal and antidiagonal indices
+are determined by the coordinates of the square: $2-3=-1$ and $2+3-1=4$. In the incidence matrix,
+the row for this square has a one in the column for each of the four lines shown.}
+\label{fig:incidencia}
+\end{figure}

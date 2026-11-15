@@ -1,0 +1,31 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=5.6mm,y=5.6mm]
+ \begin{scope}
+  \bcuadricula{5}
+  \foreach \r in {1,...,5} {\foreach \c in {1,...,5} {
+    \pgfmathtruncatemacro{\ataque}{(\r==1)||(\c==2)||(abs(\r-1)==abs(\c-2))}
+    \ifnum\ataque=1\relax\bmarca{5}{\r}{\c}\fi
+  }}
+  \breina{5}{1}{2}
+  \foreach \c in {4,5}{\draw[btinta,line width=1.1pt] (\c-.5,3.5) circle[radius=.31];}
+  \node[anchor=north,font=\small] at (2.5,-.32) {(a) Parent $B$};
+ \end{scope}
+ \draw[-{Stealth[length=2mm]},btinta] (5.55,2.5)--(7.35,2.5);
+ \node[font=\footnotesize,above] at (6.45,2.65) {$(2,4)$};
+ \begin{scope}[shift={(8.5,0)}]
+  \bcuadricula{5}
+  \foreach \r in {1,...,5}{\foreach \c in {1,...,5}{
+    \pgfmathtruncatemacro{\ataque}{(\r==1)||(\c==2)||(abs(\r-1)==abs(\c-2))||(\r==2)||(\c==4)||(abs(\r-2)==abs(\c-4))}
+    \ifnum\ataque=1\relax\bmarca{5}{\r}{\c}\fi
+  }}
+  \breina{5}{1}{2}\breina{5}{2}{4}
+  \node[anchor=north,font=\small] at (2.5,-.32) {(b) Child $B+(2,4)$};
+ \end{scope}
+\end{tikzpicture}
+\caption{The exact partition of the count on a small board. The second row of the board on the
+left has two legal choices, marked with rings. The arrow follows one of them; the other,
+$(2,5)$, gives the second summand of the count. Dots mark occupied squares or squares under attack,
+and crowns denote queens already placed. The available squares retain their coordinates.}
+\label{fig:residual}
+\end{figure}

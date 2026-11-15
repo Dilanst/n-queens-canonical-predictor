@@ -1,0 +1,99 @@
+\subsection{Uniform bounds on weights and vacancies, and interiority}\label{sec:P02}
+We retain the notation of Section~\ref{sec:P01}, in particular
+$n\ge32$, $\kappa=1/20$, $M_0=6/5$, $d_0=3\log(4/3)$, and
+$T=(M_0+d_0+4/e)/\kappa$.
+
+\paragraph{Factorization with the multiplier retained.}
+Equation (P1.3) admits the factorization
+\[
+ x_{ij}=B R_i C_j K_{ij},\qquad
+ K_{ij}=h_{D(i,j)}h_{A(i,j)}e^{-\mu_{ij}}(1-p_{ij})^{-3},
+                                                               \tag{P2.1}
+\]
+with positive factors and geometric normalizations
+\[
+ \frac1n\sum_i\log R_i=\frac1n\sum_j\log C_j=0.
+\]
+For example, these factors are obtained by dividing $e^{-\alpha_i}$ and
+$e^{-\beta_j}$ by their geometric means and absorbing into $B$
+these two scalar factors together with $ne^{-2}$.
+Each row meets each diagonal in either family at most once.
+Thus (P1.5) and the inequality $(1-p)^{-3}\ge1$ give
+\[
+ \frac1n\sum_j\log K_{ij}\ge-T.
+\]
+The same property holds for each column:
+\[
+ \frac1n\sum_i\log K_{ij}\ge-T.                  \tag{P2.2}
+\]
+Here we use the global sum of $\mu$: the sum of its values in any
+row or column is at most the global sum.
+
+\paragraph{Control of the factors without a pointwise vacancy assumption.}
+Jensen's inequality, the geometric normalizations, and the row sums give
+\[
+ 1=B R_i\frac1n\sum_j C_jK_{ij}\ge B R_i e^{-T}.
+\]
+Applying the same argument to the columns gives
+\[
+ R_i,C_j\le e^T/B.                               \tag{P2.3}
+\]
+On the other hand, $\log K_{ij}\le d_0$, since $h_d\le1$,
+$\mu_{ij}\ge0$, and $p_{ij}\le1/4$.
+We multiply the logarithm of (P2.1) by $p_{ij}$ and sum.
+The contributions of $\log R_i$ and $\log C_j$ vanish because the
+row and column sums are one and the logarithms of the factors in each family sum
+to zero. By the convexity used in Section~\ref{sec:P01},
+\[
+ n\log B=\sum_{ij}p_{ij}\log(np_{ij})
+               -\sum_{ij}p_{ij}\log K_{ij}\ge-d_0n.
+\]
+Thus $B\ge e^{-d_0}$. From (P2.3) we deduce the bound
+\[
+ B R_i C_j(1-p_{ij})^{-3}
+ \le e^{2T+d_0}/B\le e^{2T+2d_0}=:M.             \tag{P2.4}
+\]
+In (P2.1) all the factors $h_d,e^{-\mu_{ij}}$ are at most
+one. Hence, with the caps still in place,
+\[
+             0<p_{ij}\le M/n.                    \tag{P2.5}
+\]
+
+\paragraph{Uniform vacancy bounds.}
+Fix a diagonal $d$ in the first family. By (P2.1) and (P2.4),
+\[
+ m_d(p)=\frac{h_d}{n}\sum_{(i,j)\in d}
+ B R_i C_j h_{A(i,j)}e^{-\mu_{ij}}(1-p_{ij})^{-3}
+ \le M h_d\frac{|d|}{n}\le M h_d.
+\]
+The same argument applies to the second family.
+Since $m_d=1-h_d$, it follows that for all diagonals
+\[
+                 h_d\ge\eta:=\frac1{1+M}.        \tag{P2.6}
+\]
+This conclusion also holds before the cap is removed.
+
+\paragraph{Removal of the cap and a lower bound.}
+For
+\[
+ n\ge n_0:=\max\{32,\lfloor4M\rfloor+1\},
+\]
+(P2.5) implies $p_{ij}<1/4$. Complementarity then gives
+$\mu_{ij}=0$ at every square.
+This establishes hypothesis $(H_\infty)$ of Definition~\ref{def:Hinf} and
+the uniform bounds. In fact, bounds (P2.5) and
+(P2.6) already hold for every $n\ge32$.
+For $n\ge n_0$ we also have a lower bound of order $1/n$.
+By $K_{ij}\le e^{d_0}$ and (P2.3), the row equation implies
+\[
+ R_i=\left(B\frac1n\sum_jC_jK_{ij}\right)^{-1}
+       \ge e^{-(T+d_0)};
+\]
+and similarly $C_j\ge e^{-(T+d_0)}$.
+Once $\mu=0$, (P2.6) gives $K_{ij}\ge\eta^2$. Together with
+$B\ge e^{-d_0}$, this proves
+\[
+ \frac{c}{n}\le p_{ij}\le\frac Mn,\qquad
+ c:=\eta^2e^{-2T-3d_0}>0,
+ \qquad h_d\ge\eta.                              \tag{P2.7}
+\]

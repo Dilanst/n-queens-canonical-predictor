@@ -1,0 +1,8 @@
+n=4: Λ = 10^-1.00 → máx π̂ = 0.0255563, ∂Φ en argmax = +9.75e-13: rama pequeña
+n=4: Λ = 10^ 2.00 → máx π̂ = 0.2500000, ∂Φ en argmax = +4.90e-02: π̂ en el borde 1/4
+n=4: último Λ = 10^9.00: máx π̂ = 0.2500000 (π̂ en el borde 1/4)
+n=5: Λ = 10^-1.00 → máx π̂ = 0.0193010, ∂Φ en argmax = +3.48e-10: rama pequeña
+n=5: Λ = 10^ 4.00 → máx π̂ = 0.2500000, ∂Φ en argmax = +1.44e-02: π̂ en el borde 1/4
+n=5: último Λ = 10^9.00: máx π̂ = 0.2500000 (π̂ en el borde 1/4)
+n=6: Λ = 10^-1.00 → máx π̂ = 0.0154960, ∂Φ en argmax = +4.26e-13: rama pequeña
+n=6: último Λ = 10^9.00: máx π̂ = 0.2165479 (rama pequeña)

@@ -1,0 +1,44 @@
+\subsection{The constant term of the predictor}\label{sec:D05}
+Recall Definition~\ref{def:Qpred}:
+\[
+ \log Q_{\rm pred}(n)=H(\pi^{(n)})+L_n
+           -\tfrac12\log\operatorname{pdet}S_n
+           +\tfrac12\log(4\pi n),                    \tag{D5.1}
+\]
+where $L_n\to3I_2$ by (LC4).
+Here $\pi=3.14159\ldots$ only in the normalization logarithm and in Stirling's formula.
+As in Section~\ref{sec:preliminares}, $\Phi=s_1+1$, where $s_1$ is the optimal value
+at mass one.
+The following theorem is Theorem~\ref{thm:intro-constante} of the introduction: $J$ is the operator
+in~(D3.6), $\mathcal D(J)=\log\det_2(I+J)$ by~(D4.1), and $I+J\ge aI$ with $a>0$ by
+Section~\ref{sec:D04}.
+
+\begin{teorema}[Constant term of the predictor]\label{thm:constante}
+As $n\to\infty$,
+\[
+ \log Q_{\rm pred}(n)-\log n!-n\Phi\longrightarrow C_{\rm pred},
+                                                        \tag{D5.2}
+\]
+\[
+ C_{\rm pred}=\tfrac12\log2-\tfrac12
+             -\tfrac32 I_2-\tfrac12\mathcal D(J).     \tag{D5.3}
+\]
+\end{teorema}
+\begin{proof}
+We collect the three expansions, retaining the terms of order one in each line:
+\[
+\begin{aligned}
+ H(\pi^{(n)}) &= n\log n+ns_1+\tfrac32 I_2+o(1) &&\text{by (D2.5)},\\
+ L_n &= 3I_2+o(1) &&\text{by (LC4)},\\
+ \log\operatorname{pdet}S_n &=1+12I_2+\mathcal D(J)+o(1) &&\text{by (D4.3)}.
+\end{aligned}
+\]
+By Stirling's formula,
+\[
+ \log n!=n\log n-n+\tfrac12\log(2\pi n)+o(1).
+\]
+Upon substitution into (D5.1), the leading terms cancel because
+$\Phi=s_1+1$. The normalization contributes $\tfrac12\log2$,
+and $\tfrac32I_2+3I_2-6I_2=-\tfrac32I_2$.
+This gives (D5.3).
+\end{proof}

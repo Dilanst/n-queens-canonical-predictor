@@ -1,0 +1,64 @@
+\subsection{A uniform gap for the reduced canonical operator}\label{sec:P03}
+We use only the deterministic bounds from Section~\ref{sec:P02}.
+Let $n$ be large enough that
+\[
+ c/n\le\pi_{ij}\le M/n\le1/8,\qquad h_D,h_A\ge\eta>0.
+\]
+The symbols $c,M,\eta$ denote constants, not square indices.
+The incidence matrix $A$ has one row per square and one column per line.
+Set
+\[
+ g_{ij}=\frac{\pi_{ij}(1-\pi_{ij})}{1-4\pi_{ij}},\quad
+ S=\operatorname{diag}(0_R,0_C,h_D,h_A)+A^T\operatorname{diag}(g)A.
+                                                        \tag{G1}
+\]
+Then $c/n\le g_{ij}\le2M/n$.
+We use ordinary Euclidean norms on the $6n-2$ lines.
+
+\begin{proposicion}
+The kernel of $S$ is exactly
+$\operatorname{span}\{v_0\}$, where
+$v_0=(\mathbf1_R,-\mathbf1_C,0_D,0_A)$.
+On $v_0^\perp$ we have
+\[
+ \gamma\|v\|^2\le v^TSv\le(1+8M)\|v\|^2,
+ \qquad \gamma=\min\{c/2,\eta/5\}>0.               \tag{G2}
+\]
+The constants are independent of $n$.
+\end{proposicion}
+\begin{proof}
+Write $v=(r_i,t_j,d_k,a_l)$ and
+$s_{ij}=r_i+t_j+d_{i-j}+a_{i+j-1}$.
+The condition $v\perp v_0$ is equivalent to $\sum_i r_i=\sum_jt_j$.
+Hence
+\[
+ \frac1n\sum_{ij}(r_i+t_j)^2
+ =\sum_i r_i^2+\sum_jt_j^2+
+       \frac2n\left(\sum_i r_i\right)^2
+ \ge\|r\|^2+\|t\|^2.
+\]
+The inequality $(s-d-a)^2\le2s^2+4(d^2+a^2)$
+and the fact that each diagonal contains at most $n$ squares
+give
+\[
+ \|v\|^2\le\frac2n\sum_{ij}s_{ij}^2
+                        +5(\|d\|^2+\|a\|^2).     \tag{G3}
+\]
+By (G1),
+\[
+ v^TSv\ge\frac cn\sum s_{ij}^2+
+                          \eta(\|d\|^2+\|a\|^2),
+\]
+which proves the lower bound. Moreover,
+$s_{ij}^2\le4(r_i^2+t_j^2+d_{i-j}^2+a_{i+j-1}^2)$.
+Each line contains at most $n$ squares, so
+$\sum s_{ij}^2\le4n\|v\|^2$. Since $h_D,h_A\le1$,
+the upper bound follows.
+Finally, $Sv_0=0$. If $v^TSv=0$, the positivity of
+$g,h_D,h_A$ forces $d=a=0$ and $r_i+t_j=0$ for all $i,j$.
+Thus $r$ is constant and $t$ is its negative. There are no other null vectors.
+\end{proof}
+
+\paragraph{Consequence.}
+The inverse of $S$ on $v_0^\perp$ has spectral norm
+at most $\gamma^{-1}$, with $\gamma$ independent of $n$.

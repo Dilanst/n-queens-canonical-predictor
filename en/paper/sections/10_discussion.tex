@@ -1,0 +1,38 @@
+\section{Discussion}\label{sec:discusion}
+
+\paragraph{What remains open for the exact count.}
+Set $R_Q(n)=\log Q(n)-\log Q_{\rm pred}(n)$. Theorem~\ref{thm:intro-constante} is equivalent to
+\[
+ \log Q(n)-\log n!-n\Phi=C_{\rm pred}+R_Q(n)+o(1).
+\]
+Thus $R_Q(n)\to0$ suffices for the constant term of $\log Q(n)$ to equal $C_{\rm pred}$. If
+all that were known was that $R_Q(n)$ has a finite limit $r$, the constant term would exist and would equal
+$C_{\rm pred}+r$. We have proved neither statement. The natural quantitative form is the following.
+
+\begin{conjetura}\label{conj:RQ}
+There exist $C$ and $n_0$ such that $|\log Q(n)-\log Q_{\rm pred}(n)|\le C/n$ for all $n\ge n_0$.
+\end{conjetura}
+
+Section~\ref{sec:numerico} gives $R_Q(20)\approx0.021$ and $R_Q(27)\approx0.012$.
+
+\paragraph{The role of consistency.}
+Theorem~\ref{thm:intro-consistencia} states that, on residual boards in its classes, the predictor satisfies
+the exact recursion for the count at each step up to a factor $e^{O(k^{-2})}$. Along a trajectory of residual boards that
+stays in a single class with $k\ge\delta_0n$, the errors sum to $O_{\delta_0}(1/n)$
+(Section~\ref{sec:B4T05}). To pass from this to $R_Q(n)\to0$ requires three ingredients that this paper
+does not provide: membership of typical residual boards of a random placement in these classes; control of
+the end of the process, when few empty rows remain (for the exact count,~\cite{Completabilidad} studies the case of
+a fixed number of queens left to place, without uniformity as this number grows); and a comparison between
+the count and the predictor along random trajectories.
+
+\paragraph{Finite activity.}
+The predictor is defined directly on the full board, on the polytope $K_n$. At finite
+activity $\lambda$, the corresponding approximation uses the small branch of the Bethe equations.
+For $n\ge6$, existence of the small branch for every $\lambda>0$ is a conjecture. A floating-point
+calculation, without rigorous bounds, finds it at the 61 activities tested, spaced
+logarithmically between $\Lambda=\lambda(n-1)=10^{-3}$ and $10^{12}$, for $n=6$, $7$, $8$, $10$, $12$,
+$16$, $20$, $27$, $40$, $60$, $80$, $120$ and $160$. For $n=4$, $K_4$ reduces to the point
+$\pi\equiv1/4$, because each row has four squares with $p_c\le1/4$ and sums to one; hence
+$(H_\infty)$ does not hold. For $n=5$, the calculation indicates $\max_c\pi^{(5)}_c=1/4$. In both cases, a
+barrier optimizer suggests that the branch ceases to exist for large $\Lambda$, but this has not been proved.
+Nothing in this paragraph is used in the rest of the paper.

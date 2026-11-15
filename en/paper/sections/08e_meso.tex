@@ -1,0 +1,96 @@
+\subsection{Consistency in the weak class}\label{sec:B5T05}
+\begin{teorema}[Mesoscopic consistency]\label{thm:meso}
+For fixed $C,\eta,\gamma$ there exist $\varepsilon_0,k_0,C_*$ independent
+of $n/k$ with the following property. If the parent satisfies the conditions of Section~\ref{sec:B5T01} with
+$\varepsilon\le\varepsilon_0$ and $k\ge k_0$, then all its legal children
+have the small stationary point constructed in Section~\ref{sec:B5T03}, and
+\[
+ \boxed{\left|\log\rho(B)\right|\le C_*/k^2,\qquad
+ \rho(B)=\sum_{c\in r}\exp[L(B+c)-L(B)].}
+\]
+\end{teorema}
+The statement fixes a row $r$ and includes all its children. Here $L$ is precisely
+the canonical predictor, with its tree term, local factor, RC cofactor, and covolume.
+We do not identify its corrected marginal with the true marginal of the solutions.
+The predictor selects the small branch. The negative Hessian
+is positive definite in the convex region $p<1/4$ with positive vacancies.
+Thus the Newton point is its unique stationary point on that branch and requires no new selection.
+The total displacement is $y=z+s+O_{\rm rel}(k^{-2})$, where $s$ is the Newton step from $\bar p$.
+A margin is reserved in $\varepsilon_0,C,\eta,\gamma$ for all children.
+
+\begin{proof}
+\emph{Adaptation of the macroscopic proof.}
+The proof follows that of Section~\ref{sec:macro} and retains its algebraic identities and normalization.
+In place of its uses of $k\ge\delta_0n$, we use Section~\ref{sec:B5T02} for the line inverse
+and the response, Section~\ref{sec:B5T03} for the Newton step, the mass of the Schur difference,
+and the cubic remainders, and Section~\ref{sec:B5T04} for the traces, their changes, and the resolvent.
+Rebalancing uses only the $2k$ RC lines.
+At no point do we require the number of diagonals to be $O(k)$.
+
+\par\emph{Exact change of support and gauge.}
+Let $\Gamma=S_0^+$, $v=(\mathbf1_R,-\mathbf1_C,0_D)$,
+$\Pi=vv^T/(2k)$, and $\widetilde S_0=S_0+\Pi$.
+Let $J$ be the four removed lines and let $I=J^c$. Set
+\[
+ C_J=S_{0,JJ}+\Pi_{JJ},\quad V_J=S_{0,IJ}+\Pi_{IJ},
+ \quad P_*=(\widetilde S_0)_{II}-V_JC_J^{-1}V_J^T,
+\]
+\[
+ H_*=P_*^{-1}=(\Gamma+\Pi)_{II},\quad
+ D_*=\Delta_0+(\Pi'-\Pi_{II})+V_JC_J^{-1}V_J^T.
+\]
+The exact cofactor identity is
+\[
+ \frac{\det S'_{0,\rm gf}}{\det S_{0,\rm gf}}
+ =\frac{k}{k-1}\frac{\det(I+H_*D_*)}{\det C_J}.
+\]
+Section~\ref{sec:B5T04} controls its quadratic and cubic terms. No Taylor expansion is taken
+all the way to $p=0$ or $1$.
+
+\par\emph{Preservation of the cancellation and its coefficients.}
+Let $a_i$ be the indicator of the four lines of $i$. Define
+$f_i=\sum_{a<b\in i}\Gamma_{ab}$ and, using only the retained pairs, $f_i^I$.
+The quadratic response of the child satisfies
+\[
+ y_i/p_i=-a_i^T\Gamma a_c+O(k^{-2}),\qquad
+ \mathcal Q(y)=a_c^T\Gamma a_c-4+12p_c+O(k^{-2}).
+\]
+Using the exact Jacobi derivative avoids differentiating an asymptotic remainder and gives
+\[
+ \delta_c=-6p_c-f_c+\sum_Fp_i(6p_i+f_i)
+             -\sum_{E'}y_i(6p_i+f_i)+O(k^{-2}).
+\]
+The boundary identity for the action, the change in the prefactor, and the cofactor give
+\[
+ \begin{aligned}
+ e_c:={}&L(B+c)-L(B)-\log p_c\\
+ ={}&-6p_c-f_c+6\sum_Fp_i^2-6\sum_{E'}p_iy_i-\sum_{E'}y_if_i\\
+ &+\sum_Fp_if_i^I-\sum_{j\in J}(\Gamma_{jj}-1)-1/k+O(k^{-2}).
+ \end{aligned}
+\]
+The final identity of Section~\ref{sec:B4T08}, before approximation, implies
+\[
+ \sum_Fp_i(f_i-f_i^I)
+ =-\sum_{j\in J}(\Gamma_{jj}-1)-1/k-p_cf_c.
+\]
+Since $p_cf_c=O(k^{-2})$, we obtain $e_c-\delta_c=O(k^{-2})$.
+All error sums use $\sum_Ep=k$, $\sum_Fp=O(1)$, and Section~\ref{sec:B5T04}.
+This step retains and cancels the terms of order $k^{-1}$.
+
+The row conservation identity gives exactly
+\[
+ \sum_{c\in r}p_c\delta_c=0,\quad
+ w_c=p_c(1+\delta_c)>0,\quad\sum_{c\in r}w_c=1.
+\]
+Section~\ref{sec:B5T02} implies $\delta_c=O(k^{-1})$. Hence
+\[
+ r_c=e_c-\log(1+\delta_c)=O(k^{-2}),\quad
+ \rho=\mathbb E_w e^{r_c},\quad|\log\rho|\le\sup_c|r_c|.
+\]
+This proves the deterministic extension under the hypotheses of the theorem.
+\end{proof}
+
+\paragraph{Scope.}
+The case of masked rooks is included through the representation with two
+single-square diagonals per square in Section~\ref{sec:B5T01}. A child of an interior parent inherits
+membership in an outer class with a margin. We make no claim that a trajectory remains in that class.

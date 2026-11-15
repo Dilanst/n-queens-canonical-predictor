@@ -1,0 +1,110 @@
+\subsection{The limit operator and the two parity sheets}\label{sec:D03}
+We use the uniform comparison with the continuous profile (Section~\ref{sec:P06}) and the gap from Section~\ref{sec:P03}.
+Let $v_n=(\mathbf1_R,-\mathbf1_C,0_D,0_A)$ and set
+\[
+ \begin{gathered}
+ P_n=\frac{v_nv_n^T}{2n},\qquad J_n=S_n-I+P_n,\\
+ S_n=\operatorname{diag}(0_R,0_C,h_D,h_A)+A^T\operatorname{diag}(g)A,
+ \qquad g_c=\frac{\pi_c(1-\pi_c)}{1-4\pi_c}.
+ \end{gathered}                                         \tag{D3.1}
+\]
+The matrix $S_n+P_n$ replaces the unique zero eigenvalue of $S_n$ by one.
+Thus $\det(I+J_n)=\operatorname{pdet}S_n$ and
+$I+J_n\ge\min(1,\gamma)I$ uniformly.
+
+\paragraph{Diagonal and trace.}
+In every family, $h_L+\sum_{c\in L}\pi_c=1$, with $h_R=h_C=0$.
+Hence $(S_n)_{LL}=1+\delta_L$, where
+$\delta_L=\sum_{c\in L}(g_c-\pi_c)=O(n^{-1})$.
+The diagonal part satisfies $\sum_L\delta_L^2=O(n^{-1})$, yet
+\[
+ \operatorname{tr}J_n
+ =1+4\sum_c(g_c-\pi_c)
+ =1+12\sum_c\frac{\pi_c^2}{1-4\pi_c}
+ \longrightarrow1+12I_2.                          \tag{D3.2}
+\]
+Here we use $\sum\pi_c^3=O(n^{-1})$ and $\sum\pi_c^2\to I_2$.
+The trace cannot be obtained by taking the trace of a Hilbert--Schmidt limit.
+
+\paragraph{A fixed space and isometries.}
+With the intervals $I_F$ from Section~\ref{sec:preliminares}, let
+\[
+ \mathcal H=\bigoplus_{F=R,C,D,A}
+          L^2(I_F\times\{0,1\},dt/2).
+\]
+Each family has two sheets. The sheet of a line is determined by the parity of its absolute index,
+$i,j,k,l$ in the respective families. At square $(i,j)$, the diagonal indices $i-j$ and $i+j-1$
+differ by $2j-1$, so they always have opposite parity. Merging the two parity
+classes before constructing the operator would lose this information about which diagonals
+can meet at a square.
+For each family and parity, with $m_{F,p}$ indices, divide $I_F$
+into $m_{F,p}$ equal intervals, called cells, assigned to the indices in increasing order.
+The measure of each cell in $\mathcal H$ is
+$\mu_{F,p}=|I_F|/(2m_{F,p})=n^{-1}(1+O(n^{-1}))$.
+The isometry from the finite-dimensional Euclidean space is
+\[
+ E_ne_L=\mu_{F,p}^{-1/2}\mathbf1_{\text{cell of }L}.
+                                                        \tag{D3.3}
+\]
+Each cell lies within distance $O(n^{-1})$ of the physical coordinate
+of its index: $(i-1/2)/n$, $(j-1/2)/n$, $k/n$, or $l/n$.
+This also holds when the two sheets contain different numbers of indices.
+
+\paragraph{Limit kernels between distinct families.}
+Define $\mathcal K$ by the following kernels. The blocks in the reverse order are
+their adjoints, and the blocks coupling a family to itself are zero:
+\[
+\begin{array}{ll}
+ RC:&\nu(r,c),\\
+ RD:&\nu(r,r-d)\mathbf1_{0<r-d<1},\\
+ RA:&\nu(r,a-r)\mathbf1_{0<a-r<1},\\
+ CD:&\nu(c+d,c)\mathbf1_{0<c+d<1},\\
+ CA:&\nu(a-c,c)\mathbf1_{0<a-c<1}.
+\end{array}                                             \tag{D3.4}
+\]
+These five kernels are independent of both sheet indices.
+By contrast,
+\[
+ \begin{gathered}
+ \mathcal K_{DA}((d,p),(a,q))
+ =\mathbf1_{p\ne q}\,
+   \nu\left(\frac{a+d}{2},\frac{a-d}{2}\right)\mathbf1_\Omega(d,a),\\
+ \Omega=\left\{(d,a):0<\frac{a+d}{2}<1,\ 0<\frac{a-d}{2}<1\right\}.
+ \end{gathered}                                         \tag{D3.5}
+\]
+Indeed, $k=i-j$, $l=i+j-1$, and $k+l=2i-1$ is odd.
+This condition is independent of $n\bmod2$.
+The definition of $\Omega$ requires both arguments to lie between zero and one.
+
+\begin{proposicion}[Hilbert--Schmidt convergence]
+Let $f_0$ equal $1/\sqrt2$ on both R sheets, $-1/\sqrt2$ on
+both C sheets, and zero on the D and A families. Then $\|f_0\|=1$.
+With $P_0=|f_0\rangle\langle f_0|$, we have
+\[
+ \widehat J_n:=E_nJ_nE_n^*\longrightarrow
+             J:=\mathcal K+P_0\quad\text{in Hilbert--Schmidt norm}.       \tag{D3.6}
+\]
+\end{proposicion}
+\begin{proof}
+The kernel corresponding to an entry for an intersection is
+$g_{ij}/\sqrt{\mu_{F,p}\mu_{G,q}}=ng_{ij}(1+O(n^{-1}))
+=\nu(x_i,x_j)+O(n^{-1})$.
+Outside bands of width $O(n^{-1})$ around the finitely many segments
+bounding the intersection regions, the indicators agree
+and the kernels converge uniformly because the profile is Lipschitz.
+Inside the bands, the kernels remain bounded and the area of the bands tends to zero.
+Thus each block converges in $L^2$. The parity condition in (D3.5) holds exactly.
+The diagonal $\delta$ vanishes in Hilbert--Schmidt norm.
+Finally, $f_n=E_nv_n/\sqrt{2n}\to f_0$ in $\mathcal H$:
+its value on an R sheet is $\sqrt{m_{R,p}/n}\to1/\sqrt2$,
+and similarly on a C sheet. Hence the corresponding projections converge in Hilbert--Schmidt norm.
+\end{proof}
+
+\paragraph{An equivalent description of parity.}
+The change of variables $s=(f_{F,0}+f_{F,1})/2$, $o=(f_{F,0}-f_{F,1})/2$
+defines a unitary map onto $\bigoplus_F(L^2(I_F,dt)\oplus L^2(I_F,dt))$.
+The symmetric sector has four families, and the block between D and A is
+$T(d,a)=\tfrac12\nu((a+d)/2,(a-d)/2)\mathbf1_\Omega$.
+In the antisymmetric sector, only the block
+$\left(\begin{smallmatrix}0&-T\\-T^*&0\end{smallmatrix}\right)$ on the D and A families remains.
+Averaging over parity before constructing the limit would remove this block.

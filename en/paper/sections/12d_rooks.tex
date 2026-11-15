@@ -1,0 +1,93 @@
+\subsection{The Laplace step}
+
+Since $q!=\int_0^\infty e^{-t}t^q\,dt$, Tonelli's theorem gives
+$\mathbb E_D[q!\,u^{-q}]=\int_0^\infty e^{-t}\,\mathbb E_D[(t/u)^q]\,dt$. With $t=ue^v$ this becomes
+\begin{equation}\label{eq:torres-laplace}
+ \mathbb E_D[q!\,u^{-q}]=u\int_{\mathbb R}e^{\Psi(v)}\,dv,\qquad \Psi(v)=-ue^v+v+K(v),
+\end{equation}
+with $\Psi(0)=-u$, $\Psi'(0)=1+\mu_D-u$, and $\Psi''(0)=-(u-\sigma_D^2)$.
+
+\begin{lema}\label{lem:torres-psi}
+Suppose $\theta\in[\theta_0,1)$, that is, $\lambda<\infty$, so that $x=(\theta/y)^2$ is finite, and assume
+$k\ge k_1:=\max(11,20/\theta_0)$. Let $\delta=0.3$. Then
+\begin{enumerate}[(a)]
+\item $\Psi''(v)\le-a$ for every $v\ge-\delta$, with $a=0.08\,k\theta_0$,
+\item $\Psi'(v)>0$ for every $v\le-\delta$, and $\Psi(v)\le v$ for every $v\le0$,
+\item $|\Psi'''(v)|\le b$ and $|\Psi''''(v)|\le b$ for $|v|\le\delta$, with $b=2k$,
+\item $|\Psi'(0)|\le4.5$ and $k\theta(1+\theta)/2-3.1\le u-\sigma_D^2\le k\theta(1+\theta)/2+3.1$.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+(a) We have $\Psi''(v)=-ue^v+\sigma^2(v)$ and, by Lemma~\ref{lem:torres-momentos} applied to $D_v$,
+$\sigma^2(v)\le(k+\frac12)\theta_vy_v/2+1$, with $\theta_vy_v=s_v/(1+s_v)^2$. Since $u\ge k\theta=ks/(1+s)$,
+\[
+ -\Psi''(v)\ge k\,se^{v/2}\Bigl[\frac{e^{v/2}}{1+s}-\frac1{2(1+se^{v/2})^2}\Bigr]-\frac1{16}-1.
+\]
+For $v\ge-\delta$, we have $1+se^{v/2}\ge e^{-\delta/2}(1+s)$, so the expression in brackets is at least
+$(e^{-\delta/2}-e^\delta/2)/(1+s)>\gamma/(1+s)$, with $\gamma=0.1857$. Hence
+$-\Psi''(v)\ge\gamma e^{-\delta/2}k\theta-1.07\ge0.159\,k\theta-1.07\ge0.08\,k\theta_0$ if
+$k\theta_0\ge14$.
+
+(b) By Lemma~\ref{lem:torres-momentos}, $\Psi'(v)=-ue^v+1+\mu(v)\ge(k+\frac12)\theta_v-ue^v$. For
+$v\le0$, we have $\theta_v\ge se^{v/2}/(1+s)=\theta e^{v/2}$ and $u\le k\theta/(1-1/k)$. Hence
+$\Psi'(v)\ge k\theta e^{v/2}\bigl[1-e^{v/2}/(1-1/k)\bigr]>0$ for $v\le-\delta$, since
+$e^{-\delta/2}<0.861<1-1/k$ when $k\ge8$. Moreover, $\Psi(v)\le v$ for $v\le0$, since $-ue^v<0$ and
+$K(v)\le0$.
+
+(c) We have $\Psi'''=-ue^v+K'''$ and $\Psi''''=-ue^v+K''''$. Since $|K'''|,|K''''|\le k/4$ and
+$ue^v\le1.1k\,e^{0.3}\le1.5k$ for $k\ge11$, both absolute values are at most $1.75k\le b$.
+
+(d) By Lemma~\ref{lem:torres-momentos}, $|\mu_D-k\theta|\le1+\theta/2\le\frac32$ and
+$u-k\theta=\theta^2/(1-p)\in[0,2]$. Since $\Psi'(0)=1+(\mu_D-k\theta)-(u-k\theta)$, we obtain
+$|\Psi'(0)|\le4.5$. For $u-\sigma_D^2$ we also use $|\sigma_D^2-(k+\frac12)\theta y/2|\le1$ and
+$1-y/2=(1+\theta)/2$.
+\end{proof}
+
+\begin{lema}[Laplace's method with an explicit error bound]\label{lem:torres-laplace}
+Let $\Psi\in C^4(\mathbb R)$ and let the constants $a,b>0$, $\delta\in(0,1]$, $r\in(0,\delta/2]$ with $r\le1$ and
+$br\le a$, and $V\ge0$ satisfy the following conditions.
+\begin{enumerate}[label=(L\arabic*)]
+\item $\Psi''\le-a$ on $[-\delta,\infty)$.
+\item $\Psi'>0$ on $(-\infty,-\delta]$, and $\Psi(v)\le v$ for $v\le-\delta$.
+\item $|\Psi'''|\le b$ and $|\Psi''''|\le b$ on $[-\delta,\delta]$.
+\item There exists $v^*$ with $|v^*|\le\delta/2$ and $\Psi'(v^*)=0$.
+\item $\Psi(v^*)\ge-V$.
+\end{enumerate}
+Then $v^*$ is the global maximizer of $\Psi$ and, with $A=-\Psi''(v^*)\ge a$,
+$\int_{\mathbb R}e^{\Psi}=e^{\Psi(v^*)}\sqrt{2\pi/A}\,(1+\varepsilon)$, where
+\[
+ |\varepsilon|\le\frac b{8A^2}+\frac{6b^2}{A^3}+\frac{e^{-Ar^2/2}}{r\sqrt A}
+ +\sqrt A\Bigl[\frac{2e^{-ar^2/2}}{ar}+\Bigl(1+V+\frac{a\delta^2}8\Bigr)e^{-a\delta^2/8}\Bigr].
+\]
+\end{lema}
+\begin{proof}
+\emph{Global maximum.} By (L1) and (L2), $\Psi$ is increasing on $(-\infty,-\delta]$ and strictly concave on
+$[-\delta,\infty)$, so $v^*$ is the global maximizer.
+
+\emph{Central region $|t|\le r$, with $t=v-v^*$.} Taylor's theorem gives $\Psi(v^*+t)=\Psi(v^*)-At^2/2+S(t)$, with
+$S(t)=\Psi'''(v^*)t^3/6+T(t)$ and $|T(t)|\le bt^4/24$. Since $|t|\le r\le1$,
+$|S|\le b|t|^3/4\le(br/4)t^2\le(A/4)t^2$. Write $e^S=1+S+R_2$, with $|R_2|\le S^2e^{|S|}/2$. The cubic
+term integrates to zero on $[-r,r]$, and
+\[
+ \Bigl|\int e^{-At^2/2}\,T\Bigr|\le\frac b{24}\,3\sqrt{2\pi}\,A^{-5/2}=\sqrt{\frac{2\pi}A}\,\frac b{8A^2},
+\]
+\[
+ \Bigl|\int e^{-At^2/2}R_2\Bigr|\le\frac{b^2}{32}\int t^6e^{-At^2/4}\,dt
+ =\sqrt{\frac{2\pi}A}\,\frac{15\cdot2^{7/2}}{32}\,\frac{b^2}{A^3}\le\sqrt{\frac{2\pi}A}\,\frac{6b^2}{A^3}.
+\]
+Truncating the Gaussian on $|t|>r$ incurs an error of at most $2e^{-Ar^2/2}/(Ar)$, that is, a relative error of at
+most $e^{-Ar^2/2}/(r\sqrt A)$.
+
+\emph{Parts of $[-\delta,\infty)$ outside the central region.} By concavity (L1), for $v\ge v^*+r$,
+$\Psi(v)\le\Psi(v^*)-ar^2/2-ar(v-v^*-r)$, and the analogous bound holds on $[-\delta,v^*-r]$. Their contribution is at
+most $2e^{\Psi(v^*)-ar^2/2}/(ar)$.
+
+\emph{Tail $(-\infty,-\delta]$.} Let $V'=V+a\delta^2/8$. If $V'<\delta$, there is no need to split the integral,
+since (L2) gives $\int_{-\infty}^{-\delta}e^\Psi\le\int_{-\infty}^{-\delta}e^v\,dv=e^{-\delta}\le e^{-V'}$.
+Now suppose $V'\ge\delta$, as is the case in Proposition~\ref{prop:torres-laplace}, where
+$V'\ge u\ge k\theta_0>375$. By (L2) and (L5), $\int_{-\infty}^{-V'}e^\Psi\le e^{-V'}\le e^{\Psi(v^*)-a\delta^2/8}$.
+Since $\Psi$ is increasing on $[-V',-\delta]$, we have $\int_{-V'}^{-\delta}e^\Psi\le V'e^{\Psi(-\delta)}$, and by
+concavity and $|v^*|\le\delta/2$, we have $\Psi(-\delta)\le\Psi(v^*)-a\delta^2/8$.
+
+Dividing by $e^{\Psi(v^*)}\sqrt{2\pi/A}$ and using $(2\pi)^{-1/2}\le1$ gives the bound.
+\end{proof}

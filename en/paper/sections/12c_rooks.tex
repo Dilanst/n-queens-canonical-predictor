@@ -1,0 +1,112 @@
+\subsection{The law \texorpdfstring{$D$}{D} and its moments}
+
+\begin{lema}[Legendre]\label{lem:torres-legendre}
+Let $\cos\alpha_1>\dots>\cos\alpha_k$ be the zeros of the Legendre polynomial $P_k$, with
+$0<\alpha_1<\dots<\alpha_k<\pi$. Then, for every $x$,
+\[
+ f_k(x):=\sum_{q=0}^k\binom kq^2x^q=\prod_{i=1}^k(1+xc_i),\qquad c_i=\cot^2(\alpha_i/2)>0.
+\]
+\end{lema}
+\begin{proof}
+By Rodrigues' formula, $P_k(t)=(2^kk!)^{-1}(d/dt)^k[(t-1)^k(t+1)^k]$, and by the Leibniz rule
+\[
+ \Bigl(\frac{d}{dt}\Bigr)^k\bigl[(t-1)^k(t+1)^k\bigr]
+ =\sum_q\binom kq\frac{k!}{q!}(t-1)^q\,\frac{k!}{(k-q)!}(t+1)^{k-q}.
+\]
+Hence $P_k(t)=\sum_q\binom kq^2\bigl(\frac{t-1}2\bigr)^q\bigl(\frac{t+1}2\bigr)^{k-q}$. For $x\ne1$, let
+$t=(1+x)/(1-x)$. Then $(t-1)/2=x/(1-x)$ and $(t+1)/2=1/(1-x)$, giving
+$f_k(x)=(1-x)^kP_k\bigl((1+x)/(1-x)\bigr)$. Both sides are polynomials in $x$, so the identity holds
+for every $x$. The polynomial $P_k$ has $k$ simple zeros $t_i=\cos\alpha_i$ in $(-1,1)$~\cite[Theorem~3.3.1]{Szego}. If
+$\kappa_k$ is its leading coefficient, then $f_k(x)=\kappa_k\prod_i[(1-t_i)+x(1+t_i)]$. Since $f_k(0)=1$, we
+have $\kappa_k\prod_i(1-t_i)=1$. Using $(1+\cos\alpha)/(1-\cos\alpha)=\cot^2(\alpha/2)$ gives the product
+in the statement.
+\end{proof}
+
+\begin{corolario}\label{cor:torres-pb}
+Let $x=(\theta/y)^2$, so that $D(q)=\binom kq^2x^q/f_k(x)$.
+\begin{enumerate}[(a)]
+\item The generating function is $\mathbb E_D[\tau^q]=f_k(x\tau)/f_k(x)=\prod_i(1-r_i+r_i\tau)$, with
+ $r_i=xc_i/(1+xc_i)\in(0,1)$. Thus $D$ is the law of a sum of $k$ independent Bernoulli
+ variables with parameters $r_i$.
+\item For $v\in\mathbb R$, the tilted law $D_v(q)\propto D(q)e^{vq}$ is in the same family, with $x$
+ replaced by $xe^v$.
+\item The function $K(v)=\log\mathbb E_D[e^{vq}]=\sum_i\log(1-r_i+r_ie^v)$ satisfies
+ \[
+ \begin{aligned}
+  K'(v)&=\sum_ir_i(v)=:\mu(v),\qquad K''(v)=\sum_ir_i(v)(1-r_i(v))=:\sigma^2(v),\\
+  K'''(v)&=\sum_ir_i(v)(1-r_i(v))(1-2r_i(v)),\\
+  K''''(v)&=\sum_ir_i(v)(1-r_i(v))\bigl(1-6r_i(v)(1-r_i(v))\bigr),
+ \end{aligned}
+ \]
+ with $r_i(v)=r_ie^v/(1-r_i+r_ie^v)$.
+\item Consequently, $|K'''|\le K''$, $|K''''|\le K''$, $0\le K''\le k/4$,
+ $K''(0)e^{-|v|}\le K''(v)\le K''(0)e^{|v|}$, and $K(v)\le0$ for $v\le0$.
+\end{enumerate}
+\end{corolario}
+\begin{proof}
+Part (a) follows from Lemma~\ref{lem:torres-legendre}, and (b) from $\binom kq^2(xe^v)^q\propto D(q)e^{vq}$. The
+derivatives in (c) are those of a sum of logarithms of Bernoulli generating functions. The
+inequalities $|1-2r|\le1$ and $|1-6r(1-r)|\le1$ give the first two bounds in (d), and $r(1-r)\le\frac14$ gives
+$K''\le k/4$. For the fourth bound it suffices to use $|(\log K'')'|=|K'''/K''|\le1$. Finally, $K(v)\le0$ for $v\le0$
+because $q\ge0$.
+\end{proof}
+
+\begin{lema}\label{lem:torres-momentos}
+Let $x>0$, $s=\sqrt x$, $\theta_x=s/(1+s)$, and $y_x=1-\theta_x$, and let $\mu_D$ and $\sigma_D^2$ be the mean and
+variance of the law $q\mapsto\binom kq^2x^q/f_k(x)$. Then
+\[
+ \bigl|\mu_D-(k+\tfrac12)\theta_x\bigr|\le1,\qquad \bigl|\sigma_D^2-(k+\tfrac12)\theta_xy_x/2\bigr|\le1.
+\]
+With $x=(\theta/y)^2$ the law is $D$ and we have $\theta_x=\theta$ and $y_x=y$. By
+Corollary~\ref{cor:torres-pb}(b), for the tilted law $D_v$, whose mean is $\mu(v)$ and whose variance is
+$\sigma^2(v)$, it suffices to set $s_v=se^{v/2}$, $\theta_v=s_v/(1+s_v)$, and $y_v=1-\theta_v$.
+\end{lema}
+\begin{proof}
+By Corollary~\ref{cor:torres-pb}, $\mu_D=\sum_iF(\alpha_i)$ and $\sigma_D^2=\sum_iG(\alpha_i)$, with
+$F(\alpha)=s^2/(s^2+\tan^2(\alpha/2))$ and $G=F(1-F)$. The function $F$ is continuous and decreases on
+$[0,\pi]$ from $1$ to $0$. The function $G$ takes values in $[0,\frac14]$, vanishes at the endpoints, and is
+unimodal. It increases while $F>\frac12$ and decreases while $F<\frac12$. By Bruns's
+inequality~\cite{Bruns} (see also~\cite[\S6.21]{Szego}), with $h=\pi/(k+\frac12)$,
+\[
+ (i-\tfrac12)h\le\alpha_i\le ih\qquad(i=1,\dots,k).
+\]
+By Lemma~\ref{lem:torres-riemann}, proved below, with $m_0=1$ for $F$ and
+$m_0=\frac14$ for $G$, each sum differs from the corresponding $h^{-1}\int_0^\pi$ by at most $1$. With $t=\tan(\alpha/2)$ and
+$d\alpha=2\,dt/(1+t^2)$, we obtain
+\[
+\begin{aligned}
+ \int_0^\pi F\,d\alpha&=2\int_0^\infty\frac{s^2\,dt}{(t^2+s^2)(1+t^2)}=\frac{\pi s}{1+s}=\pi\theta_x,\\
+ \int_0^\pi G\,d\alpha&=2\int_0^\infty\frac{s^2t^2\,dt}{(t^2+s^2)^2(1+t^2)}=\frac{\pi s}{2(1+s)^2}
+ =\frac\pi2\,\theta_xy_x;
+\end{aligned}
+\]
+Both integrals follow by partial fractions (at $s=1$, by continuity). Since $h^{-1}=(k+\frac12)/\pi$, this gives
+the stated bounds.
+\end{proof}
+
+\begin{lema}[Riemann sums at interlaced points]\label{lem:torres-riemann}
+Let $h=\pi/(k+\frac12)$, $\alpha_i\in[(i-\frac12)h,ih]$ for $i=1,\dots,k$, and $m_0>0$.
+\begin{enumerate}[(a)]
+\item If $F:[0,\pi]\to[0,m_0]$ is nonincreasing, then
+ $\bigl|\sum_iF(\alpha_i)-h^{-1}\int_0^\pi F\bigr|\le m_0$.
+\item If $G:[0,\pi]\to[0,m_0]$ is unimodal, then
+ $\bigl|\sum_iG(\alpha_i)-h^{-1}\int_0^\pi G\bigr|\le4m_0$.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+(a) Extend $F$ by $0$ outside $[0,\pi]$. It remains nonincreasing on $[0,\infty)$. First,
+$F(\alpha_i)\le F((i-\frac12)h)$, whose right-hand side for $i\ge2$ is at most $h^{-1}\int_{(i-3/2)h}^{(i-1/2)h}F$ and for
+$i=1$ is at most $m_0$. Hence $\sum_iF(\alpha_i)\le m_0+h^{-1}\int_0^\pi F$. Conversely,
+$F(\alpha_i)\ge F(ih)\ge h^{-1}\int_{ih}^{(i+1)h}F$. Since $(k+1)h\ge\pi$, we have
+$\sum_iF(\alpha_i)\ge h^{-1}\int_h^\pi F\ge h^{-1}\int_0^\pi F-m_0$.
+
+(b) Set $I_i=[(i-1)h,ih]$. Since $\alpha_i\in I_i$,
+\[
+ \left|G(\alpha_i)-h^{-1}\int_{I_i}G\right|
+ \le\operatorname{osc}_{I_i}G .
+\]
+By unimodality and $0\le G\le m_0$, the sum of the oscillations over these intervals
+is at most the total variation of $G$ on $[0,kh]$, which is at most $2m_0$.
+Since $\pi-kh=h/2$, the remainder $h^{-1}\int_{kh}^{\pi}G$ contributes at most $m_0/2$.
+The triangle inequality gives the bound $5m_0/2\le4m_0$, including when the mode is at an endpoint.
+\end{proof}

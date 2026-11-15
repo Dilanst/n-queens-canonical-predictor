@@ -1,0 +1,122 @@
+\section{Introduction}\label{sec:intro}
+
+The $n$-queens problem asks how many ways there are to place $n$ queens on an $n\times n$ board
+so that no two attack each other. We denote this number by $Q(n)$. In a solution, each row
+contains one queen. Recording its column as we read the rows from top to bottom gives a
+permutation, since no column occurs twice. Figure~\ref{fig:permutaciones} shows why only some of the $n!$ possible
+permutations are solutions.
+
+\input{figures/permutations}
+
+By how much do the diagonals reduce these $n!$ possibilities as the board grows?
+Simkin~\cite[Theorem~1.1]{Simkin} determined the leading order by a variational principle:
+there is a constant $\alpha$ such that
+\[
+ Q(n)=\bigl((1+o(1))\,n\,e^{-\alpha}\bigr)^n .
+\]
+Nobel, Agrawal and Boyd~\cite{NAB} bounded $\alpha$ in $[1.944000752,\,1.944001082]$.
+Taking logarithms and applying Stirling's formula, Simkin's result gives
+\[
+ \log Q(n)-\log n!=n(1-\alpha)+o(n).
+\]
+The remainder $o(n)$ is undetermined. The question motivating this paper concerns the next term:
+after subtracting the linear term, does the difference converge, and if so, to what constant?
+
+We construct a deterministic quantity $Q_{\rm pred}(n)$, which we call the predictor and whose constant
+term we can calculate. The construction assigns a weight to each square so that each row and
+each column sums to one and no diagonal receives more than one. Among the admissible weights
+of the model, we choose those that maximize the Bethe entropy (Section~\ref{sec:predictor}). This entropy
+contributes the first term of the predictor. The other three terms in Definition~\ref{def:Qpred} are a
+local term depending on the square weights, a pseudodeterminant that also depends on how the
+lines intersect, and a normalization. The definition requires the maximizer to be interior,
+which holds for all sufficiently large $n$ (Section~\ref{sec:P02}).
+
+Passing from the board to the unit square brings in the profile of mass one $\nu_1$ from~\cite{Perfil}.
+We write $s_1$ for the optimal value at mass one, attained by that profile, and set $\Phi=s_1+1$.
+Under the identification with Simkin's problem discussed in Section~\ref{sec:preliminares}, which we do not use
+in any proof, $\Phi=1-\alpha$. The integral $I_2=\int\nu_1^2$ is taken over the unit square. Since $\nu_1$ has total mass one,
+$I_2\ge1$, with equality only for the constant density: $I_2$ measures how far the profile is from that density.
+
+\begin{teorema}[Constant term of the predictor]\label{thm:intro-constante}
+As $n\to\infty$,
+\[
+\begin{aligned}
+ \log Q_{\rm pred}(n)-\log n!-n\Phi &\longrightarrow C_{\rm pred},\\
+ C_{\rm pred} &=\tfrac12\log2-\tfrac12-\tfrac32I_2-\tfrac12\log{\det}_2(I+J),
+\end{aligned}
+\]
+where $J$ is the Hilbert--Schmidt operator constructed from $\nu_1$ in Section~\ref{sec:D03} and
+$I+J$ is positive definite.
+\end{teorema}
+
+The proof follows the definition term by term. First we approximate the discrete maximizer by the
+continuous profile with error $O(1/n)$ (Section~\ref{sec:perfil}). We then identify the contributions of the
+entropy and the pseudodeterminant separately and add them to the local term
+(Section~\ref{sec:constante}). The theorem is proved in Section~\ref{sec:D05} (Theorem~\ref{thm:constante}).
+
+The second result answers a question that can already be posed on a small board.
+A partial placement leaves a residual board $B$. We choose an empty row $r$ and write
+$B+c$ for the residual board left after occupying a legal square $c$ in that row.
+If $Q(B)$ counts the completions of $B$, then
+\[
+ Q(B)=\sum_{c\in r} Q(B+c).
+\]
+Indeed, each completion uses exactly one of these squares. A legal choice that has no completion
+contributes zero to the sum. Figure~\ref{fig:residual} shows this partition on a $5\times5$ board with a queen in
+row~1 and column~2: two legal squares remain in the second row, in columns 4 and~5, and each gives one summand.
+
+\input{figures/residual}
+
+The predictor assigns to $B$ the value $e^{L(B)}$ (Section~\ref{sec:B3T01}).
+We divide the sum of the predictions for the children by the prediction for the parent:
+\[
+ \rho(B)=\frac{\sum_{c\in r}e^{L(B+c)}}{e^{L(B)}}
+        =\sum_{c\in r}e^{L(B+c)-L(B)} .
+\]
+If the predictor satisfied exactly the same identity as the count, this ratio would be one.
+The following theorem bounds the defect on a logarithmic scale and specifies the residual boards for which the bound holds.
+
+Its statement uses notions made precise in Sections~\ref{sec:insercion} and~\ref{sec:B5T01}.
+A residual board with $k$ empty rows also has $k$ empty columns and is missing $k$ queens;
+in \cite{Completabilidad} this number is denoted by $h$.
+The \emph{Bethe point} of $B$ is the vector of weights $p=(p_e)$, one for each available square
+$e$, at which $L(B)$ is evaluated: a stationary point of the Bethe entropy of the residual board
+under the row and column constraints. The \emph{mass} of a diagonal in either family is the sum
+of the weights of its available squares; its \emph{vacancy} is one minus its mass.
+The \emph{row--column Laplacian} is the Laplacian of the graph whose vertices are the empty rows
+and columns and in which each available square $e$ is an edge of weight $p_e$ between its row and
+its column. Its \emph{gap} is its second smallest eigenvalue, counted with multiplicity.
+
+\begin{teorema}[Second-order consistency]\label{thm:intro-consistencia}
+Let $C,\eta,\gamma>0$ and let $B$ be a residual board with $k$ empty rows whose Bethe point $p$ is
+stationary and interior, with row and column masses equal to one, $p_e\le C/k$, diagonal vacancies
+at least $\eta$, and a gap of at least $\gamma$ for the row--column Laplacian weighted by $p$.
+\begin{enumerate}[(a)]
+\item For every $\delta_0>0$ there exist $k_0$ and $C_*$, depending only on $\delta_0,C,\eta,\gamma$, such
+that if $k\ge\max(k_0,\delta_0n)$, then $|\log\rho(B)|\le C_*/k^2$ for every empty row $r$ (Theorem~\ref{thm:macro} and Corollary~\ref{cor:rho}).
+\item There exist $\varepsilon_0$, $k_0$ and $C_*$, independent of $n/k$, such that the same conclusion
+holds for $k\ge k_0$ without the condition $k\ge\delta_0n$ if the mass of each diagonal is at most
+$\varepsilon_0$ (Theorem~\ref{thm:meso}).
+\end{enumerate}
+\end{teorema}
+
+Both parts include all legal children of the chosen row. For each child we obtain a unique
+stationary point on the small branch, that is, with all its weights less than $1/4$. The first
+part requires a fixed fraction of the original rows to remain. The second dispenses with
+this condition when the mass of each diagonal is small. In both cases the hypotheses concern
+the residual board. The theorem is deterministic: it does not assert that the residual boards
+arising when queens are placed at random satisfy these hypotheses.
+
+To transfer the first theorem to the exact count, it remains to control a difference:
+\[
+ R_Q(n)=\log Q(n)-\log Q_{\rm pred}(n).
+\]
+If $R_Q(n)\to0$, we obtain
+\[
+ \log Q(n)=\log n!+n\Phi+C_{\rm pred}+o(1).
+\]
+We do not prove that $R_Q(n)\to0$. Section~\ref{sec:discusion} explains what additional estimates on the trajectories
+and on residual boards with few empty rows this step would require.
+
+Numerically, $C_{\rm pred}\approx0.9401$: over the entire interval for $\alpha$ cited above, fits of the predictor starting at $n=40$ or $60$ give values between $0.9400$ and $0.9402$, and a direct evaluation of the formula gives $0.94014$ (Section~\ref{sec:numerico}); none of these figures is certified.
+With the reference value $\Phi_0$ from that section, the exact counts for $16\le n\le27$ give values of $\log Q(n)-\log n!-n\Phi_0$ between $0.913$ and $0.941$.

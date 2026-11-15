@@ -1,0 +1,89 @@
+\subsection{Quadrature lemmas and the dual formulation of the entropy}\label{sec:D01}
+From Section~\ref{sec:perfil} we use the bounds $c/n\le\pi\le M/n$, the fact that the diagonal vacancies are
+at least $\eta$, and the estimate $\|z^*-z^0\|_\infty=O(n^{-1})$ in the row and column gauge.
+The continuous profile $\nu$ and its positive factors are Lipschitz.
+The estimates hold for all sufficiently large $n$, with constants independent of $n$.
+
+\begin{lema}[Midpoint quadrature with a small remainder]\label{lem:puntosmedios}
+For a fixed Lipschitz function $f$ on $[0,1]^d$, $d=1,2$,
+the uniform midpoint rule satisfies
+$Q_n(f)-\int f=o(n^{-1})$.
+\end{lema}
+\begin{proof}
+Let $h=1/n$, and let $c_n(x)$ be the center of the cell containing $x$.
+Since Lipschitz functions are differentiable almost everywhere,
+\[
+ f(c_n(x))-f(x)=\nabla f(x)\cdot(c_n(x)-x)+r_n(x),
+ \qquad r_n(x)/h\longrightarrow0\quad\text{almost everywhere}.
+\]
+The quotient $|r_n|/h$ is bounded by a constant.
+The field $w_n=(c_n-x)/h$ is uniformly bounded and has
+mean zero on each cell. For every continuous field $v$,
+$\int v\cdot w_n\to0$ by uniform continuity.
+Approximating $\nabla f\in L^1$ by continuous fields proves the same assertion
+for $\nabla f$. Integrating the identity and applying dominated convergence
+to the remainder gives the result.
+The proof does not invoke pointwise evaluation of arbitrary $W^{1,1}$ functions
+in two dimensions.
+\end{proof}
+
+\begin{lema}[One-dimensional interior grid]
+For $f$ Lipschitz on $[a,b]$, with the endpoints on the grid of spacing $1/n$,
+\[
+ \sum_{a<k/n<b}f(k/n)
+ =n\int_a^b f-\frac{f(a)+f(b)}2+o(1).             \tag{D1.1}
+\]
+\end{lema}
+\begin{proof}
+On each interval of length $h$, the trapezoidal error is
+$\int (x-\text{center})f'(x)\,dx$.
+After division by $h$, its kernel is bounded and has mean zero
+on each interval. Approximating $f'\in L^1$ by continuous functions
+gives a total error of $o(h)$. Solving for the interior sum proves (D1.1).
+\end{proof}
+
+\paragraph{The exact dual functional.}
+We use the operators in (TR3), $\mathcal Tz=\sum_{L\ni c}z_L$ and
+$(\mathcal R_fq)_L=n^{-1}\sum_{c\in L}q_c$.
+Let $\chi_n$ be the inverse of $\psi_n(q)=q(1-q/n)^3$ on the small branch, and set
+$q(z)=\chi_n(e^{\mathcal Tz})$ and
+\[
+ A_n(q)=4q+3n\log(1-q/n),
+ \quad E_n(z)=\sum_{D,A}e^{z_L}-\sum_{\text{all }L}z_L
+                         +\frac1n\sum_c A_n(q(z)_c).       \tag{D1.2}
+\]
+Since $dA_n/d\log\psi_n=q$, the Euclidean gradient of $E_n$ is exactly
+\[
+ F_n(z)=(\mathcal R_Rq-1,\mathcal R_Cq-1,
+                 e^{z_D}+\mathcal R_Dq-1,e^{z_A}+\mathcal R_Aq-1).
+\]
+Section~\ref{sec:P05} proves $F_n(z^*)=0$ and
+$\|F_n(z^0)\|_\infty=O(n^{-1})$. On the segment joining the two points,
+$DF_n=d+\mathcal R(w\mathcal T)$, with $0\le d\le1$ and
+$w\le C_w$ (Section~\ref{sec:P06}, (TP1)). Each line contains at most $n$ squares
+and each square lies on four lines, so
+$\|\nabla^2E_n\|_{\infty\to\infty}\le1+4C_w$.
+Since there are $6n-2$ variables, Taylor's formula with integral remainder gives
+\[
+ E_n(z^*)-E_n(z^0)=O(n^{-1}).                         \tag{D1.3}
+\]
+Indeed, the linear term is bounded by
+$(6n-2)\|F_n(z^0)\|_\infty\|z^*-z^0\|_\infty$,
+and the quadratic term by a constant times
+$(6n-2)\|z^*-z^0\|_\infty^2$.
+
+\paragraph{The entropy at the critical point.}
+At the maximizer, $q^*=n\pi$, the row and column sums equal one,
+$\sum_{D,A}h_L=2n-2$, and $\sum_c q_c^*/n=n$.
+Stationarity implies
+\[
+ \log\pi_c+3\log(1-\pi_c)
+       =z^*_{R}+z^*_{C}+\log h_D+\log h_A-\log n.
+\]
+Upon substitution into the Bethe entropy, the terms for each diagonal
+combine by $m_L+h_L=1$, giving
+\[
+ H(\pi)=n\log n-\sum_Lz_L^*+3\sum_c\log(1-\pi_c)
+       =n\log n+E_n(z^*)-(6n-2).                    \tag{D1.4}
+\]
+The term $n\log n$ comes from the exact discrete mass, before any quadrature.

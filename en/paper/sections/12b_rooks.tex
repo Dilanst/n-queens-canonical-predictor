@@ -1,0 +1,102 @@
+\subsection{The uniform fixed point and closed forms}
+
+\begin{lema}\label{lem:torres-punto}
+For each $\lambda>0$ there is a unique $y\in(0,1)$ satisfying~\eqref{eq:torres-punto}. The map
+$\lambda\mapsto y$ is a continuous decreasing bijection from $(0,\infty)$ onto $(0,1)$, with $y\to0$ as
+$\lambda\to\infty$ and $y\to1$ as $\lambda\to0$. Moreover, $\Lambda\le\theta/y^2$. Hence
+$\Lambda\ge\Lambda_0$ implies $\theta\ge\theta_0$, where $\theta_0\in(0,1)$ is the root of
+$\theta_0=\Lambda_0(1-\theta_0)^2$.
+\end{lema}
+\begin{proof}
+With $p=(1-y)/k$, equation~\eqref{eq:torres-punto} reads $\lambda=\varphi(y)$, with
+$\varphi(y)=(1-y)(k-1+y)/(k^2y^2)$. The function $\varphi$ is smooth on $(0,1]$, tends to $\infty$ as
+$y\to0^+$, and satisfies $\varphi(1)=0$. Let $\mathcal N(y)=(1-y)(k-1+y)=(k-1)-(k-2)y-y^2$. Then
+$\varphi'(y)=(\mathcal N'(y)y-2\mathcal N(y))/(k^2y^3)$ and
+\[
+ \mathcal N'(y)y-2\mathcal N(y)=(k-2)y-2(k-1)<0\qquad\text{in }(0,1).
+\]
+Thus $\varphi$ is strictly decreasing, which gives the bijection and the limits. For the bound, we have
+\[
+ \Lambda=(k-1)\varphi(y)=\frac{\theta}{y^2}\cdot\frac{k-1}k\cdot\frac{k-1+y}k\le\frac\theta{y^2}.
+\]
+If $\Lambda\ge\Lambda_0$, then $\theta\ge\Lambda_0y^2=\Lambda_0(1-\theta)^2$. The function
+$\theta\mapsto\theta-\Lambda_0(1-\theta)^2$ increases on $[0,1]$ from $-\Lambda_0$ to $1$. Hence
+$\theta\ge\theta_0$.
+\end{proof}
+
+\begin{lema}[Tree term]\label{lem:torres-arbol}
+At the uniform fixed point, $\log Z_B=-2k\log y+k^2\log(1-p)$.
+\end{lema}
+\begin{proof}
+There are $k^2$ squares and $2k$ lines, and $\sum_cp=k^2p=k\theta$. Hence
+\[
+ \log Z_B=k\theta\log\lambda-2ky\log y-k^2p\log p+k^2(1-p)\log(1-p).
+\]
+By~\eqref{eq:torres-punto}, $\log\lambda=\log p+\log(1-p)-2\log y$. On substitution, the term
+$k\theta\log p$ cancels with $-k^2p\log p$, leaving
+$\log Z_B=-2k(\theta+y)\log y+(k\theta+k^2-k^2p)\log(1-p)$. Since $\theta+y=1$ and $k^2p=k\theta$, this equals
+$-2k\log y+k^2\log(1-p)$.
+\end{proof}
+
+\begin{lema}[One-loop correction]\label{lem:torres-lazo}
+We have
+\[
+ \det(I+M)=\bigl(1-(k-1)^2w^2\bigr)\bigl(1+(k-1)w^2\bigr)^{2(k-1)}\bigl(1-w^2\bigr)^{(k-1)^2}
+\]
+and $1-(k-1)^2w^2=y\,(1+(k-2)p)/(1-p)^2$. For $k\ge3$, all factors are positive when
+$y\in(0,1)$.
+\end{lema}
+\begin{proof}
+Order the states in two blocks, $(c,\text{row})$ and $(c,\text{column})$. Within each block,
+the squares $c=(i,j)$ are in Kronecker order, with $i$ the outer index and $j$ the inner index. Let $J$ denote the
+$k\times k$ all-ones matrix. From $(c,\text{row})$ the next family is the column family, so $c'=(i',j)$ with
+$i'\ne i$. This gives the row-to-column block $wE$, with $E=(J-I)\otimes I$. From
+$(c,\text{column})$ the transition is to $c'=(i,j')$ with $j'\ne j$, giving the block $wE'$, with
+$E'=I\otimes(J-I)$. The diagonal blocks vanish because $f'\ne f$. Thus the Schur complement gives
+\[
+ I+M=\begin{pmatrix}I&wE\\ wE'&I\end{pmatrix},\qquad \det(I+M)=\det(I-w^2E'E),
+\]
+and $E'E=(J-I)\otimes(J-I)$. The matrix $J-I$ is symmetric, with eigenvalues $k-1$ (once) and $-1$ ($k-1$
+times). The eigenvalues of the Kronecker product are the pairwise products, namely $(k-1)^2$ (once), $-(k-1)$
+($2(k-1)$ times), and $1$ ($(k-1)^2$ times). This gives the formula. For the second identity, we have
+\[
+ 1-(k-1)^2w^2=\frac{\bigl[(1-p)-(k-1)p\bigr]\bigl[(1-p)+(k-1)p\bigr]}{(1-p)^2}
+ =\frac{(1-kp)(1+(k-2)p)}{(1-p)^2}.
+\]
+For positivity, $p=\theta/k\le1/k$, so $w\le1/(k-1)\le\frac12$ if $k\ge3$. Hence
+$1-w^2\ge\frac34$, and the first factor is proportional to $y>0$.
+\end{proof}
+
+\begin{lema}[Zero mode]\label{lem:torres-cero}
+Let $\beta(q)=\binom kq\theta^qy^{k-q}$ denote the $\mathrm{Bin}(k,\theta)$ law of the number of occupied rows.
+Then $\mathsf P=\sum_{q=0}^k\beta(q)^2$ and $\log\rho_0=\log\mathsf P+\frac12\log(4\pi ky\theta)$.
+\end{lema}
+\begin{proof}
+The equality $N_R=N_C$ is equivalent to $k-N_R=k-N_C$, and $k-N_R$ has law $\mathrm{Bin}(k,\theta)$. Moreover,
+$V_R+V_C=2ky\theta$.
+\end{proof}
+
+\subsection{The exact identity}
+
+\begin{lema}\label{lem:torres-identidad}
+For every $\lambda>0$, with $y=y(\lambda)$,
+\[
+ Z_k(\lambda)=y^{-2k}\sum_{q=0}^k\beta(q)^2q!\,u^{-q}.
+\]
+Let $D$ be the probability law $D(q)=\beta(q)^2/\mathsf P$ on $\{0,\dots,k\}$. Then
+\begin{equation}\label{eq:torres-identidad}
+ R'_k(\lambda)=\log\mathbb E_D[q!\,u^{-q}]-k^2\log(1-p)+\tfrac12\log\det(I+M)-\tfrac12\log(4\pi ky\theta).
+\end{equation}
+\end{lema}
+\begin{proof}
+Since $\binom kq^2=\beta(q)^2\theta^{-2q}y^{-2(k-q)}$, we have
+$Z_k=y^{-2k}\sum_q\beta(q)^2q!\,(\lambda y^2/\theta^2)^q$. By~\eqref{eq:torres-punto} and $p=\theta/k$,
+$\lambda y^2/\theta^2=p(1-p)/\theta^2=(1-p)/(k\theta)=1/u$, giving the first formula. Hence
+$\log Z_k=-2k\log y+\log\mathsf P+\log\mathbb E_D[q!\,u^{-q}]$. Subtracting $F_k$, expressed using
+Lemmas~\ref{lem:torres-arbol} and~\ref{lem:torres-cero}, cancels the terms $-2k\log y$ and $\log\mathsf P$
+exactly and leaves~\eqref{eq:torres-identidad}.
+\end{proof}
+
+Thus the entire discrete part of the zero mode, the exact probability of $N_R=N_C$, appears identically in
+$Z_k$ and in the formula. What remains is the average under $D$ of $q!\,u^{-q}$, a slowly varying
+function whose logarithm has second difference $\log((q+1)/q)$, of order $1/q$.

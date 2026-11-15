@@ -1,0 +1,65 @@
+\section{Numerical evidence}\label{sec:numerico}
+
+Nobel, Agrawal and Boyd~\cite{NAB} give $\alpha\in[1.944000752,\,1.944001082]$.
+For the two tables we use $\alpha_0=1.944001$ and $\Phi_0=1-\alpha_0$ as reference values,
+under the identification $\alpha=-s_1$ (Section~\ref{sec:preliminares}). The extrapolations have no certified error bound.
+
+\paragraph{The predictor.}
+Set $C'_{{\rm pred},0}(n)=\log Q_{\rm pred}(n)-\log n!-n\Phi_0$. A numerical solution for the canonical maximizer
+finds it to be interior at all ten tabulated sizes, in floating-point arithmetic.
+The pseudodeterminant of $S_n$ completes the calculation in Table~\ref{tab:predictor}.
+With $\alpha_0$ and $40\le n\le240$, the fit $C+a/n+b/n^2$ gives $C=0.94015$ and the fit that adds $c/n^3$ gives $C=0.94013$.
+Over the full interval for $\alpha$, the fits starting at $40$ or $60$ give rounded endpoints of $0.9400$ and $0.9402$.
+When $20$ and $27$ are included, the rounded endpoints are $0.9397$ and $0.9404$. This gives the estimate $C_{\rm pred}\approx0.9401$.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+$n$ & 20 & 27 & 40 & 60 & 80\\
+$C'_{{\rm pred},0}(n)$ & 0.9112 & 0.9165 & 0.9239 & 0.9290 & 0.9316\\
+\midrule
+$n$ & 100 & 130 & 160 & 200 & 240\\
+$C'_{{\rm pred},0}(n)$ & 0.9333 & 0.9348 & 0.9358 & 0.9367 & 0.9372\\
+\bottomrule
+\end{tabular}
+\caption{Constant term of the predictor for finite boards.}\label{tab:predictor}
+\end{table}
+
+\paragraph{Direct evaluation of the formula.}
+Separately, we computed the continuous profile $\nu_1$ by solving its equations at mass one numerically. We used it to compute $I_2$ and $\det_2(I+J)$ by a Nyström discretization~\cite{Bornemann} of the operator in Section~\ref{sec:D03}, on successive grids with extrapolation in the grid spacing. This gives $I_2\approx1.02638534$ and $\det_2(I+J)\approx0.005162694$, and the formula in Theorem~\ref{thm:intro-constante} gives $C_{\rm pred}\approx0.940144$, within the bands above. This calculation uses neither $\alpha$ nor Table~\ref{tab:predictor}, and it too has no certified error bound.
+For the pairs of grids of sizes $192$ and $384$ (even), and $193$ and $385$ (odd), the extrapolations gave $0.94014395698$ and $0.94014395711$, respectively.
+
+\paragraph{The exact count.}
+Exact values of $Q(n)$ up to $n=27$~\cite{OEIS,PE} have been known since 2016. For $16\le n\le27$, the values of $C'_0(n)=\log Q(n)-\log n!-n\Phi_0$ are given in Table~\ref{tab:exacto}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+$n$ & 16 & 17 & 18 & 19 & 20 & 21\\
+$C'_0(n)$ & 0.9404 & 0.9209 & 0.9135 & 0.9224 & 0.9320 & 0.9187\\
+\midrule
+$n$ & 22 & 23 & 24 & 25 & 26 & 27\\
+$C'_0(n)$ & 0.9178 & 0.9241 & 0.9295 & 0.9272 & 0.9265 & 0.9285\\
+\bottomrule
+\end{tabular}
+\caption{Constant term of the exact count.}\label{tab:exacto}
+\end{table}
+
+In November 2026 a preprint reported a value for $Q(28)$~\cite{Cherepanov},
+obtained using a new exact counting algorithm. To our knowledge, this value has not yet been
+independently verified, so we do not include it in Table~\ref{tab:exacto} or
+Figure~\ref{fig:comparacion}. For information, it gives $C'_0(28)\approx0.9305$, within
+the range of the tabulated values.
+
+Figure~\ref{fig:comparacion} shows the two tables on the same scale.
+As $n$ increases, the points approach the vertical axis because the horizontal coordinate is $1/n$.
+
+\input{figures/comparison}
+
+At $n=20$ and $n=27$ we have $\log Q(n)-\log Q_{\rm pred}(n)=0.0208$ and $0.0119$. The two numbers
+are compatible with a difference of order $1/n$, but they do not allow us to estimate its limit.
+
+The programs and data used to obtain the numerical values in this section form the numerical verification package
+accompanying the paper\ifx\DOIcodigo\empty\else~\cite{Codigo}\fi.

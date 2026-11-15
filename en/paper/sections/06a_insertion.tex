@@ -1,0 +1,73 @@
+\subsection{The predictor of a residual board and its differential identity}\label{sec:B3T01}
+In the formulas in this section, the letter $B$ denotes both the residual board and the matrix of row and column constraints. We use RC for “row and column.” In each component, one mass equation is redundant because summing over the rows or over the columns gives the same total mass. This redundancy is the gauge of Section~\ref{sec:predictor}, which here is the direction $(\mathbf1_R,-\mathbf1_C)$ in each component. We fix the gauge by omitting one column constraint per component.
+
+Let $p\in(0,1)^E$ satisfy $Bp=\mathbf1$, where $B$ contains the independent RC constraints that remain after this omission. Let $D$ denote the square--diagonal incidence matrix, set $h=\mathbf1-D^Tp>0$ and $q=\mathbf1-p$, and write
+\[
+ H_B(p)=-\sum p\log p+3\sum q\log q-\sum h\log h.
+\]
+We introduce auxiliary activities $\lambda_c>0$, one per square, and write $u=\log\lambda$ componentwise. Let $p(u)$ be a branch of stationary points of $H_B(p)+u^Tp$ with negative definite Hessian on $\ker B$. A degenerate strict local maximum does not suffice. If $Z$ is an orthonormal basis of $\ker B$, set
+\[
+ a_c=1/p_c-3/q_c,\quad
+ K=\operatorname{diag}a+D\operatorname{diag}(h^{-1})D^T,\quad
+ K_T=Z^TKZ\succ0,\quad R=ZK_T^{-1}Z^T.
+\]
+The implicit function theorem gives a local differentiable branch. It does not imply global maximality.
+Differentiating $Z^T(\nabla H_B+u)=0$ gives $-K_T\,dz+Z^Tdu=0$.
+Hence $dp/du=R=R^T$ and $BR=0$.
+
+Let $d$ denote the number of components, which is constant as long as the support does not change.
+We use the canonical determinant of the residual board,
+\[
+ N=\begin{pmatrix}
+ \operatorname{diag}a&D&B^T\\ D^T&-\operatorname{diag}h&0\\ B&0&0
+ \end{pmatrix},\quad
+ \mathcal D=(-1)^{s+r}\prod_c(p_c/q_c^3)\det N>0,
+\]
+where $s$ is the number of diagonals and $r=\operatorname{rank}B$.
+Define $\ell=-\tfrac12\log\mathcal D$, $g=\nabla_p\ell$, and
+\[
+ L(u)=H_B(p(u))+u^Tp(u)+\ell(p(u))+\tfrac d2\log(2\pi).
+\]
+The predictor of the residual board without auxiliary activities is $L(B)=L(0)$, with the same cofactor and the same normalization per component.
+\paragraph{Total derivative.}
+Stationarity makes $(\nabla H_B+u)^Tdp$ vanish because $dp\in\ker B$.
+Thus
+\[
+ \boxed{\nabla_uL=p+Rg},\qquad
+ \boxed{\delta_c=(Rg)_c/p_c},\qquad
+ \partial_{u_c}L=p_c(1+\delta_c).
+\]
+The total derivative of the loop term is $p_c\delta_c$, as distinct from $\delta_c$. The “corrected marginal” in the last equality is the derivative of the predictor. We do not identify it with the exact marginal of the count.
+
+\paragraph{Jacobi's formula for the gradient, with no poles at $p=1/4$.}
+Let $a'_c=-p_c^{-2}-3q_c^{-2}$ and place the diagonal indices after the $E$ square indices. Since $\partial_{p_c}(-h_\alpha)=D_{c\alpha}$,
+\[
+ \boxed{g_c=-\frac12\left[
+ p_c^{-1}+3q_c^{-1}+a'_c(N^{-1})_{cc}
+ +\sum_\alpha D_{c\alpha}(N^{-1})_{E+\alpha,E+\alpha}
+ \right].}
+\]
+This expression follows from Jacobi's formula applied to $\log|\det N|$, where the determinant has constant sign along the branch. The formula requires no division by $1-4p_c$. Moreover, $(N^{-1})_{pp}=R$ by the Schur complement of the diagonal block and the RC constraints.
+One can obtain $Rg$ by solving $Nw=(g,0,0)^T$ and taking the first block of the solution.
+Extending the gradient off $Bp=1$ adds only normal components, which $R$ annihilates. The identity used here is intrinsic to the feasible space.
+
+\paragraph{Exact normalization.}
+Under the translation $u\mapsto u+B^T\eta$, the objective changes by the constant $\eta^TBp=\eta^T\mathbf1$. Along the corresponding branch, $p$, $h$, the determinant, and the number of components stay the same. Therefore
+\[
+ L(u+B^T\eta)=L(u)+\eta^T\mathbf1,
+ \quad B\nabla_uL=\mathbf1,
+ \quad B(p\odot\delta)=BRg=0.
+\]
+The equality of the row and column sums recovers the constraint omitted in each component. In every original row,
+\[
+ \boxed{\sum_{c\in\mathrm{fila}}p_c\delta_c=0.}
+\]
+This identity goes beyond saying that the sum is $O(k^{-2})$ and requires no asymptotic approximation. Nor does it imply that $\sum_c\delta_c=0$.
+
+\paragraph{Sufficient conditions for a uniform rate.}
+For $\|\delta\|_\infty=O(k^{-1})$ it suffices, for example, to have
+\[
+ \|\operatorname{diag}(p)^{-1}R\|_{\infty\to\infty}\le C_R,
+ \qquad \inf_\eta\|g-B^T\eta\|_\infty\le C_g/k.
+\]
+Sections~\ref{sec:B3T05} and~\ref{sec:B3T06} prove these bounds for the class with a uniform weighted RC gap.

@@ -1,0 +1,70 @@
+\subsection{Limit of the pseudodeterminant}\label{sec:D04}
+We use the definitions and Hilbert--Schmidt convergence from Section~\ref{sec:D03}.
+On the orthogonal complement of the range of $E_n$, $\widehat J_n$ vanishes.
+By the finite-dimensional gap,
+\[
+ I+\widehat J_n\ge aI,\qquad a=\min(1,\gamma)>0.
+\]
+Convergence in operator norm, which follows from
+Hilbert--Schmidt convergence, also gives $I+J\ge aI$.
+
+\paragraph{The regularized logarithm.}
+For a self-adjoint Hilbert--Schmidt operator $B$ with $I+B\ge aI>0$, define
+\[
+ \mathcal D(B)=-\int_0^1 t\,
+       \operatorname{tr}\bigl[B^2(I+tB)^{-1}\bigr]\,dt
+             =\log\det{}_2(I+B).                    \tag{D4.1}
+\]
+The integral is well defined because $B^2$ is trace class and
+$\|(I+tB)^{-1}\|\le\min(1,a)^{-1}$.
+In finite dimensions, the integrated scalar identity
+$\log(1+\lambda)-\lambda
+=-\int_0^1 t\lambda^2/(1+t\lambda)\,dt$ gives
+\[
+ \log\det(I+B)=\operatorname{tr}B+\mathcal D(B).       \tag{D4.2}
+\]
+The same spectral identity defines the regularized determinant
+in infinite dimensions, since its summands are $O(\lambda^2)$ near zero.
+
+\begin{lema}[Continuity of the regularized logarithm]\label{lem:continuidad}
+If $B_n\to B$ in Hilbert--Schmidt norm, all the operators are self-adjoint, and
+$I+B_n\ge aI>0$ uniformly, then
+$\mathcal D(B_n)\to\mathcal D(B)$.
+\end{lema}
+\begin{proof}
+The inequality for products of Hilbert--Schmidt operators gives
+\[
+ \|B_n^2-B^2\|_1\le
+       (\|B_n\|_2+\|B\|_2)\|B_n-B\|_2\longrightarrow0.
+\]
+By the resolvent identity, the inverses $(I+tB_n)^{-1}$
+converge in operator norm uniformly for $0\le t\le1$.
+Splitting the difference of the products in (D4.1) into two terms
+and using $|\operatorname{tr}(UV)|\le\|U\|_1\|V\|$
+gives uniform convergence of the integrands and convergence of their integrals.
+\end{proof}
+
+\begin{teorema}[Limit of the canonical pseudodeterminant]\label{thm:pdet}
+With $I_2=\int\nu^2$ and $J=\mathcal K+P_0$ as defined in Section~\ref{sec:D03},
+\[
+ \log\operatorname{pdet}S_n
+ \longrightarrow C_S:=1+12I_2+\mathcal D(J).           \tag{D4.3}
+\]
+\end{teorema}
+\begin{proof}
+The unique zero eigenvalue of $S_n$ is replaced by one in
+$I+J_n=S_n+P_n$, so (D4.2) gives exactly
+\[
+ \log\operatorname{pdet}S_n
+       =\operatorname{tr}J_n+\mathcal D(\widehat J_n).
+\]
+The additional zeros in the spectrum of $\widehat J_n$ make no contribution to
+$\mathcal D$. Formula (D3.2) gives the limit of the trace,
+and (D3.6) and Lemma~\ref{lem:continuidad} give the second limit.
+\end{proof}
+
+\paragraph{Remark.}
+The term $12I_2$ retains the trace of a diagonal that vanishes
+in Hilbert--Schmidt norm. It cannot be obtained by taking the trace of the limit operator.
+The integral identity (D4.1) uses only positivity along the segment $I+tJ$
+and does not require $\|J\|<1$.

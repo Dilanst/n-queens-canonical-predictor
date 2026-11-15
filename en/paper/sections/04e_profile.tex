@@ -1,0 +1,121 @@
+\subsection{Comparison with the continuous profile: the system and its residual}\label{sec:P05}
+\paragraph{Initial data.}
+Sections~\ref{sec:P01} and~\ref{sec:P02} give, for the canonical maximizer $\pi$ and
+$n\ge n_0$, where the threshold is that of Section~\ref{sec:P02},
+\[
+ c\le\rho^*_{ij}:=n\pi_{ij}\le M,\qquad h_D^*,h_A^*\ge\eta>0.
+                                                        \tag{TR1}
+\]
+For the continuous profile of mass one, we use only its factorization, its equations,
+and its positivity and Lipschitz bounds (Section~\ref{sec:preliminares}):
+\[
+ \nu_1(r,c)=b_0 r_R(r)r_C(c)u_D(r-c)u_A(r+c),\quad
+ c_\nu\le\nu_1\le C_\nu,\quad \kappa_\nu\le u_D,u_A\le1.
+                                                        \tag{TR2}
+\]
+Its row and column marginals equal one, and $u_f+T_f\nu_1=1$ for $f=D,A$, where $T_f\nu_1=m_f$ is
+the projection of $\nu_1$ onto family $f$.
+Recall that $L_\nu$ is a Lipschitz constant for $\nu_1$ with respect to the maximum metric.
+
+\paragraph{Grid, operators, and gauge.}
+Set $x_i=(i-1/2)/n$. The lines $D_k$ and $A_l$ have parameters
+$k/n$ and $l/n$, with $k=i-j$ and $l=i+j-1$ at square $(i,j)$.
+The four families consist of $n,n,2n-1,2n-1$ lines, respectively. Define
+\[
+ (\mathcal R_f p)_\ell=\frac1n\sum_{(i,j)\in\ell}p_{ij},\qquad
+ (\mathcal T z)_{ij}=z_{R,i}+z_{C,j}+z_{D,i-j}+z_{A,i+j-1}.
+                                                        \tag{TR3}
+\]
+Write $\mathcal R=(\mathcal R_R,\mathcal R_C,
+\mathcal R_D,\mathcal R_A)$. The inner products are
+$\langle p,q\rangle_\square=n^{-2}\sum pq$ and
+$\langle h,k\rangle_\ell=n^{-1}\sum_{f,\ell}h_{f,\ell}k_{f,\ell}$,
+so $\mathcal R^*=\mathcal T$. We use the same space for the domain and range:
+\[
+ E_n=\{z:\ \sum_i z_{R,i}=\sum_j z_{C,j}\}=v_0^\perp,\qquad
+ v_0=(\mathbf1_R,-\mathbf1_C,0_D,0_A).
+                                                        \tag{TR4}
+\]
+Every potential can be moved into $E_n$ by subtracting $\tau v_0$, where
+$\tau=(\overline z_R-\overline z_C)/2$. This leaves $\mathcal Tz$ unchanged.
+
+\paragraph{The small root and the exact system.}
+Let $\psi_n(t)=t(1-t/n)^3$. Since
+$\psi_n'(t)=(1-t/n)^2(1-4t/n)>0$ for $0<t<n/4$,
+its inverse on this branch, denoted by $\chi_n$, is unique and smooth.
+When the arguments lie in the image of this branch, set
+\[
+ \rho(z)_{ij}=\chi_n(e^{(\mathcal Tz)_{ij}}),\qquad
+ u_D(z)=e^{z_D},\quad u_A(z)=e^{z_A},
+\]
+\[
+ F_n(z)=(\mathcal R_R\rho(z)-1,\mathcal R_C\rho(z)-1,
+ u_D(z)+\mathcal R_D\rho(z)-1,u_A(z)+\mathcal R_A\rho(z)-1).
+                                                        \tag{TR5}
+\]
+We always have $F_n(z)\in E_n$. The sums of its R and C components
+are exactly equal because both sum to $n^{-1}\sum_{ij}\rho(z)_{ij}-n$.
+
+\paragraph{The canonical maximizer as a solution of the system.}
+By Section~\ref{sec:P02}, no cap is active and all the multipliers $\mu_{ij}$ in (P1.3) vanish.
+Before fixing the gauge, take
+\[
+ z^*_{R,i}=\tfrac12\log n-\alpha_i-1,\quad
+ z^*_{C,j}=\tfrac12\log n-\beta_j-1,\quad
+ z_D^*=\log h_D^*,\quad z_A^*=\log h_A^*.
+\]
+With this choice, (P1.3) gives $\psi_n(\rho^*_{ij})=e^{(\mathcal Tz^*)_{ij}}$.
+For large $n$, we have $\rho^*/n<1/4$ by (TR1). The uniqueness of the small
+root gives $\rho(z^*)=\rho^*$ and $F_n(z^*)=0$.
+The gauge adjustment preserves these identities.
+Thus this solution of the system represents the canonical maximizer itself. It does not
+define a distinct branch of solutions.
+
+\paragraph{Sampling the continuous profile and quadrature on all fibers.}
+Before fixing the same gauge, set
+\[
+ \begin{aligned}
+ z^0_{R,i}&=\tfrac12\log b_0+\log r_R(x_i), & z^0_{C,j}&=\tfrac12\log b_0+\log r_C(x_j),\\
+ z^0_{D,k}&=\log u_D(k/n), & z^0_{A,l}&=\log u_A(l/n).
+ \end{aligned}                                          \tag{TR6}
+\]
+Then $e^{(\mathcal Tz^0)_{ij}}=\widehat\nu_{ij}:=\nu_1(x_i,x_j)$.
+Let $Q=\max\{2C_\nu,M\}$ and fix $n\ge\max\{n_0,\lceil8Q\rceil\}$.
+Since $\psi_n(2C_\nu)\ge2C_\nu(7/8)^3>C_\nu$,
+the initial root exists and satisfies
+\[
+ c_\nu\le\rho(z^0)\le2C_\nu,\qquad
+ 0\le\rho(z^0)-\widehat\nu\le12C_\nu^2/n.
+                                                        \tag{TR7}
+\]
+The last inequality uses $t-\psi_n(t)\le3t^2/n$.
+In the rows and columns, the squares are represented by the midpoints of intervals of length $1/n$.
+On $D_k$, the row coordinate ranges over
+$[\max(0,k/n),\min(1,1+k/n)]$, and on $A_l$ it ranges over
+$[\max(0,l/n-1),\min(1,l/n)]$.
+The endpoints are multiples of $1/n$, and the values of $x_i$ encountered are
+exactly the midpoints of the corresponding partition.
+Each restriction of $\nu_1$ has Lipschitz constant at most $L_\nu$.
+Integration is with respect to the row or column coordinate, with no factor of $\sqrt2$.
+The error per subinterval is at most $L_\nu/(4n^2)$, and there are at most
+$n$ subintervals. Uniformly, even on the shortest diagonals,
+\[
+ |\mathcal R_f\widehat\nu-T_f\nu_1(\text{parameter})|
+ \le L_\nu/(4n),\qquad
+ \|F_n(z^0)\|_\infty\le C_0/n,\quad C_0=12C_\nu^2+L_\nu/4.
+                                                        \tag{TR8}
+\]
+
+\paragraph{Control along the segment without assuming closeness.}
+On the segment $z(t)=(1-t)z^0+tz^*$, the exponential $e^{\mathcal Tz(t)}$ interpolates geometrically
+between the arguments of the two roots. By the monotonicity of $\chi_n$, each
+$\rho(z(t))_{ij}$ lies between its two endpoint values. Similarly, the
+exponential vacancies interpolate geometrically between their endpoint values. Thus
+\[
+ \begin{gathered}
+ a\le\rho(z(t))\le Q,\quad \rho(z(t))/n\le1/8,\qquad
+ \zeta\le u_D(z(t)),u_A(z(t))\le1,\\
+ a=\min(c_\nu,c),\qquad\zeta=\min(\kappa_\nu,\eta)>0.
+ \end{gathered}                                         \tag{TR9}
+\]
+The intermediate points need not satisfy the marginal constraints.

@@ -1,0 +1,21 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=5.6mm,y=5.6mm]
+  \begin{scope}
+    \bcuadricula{4}
+    \foreach \r/\c in {1/2,2/4,3/1,4/3} {\breina{4}{\r}{\c}}
+    \node[font=\small,anchor=north] at (2,-.35) {(a) Solution};
+  \end{scope}
+  \begin{scope}[shift={(9,0)}]
+    \bcuadricula{4}
+    \draw[btinta,densely dashed,line width=1.1pt] (.5,3.5)--(3.5,.5);
+    \foreach \r/\c in {1/1,2/2,3/3,4/4} {\breina{4}{\r}{\c}}
+    \node[font=\small,anchor=north] at (2,-.35) {(b) Shared diagonal};
+  \end{scope}
+\end{tikzpicture}
+\caption{Two permutations on the same board. Rows are numbered from top to bottom and columns
+from left to right, starting at one. In (a) the column sequence is $(2,4,1,3)$: the four
+queens also lie on distinct diagonals in each direction. In (b) it is $(1,2,3,4)$:
+each row and each column still has one queen, but the diagonal shown contains all four.}
+\label{fig:permutaciones}
+\end{figure}

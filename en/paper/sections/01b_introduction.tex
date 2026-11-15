@@ -1,0 +1,35 @@
+\subsection*{Relation to previous work}
+
+Luria and Simkin~\cite{LS} obtained a lower bound for the number of queen placements by a greedy
+process and absorption. Bowtell and Keevash~\cite{BK} studied the toroidal problem and its
+consequences for the ordinary board. Here the construction of the predictor starts from a
+different object, the maximum of an entropy on square weights.
+
+The Bethe approximation and its loop corrections have been studied for the permanent of
+nonnegative matrices~\cite{Vontobel,WC} and, more generally, for discrete models on graphs~\cite{CC,WF,YFW}.
+The Ihara--Bass formula~\cite{Bass}, in the form given by Watanabe and Fukumizu~\cite{WF}, relates the
+one-loop correction to a determinant whose size is the number of lines and is the heuristic
+origin of the pseudodeterminant in~\eqref{eq:Qpred}.
+For toroidal semiqueens, Eberhard, Manners and Mrazović~\cite{EMM19} obtained an asymptotic
+formula that includes the constant factor and later treated transversals in quasirandom
+Latin squares~\cite{EMM}. Neither model involves both diagonal families of the ordinary board.
+Liu, Liao and Wang~\cite{LLW} studied the queens problem as a lattice gas, using Monte Carlo
+simulations and tensor networks.
+This paper uses the results of~\cite{Perfil} on the profile of mass one. The work in~\cite{Completabilidad}
+studies uniformly chosen legal placements missing a fixed number of queens, by a relative
+entropy comparison with a reference process and a double count of repairs: the mean
+fraction of empty crossings (the intersections of the empty rows and columns) that admit
+a queen tends to the reciprocal of the normalization constant of that profile. That result
+does not determine the constant term of the exact count.
+
+\subsection*{Organization}
+
+Sections~\ref{sec:preliminares} and~\ref{sec:predictor} proceed from the four lines through a square to the formula for the
+predictor. The two questions of the paper are then treated separately. To obtain the constant,
+Section~\ref{sec:perfil} compares the finite board with the continuous profile, and Section~\ref{sec:constante}
+calculates the terms that survive in the limit. To understand consistency, Section~\ref{sec:insercion}
+studies an insertion and Sections~\ref{sec:macro} and~\ref{sec:meso} control its effect in the two regimes of the theorem.
+
+Section~\ref{sec:numerico} compares two evaluations of the constant of the predictor with the values of the
+exact count for $16\le n\le27$. Section~\ref{sec:discusion} distinguishes those results from the open question about
+$Q(n)$. Appendix~\ref{sec:torres} gives an explicit case in which only the row and column constraints are retained.

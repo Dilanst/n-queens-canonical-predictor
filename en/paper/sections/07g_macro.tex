@@ -1,0 +1,73 @@
+\subsection{Zero-mode contributions to the determinant of the unit-diagonal matrix}\label{sec:B4T08}
+Retain the notation of Sections~\ref{sec:B4T06} and~\ref{sec:B4T07}. Write $y=p^*_{\rm hijo}-w$ and
+\[
+ f_i=\sum_{\{a,b\}\subset a_i}\Gamma_{ab},\qquad
+ f_i^I=\sum_{\{a,b\}\subset a_i\cap I}\Gamma_{ab},
+ \qquad K_0=\Gamma-I.
+\]
+The sums run over unordered pairs of distinct lines. Each $f_i$ is $O(k^{-1})$.
+The perturbation $\Delta_0=S_{0,\rm hijo}-S_{0,II}$ has zero diagonal and satisfies
+\[
+ \operatorname{tr}(\Gamma_{II}\Delta_0)
+ =-2\sum_Fp_i f_i^I+2\sum_{E'}y_i f_i.
+\]
+The identity is exact because each pair of lines intersects in at most one square.
+
+\paragraph{Positive Schur complement and covolume.}
+To handle the zero mode without an ill-conditioned gauge-fixed inverse, set $\Pi=vv^T/(2k)$ and $\widetilde S_0=S_0+\Pi$.
+The latter has inverse $\Gamma+\Pi$. Let
+\[
+ C_J=S_{0,JJ}+\Pi_{JJ},\quad V_J=S_{0,IJ}+\Pi_{IJ},\quad
+ P_*=\widetilde S_{0,II}-V_J C_J^{-1}V_J^T,
+\]
+\[
+ H_*=P_*^{-1}=(\Gamma+\Pi)_{II},\quad
+ \Pi'=v_Iv_I^T/[2(k-1)],\quad
+ D_*=\Delta_0+(\Pi'-\Pi_{II})+V_JC_J^{-1}V_J^T.
+\]
+The exact Schur and cofactor identities give
+\[
+ \frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
+ =\frac{k}{k-1}\frac{\det(I+H_*D_*)}{\det C_J}.
+\]
+The factor $k/(k-1)$ appears only when these regularized matrices are introduced. It is consistent with the direct cofactor identity of Section~\ref{sec:B4T01}.
+
+\paragraph{Four first-order calculations.}
+Since $S_{0,JJ}=I+p_c(\mathbf1\mathbf1^T-I)$,
+\[
+ \log[k/(k-1)]-\log\det C_J=O(k^{-2}).
+\]
+The two projector corrections satisfy
+\[
+ \operatorname{tr}(\Pi_{II}\Delta_0)=-1/k+O(k^{-2}),\qquad
+ \operatorname{tr}\big[H_*(\Pi'-\Pi_{II})\big]=1/k+O(k^{-2}).
+\]
+Here we use $\Delta_0v_I=S_{0,IJ}v_J$ and $\Gamma v=0$.
+For the rank-four term, block inversion gives
+\[
+ \operatorname{tr}(H_*V_JC_J^{-1}V_J^T)
+ =\operatorname{tr}\big[C_J(\Gamma+\Pi)_{JJ}-I\big]
+ =\sum_{j\in J}(K_0)_{jj}+2/k+O(k^{-2}).
+\]
+
+\paragraph{Contribution of the quadratic term.}
+The leading part of $\Delta_0$ is the sparse matrix with entry $-p_i$ for each pair among the three retained lines of a square $i\in F\setminus c$. Its $\infty$-norm is $O(k^{-1})$. The remaining entries of $D_*$ are $O(k^{-2})$, with absolute row sums $O(k^{-1})$.
+Since $H_*=I+O_{\max}(k^{-1})$ and $\|H_*\|_\infty=O(1)$,
+\[
+ \operatorname{tr}(H_*D_*H_*D_*)=6\sum_Fp_i^2+O(k^{-2}).
+\]
+Distinct squares give disjoint sets of line pairs. The contribution of $c$ is only $O(k^{-2})$. The cross terms involving the dense part are $O(k^{-2})$, as is the cubic remainder in the logarithm of the determinant. Combining these calculations gives
+\[
+ \boxed{\log\frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
+ =\sum_{j\in J}(K_0)_{jj}+\frac2k+
+ \operatorname{tr}(\Gamma_{II}\Delta_0)-3\sum_Fp_i^2+O(k^{-2}).}
+\]
+
+\paragraph{Identity for first-order cancellation.}
+Summing the four diagonal entries of $S_0\Gamma=I-\Pi$ indexed by the removed lines gives
+\[
+ \boxed{\sum_Fp_i(f_i-f_i^I)
+ =-\sum_{j\in J}(K_0)_{jj}-\frac1k-p_cf_c.}
+\]
+Each square in $F\setminus c$ meets exactly one line in $J$. The square $c$ counts each pair twice in the resolvent instead of once. The exact difference is $p_cf_c=O(k^{-2})$.
+This identity uses the exact zero mode and requires no independence assumption.

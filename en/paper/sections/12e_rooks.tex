@@ -1,0 +1,90 @@
+\begin{proposicion}\label{prop:torres-laplace}
+For each $\theta_0\in(0,1]$ there exist $k_2(\theta_0)$ and $C_1(\theta_0)$ such that, if $\theta\in[\theta_0,1)$ and
+$k\ge k_2$,
+\[
+ \log\mathbb E_D[q!\,u^{-q}]=\log u-u+\tfrac12\log(2\pi)-\tfrac12\log(u-\sigma_D^2)+\varepsilon',\qquad
+ |\varepsilon'|\le C_1/k.
+\]
+\end{proposicion}
+\begin{proof}
+\emph{Hypotheses of Lemma~\ref{lem:torres-laplace}.} Take $\delta=0.3$, $a=0.08\,k\theta_0$, $b=2k$,
+$r=a/b=0.04\,\theta_0$, and $V=u$. Hypotheses (L1)--(L3) hold by Lemma~\ref{lem:torres-psi}, and
+(L5) holds because $\Psi(v^*)\ge\Psi(0)=-u$. For (L4), $\Psi'$ is strictly decreasing on
+$[-\delta,\infty)$, with slope at most $-a$. Hence $\Psi'(\delta/2)\le\Psi'(0)-a\delta/2$ and
+$\Psi'(-\delta/2)\ge\Psi'(0)+a\delta/2$. Since $|\Psi'(0)|\le4.5<a\delta/2$ if $k\theta_0>375$, the first
+derivative value is negative and the second positive. Thus there is a unique $v^*$ with $\Psi'(v^*)=0$, and
+$|v^*|\le|\Psi'(0)|/a\le4.5/a\le\delta/2$.
+
+\emph{Size of the error.} Since $K''\ge0$ and $|v^*|\le\delta/2$,
+we have $A=ue^{v^*}-K''(v^*)\le ue^{\delta/2}\le1.1\,e^{0.15}k\le1.28k$. Together with $A\ge a$ this gives
+$a\le A\le1.28k$. The first two terms of the bound on $|\varepsilon|$ are $O(1/k)$,
+since $b/(8A^2)\le2k/(8a^2)$ and $6b^2/A^3\le6b^2/a^3=46875/(\theta_0^3k)$. With $\theta_0$ fixed, $r$ is constant,
+$V=O(k)$, and $A$ is of order $k$. Hence the tail terms are
+$O_{\theta_0}(k^{3/2}e^{-c(\theta_0)k})$, with $c(\theta_0)>0$. Taking $0<c'<c(\theta_0)$ absorbs the
+prefactor into $O_{\theta_0}(e^{-c'k})$. Summing the two algebraic terms and the tails shows that there is a
+$k_2(\theta_0)$ such that $|\varepsilon|\le1/2$ for $k\ge k_2$. Then
+$|\log(1+\varepsilon)|\le2|\varepsilon|$.
+
+\emph{Value at the maximum.} Taylor's theorem at $0$ with $\Psi''\le-a$ gives
+$\Psi(v^*)\le\Psi(0)+\Psi'(0)v^*-av^{*2}/2\le\Psi(0)+\Psi'(0)^2/(2a)$. Hence
+$0\le\Psi(v^*)-\Psi(0)\le\Psi'(0)^2/(2a)\le10.2/a=O(1/k)$.
+
+\emph{Curvature.} Since $A=ue^{v^*}-K''(v^*)$,
+\[
+ |A-(u-\sigma_D^2)|\le ue^{\delta}|v^*|+\sigma_D^2\bigl(e^{|v^*|}-1\bigr)\le1.35\,(u+\sigma_D^2)\cdot4.5/a=O(1),
+\]
+because $u+\sigma_D^2\le1.35k$. Since $u-\sigma_D^2\ge k\theta_0/2-3.1$, we have
+$|\log A-\log(u-\sigma_D^2)|=O(1/k)$.
+
+\emph{Conclusion.} By~\eqref{eq:torres-laplace},
+$\log\mathbb E_D[q!\,u^{-q}]=\log u+\Psi(v^*)+\frac12\log(2\pi/A)+\log(1+\varepsilon)$, which gives the
+claim.
+\end{proof}
+
+The threshold $k\ge93750/\theta_0^3$ ensures that $46875/(\theta_0^3k)\le1/2$. To bound $|\varepsilon|$ by $1/2$,
+we choose $k_2$ using the full sum. The constant $C(\Lambda_0)$ in Theorem~\ref{thm:torres}(i)
+also requires a compactness argument for $3\le k<k_2$.
+
+\subsection{Proof of Theorem~\ref{thm:torres}}\label{sec:torres-i}
+
+\paragraph{Part (i).}
+Let $\Lambda_0\le\Lambda<\infty$, so that $\theta\in[\theta_0,1)$ by Lemma~\ref{lem:torres-punto}. We treat the
+case $\lambda=\infty$ at the end by taking the limit. In~\eqref{eq:torres-identidad} we substitute the expressions from
+Proposition~\ref{prop:torres-laplace} and Lemma~\ref{lem:torres-lazo}. The term $\frac12\log y$ in
+Lemma~\ref{lem:torres-lazo} cancels with the $-\frac12\log y$ term in $-\frac12\log(4\pi ky\theta)$. This is the
+zero-mode cancellation. Using $\log u=\log(k\theta)-\log(1-p)$ and
+Lemma~\ref{lem:torres-psi}(d) to obtain $\log(u-\sigma_D^2)=\log(k\theta(1+\theta)/2)+O(1/k)$, we are left with
+\[
+\begin{aligned}
+ R'_k={}&-u-2\log(1-p)-k^2\log(1-p)-\tfrac12\log(1+\theta)+\tfrac12(k-1)^2\log(1-w^2)\\
+ &+\tfrac12\log(1+(k-2)p)+(k-1)\log(1+(k-1)w^2)+O(1/k).
+\end{aligned}
+\]
+We expand using $p=\theta/k\le1/k$, $w\le1/(k-1)\le\frac12$, and $k\ge3$. All the bounds are
+uniform in $\theta\in[0,1]$.
+\begin{enumerate}[(a)]
+\item $-k^2\log(1-p)=k\theta+\theta^2/2+e_1$, with $0\le e_1\le\frac23k^2p^3\le\frac2{3k}$.
+\item $-u=-k\theta-\theta^2/(1-p)=-k\theta-\theta^2-e_2$, with $0\le e_2=\theta^2p/(1-p)\le2/k$.
+\item $0\le-2\log(1-p)\le2p/(1-p)\le4/k$.
+\item $\frac12(k-1)^2\log(1-w^2)=-\theta^2/2+e_4$, with $|e_4|\le2/k$. Indeed, if
+ $\zeta=(1-1/k)/(1-\theta/k)\in[1-1/k,1]$, then $(k-1)^2w^2=\theta^2\zeta^2$ and
+ $|\theta^2\zeta^2-\theta^2|\le2/k$. Moreover, $0\le-\log(1-w^2)-w^2\le\frac43w^4$ and $(k-1)^2w^4\le(k-1)^{-2}$.
+\item $1+(k-2)p=1+\theta-2\theta/k$, and
+ $\bigl|\frac12\log(1+\theta-2\theta/k)-\frac12\log(1+\theta)\bigr|\le\theta/k\le1/k$.
+\item $(k-1)\log(1+(k-1)w^2)=\theta^2+e_6$, with $|e_6|\le3/k$. Here we use $0\le z-\log(1+z)\le z^2/2$ with
+ $z=(k-1)w^2\le1/(k-1)$ and the same argument as in (d).
+\end{enumerate}
+On summing, the terms of order $k$ cancel ($k\theta-k\theta$), as do the terms of order one, since
+\[
+ -\theta^2+\tfrac12\theta^2-\tfrac12\log(1+\theta)-\tfrac12\theta^2+\tfrac12\log(1+\theta)+\theta^2=0.
+\]
+Hence $|R'_k|\le C(\theta_0)/k$ for $k\ge k_2(\theta_0)$.
+
+For $3\le k<k_2$, $R'_k$ is continuous on $\lambda\in[\Lambda_0/(k-1),\infty)$, since all the components are
+continuous functions of $y\in(0,1)$ and $\lambda\mapsto y$ is continuous. It has a finite limit as
+$\lambda\to\infty$ (see the next paragraph, where finiteness follows from $k\ge3$). It is therefore bounded, and since
+there are only finitely many such $k$, it suffices to take $C\ge\max_{3\le k<k_2}k\sup|R'_k|$.
+
+In the limit $\lambda\to\infty$, the only term of~\eqref{eq:torres-identidad} that is singular as
+$y\to0$ is $\frac12\log y$, and it cancels identically. The other terms are continuous up to $y=0$, where $D$ is the
+unit point mass at $q=k$. The uniform bound passes to the limit.
