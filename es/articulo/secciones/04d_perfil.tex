@@ -1,0 +1,50 @@
+\subsection{El término local de la fórmula canónica}\label{sec:P04}
+Se toma $n$ suficientemente grande, en particular $n\ge8M$.
+Se distingue una consecuencia de la Sección~\ref{sec:P02} de otra que requiere
+la comparación con el perfil continuo (Secciones~\ref{sec:P05} y~\ref{sec:P06}).
+El término local es
+\[
+ L_n=-\frac12\sum_{ij}
+       [\log(1-4\pi_{ij})-4\log(1-\pi_{ij})].       \tag{LC1}
+\]
+Para $0\le t\le1/8$, las series escalares convergentes dan
+\[
+ -\tfrac12[\log(1-4t)-4\log(1-t)]
+   =\frac12\sum_{m\ge2}\frac{4^m-4}{m}t^m.
+\]
+El término cuadrático es $3t^2$ y los restantes son positivos.
+Su suma está acotada por
+\[
+ \frac12\sum_{m\ge3}(4t)^m
+       =\frac{32t^3}{1-4t}\le64t^3.
+\]
+Con $\pi\le M/n$ y $\sum\pi=n$ resulta
+\[
+ 0\le L_n-3\sum_{ij}\pi_{ij}^2
+       \le64\sum\pi_{ij}^3\le\frac{64M^2}{n}.      \tag{LC2}
+\]
+La estimación (LC2) es una expansión local de escala $\pi=O(1/n)$.
+
+\paragraph{Paso del término local al perfil continuo.}
+Si $\nu_1$ es el perfil continuo acotado y Lipschitz y
+\[
+ \max_{ij}|n\pi_{ij}-\nu_1((i-1/2)/n,(j-1/2)/n)|=O(1/n),
+                                                        \tag{LC3}
+\]
+entonces
+\[
+ \sum_{ij}\pi_{ij}^2
+       =\int_{[0,1]^2}\nu_1(r,c)^2\,dr\,dc+O(1/n).
+\]
+En efecto, el error entre los cuadrados de los perfiles
+es $O(1/n)$ uniformemente, y la cuadratura bidimensional
+de una función Lipschitz tiene error $O(1/n)$.
+Por (LC2),
+\[
+ L_n=3\int_{[0,1]^2}\nu_1^2+O(1/n).               \tag{LC4}
+\]
+Éste es sólo uno de los sumandos de $\log Q_{\rm pred}$; las contribuciones de la entropía y
+del pseudodeterminante se estudian en la Sección~\ref{sec:constante}.
+
+Las Secciones~\ref{sec:P05} y~\ref{sec:P06} prueban (LC3) para el maximizador canónico;
+por tanto (LC4) se aplica a él.

@@ -1,0 +1,78 @@
+\subsection{Masas, hijo estacionario y restos cúbicos}\label{sec:B5T03}
+Escribimos $|X|_\Sigma=\sum_{ij}|X_{ij}|$ para matrices y
+$|x|_1=\sum_i|x_i|$ para vectores. Son controles de masa, no de dimensión.
+Las identidades de incidencia son
+\[
+ \begin{gathered}
+ \sum_ep_e=k,\qquad\sum_d m_d=2k,\qquad
+ m_{r,a}=\sum_{e\ni a}p_e^r,\\
+ \sum_a m_{2,a}=4\sum_ep_e^2=O(1),\qquad
+ \max_a m_{2,a}=O(k^{-1}).
+ \end{gathered}
+\]
+Al insertar $c$ se retiran sus cuatro líneas, $J$, y las casillas de su unión, $F$.
+Cada línea retenida pierde a lo sumo tres casillas. Por tanto
+\[
+ |F|\le4k-3,\quad\sum_Fp=O(1),\quad\sum_Fp^3=O(k^{-2}),
+ \quad d_a\le3C/k,\quad |d|_1=O(1).
+\]
+
+\paragraph{Reequilibrado y paso de Newton.}
+El reequilibrado RC de la Sección~\ref{sec:B3T07} usa únicamente $2k$ líneas: al restringir
+el padre, la brecha pierde a lo sumo $6C/k$. Resolver su laplaciano da
+\[
+ w=p|_{E'},\quad\bar p=w+z,\quad B\bar p=\mathbf1,
+ \quad z/w\in\operatorname{im}B^T,\quad\|z/w\|_\infty=O(k^{-1}).
+\]
+Aquí $B$ es la incidencia RC y $D$ la incidencia diagonal del hijo.
+Con $u=d-D^Tz$ se obtiene
+\[
+ |z|_1=O(1),\quad\|u\|_\infty=O(k^{-1}),\quad|u|_1=O(1),
+ \quad\sum u^2=O(k^{-1}),\quad\sum|u|^3=O(k^{-2}).
+\]
+Las vacancias de todo el segmento relevante son al menos $\eta/2$.
+El residuo KKT, módulo funciones RC, es
+\[
+ e=D(u/h)+O_\infty(k^{-2})=O_\infty(k^{-1}).
+\]
+La Sección~\ref{sec:B5T02} da una respuesta tangente $\bar{\mathcal R}$ con norma relativa acotada.
+Para $\|v/\bar p\|_\infty\le r$,
+\[
+ \nabla H(\bar p+v)=\nabla H(\bar p)-Kv+\mathcal N(v),\quad
+ \|\mathcal N(v)\|_\infty\le Cr^2,
+\]
+y su constante de Lipschitz relativa es $Cr$.
+La ecuación $v=\bar{\mathcal R}e+\bar{\mathcal R}\mathcal N(v)$
+es contractiva en radio $O(k^{-1})$. Este argumento de Newton local da un hijo estacionario único
+en la rama pequeña:
+\[
+ \|(p'-\bar p)/\bar p\|_\infty=O(k^{-1}),\quad
+ \|(p'-\bar p-\bar{\mathcal R}e)/\bar p\|_\infty=O(k^{-2}).
+\]
+En particular $y=p'-w$ cumple $y/p=O(k^{-1})$ y $|y|_1=O(1)$.
+La herencia es de una clase interior a una exterior con margen;
+iterar esta afirmación no demuestra permanencia en una clase fija.
+
+\paragraph{Restos cúbicos sin contar las diagonales.}
+Si $|v_e|\le rp_e$, entonces
+\[
+ \sum_d\frac{|(D^Tv)_d|^3}{h_d^2}
+ \le\eta^{-2}r^3\sum_d m_d^3
+ \le2\eta^{-2}\varepsilon^2kr^3.
+\]
+La parte de casillas satisface $\sum|v|^3/p^2\le kr^3$.
+Para $r=O(k^{-1})$, ambos restos son $O(k^{-2})$.
+Las casillas retiradas no entran en este desarrollo de Taylor: para ellas se usa la identidad
+de frontera exacta de la Sección~\ref{sec:B4T04}.
+
+\paragraph{Diferencia de Schur completa.}
+Con $Q=S_{IJ}S_{JJ}^{-1}S_{JI}$ y $U=A_{F,I}^TT_FA_{F,I}$,
+la diferencia exacta es $\mathcal E=Q+\operatorname{diag}_D d-U+\Xi$,
+donde $\Xi$ corresponde al reequilibrado $z$.
+Cada columna de $S_{IJ}$ tiene masa $O(1)$ y sólo hay cuatro columnas.
+Se sigue que $|\mathcal E|_\Sigma=O(1)$ y $\|\mathcal E\|_\infty=O(k^{-1})$,
+por lo que $\|\mathcal E\|_{HS}^2=O(k^{-1})$.
+Además $\sum_a|\mathcal E_{aa}|=O(k^{-1})$:
+la diagonal de un punto factible es $1+3m_{2,a}+O(m_{3,a})$,
+$\sum_a|\Delta m_{2,a}|=O(k^{-1})$ y $\operatorname{tr}Q=O(k^{-1})$.
+Con ello, la estimación de la traza lineal tampoco depende de la dimensión.

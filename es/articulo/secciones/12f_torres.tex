@@ -1,0 +1,49 @@
+\paragraph{Parte (ii).}
+Cuando $\lambda\to\infty$ se tiene $y\to0$, $\theta\to1$, $p\to1/k$, $w\to1/(k-1)$ y $u\to k^2/(k-1)$, y $D$
+tiende a la masa unidad en $q=k$, porque $r_i\to1$ cuando $x\to\infty$. En~\eqref{eq:torres-identidad}, con
+la cancelación del $\frac12\log y$, queda
+\[
+\begin{aligned}
+ R'_k(\infty)={}&\log k!-k\log\frac{k^2}{k-1}-k^2\log\bigl(1-\tfrac1k\bigr)
+ +\tfrac12(k-1)^2\log\bigl(1-(k-1)^{-2}\bigr)\\
+ &+\tfrac12\log\Bigl(1+\frac{k-2}k\Bigr)-\log\bigl(1-\tfrac1k\bigr)
+ +(k-1)\log\Bigl(1+\frac1{k-1}\Bigr)-\tfrac12\log(4\pi k).
+\end{aligned}
+\]
+Como $-k\log(k^2/(k-1))-k^2\log(1-1/k)=-k\log k-k(k-1)\log(1-1/k)$ y
+$\frac12\log((2k-2)/k)-\log((k-1)/k)=\frac12\log(2k/(k-1))$, se obtiene la expresión del enunciado. Para el
+desarrollo usamos la fórmula de Stirling, que no tiene término en $k^{-2}$, y los desarrollos siguientes:
+\[
+\begin{aligned}
+ \log k!&=k\log k-k+\tfrac12\log(2\pi k)+\tfrac1{12k}+O(k^{-3}),\\
+ -k(k-1)\log\bigl(1-\tfrac1k\bigr)&=(k-1)\sum_{m\ge1}\frac1{m\,k^{m-1}}
+ =k-\tfrac12-\tfrac1{6k}-\tfrac1{12k^2}+O(k^{-3}),\\
+ \tfrac12(k-1)^2\log\bigl(1-(k-1)^{-2}\bigr)&=-\tfrac12-\tfrac1{4(k-1)^2}+O(k^{-4})
+ =-\tfrac12-\tfrac1{4k^2}+O(k^{-3}),\\
+ \tfrac12\log\frac{2k}{k-1}&=\tfrac12\log2+\tfrac1{2k}+\tfrac1{4k^2}+O(k^{-3}),\\
+ (k-1)\log\frac k{k-1}&=1-\tfrac1{2k}-\tfrac1{6k^2}+O(k^{-3}).
+\end{aligned}
+\]
+Al sumar, $\frac12\log(2\pi k)+\frac12\log2-\frac12\log(4\pi k)=0$ y $-\frac12-\frac12+1=0$; el coeficiente
+de $1/k$ es $\frac1{12}-\frac16+\frac12-\frac12=-\frac1{12}$, y el de $1/k^2$ es
+$-\frac1{12}-\frac14+\frac14-\frac16=-\frac14$. Por tanto $R'_k(\infty)=-\frac1{12k}-\frac1{4k^2}+O(k^{-3})$.
+
+\paragraph{Parte (iii).}
+Con $k$ fijo y $\lambda\to0^+$, se tiene $y\to1$ y $\theta\to0$. Por~\eqref{eq:torres-punto},
+$p/\lambda\to1$, así que $\theta=kp\sim k\lambda$. Entonces $\log Z_k\to0$; además
+$\log Z_B=-2k\log y+k^2\log(1-p)\to0$, $\det(I+M)\to1$ y $\mathsf P\to1$, porque el término $q=0$ de
+$\sum_q\beta(q)^2$ es $y^{2k}\to1$. En cambio,
+$\frac12\log(4\pi ky\theta)=\frac12\log(4\pi k^2\lambda)+o(1)\to-\infty$. Por tanto
+$R'_k=-\frac12\log(4\pi k^2\lambda)+o(1)$.
+
+\begin{observacion}[Lectura]
+Cuando casi no hay torres, la gaussiana $P_G$ del balance $N_R-N_C$ es muy estrecha, porque su varianza
+$2ky\theta$ tiende a cero, pero el determinante no tiene ahí ningún factor pequeño que la compense: el
+factor del modo cero sobrecorrige. En el lado denso, en cambio, el factor de $\det(I+M)$ que tiende a cero
+es proporcional a $y$ (Lema~\ref{lem:torres-lazo}) y se cancela con la varianza.
+
+El argumento usa que el número de emparejamientos perfectos entre $q$ filas ocupadas y $q$ columnas
+ocupadas es $q!$, lo que hace explícito el promedio del Lema~\ref{lem:torres-identidad}. En las reinas, el
+factor correspondiente es el número de colocaciones que además respetan las diagonales, y contarlas es el
+problema entero; por eso el argumento de este apéndice no se traslada a las reinas.
+\end{observacion}

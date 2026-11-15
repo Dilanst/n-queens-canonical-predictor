@@ -1,0 +1,19 @@
+\section{El término constante}\label{sec:constante}
+
+En la fórmula del predictor aparecen términos de tamaños muy distintos. Para identificar la
+constante hay que conservar, en cada uno, todo lo que sobrevive después de restar $\log n!+n\Phi$.
+Por ejemplo, la sección anterior da $\pi_{ij}\le M/n$. Como cada fila tiene masa uno,
+$\sum_{ij}\pi_{ij}=n$, y por Cauchy--Schwarz
+\[
+ 1=\frac{(\sum_{ij}\pi_{ij})^2}{n^2}
+ \le \sum_{ij}\pi_{ij}^2
+ \le \frac{M}{n}\sum_{ij}\pi_{ij}=M .
+\]
+Por eso la suma de los cuadrados de los pesos permanece en la escala de la constante.
+El paso al perfil, (LC3)--(LC4), identifica su límite con $I_2$ y da así el límite $3I_2$ del término local.
+
+Las Secciones~\ref{sec:D01} y~\ref{sec:D02} calculan la contribución de la entropía mediante su
+formulación dual. Para el pseudodeterminante hay que identificar tanto el límite del operador
+(Sección~\ref{sec:D03}) como el de su traza; para ello se usa el determinante regularizado
+$\det_2$ de~\cite[cap.~9]{Simon} (Sección~\ref{sec:D04}). La Sección~\ref{sec:D05} reúne estas
+contribuciones y aplica la fórmula de Stirling.

@@ -1,0 +1,63 @@
+\subsection{Herencia de la brecha y reequilibrado de todos los hijos}\label{sec:B3T07}
+Supongamos las hipótesis de la Sección~\ref{sec:B3T04} y que el laplaciano RC parental
+$\mathscr L_p$ es conexo con brecha $\gamma>0$. El número de filas vacías del padre es $k$.
+Sean $w=p^-$ el vector restringido al soporte hijo y $\mathscr L_w$
+su laplaciano ponderado sobre las $2(k-1)$ líneas RC retenidas.
+
+\paragraph{Herencia de la brecha en el hijo restringido.}
+La matriz
+\[
+ Q=\mathscr L_p[\mathrm{rest},\mathrm{rest}]-\mathscr L_w
+\]
+es la suma de la matriz diagonal de los pesos hacia los dos nodos RC eliminados
+y del laplaciano de las aristas eliminadas entre nodos retenidos.
+Es semidefinida positiva y la suma absoluta de su fila $v$ es a lo sumo
+$2d_v\le6C/k$. Así $\|Q\|_2\le6C/k$.
+Extender por cero un vector perpendicular a $\mathbf1_{\rm rest}$ lo
+deja perpendicular a $\mathbf1_{\rm parent}$. Por la brecha parental,
+\[
+ x^T\mathscr L_wx\ge(\gamma-6C/k)\|x\|_2^2
+ \quad(x\perp\mathbf1_{\rm rest}).
+\]
+Para $k>12C/\gamma$, todo hijo restringido es conexo y su brecha
+es al menos $\gamma/2$. Esto vale uniformemente para todas las inserciones
+legales del padre, con las mismas constantes.
+
+\paragraph{Corrección explícita de las masas RC.}
+Sean $B_f$ la incidencia RC completa del hijo y
+$b=\mathbf1-B_fw$, con $0\le b_v\le\beta/k$, $\beta=3C$.
+Sean $J$ la matriz diagonal que cambia el signo de las restricciones
+de columnas, $A_o=JB_f$ y $f=Jb$.
+La compatibilidad global de la Sección~\ref{sec:B3T04} da $f\perp\mathbf1$.
+Con $P_w=\operatorname{diag}w$, definimos
+\[
+ \phi=\mathscr L_w^+f,\qquad z=P_wA_o^T\phi,
+ \qquad \bar p=w+z.
+\]
+Entonces $B_fz=b$, por lo que $B_f\bar p=\mathbf1$ exactamente.
+La brecha da $\|\phi\|_2=O(k^{-1/2})$.
+En la ecuación del laplaciano para el vértice $v$, su grado es
+$a_v=1-b_v\ge1/2$ para $k$ grande y
+\[
+ a_v|\phi_v|\le |f_v|+
+ \left(\sum_jw_{vj}^2\right)^{1/2}\|\phi\|_2,
+ \quad \sum_jw_{vj}^2\le(C/k)a_v.
+\]
+Por ello $\|\phi\|_\infty=O(k^{-1})$ y
+\[
+ \boxed{|z_e|/w_e=O(k^{-1}),\qquad |z_e|=O(k^{-2}).}
+\]
+Esto preserva la positividad de $\bar p$ sin exigir una cota inferior
+cuantitativa de $w_e$. Para $k$ grande también $\bar p_e<1$.
+Como las masas diagonales de $w$ son a lo sumo uno,
+\[
+ |(D^Tz)_\alpha|\le\sup_e|z_e|/w_e=O(k^{-1}),
+\]
+y las vacancias de $\bar p$ son al menos $\eta/2$.
+La comparación multiplicativa de pesos conserva una brecha uniforme
+en $\mathscr L_{\bar p}$ para este paso.
+
+\paragraph{Alcance.}
+La construcción anterior da, para cada hijo, un punto RC factible y cercano.
+Las Secciones~\ref{sec:B4T02} a~\ref{sec:B4T09} comparan con él el punto estacionario del hijo y el
+predictor completo. No se afirma aquí la uniformidad a lo largo de una trayectoria.

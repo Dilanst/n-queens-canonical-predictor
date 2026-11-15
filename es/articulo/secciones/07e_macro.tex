@@ -1,0 +1,80 @@
+\subsection{Matriz de diagonal uno y respuesta óptima del hijo}\label{sec:B4T06}
+Con la notación anterior definimos
+\[
+ S_0=\operatorname{diag}(0_{RC},h)+A^TP_pA,\quad
+ P_p=\operatorname{diag}p,\quad \Gamma=S_0^+,\quad K_0=\Gamma-I.
+\]
+Todas las entradas diagonales de $S_0$ valen uno. La prueba de la Sección~\ref{sec:B3T05}
+se aplica directamente con pesos $p$ y da brecha uniforme, núcleo $v$ y
+\[
+ \Gamma_{ab}=\delta_{ab}+O(k^{-1}),\quad \|\Gamma\|_\infty=O(1).
+\]
+Sea $a_i=A_i^T$ el indicador de las cuatro líneas de la casilla $i$.
+Para las casillas retenidas, la restricción de $a_i$ a $I$ se sobreentiende.
+
+\paragraph{Energía de desplazamiento.}
+Escribimos $y=p^*_{\rm hijo}-w$ y consideramos
+\[
+ \mathcal Q(t)=\sum_{E'}t_i^2/p_i+
+ \sum_{D\cap I}(d_D-D'^Tt)_D^2/h_D,
+ \qquad A'_{RC}{}^Tt=d_{RC}.
+\]
+La energía es estrictamente convexa; su minimizador $y_0$ se representa por
+\[
+ \mathcal S\zeta=d,\quad
+ \mathcal S=S_{0,II}-A_{F,I}^TP_{p_F}A_{F,I},\quad
+ y_0=P_{p_{E'}}A'\zeta,\quad d_D-D'^Ty_0=h\zeta_D.
+\]
+En $\mathcal S$ se mantienen las vacancias $h$ del padre, no $h+d$.
+La fuente $d$ es compatible con el núcleo $v_I$ por la igualdad de los déficits RC.
+Sea $H$ el complemento de Schur de $S_0$. La Sección~\ref{sec:B4T04}, aplicada a $S_0$, da $\|H^+\|_\infty=O(1)$.
+Tanto $H$ como $\mathcal S$ anulan $v_I$ y por simetría dejan invariante $v_I^\perp$.
+En ese complemento $H$ es invertible, y $\|\mathcal S-H\|_\infty=O(k^{-1})$ por intersecciones únicas.
+Para $k$ grande la serie de Neumann de $I+H^+(\mathcal S-H)$ converge en norma infinito.
+Por tanto $\mathcal S$ es invertible sobre $v_I^\perp$, su núcleo es exactamente
+$\operatorname{span}(v_I)$ y $\|\mathcal S^+\|_\infty=O(1)$.
+
+\paragraph{Identificación con la respuesta parental.}
+Pongamos $\beta=\Gamma a_c$. Por intersecciones únicas,
+\[
+ S_{0,IJ}\mathbf1=d,\quad \beta_J=\mathbf1+O_\infty(k^{-1}),
+ \quad \beta_I=O_\infty(k^{-1}),\quad
+ \mathcal S\beta_I=-d+O_\infty(k^{-2}).
+\]
+Los residuos son compatibles. Fijar el gauge de $\beta_I$ cambia sus
+entradas sólo en $O(k^{-2})$, porque
+$v_I^T\beta_I=-v_J^T\beta_J=O(k^{-1})$.
+Por tanto
+\[
+ \zeta=-\beta_I+O_\infty(k^{-2}),\qquad
+ \boxed{y_{0,i}/p_i=-a_i^T\Gamma a_c+O(k^{-2}).}
+\]
+La estacionariedad del hijo y la identidad de Bregman de la Sección~\ref{sec:B4T04} dan,
+en la ecuación cuadrática, un residuo de orden $O_\infty(k^{-2})$:
+se desarrollan $\log(1+y/p)$ y $\log(1+(d-D'^Ty)/h)$, usando la Sección~\ref{sec:B4T02}.
+El término $3\log(1-y/(1-p))$ es también $O(k^{-2})$.
+La inversa tangente ponderada de esta energía tiene norma uniforme,
+por la misma representación con $\mathcal S^+$.
+En consecuencia
+\[
+ \boxed{(y-y_0)/p=O_\infty(k^{-2}).}
+\]
+
+\paragraph{Valor de la energía.}
+Se tiene $\mathcal Q(y_0)=d^T\zeta=-d^T\beta_I+O(k^{-2})$,
+ya que $\|d\|_1=O(1)$. Las cuatro ecuaciones de $S_0\beta=a_c$ dan
+\[
+ -d^T\beta_I=\mathbf1^TS_{0,JJ}\beta_J-4.
+\]
+Las intersecciones entre líneas de $J$ son todas la casilla $c$, por lo que
+$S_{0,JJ}=I+p_c(\mathbf1\mathbf1^T-I)$ y
+\[
+ \boxed{\mathcal Q(y_0)=a_c^T\Gamma a_c-4+12p_c+O(k^{-2}).}
+\]
+Se puede sustituir $y$ por $y_0$ en los términos lineales de orden $1/k$
+que aparecen más adelante: la norma $1$ de la diferencia es $O(k^{-1})$.
+Por la Sección~\ref{sec:B4T04}, la acción verdadera satisface
+\[
+ H_{\rm hijo}-H_{\rm padre}-\log p_c
+ =\tfrac32\sum_Fp_i^2-\tfrac12\mathcal Q(y_0)+O(k^{-2}).
+\]

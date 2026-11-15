@@ -1,0 +1,37 @@
+\subsection*{Relación con trabajos previos}
+
+Luria y Simkin~\cite{LS} obtuvieron una cota inferior para el conteo de reinas mediante un
+proceso voraz y absorción. Bowtell y Keevash~\cite{BK} estudiaron el problema toroidal y sus
+consecuencias para el tablero ordinario. Aquí la construcción del predictor parte de otro
+objeto, el máximo de una entropía sobre pesos de casilla.
+
+La aproximación de Bethe y sus correcciones por lazos se han estudiado para el permanente de matrices
+no negativas~\cite{Vontobel,WC} y, en general, para modelos discretos sobre grafos~\cite{CC,WF,YFW}.
+La fórmula de Ihara--Bass~\cite{Bass}, en la forma de Watanabe y Fukumizu~\cite{WF}, relaciona la
+corrección de un lazo con un determinante de tamaño igual al número de líneas, y es el origen
+heurístico del pseudodeterminante de~\eqref{eq:Qpred}.
+Para las semirreinas toroidales, Eberhard, Manners y Mrazović~\cite{EMM19} obtuvieron una asintótica
+que incluye el factor constante, y después trataron las transversales de cuadrados latinos
+cuasialeatorios~\cite{EMM}; en esos modelos no intervienen las dos familias de diagonales del tablero
+ordinario. Liu, Liao y Wang~\cite{LLW} estudiaron el problema de las reinas como un gas reticular, con
+simulaciones de Monte Carlo y redes tensoriales.
+Este artículo usa los resultados de~\cite{Perfil} sobre el perfil de masa uno. En~\cite{Completabilidad}
+se estudian, mediante una comparación de entropía relativa con un proceso de referencia y una doble
+cuenta de reparaciones, las colocaciones legales elegidas uniformemente a las que falta un número fijo
+de reinas: la fracción media de cruces vacíos (las intersecciones de las filas y las columnas vacías)
+que admiten una reina tiende al inverso de la constante de normalización de ese perfil. Ese resultado
+no determina el término constante del conteo exacto.
+
+\subsection*{Organización}
+
+Las Secciones~\ref{sec:preliminares} y~\ref{sec:predictor} pasan de las cuatro líneas de una
+casilla a la fórmula del predictor. A partir de ahí, las dos preguntas del artículo se tratan por
+separado. Para obtener la constante, la Sección~\ref{sec:perfil} compara el tablero finito con el
+perfil continuo y la Sección~\ref{sec:constante} calcula los términos que sobreviven en el límite.
+Para entender la consistencia, la Sección~\ref{sec:insercion} estudia una inserción y las
+Secciones~\ref{sec:macro} y~\ref{sec:meso} controlan su efecto en los dos regímenes del teorema.
+
+La Sección~\ref{sec:numerico} contrasta dos evaluaciones de la constante del predictor con los
+valores del conteo exacto para $16\le n\le27$. La Sección~\ref{sec:discusion} distingue esos resultados
+de la cuestión abierta sobre $Q(n)$. El Apéndice~\ref{sec:torres} ofrece un caso explícito
+en el que se conservan sólo las restricciones de filas y columnas.

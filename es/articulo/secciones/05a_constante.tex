@@ -1,0 +1,89 @@
+\subsection{Lemas de cuadratura y formulación dual de la entropía}\label{sec:D01}
+De la Sección~\ref{sec:perfil} se usa que $c/n\le\pi\le M/n$, que las vacancias diagonales son
+al menos $\eta$ y que $\|z^*-z^0\|_\infty=O(n^{-1})$ en el gauge de filas y columnas.
+El perfil continuo $\nu$ y sus factores positivos son Lipschitz.
+Las estimaciones se aplican para $n$ suficientemente grande, con constantes independientes de $n$.
+
+\begin{lema}[Puntos medios con resto pequeño]\label{lem:puntosmedios}
+Para una función Lipschitz fija $f$ en $[0,1]^d$, $d=1,2$,
+la cuadratura uniforme de puntos medios cumple
+$Q_n(f)-\int f=o(n^{-1})$.
+\end{lema}
+\begin{proof}
+Sean $h=1/n$ y $c_n(x)$ el centro de la celda de $x$.
+Como las funciones Lipschitz son diferenciables casi en todas partes,
+\[
+ f(c_n(x))-f(x)=\nabla f(x)\cdot(c_n(x)-x)+r_n(x),
+ \qquad r_n(x)/h\longrightarrow0\quad\text{casi siempre}.
+\]
+El cociente $|r_n|/h$ está dominado por una constante.
+El campo $w_n=(c_n-x)/h$ está uniformemente acotado y tiene
+media cero en cada celda. Para cualquier campo continuo $v$,
+$\int v\cdot w_n\to0$ por continuidad uniforme.
+Aproximar $\nabla f\in L^1$ por campos continuos prueba lo mismo
+para $\nabla f$. Integrar la identidad y aplicar convergencia
+dominada al resto da el resultado.
+No se invoca evaluación puntual de funciones arbitrarias de $W^{1,1}$
+en dos dimensiones.
+\end{proof}
+
+\begin{lema}[Malla interior unidimensional]
+Para $f$ Lipschitz en $[a,b]$, con extremos en la malla $1/n$,
+\[
+ \sum_{a<k/n<b}f(k/n)
+ =n\int_a^b f-\frac{f(a)+f(b)}2+o(1).             \tag{D1.1}
+\]
+\end{lema}
+\begin{proof}
+En cada intervalo de longitud $h$, el error trapezoidal es
+$\int (x-\text{centro})f'(x)\,dx$.
+Dividido por $h$, su núcleo está acotado y tiene media cero
+en cada intervalo. Aproximar $f'\in L^1$ por funciones continuas
+da un error total $o(h)$. Despejar la suma interior prueba (D1.1).
+\end{proof}
+
+\paragraph{Dual exacto.}
+Se usan los operadores de (TR3), $\mathcal Tz=\sum_{L\ni c}z_L$ y
+$(\mathcal R_fq)_L=n^{-1}\sum_{c\in L}q_c$.
+Sean $\chi_n$ la inversa de $\psi_n(q)=q(1-q/n)^3$ en la rama pequeña,
+$q(z)=\chi_n(e^{\mathcal Tz})$ y
+\[
+ A_n(q)=4q+3n\log(1-q/n),
+ \quad E_n(z)=\sum_{D,A}e^{z_L}-\sum_{\text{todas }L}z_L
+                         +\frac1n\sum_c A_n(q(z)_c).       \tag{D1.2}
+\]
+Como $dA_n/d\log\psi_n=q$, el gradiente euclídeo de $E_n$ es exactamente
+\[
+ F_n(z)=(\mathcal R_Rq-1,\mathcal R_Cq-1,
+                 e^{z_D}+\mathcal R_Dq-1,e^{z_A}+\mathcal R_Aq-1).
+\]
+La Sección~\ref{sec:P05} prueba $F_n(z^*)=0$ y
+$\|F_n(z^0)\|_\infty=O(n^{-1})$. En el segmento que une ambos puntos,
+$DF_n=d+\mathcal R(w\mathcal T)$, con $0\le d\le1$ y
+$w\le C_w$ (Sección~\ref{sec:P06}, (TP1)). Cada línea tiene a lo sumo $n$ casillas
+y cada casilla está en cuatro líneas, por lo que
+$\|\nabla^2E_n\|_{\infty\to\infty}\le1+4C_w$.
+Como hay $6n-2$ variables, la fórmula de Taylor con resto integral da
+\[
+ E_n(z^*)-E_n(z^0)=O(n^{-1}).                         \tag{D1.3}
+\]
+En efecto, el término lineal está acotado por
+$(6n-2)\|F_n(z^0)\|_\infty\|z^*-z^0\|_\infty$,
+y el cuadrático, por una constante multiplicada por
+$(6n-2)\|z^*-z^0\|_\infty^2$.
+
+\paragraph{Valor de la entropía en el punto crítico.}
+En el maximizador, $q^*=n\pi$, las filas y columnas suman uno,
+$\sum_{D,A}h_L=2n-2$ y $\sum_c q_c^*/n=n$.
+La estacionariedad implica
+\[
+ \log\pi_c+3\log(1-\pi_c)
+       =z^*_{R}+z^*_{C}+\log h_D+\log h_A-\log n.
+\]
+Al sustituir en la entropía de Bethe, los términos de cada diagonal
+se combinan mediante $m_L+h_L=1$, y resulta
+\[
+ H(\pi)=n\log n-\sum_Lz_L^*+3\sum_c\log(1-\pi_c)
+       =n\log n+E_n(z^*)-(6n-2).                    \tag{D1.4}
+\]
+El término $n\log n$ sale de la masa discreta exacta, antes de cualquier cuadratura.

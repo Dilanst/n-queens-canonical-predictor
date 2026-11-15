@@ -1,0 +1,40 @@
+\section{Discusión}\label{sec:discusion}
+
+\paragraph{Lo que queda abierto para el conteo exacto.}
+Pongamos $R_Q(n)=\log Q(n)-\log Q_{\rm pred}(n)$. El Teorema~\ref{thm:intro-constante} equivale a
+\[
+ \log Q(n)-\log n!-n\Phi=C_{\rm pred}+R_Q(n)+o(1).
+\]
+Por tanto, $R_Q(n)\to0$ basta para que el término constante de $\log Q(n)$ sea $C_{\rm pred}$. Si
+sólo se supiera que $R_Q(n)$ tiene un límite finito $r$, el término constante existiría y valdría
+$C_{\rm pred}+r$. No hemos probado ninguna de las dos afirmaciones. La forma cuantitativa natural
+es la siguiente.
+
+\begin{conjetura}\label{conj:RQ}
+Existen $C$ y $n_0$ tales que $|\log Q(n)-\log Q_{\rm pred}(n)|\le C/n$ para todo $n\ge n_0$.
+\end{conjetura}
+
+La Sección~\ref{sec:numerico} da $R_Q(20)\approx0{,}021$ y $R_Q(27)\approx0{,}012$.
+
+\paragraph{El papel de la consistencia.}
+El Teorema~\ref{thm:intro-consistencia} dice que, en los residuales de sus clases, el predictor cumple
+paso a paso la recursión exacta del conteo salvo un factor $e^{O(k^{-2})}$. A lo largo de una trayectoria de residuales que
+permanezca en una misma clase con $k\ge\delta_0n$, los errores suman $O_{\delta_0}(1/n)$
+(Sección~\ref{sec:B4T05}). Para pasar de ahí a $R_Q(n)\to0$ hacen falta tres piezas que este artículo
+no contiene: que los residuales típicos de una colocación al azar estén en esas clases, el control del
+final del proceso, cuando quedan pocas filas vacías (en~\cite{Completabilidad} se estudia, para el
+conteo exacto, el caso de un número fijo de reinas por colocar, sin uniformidad cuando ese número
+crece), y la comparación entre el conteo y el predictor a
+lo largo de trayectorias aleatorias.
+
+\paragraph{Actividad finita.}
+El predictor se ha definido directamente en el tablero lleno, sobre el politopo $K_n$. Con una
+actividad finita $\lambda$, la aproximación correspondiente usa la rama pequeña de las ecuaciones de
+Bethe. Para $n\ge6$, que la rama pequeña exista para todo $\lambda>0$ es una conjetura. Un cálculo en
+punto flotante, sin cotas rigurosas, la encuentra en las 61 actividades ensayadas, espaciadas
+logarítmicamente entre $\Lambda=\lambda(n-1)=10^{-3}$ y $10^{12}$, para $n=6$, $7$, $8$, $10$, $12$,
+$16$, $20$, $27$, $40$, $60$, $80$, $120$ y $160$. Para $n=4$, $K_4$ se reduce al punto
+$\pi\equiv1/4$, porque cada fila tiene cuatro casillas con $p_c\le1/4$ y suma uno; por tanto
+$(H_\infty)$ no se cumple. Para $n=5$, el cálculo indica $\max_c\pi^{(5)}_c=1/4$. En ambos casos, un
+optimizador de barrera sugiere que la rama deja de existir para $\Lambda$ grande, pero no está
+demostrado. Nada de lo expuesto en este párrafo se usa en el resto del artículo.

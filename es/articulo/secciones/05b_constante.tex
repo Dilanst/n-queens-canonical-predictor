@@ -1,0 +1,67 @@
+\subsection{Expansión de la entropía hasta el término constante}\label{sec:D02}
+Recordamos que $I_2=\int_{[0,1]^2}\nu^2$.
+Se usa la factorización del perfil continuo de masa uno,
+\[
+ \nu(r,c)=b_0 r_R(r)r_C(c)u_D(r-c)u_A(r+c),
+\]
+con marginales de filas y columnas iguales a uno y $m_D+u_D=m_A+u_A=1$.
+Definimos $z_R=\tfrac12\log b_0+\log r_R$, $z_C$ de forma análoga,
+$z_D=\log u_D$ y $z_A=\log u_A$.
+A diferencia de las incógnitas de~\cite[Sección~5]{Perfil}, donde $z_R=\log r_R$ y el logaritmo
+de la constante es una incógnita aparte, aquí $z_R$ y $z_C$ incluyen cada uno $\tfrac12\log b_0$.
+Todos estos campos son Lipschitz por positividad uniforme.
+El cambio discreto de gauge no altera $\sum_Lz_L^0$.
+
+\paragraph{Expansión de la primitiva.}
+Para $t$ en un compacto positivo fijo, la raíz pequeña satisface
+\[
+ \chi_n(t)=t+3t^2/n+O(n^{-2}),\qquad
+ A_n(\chi_n(t))=t+\frac{3t^2}{2n}+O(n^{-2}),          \tag{D2.1}
+\]
+uniformemente. Basta expandir $q(1-q/n)^3=t$ y el logaritmo
+para $q$ acotado; la derivada de la primera función está separada
+de cero en ese rango para $n$ grande.
+En el muestreo $x_i=(i-1/2)/n$ se tiene $e^{\mathcal Tz^0}_{ij}=\nu(x_i,x_j)$.
+El Lema~\ref{lem:puntosmedios} y $\int\nu=1$ dan
+\[
+ \frac1n\sum_{ij}A_n(\chi_n(\nu(x_i,x_j)))
+      =n+\frac32 I_2+o(1).                         \tag{D2.2}
+\]
+El resto uniforme $O(n^{-2})$ de (D2.1) contribuye sólo $O(n^{-1})$.
+
+\paragraph{Las constantes de los extremos.}
+Los parámetros de las diagonales son $k/n$, $-n<k<n$; los de las antidiagonales son $l/n$,
+$0<l<2n$. En los cuatro extremos, $u=1$ porque la fibra tiene
+longitud cero, y por tanto $\log u=0$.
+Además $\int_{I_D}u_D+\int_{I_A}u_A=4-2=2$.
+La fórmula (D1.1), junto con la cuadratura de puntos medios en filas y columnas, implica
+\[
+ \sum_{D,A}u_L^0=2n-2+o(1),\qquad
+ \sum_{\text{todas }L}z_L^0=n\sum_f\int_{I_f}z_f+o(1).   \tag{D2.3}
+\]
+Las cuatro contribuciones $-1/2$ de los extremos dan el $-2$;
+no se omiten ni se añaden términos de paridad.
+Por (D1.2) y (D2.2)--(D2.3),
+\[
+ E_n(z^0)=n\left(3-\sum_f\int z_f\right)-2
+                                    +\frac32I_2+o(1).    \tag{D2.4}
+\]
+
+\begin{teorema}[Constante entrópica]\label{thm:entropia}
+Con los resultados de la Sección~\ref{sec:perfil},
+\[
+ H(\pi^{(n)})=n\log n+n s_1+\frac32I_2+o(1),       \tag{D2.5}
+\]
+donde $s_1$ es el valor óptimo continuo en masa uno.
+\end{teorema}
+\begin{proof}
+Las identidades de marginales dan
+\[
+ \int\nu\log\nu+\sum_{D,A}\int u\log u
+        =\sum_f\int_{I_f}z_f.
+\]
+Así $s_1=-3-\sum_f\int z_f$ por la definición~\eqref{eq:s1} de $s_1$.
+Sustituir (D2.4) en (D1.3)--(D1.4) prueba (D2.5):
+el $-2$ de la cuadratura se cancela con el $+2$ de (D1.4).
+\end{proof}
+Este resultado se refiere a la entropía de Bethe, no a $\log Q(n)$.

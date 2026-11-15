@@ -1,0 +1,121 @@
+\subsection{Comparación con el perfil continuo: sistema y residuo}\label{sec:P05}
+\paragraph{Datos de partida.}
+Las Secciones~\ref{sec:P01} y~\ref{sec:P02} proporcionan, para el maximizador canónico $\pi$ y
+$n\ge n_0$, el umbral de la Sección~\ref{sec:P02},
+\[
+ c\le\rho^*_{ij}:=n\pi_{ij}\le M,\qquad h_D^*,h_A^*\ge\eta>0.
+                                                        \tag{TR1}
+\]
+Del perfil continuo de masa uno sólo se usan su factorización, sus ecuaciones y
+sus cotas de positividad y de Lipschitz (Sección~\ref{sec:preliminares}):
+\[
+ \nu_1(r,c)=b_0 r_R(r)r_C(c)u_D(r-c)u_A(r+c),\quad
+ c_\nu\le\nu_1\le C_\nu,\quad \kappa_\nu\le u_D,u_A\le1.
+                                                        \tag{TR2}
+\]
+Sus marginales de filas y columnas valen uno y $u_f+T_f\nu_1=1$ para $f=D,A$, donde $T_f\nu_1=m_f$ es
+la proyección de $\nu_1$ sobre la familia $f$.
+Recordamos que $L_\nu$ es una constante de Lipschitz de $\nu_1$ para la distancia del máximo.
+
+\paragraph{Malla, operadores y gauge.}
+Ponemos $x_i=(i-1/2)/n$. Las líneas $D_k$ y $A_l$ tienen parámetros
+$k/n$ y $l/n$, con $k=i-j$ y $l=i+j-1$ en la casilla $(i,j)$.
+Hay $n,n,2n-1,2n-1$ líneas de las cuatro familias. Definimos
+\[
+ (\mathcal R_f p)_\ell=\frac1n\sum_{(i,j)\in\ell}p_{ij},\qquad
+ (\mathcal T z)_{ij}=z_{R,i}+z_{C,j}+z_{D,i-j}+z_{A,i+j-1}.
+                                                        \tag{TR3}
+\]
+Escribimos $\mathcal R=(\mathcal R_R,\mathcal R_C,
+\mathcal R_D,\mathcal R_A)$. Los productos escalares son
+$\langle p,q\rangle_\square=n^{-2}\sum pq$ y
+$\langle h,k\rangle_\ell=n^{-1}\sum_{f,\ell}h_{f,\ell}k_{f,\ell}$;
+así $\mathcal R^*=\mathcal T$. Usamos el mismo espacio en dominio y rango:
+\[
+ E_n=\{z:\ \sum_i z_{R,i}=\sum_j z_{C,j}\}=v_0^\perp,\qquad
+ v_0=(\mathbf1_R,-\mathbf1_C,0_D,0_A).
+                                                        \tag{TR4}
+\]
+Todo potencial se lleva a $E_n$ restándole $\tau v_0$, donde
+$\tau=(\overline z_R-\overline z_C)/2$. Esto no cambia $\mathcal Tz$.
+
+\paragraph{Raíz pequeña y sistema exacto.}
+Sea $\psi_n(t)=t(1-t/n)^3$. Como
+$\psi_n'(t)=(1-t/n)^2(1-4t/n)>0$ para $0<t<n/4$,
+su inversa en esa rama, denotada por $\chi_n$, es única y suave.
+Cuando los argumentos pertenecen a su imagen, ponemos
+\[
+ \rho(z)_{ij}=\chi_n(e^{(\mathcal Tz)_{ij}}),\qquad
+ u_D(z)=e^{z_D},\quad u_A(z)=e^{z_A},
+\]
+\[
+ F_n(z)=(\mathcal R_R\rho(z)-1,\mathcal R_C\rho(z)-1,
+ u_D(z)+\mathcal R_D\rho(z)-1,u_A(z)+\mathcal R_A\rho(z)-1).
+                                                        \tag{TR5}
+\]
+Siempre $F_n(z)\in E_n$: las sumas de sus componentes R y C son
+iguales exactamente, porque ambas suman $n^{-1}\sum_{ij}\rho(z)_{ij}-n$.
+
+\paragraph{El maximizador canónico como solución del sistema.}
+Por la Sección~\ref{sec:P02}, ningún tope está activo y todos los $\mu_{ij}$ de (P1.3) son cero.
+Tomamos, antes de fijar el gauge,
+\[
+ z^*_{R,i}=\tfrac12\log n-\alpha_i-1,\quad
+ z^*_{C,j}=\tfrac12\log n-\beta_j-1,\quad
+ z_D^*=\log h_D^*,\quad z_A^*=\log h_A^*.
+\]
+Con esta elección, (P1.3) da $\psi_n(\rho^*_{ij})=e^{(\mathcal Tz^*)_{ij}}$.
+Para $n$ grande, $\rho^*/n<1/4$ por (TR1); la unicidad de la raíz
+pequeña identifica $\rho(z^*)=\rho^*$ y $F_n(z^*)=0$.
+La corrección de gauge deja intactas estas identidades.
+Esta solución del sistema representa, pues, al propio maximizador canónico; no se construye una
+rama de soluciones distinta.
+
+\paragraph{Muestreo continuo y cuadratura de todas las fibras.}
+Antes de fijar el mismo gauge, ponemos
+\[
+ \begin{aligned}
+ z^0_{R,i}&=\tfrac12\log b_0+\log r_R(x_i), & z^0_{C,j}&=\tfrac12\log b_0+\log r_C(x_j),\\
+ z^0_{D,k}&=\log u_D(k/n), & z^0_{A,l}&=\log u_A(l/n).
+ \end{aligned}                                          \tag{TR6}
+\]
+Entonces $e^{(\mathcal Tz^0)_{ij}}=\widehat\nu_{ij}:=\nu_1(x_i,x_j)$.
+Sea $Q=\max\{2C_\nu,M\}$ y fijemos $n\ge\max\{n_0,\lceil8Q\rceil\}$.
+Como $\psi_n(2C_\nu)\ge2C_\nu(7/8)^3>C_\nu$,
+la raíz inicial existe y satisface
+\[
+ c_\nu\le\rho(z^0)\le2C_\nu,\qquad
+ 0\le\rho(z^0)-\widehat\nu\le12C_\nu^2/n.
+                                                        \tag{TR7}
+\]
+La última desigualdad usa $t-\psi_n(t)\le3t^2/n$.
+En las filas y columnas, las casillas son puntos medios de pasos $1/n$.
+En $D_k$, la coordenada de fila recorre
+$[\max(0,k/n),\min(1,1+k/n)]$; en $A_l$ recorre
+$[\max(0,l/n-1),\min(1,l/n)]$.
+Los extremos son múltiplos de $1/n$ y los $x_i$ visitados son
+exactamente los puntos medios de la partición correspondiente.
+Cada restricción de $\nu_1$ tiene constante de Lipschitz a lo sumo $L_\nu$.
+Se integra en la coordenada de fila o columna, sin factor $\sqrt2$.
+El error por subintervalo es a lo sumo $L_\nu/(4n^2)$; hay a lo sumo
+$n$ subintervalos. Uniformemente, incluso en las diagonales más cortas,
+\[
+ |\mathcal R_f\widehat\nu-T_f\nu_1(\text{parámetro})|
+ \le L_\nu/(4n),\qquad
+ \|F_n(z^0)\|_\infty\le C_0/n,\quad C_0=12C_\nu^2+L_\nu/4.
+                                                        \tag{TR8}
+\]
+
+\paragraph{Control del segmento sin suponer cercanía.}
+En el segmento $z(t)=(1-t)z^0+tz^*$, la exponencial $e^{\mathcal Tz(t)}$ interpola geométricamente
+los argumentos de ambas raíces. Por monotonía de $\chi_n$, cada
+$\rho(z(t))_{ij}$ queda entre sus dos valores extremos. Asimismo las
+vacancias exponenciales interpolan geométricamente sus extremos. Así
+\[
+ \begin{gathered}
+ a\le\rho(z(t))\le Q,\quad \rho(z(t))/n\le1/8,\qquad
+ \zeta\le u_D(z(t)),u_A(z(t))\le1,\\
+ a=\min(c_\nu,c),\qquad\zeta=\min(\kappa_\nu,\eta)>0.
+ \end{gathered}                                         \tag{TR9}
+\]
+No se exige que los puntos intermedios satisfagan los márgenes.

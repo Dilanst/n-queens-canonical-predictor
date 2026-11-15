@@ -1,0 +1,99 @@
+\subsection{Cotas uniformes de los pesos y de las vacancias; interioridad}\label{sec:P02}
+Se mantienen las notaciones de la Sección~\ref{sec:P01}, en particular
+$n\ge32$, $\kappa=1/20$, $M_0=6/5$, $d_0=3\log(4/3)$ y
+$T=(M_0+d_0+4/e)/\kappa$.
+
+\paragraph{Factorización con el multiplicador presente.}
+La ecuación (P1.3) admite la factorización
+\[
+ x_{ij}=B R_i C_j K_{ij},\qquad
+ K_{ij}=h_{D(i,j)}h_{A(i,j)}e^{-\mu_{ij}}(1-p_{ij})^{-3},
+                                                               \tag{P2.1}
+\]
+con factores positivos y normalizaciones geométricas
+\[
+ \frac1n\sum_i\log R_i=\frac1n\sum_j\log C_j=0.
+\]
+Se obtienen, por ejemplo, dividiendo $e^{-\alpha_i}$ y
+$e^{-\beta_j}$ por sus medias geométricas y absorbiendo en $B$
+esos dos factores escalares junto con $ne^{-2}$.
+Cada fila encuentra como máximo una vez cada diagonal de cada
+familia. Por tanto, (P1.5) y la desigualdad $(1-p)^{-3}\ge1$ dan
+\[
+ \frac1n\sum_j\log K_{ij}\ge-T.
+\]
+La misma propiedad vale para cada columna:
+\[
+ \frac1n\sum_i\log K_{ij}\ge-T.                  \tag{P2.2}
+\]
+Aquí se usa la suma global de $\mu$: la suma de sus valores en una
+fila o columna es menor o igual a esa suma global.
+
+\paragraph{Control de los factores sin suponer vacancia puntual.}
+La desigualdad de Jensen, las normalizaciones geométricas y las sumas de filas dan
+\[
+ 1=B R_i\frac1n\sum_j C_jK_{ij}\ge B R_i e^{-T}.
+\]
+Aplicando lo mismo a las columnas,
+\[
+ R_i,C_j\le e^T/B.                               \tag{P2.3}
+\]
+Por otro lado $\log K_{ij}\le d_0$, pues $h_d\le1$,
+$\mu_{ij}\ge0$ y $p_{ij}\le1/4$.
+Multiplicamos el logaritmo de (P2.1) por $p_{ij}$ y sumamos.
+Las contribuciones de $\log R_i$ y $\log C_j$ desaparecen: las
+sumas de filas y columnas son uno y sus sumas de logaritmos son
+cero. Por la convexidad ya usada en la Sección~\ref{sec:P01},
+\[
+ n\log B=\sum_{ij}p_{ij}\log(np_{ij})
+               -\sum_{ij}p_{ij}\log K_{ij}\ge-d_0n.
+\]
+Así $B\ge e^{-d_0}$. De (P2.3) se deduce la cota
+\[
+ B R_i C_j(1-p_{ij})^{-3}
+ \le e^{2T+d_0}/B\le e^{2T+2d_0}=:M.             \tag{P2.4}
+\]
+En (P2.1) todos los factores $h_d,e^{-\mu_{ij}}$ son a lo sumo
+uno. Por ello, todavía sin retirar los topes,
+\[
+             0<p_{ij}\le M/n.                    \tag{P2.5}
+\]
+
+\paragraph{Vacancias uniformes.}
+Fijada una diagonal $d$ de la primera familia, (P2.1) y (P2.4) dan
+\[
+ m_d(p)=\frac{h_d}{n}\sum_{(i,j)\in d}
+ B R_i C_j h_{A(i,j)}e^{-\mu_{ij}}(1-p_{ij})^{-3}
+ \le M h_d\frac{|d|}{n}\le M h_d.
+\]
+El mismo argumento se aplica a la segunda familia.
+Como $m_d=1-h_d$, resulta para todas las diagonales
+\[
+                 h_d\ge\eta:=\frac1{1+M}.        \tag{P2.6}
+\]
+También esta conclusión es anterior a la retirada del tope.
+
+\paragraph{Retirada del tope y cota inferior.}
+Para
+\[
+ n\ge n_0:=\max\{32,\lfloor4M\rfloor+1\},
+\]
+(P2.5) implica $p_{ij}<1/4$. La complementariedad da entonces
+$\mu_{ij}=0$ en todas las casillas.
+Así se obtienen la hipótesis $(H_\infty)$ de la Definición~\ref{def:Hinf} y
+las cotas uniformes. De hecho, las cotas (P2.5) y
+(P2.6) valen ya para todo $n\ge32$.
+Para $n\ge n_0$ se tiene además una cota inferior de orden $1/n$.
+De $K_{ij}\le e^{d_0}$ y (P2.3), la ecuación de fila implica
+\[
+ R_i=\left(B\frac1n\sum_jC_jK_{ij}\right)^{-1}
+       \ge e^{-(T+d_0)};
+\]
+análogamente $C_j\ge e^{-(T+d_0)}$.
+Una vez que $\mu=0$, (P2.6) da $K_{ij}\ge\eta^2$. Junto con
+$B\ge e^{-d_0}$, esto prueba
+\[
+ \frac{c}{n}\le p_{ij}\le\frac Mn,\qquad
+ c:=\eta^2e^{-2T-3d_0}>0,
+ \qquad h_d\ge\eta.                              \tag{P2.7}
+\]

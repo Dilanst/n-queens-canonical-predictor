@@ -1,0 +1,122 @@
+\subsection{Comparación con el perfil continuo: inversa uniforme y conclusión}\label{sec:P06}
+Se usan (TR1)--(TR9). Las constantes dependen de las cotas de la Sección~\ref{sec:P02} y
+del perfil continuo, pero no de $n$.
+
+\paragraph{Jacobiana media exacta.}
+Derivar la raíz de (TR5) da, para cada casilla,
+\[
+ w(z)_{ij}=\frac{\partial\rho(z)_{ij}}{\partial(\mathcal Tz)_{ij}}
+ =\frac{\rho(z)_{ij}(1-\rho(z)_{ij}/n)}{1-4\rho(z)_{ij}/n}.
+\]
+En el segmento de (TR9), $a\le w(z)\le C_w:=2Q$. La jacobiana es
+\[
+ J(z)h=\operatorname{diag}(0_R,0_C,u_D(z),u_A(z))h
+                         +\mathcal R(w(z)\mathcal T h).
+                                                        \tag{TP1}
+\]
+Su promedio en $z(t)=(1-t)z^0+tz^*$ conserva exactamente esa forma:
+\[
+ \overline J=\int_0^1J(z(t))\,dt
+ =\operatorname{diag}(0_R,0_C,\overline u_D,\overline u_A)
+                              +\mathcal R(\overline w\mathcal T),
+ \quad a\le\overline w\le C_w,\quad\zeta\le\overline u_D,\overline u_A\le1.
+                                                        \tag{TP2}
+\]
+Es autoadjunta para los productos escalares definidos entre (TR3) y (TR4), anula $v_0$ y
+preserva $E_n$.
+
+\paragraph{Coercividad en el gauge.}
+La estimación se prueba directamente para el operador (TP2), que no es la matriz evaluada en el
+maximizador; el argumento es el de la Sección~\ref{sec:P03}.
+Si $h\in E_n$, las medias de $h_R$ y $h_C$ son iguales. Por ello
+\[
+ \|h_R\circ R+h_C\circ C\|_\square^2
+ =\|h_R\|_{2,R}^2+\|h_C\|_{2,C}^2+2\overline h_R\overline h_C
+ \ge\|h_R\|_{2,R}^2+\|h_C\|_{2,C}^2.
+\]
+Cada levantamiento diagonal tiene norma $L^2$ a lo sumo uno, pues
+una diagonal contiene a lo sumo $n$ casillas. Escribiendo
+$h_R\circ R+h_C\circ C=\mathcal T h-h_D\circ D-h_A\circ A$
+y usando $(s-d-a)^2\le2s^2+4(d^2+a^2)$, resulta
+\[
+ \|h\|_\ell^2\le2\|\mathcal T h\|_\square^2
+                    +5(\|h_D\|_{2,D}^2+\|h_A\|_{2,A}^2).
+\]
+Como $\mathcal R^*=\mathcal T$, (TP2) implica
+\[
+ \langle h,\overline Jh\rangle_\ell
+ \ge a\|\mathcal T h\|_\square^2
+             +\zeta(\|h_D\|_{2,D}^2+\|h_A\|_{2,A}^2)
+ \ge\lambda\|h\|_\ell^2,
+ \quad\lambda=\min(a/2,\zeta/5)>0.
+                                                        \tag{TP3}
+\]
+Por dimensión finita, $\overline J:E_n\to E_n$ es invertible y
+$\|\overline J^{-1}k\|_\ell\le\lambda^{-1}\|k\|_\ell$.
+
+\paragraph{De $L^2$ al supremo mediante transversalidad discreta.}
+Sea $\overline Jh=k\in E_n$. La ecuación de una línea $\ell$ de familia
+$f$ es
+\[
+ \left(d_{f,\ell}+\frac1n\sum_{ij\in\ell}\overline w_{ij}\right)h_{f,\ell}
+ +\sum_{g\ne f}\frac1n\sum_{ij\in\ell}\overline w_{ij}h_{g,\ell_g(i,j)}
+ =k_{f,\ell},
+                                                        \tag{TP4}
+\]
+con $d_R=d_C=0$, $d_D=\overline u_D$, $d_A=\overline u_A$.
+El coeficiente propio es al menos $a_0:=\min(a,\zeta)>0$:
+las filas y columnas tienen exactamente $n$ casillas; las diagonales y antidiagonales tienen
+$d_{f,\ell}\ge\zeta$.
+Dos líneas de familias distintas se cortan en a lo sumo una casilla.
+Así, para $g\ne f$, los índices $\ell_g(i,j)$ visitados sobre $\ell$
+no se repiten. Cauchy--Schwarz da
+\[
+ \frac1n\sum_{ij\in\ell}|h_{g,\ell_g(i,j)}|
+ \le\sqrt{\frac{|\ell|}{n}}
+       \left(\frac1n\sum_{\ell'\text{ visitada}}|h_{g,\ell'}|^2\right)^{1/2}
+ \le\|h_g\|_{2,g}.
+                                                        \tag{TP5}
+\]
+En el acoplamiento entre diagonales y antidiagonales se visita sólo una paridad, pero sigue siendo
+un subconjunto sin repeticiones: la misma cota vale sin factor adicional.
+Por (TP4)--(TP5) y la suma de las tres familias transversales,
+\[
+ \|h\|_\infty\le a_0^{-1}
+       (\|k\|_\infty+\sqrt3 C_w\|h\|_\ell).
+\]
+Como hay $6n-2$ líneas, $\|k\|_\ell\le\sqrt6\|k\|_\infty$.
+Con (TP3) se obtiene la inversa uniforme que necesitamos:
+\[
+ \|\overline J^{-1}k\|_\infty\le K\|k\|_\infty,
+ \qquad K=a_0^{-1}(1+\sqrt{18}C_w/\lambda).
+                                                        \tag{TP6}
+\]
+La estimación admite datos arbitrarios en $E_n$, incluso oscilatorios.
+
+\begin{proposicion}
+Para $n$ suficientemente grande, el maximizador canónico satisface
+\[
+ \max_{ij}|n\pi_{ij}-\nu_1(x_i,x_j)|\le C/n,
+ \quad C=4C_wKC_0+12C_\nu^2,
+                                                        \tag{TP7}
+\]
+\[
+ \max_k|h^*_{D,k}-u_D(k/n)|\le KC_0/n,\qquad
+ \max_l|h^*_{A,l}-u_A(l/n)|\le KC_0/n.
+                                                        \tag{TP8}
+\]
+\end{proposicion}
+\begin{proof}
+El teorema fundamental del cálculo y (TR5) dan, exactamente,
+$-F_n(z^0)=F_n(z^*)-F_n(z^0)=\overline J(z^*-z^0)$.
+Ambos potenciales están en $E_n$; (TR8) y (TP6) implican
+$\|z^*-z^0\|_\infty\le KC_0/n$.
+En el segmento, $d\rho/d(\mathcal Tz)=w\le C_w$ y
+$\|\mathcal T\|_{\infty\to\infty}\le4$. Por tanto
+$\|\rho(z^*)-\rho(z^0)\|_\infty\le4C_wKC_0/n$.
+(TR7) y la identidad $\rho(z^*)=n\pi$ prueban (TP7).
+Las vacancias exponenciales son a lo sumo uno a lo largo del segmento;
+el teorema del valor medio escalar da (TP8).
+\end{proof}
+
+Así, (TP7) establece (LC3) con el mismo muestreo de puntos medios.

@@ -1,0 +1,57 @@
+\subsection{Expansión del lazo completo sobre un soporte fijo}\label{sec:B4T03}
+Se considera el segmento factible entre $\bar p$ y $p^*$ de la Sección~\ref{sec:B4T02}.
+La clase cuantitativa persiste uniformemente en ese segmento.
+Definimos
+\[
+ b(p)=\frac{1-4p}{(1-p)^4},\qquad
+ \ell(p)=-\tfrac12\sum_e\log b(p_e)-\tfrac12\log\det S_{\rm gf}(p).
+\]
+No se expande aisladamente un determinante de dimensión $O(k^2)$:
+se conserva la combinación completa del prefactor.
+
+\paragraph{Derivada de la inversa de líneas.}
+Sean $\xi$ un vector tangente a las restricciones RC, $\varepsilon=\|\xi/p\|_\infty$
+y $B_1=DS[\xi]$. Como $\tau'-1=O(p)$,
+\[
+ (B_1)_{ii}=\sum_{e\in i}(\tau'_e-1)\xi_e=O(\varepsilon/k).
+\]
+Para las líneas RC se usa $\sum_{e\in i}\xi_e=0$; para las diagonales, cancela la
+derivada de $h_i$. Las intersecciones únicas y la masa por línea dan
+\[
+ \|B_1\|_{\max}=O(\varepsilon/k),\quad
+ \|B_1\|_\infty=\|B_1\|_1=O(\varepsilon).
+\]
+El núcleo fijo permite escribir $DG[\xi]=-GB_1G$.
+Escribiendo $G=I+Q$, con $\|Q\|_{\max}=O(k^{-1})$ y
+$\|Q\|_\infty=O(1)$, cada término de
+$B_1+QB_1+B_1Q+QB_1Q$ tiene norma máxima $O(\varepsilon/k)$.
+
+\paragraph{Hessiana del lazo.}
+La fórmula exacta de la Sección~\ref{sec:B3T06} es
+\[
+ (\nabla\ell)_e=\frac{6p_e}{(1-p_e)(1-4p_e)}
+ -\frac12\left[\tau'_e A_eGA_e^T-\sum_{d\ni e}G_{dd}\right].
+\]
+La última suma tiene las dos diagonales de $e$.
+Como $\tau''=O(1)$, $A_e$ tiene cuatro entradas y $|\xi_e|=O(\varepsilon/k)$,
+\[
+ \boxed{\|D\nabla\ell[\xi]\|_\infty=O(\varepsilon/k).}
+\]
+La tangencia RC es esencial: no se extiende la cota a un segmento
+no factible por omitir las derivadas de las masas.
+
+\paragraph{Sustitución de la solución por un paso de Newton.}
+Sean $g=\nabla\ell(\bar p)$ y $v=p^*-\bar p=s+t$.
+La Sección~\ref{sec:B4T02} da $\|v/\bar p\|_\infty=O(k^{-1})$ y
+$\|t/\bar p\|_\infty=O(k^{-2})$.
+Por tanto $\|v\|_1=O(1)$ y $\|t\|_1=O(k^{-1})$.
+El resto de Taylor de $\ell$ es $O(k^{-2})$.
+Además $g=-\mathbf1+O_\infty(k^{-1})$ por la Sección~\ref{sec:B3T06} y $\sum t=0$, de donde
+$g^Tt=(g+\mathbf1)^Tt=O(k^{-2})$.
+Concluimos
+\[
+ \boxed{\ell(p^*)-\ell(\bar p)=g^TRe+O(k^{-2}).}
+\]
+El término lineal $g^TRe$ puede tener orden $1/k$; se incorpora al escalar reducido de la
+Sección~\ref{sec:B4T04}. Junto con la Sección~\ref{sec:B4T02}, esto controla con resto uniforme
+$O(k^{-2})$ toda la respuesta estacionaria desde $\bar p$, incluidos la acción y el lazo.

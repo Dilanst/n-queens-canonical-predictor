@@ -1,0 +1,75 @@
+\subsection{Inversa uniforme, con independencia del número de diagonales}\label{sec:B5T02}
+Con $\tau=p(1-p)/(1-4p)$, separamos las líneas RC de las diagonales:
+\[
+ S=\begin{pmatrix}R&V\\V^T&I+A_D\end{pmatrix},\quad
+ R=A_R^T\operatorname{diag}(\tau)A_R,\quad G=S^+.
+\]
+El único gauge es $v=(\mathbf1_R,-\mathbf1_C,0_D)$.
+En las $2k$ líneas RC, la brecha y $p_{\max}\le C/k$ dan
+\[
+ R^+=I+O_{\max}(k^{-1}),\qquad \|R^+\|_\infty\le M.
+\]
+En efecto, $R=I-W$ tiene diagonal $1+O(k^{-1})$, las filas de $W$
+tienen norma euclídea $O(k^{-1/2})$ y el núcleo es conocido.
+La identidad $R^+=I+W-2\Pi+WR^+W$ da la cota por entradas;
+la suma de $2k$ entradas da la norma infinito. Sólo aquí se cuenta la dimensión,
+que es exactamente $2k$, con independencia de las diagonales.
+
+\paragraph{Bloques débiles.}
+Cada casilla tiene dos incidencias RC y dos diagonales; las intersecciones
+son únicas. Con constantes dependientes sólo de $C,\eta,\gamma$,
+\[
+ \|V\|_\infty=O(1),\quad \|V^T\|_\infty=O(\varepsilon),
+ \quad \|V\|_{\max}=O(k^{-1}),
+\]
+\[
+ \|A_D\|_\infty=O(\varepsilon),\quad \|A_D\|_{\max}=O(k^{-1}).
+\]
+La diagonal de $A_D$ es $\sum_{e\in d}(\tau_e-p_e)$;
+la parte fuera de diagonal une las dos familias diagonales.
+Pongamos $W_0=R^+V$, $E=A_D-V^TR^+V$, $U=I+E$.
+Se tiene
+\[
+ \|W_0\|_\infty=O(1),\quad\|W_0^T\|_\infty=O(\varepsilon),
+ \quad\|W_0\|_{\max}=O(k^{-1}),
+\]
+\[
+ \|E\|_\infty=O(\varepsilon),\qquad\|E\|_{\max}=O(k^{-1}).
+\]
+Para la cota por entradas se usa
+$\|(R^+-I)V\|_{\max}\le\|R^+-I\|_{\max}\|V^T\|_\infty$.
+Elegimos $\varepsilon_0$ para que $\|E\|_\infty\le1/2$.
+La serie de Neumann da $\|U^{-1}\|_\infty\le2$ y, por simetría, la misma cota por columnas.
+De $U^{-1}-I=-EU^{-1}$ resulta $U^{-1}=I+O_{\max}(k^{-1})$.
+
+\paragraph{Complemento de Schur con el gauge exacto.}
+Como $V^Tv_R=0$, la pseudoinversa es
+\[
+ G=\begin{pmatrix}
+ R^++W_0U^{-1}W_0^T&-W_0U^{-1}\\
+ -U^{-1}W_0^T&U^{-1}
+ \end{pmatrix}.
+\]
+Las cotas anteriores, con sumas absolutas por filas y por columnas, prueban
+\[
+ \boxed{\|G\|_\infty\le M_*,\qquad G=I+O_{\max}(k^{-1}).}
+\]
+También hay brecha uniforme fuera del gauge, por la factorización de Schur.
+Todo lo anterior vale con $\tau=p$, es decir, para $S_0$ de diagonal uno y $\Gamma=S_0^+$.
+Vale igualmente en vecindarios relativos pequeños con masas RC iguales a uno,
+brecha al menos $\gamma/2$ y masas diagonales a lo sumo $2\varepsilon_0$,
+tras reducir una vez el umbral inicial si hace falta.
+
+\paragraph{Respuesta ponderada.}
+Con $P=\operatorname{diag}p$, la respuesta tangente es
+\[
+ \mathcal R=T-TAG A^TT,
+ \quad\|P^{-1}\mathcal R\|_\infty
+ \le2(1+8\|G\|_\infty)=O(1).
+\]
+Aquí $\|A\|_\infty=4$ y $\|A^TT\|_\infty=O(1)$.
+La constante no contiene $n/k$, ni se exige una cota inferior de $p_e$.
+
+\paragraph{Alcance.}
+Esta estimación sustituye la cuenta de las $O(n)$ líneas de la Sección~\ref{sec:B3T05} por el bloque
+diagonal débil, de modo que las constantes no dependen de $n/k$.

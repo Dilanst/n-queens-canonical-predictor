@@ -1,0 +1,6 @@
+# Salidas de reproducir.mjs
+corrida_*/
+# Python
+__pycache__/
+# Node.js
+node_modules/

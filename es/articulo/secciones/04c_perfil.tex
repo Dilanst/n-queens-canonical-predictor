@@ -1,0 +1,64 @@
+\subsection{Brecha uniforme del operador canónico reducido}\label{sec:P03}
+Se usan exclusivamente las cotas deterministas de la Sección~\ref{sec:P02}.
+Sea $n$ suficientemente grande para que
+\[
+ c/n\le\pi_{ij}\le M/n\le1/8,\qquad h_D,h_A\ge\eta>0.
+\]
+Los símbolos $c,M,\eta$ son constantes, no índices de casilla.
+La matriz de incidencia $A$ tiene una fila por casilla y una columna por línea.
+Ponemos
+\[
+ g_{ij}=\frac{\pi_{ij}(1-\pi_{ij})}{1-4\pi_{ij}},\quad
+ S=\operatorname{diag}(0_R,0_C,h_D,h_A)+A^T\operatorname{diag}(g)A.
+                                                        \tag{G1}
+\]
+Entonces $c/n\le g_{ij}\le2M/n$.
+Se usan normas euclídeas ordinarias en las $6n-2$ líneas.
+
+\begin{proposicion}
+El núcleo de $S$ es exactamente
+$\operatorname{span}\{v_0\}$, con
+$v_0=(\mathbf1_R,-\mathbf1_C,0_D,0_A)$.
+En $v_0^\perp$ se tiene
+\[
+ \gamma\|v\|^2\le v^TSv\le(1+8M)\|v\|^2,
+ \qquad \gamma=\min\{c/2,\eta/5\}>0.               \tag{G2}
+\]
+Las constantes son independientes de $n$.
+\end{proposicion}
+\begin{proof}
+Escribimos $v=(r_i,t_j,d_k,a_l)$ y
+$s_{ij}=r_i+t_j+d_{i-j}+a_{i+j-1}$.
+La condición $v\perp v_0$ equivale a $\sum_i r_i=\sum_jt_j$.
+Por tanto
+\[
+ \frac1n\sum_{ij}(r_i+t_j)^2
+ =\sum_i r_i^2+\sum_jt_j^2+
+       \frac2n\left(\sum_i r_i\right)^2
+ \ge\|r\|^2+\|t\|^2.
+\]
+La desigualdad $(s-d-a)^2\le2s^2+4(d^2+a^2)$
+y el hecho de que cada diagonal tiene a lo sumo $n$ casillas
+dan
+\[
+ \|v\|^2\le\frac2n\sum_{ij}s_{ij}^2
+                        +5(\|d\|^2+\|a\|^2).     \tag{G3}
+\]
+Por (G1),
+\[
+ v^TSv\ge\frac cn\sum s_{ij}^2+
+                          \eta(\|d\|^2+\|a\|^2),
+\]
+lo que prueba la cota inferior. Además
+$s_{ij}^2\le4(r_i^2+t_j^2+d_{i-j}^2+a_{i+j-1}^2)$.
+Cada línea tiene a lo sumo $n$ casillas, así que
+$\sum s_{ij}^2\le4n\|v\|^2$. Como $h_D,h_A\le1$,
+se obtiene la cota superior.
+Finalmente $Sv_0=0$. Si $v^TSv=0$, la positividad de
+$g,h_D,h_A$ obliga a $d=a=0$ y $r_i+t_j=0$ para todo $i,j$.
+Luego $r$ es constante y $t$ su opuesto: no hay otros ceros.
+\end{proof}
+
+\paragraph{Consecuencia.}
+La inversa de $S$ sobre $v_0^\perp$ tiene norma espectral
+a lo sumo $\gamma^{-1}$, con $\gamma$ independiente de $n$.

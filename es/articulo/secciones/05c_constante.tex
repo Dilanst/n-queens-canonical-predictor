@@ -1,0 +1,110 @@
+\subsection{El operador límite y las dos hojas de paridad}\label{sec:D03}
+Se usan la comparación uniforme con el perfil continuo (Sección~\ref{sec:P06}) y la brecha de la Sección~\ref{sec:P03}.
+Sean $v_n=(\mathbf1_R,-\mathbf1_C,0_D,0_A)$ y
+\[
+ \begin{gathered}
+ P_n=\frac{v_nv_n^T}{2n},\qquad J_n=S_n-I+P_n,\\
+ S_n=\operatorname{diag}(0_R,0_C,h_D,h_A)+A^T\operatorname{diag}(g)A,
+ \qquad g_c=\frac{\pi_c(1-\pi_c)}{1-4\pi_c}.
+ \end{gathered}                                         \tag{D3.1}
+\]
+La matriz $S_n+P_n$ reemplaza por uno el único autovalor cero de $S_n$.
+Así $\det(I+J_n)=\operatorname{pdet}S_n$ y
+$I+J_n\ge\min(1,\gamma)I$ uniformemente.
+
+\paragraph{Diagonal y traza.}
+En todas las familias, $h_L+\sum_{c\in L}\pi_c=1$, con $h_R=h_C=0$.
+Por tanto $(S_n)_{LL}=1+\delta_L$, con
+$\delta_L=\sum_{c\in L}(g_c-\pi_c)=O(n^{-1})$.
+La parte diagonal satisface $\sum_L\delta_L^2=O(n^{-1})$, pero
+\[
+ \operatorname{tr}J_n
+ =1+4\sum_c(g_c-\pi_c)
+ =1+12\sum_c\frac{\pi_c^2}{1-4\pi_c}
+ \longrightarrow1+12I_2.                          \tag{D3.2}
+\]
+Aquí se usan $\sum\pi_c^3=O(n^{-1})$ y $\sum\pi_c^2\to I_2$.
+La traza no se obtiene tomando la traza de un límite Hilbert--Schmidt.
+
+\paragraph{Espacio fijo e isometrías.}
+Con los intervalos $I_F$ de la Sección~\ref{sec:preliminares}, sea
+\[
+ \mathcal H=\bigoplus_{F=R,C,D,A}
+          L^2(I_F\times\{0,1\},dt/2).
+\]
+Cada familia tiene dos hojas: la hoja de una línea es la paridad de su índice absoluto
+$i,j,k,l$, respectivamente. En una casilla $(i,j)$ los índices diagonales $i-j$ e $i+j-1$
+difieren en $2j-1$, de modo que siempre tienen paridades opuestas. Si se reuniesen las dos
+paridades antes de construir el operador, se perdería esa información sobre qué diagonales
+pueden cortarse en una casilla.
+Para cada familia y paridad, con $m_{F,p}$ índices, se divide $I_F$
+en $m_{F,p}$ intervalos iguales, las celdas, asignados a los índices por orden creciente.
+La medida de cada celda en $\mathcal H$ es
+$\mu_{F,p}=|I_F|/(2m_{F,p})=n^{-1}(1+O(n^{-1}))$.
+La isometría desde el espacio euclídeo finito es
+\[
+ E_ne_L=\mu_{F,p}^{-1/2}\mathbf1_{\text{celda de }L}.
+                                                        \tag{D3.3}
+\]
+Toda celda queda a distancia $O(n^{-1})$ de la coordenada física
+de su índice: $(i-1/2)/n$, $(j-1/2)/n$, $k/n$ o $l/n$.
+Esto vale también cuando las cardinalidades de las hojas difieren.
+
+\paragraph{Núcleos límite entre familias distintas.}
+Definimos $\mathcal K$ mediante los núcleos siguientes; los bloques en el orden inverso
+son sus adjuntos y los bloques de una familia consigo misma son cero:
+\[
+\begin{array}{ll}
+ RC:&\nu(r,c),\\
+ RD:&\nu(r,r-d)\mathbf1_{0<r-d<1},\\
+ RA:&\nu(r,a-r)\mathbf1_{0<a-r<1},\\
+ CD:&\nu(c+d,c)\mathbf1_{0<c+d<1},\\
+ CA:&\nu(a-c,c)\mathbf1_{0<a-c<1}.
+\end{array}                                             \tag{D3.4}
+\]
+Estos cinco núcleos son independientes de ambas hojas.
+En cambio,
+\[
+ \begin{gathered}
+ \mathcal K_{DA}((d,p),(a,q))
+ =\mathbf1_{p\ne q}\,
+   \nu\left(\frac{a+d}{2},\frac{a-d}{2}\right)\mathbf1_\Omega(d,a),\\
+ \Omega=\left\{(d,a):0<\frac{a+d}{2}<1,\ 0<\frac{a-d}{2}<1\right\}.
+ \end{gathered}                                         \tag{D3.5}
+\]
+En efecto, $k=i-j$, $l=i+j-1$, y $k+l=2i-1$ es impar.
+Esta condición no depende de $n\bmod2$.
+La notación de $\Omega$ exige que ambos argumentos estén entre cero y uno.
+
+\begin{proposicion}[Convergencia Hilbert--Schmidt]
+Sea $f_0$ igual a $1/\sqrt2$ en ambas hojas R, a $-1/\sqrt2$ en
+ambas hojas C y a cero en las familias D y A; $\|f_0\|=1$.
+Con $P_0=|f_0\rangle\langle f_0|$, se tiene
+\[
+ \widehat J_n:=E_nJ_nE_n^*\longrightarrow
+             J:=\mathcal K+P_0\quad\text{en Hilbert--Schmidt}.       \tag{D3.6}
+\]
+\end{proposicion}
+\begin{proof}
+El núcleo de una entrada de intersección es
+$g_{ij}/\sqrt{\mu_{F,p}\mu_{G,q}}=ng_{ij}(1+O(n^{-1}))
+=\nu(x_i,x_j)+O(n^{-1})$.
+Fuera de bandas de anchura $O(n^{-1})$ alrededor de los segmentos, en número finito,
+que delimitan las intersecciones, los indicadores coinciden
+y los núcleos convergen uniformemente porque el perfil es Lipschitz.
+Dentro de las bandas los núcleos permanecen acotados, y el área de las bandas tiende a cero.
+Así cada bloque converge en $L^2$. La paridad de (D3.5) se conserva exacta.
+La diagonal $\delta$ desaparece en norma Hilbert--Schmidt.
+Finalmente $f_n=E_nv_n/\sqrt{2n}\to f_0$ en $\mathcal H$:
+su valor en una hoja R es $\sqrt{m_{R,p}/n}\to1/\sqrt2$,
+y análogamente en C. Por tanto sus proyectores convergen en esa norma.
+\end{proof}
+
+\paragraph{Lectura equivalente de la paridad.}
+El cambio $s=(f_{F,0}+f_{F,1})/2$, $o=(f_{F,0}-f_{F,1})/2$
+es unitario hacia $\bigoplus_F(L^2(I_F,dt)\oplus L^2(I_F,dt))$.
+El sector simétrico tiene cuatro familias, y el bloque entre D y A es
+$T(d,a)=\tfrac12\nu((a+d)/2,(a-d)/2)\mathbf1_\Omega$.
+En el sector antisimétrico sólo queda el bloque
+$\left(\begin{smallmatrix}0&-T\\-T^*&0\end{smallmatrix}\right)$ en las familias D y A.
+Si se promediase la paridad antes de construir el límite, se perdería ese bloque.

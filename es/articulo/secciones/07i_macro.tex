@@ -1,0 +1,54 @@
+\subsection{Consistencia residual de segundo orden}\label{sec:B4T05}
+\begin{teorema}[Consistencia macroscópica]\label{thm:macro}
+Fijemos $\delta_0,C,\eta,\gamma>0$. Sea $B$ un residual ordinario realizable
+con $k\ge\delta_0n$ filas y columnas vacías. Supongamos que su punto de Bethe
+$p$ es estacionario para $H_B$, interior, con masas RC uno y
+\[
+ p_e\le C/k,\qquad h_D\ge\eta,\qquad
+ \lambda_2(\mathscr L_p)\ge\gamma.
+\]
+El grafo RC es conexo. El predictor usa el cofactor RC del determinante
+canónico, el factor local y $\tfrac12\log(2\pi)$ con las convenciones de las Secciones~\ref{sec:B3T01} y~\ref{sec:B4T01}.
+Entonces existen $k_0$ y $C_*$ dependientes sólo de estas cuatro constantes
+tales que para $k\ge k_0$ cada hijo legal tiene un punto estacionario
+interior único en la rama pequeña y
+\[
+ \boxed{\left|L(B+c)-L(B)-\log[p_c(1+\delta_c)]\right|
+ \le C_*/k^2\quad\hbox{para todo hijo }c.}
+\]
+Aquí $\delta_c=(R\nabla\ell)_c/p_c=O(k^{-1})$.
+No se excluyen hijos desfavorables ni se exige una cota inferior por casilla.
+\end{teorema}
+\begin{proof}
+La existencia y el control del hijo se prueban en la Sección~\ref{sec:B4T02}, y la cancelación en las
+Secciones~\ref{sec:B4T06}--\ref{sec:B4T09}, cuyo resultado final es la cota de $r_c$.
+\end{proof}
+
+\begin{corolario}\label{cor:rho}
+En las condiciones del Teorema~\ref{thm:macro}, para cada fila vacía $r$,
+$|\log\rho(B)|\le C_*/k^2$, donde $\rho(B)=\sum_{c\in r}e^{L(B+c)-L(B)}$.
+\end{corolario}
+\begin{proof}
+La identidad diferencial de la Sección~\ref{sec:B3T01} da la suma uno en cada fila.
+La positividad se sigue de $p_c>0$ y de $|\delta_c|=O(k^{-1})$ para $k$ grande (Sección~\ref{sec:B3T06}). Así,
+\[
+ w_c=p_c(1+\delta_c)>0,\qquad\sum_{c\in r}w_c=1,
+ \quad \rho(B)=\sum_{c\in r}e^{L(B+c)-L(B)}=\mathbb E_w e^r.
+\]
+Por tanto $\min r\le\log\rho\le\max r$, lo que implica
+\[
+ \boxed{|\log\rho(B)|\le C_*/k^2.}
+\]
+\end{proof}
+Si una trayectoria de padres permanece en una misma clase cuantitativa,
+con las mismas constantes y $k\ge\delta_0n$, entonces
+\[
+ \sum_{k\ge\delta_0n}|\log\rho(B_k)|\le C_*\sum_{k\ge\delta_0n}k^{-2}
+ =O_{\delta_0,C,\eta,\gamma}(n^{-1}).
+\]
+No se itera sin control la pérdida de parámetros de una herencia de un paso:
+la pertenencia de toda la trayectoria es una hipótesis independiente.
+
+\paragraph{Alcance.}
+El teorema es determinista en la clase declarada. Que las trayectorias típicas
+permanezcan en ella no se estudia aquí.

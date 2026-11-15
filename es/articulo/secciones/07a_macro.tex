@@ -1,0 +1,86 @@
+\subsection{Eliminación de las cuatro líneas de la casilla insertada}\label{sec:B4T01}
+El padre es un residual ordinario con $k\ge\delta_0n$ y un punto estacionario
+de $H_B$ con $0<p_e\le C/k$, vacancias diagonales $h\ge\eta$ y brecha del
+laplaciano RC ponderado al menos $\gamma$. Las constantes son fijas.
+Tomamos $k$ suficientemente grande para que $p<1/4$.
+Sean $q=1-p$, $\tau=pq/(1-4p)$, $T=\operatorname{diag}\tau$ y
+\[
+ S=\operatorname{diag}(0_{RC},h)+A^TTA,\quad
+ v=(\mathbf1_R,-\mathbf1_C,0_D),\quad G=S^+.
+\]
+De las Secciones~\ref{sec:B3T05}--\ref{sec:B3T07} usamos la brecha uniforme de $S$,
+$G_{ij}=\delta_{ij}+O(k^{-1})$ y $\|G\|_\infty=O(1)$.
+Para el gauge usamos un cofactor RC, no un pseudodeterminante sin normalizar.
+
+\paragraph{Las cuatro líneas eliminadas y sus casillas.}
+Sean $J$ las cuatro líneas de $c$, $I=J^c$, $F$ las casillas de su unión
+y $E'=E\setminus F$. Las coordenadas siguen siendo las originales.
+Cada línea retenida pierde a lo sumo tres casillas. Escribimos
+\[
+ d_\ell=\sum_{e\in F\cap\ell}p_e,\quad w=p|_{E'},\quad
+ U=A_{F,I}^TT_FA_{F,I},\quad \Delta=\operatorname{diag}_{D\cap I}d,
+\]
+\[
+ Q=S_{IJ}S_{JJ}^{-1}S_{JI},\quad P_c=S_{II}-Q,\quad E_c=Q+\Delta-U.
+\]
+Entonces valen las identidades exactas $S_{\rm hijo}(w)=P_c+E_c$ y
+$P_cv_I=E_cv_I=0$. La matriz $Q$ tiene rango a lo sumo cuatro;
+en cambio, $\Delta-U$ no tiene por qué tener rango acotado.
+
+Para el punto factible $\bar p=w+z$ de la Sección~\ref{sec:B3T07} se añade
+\[
+ \Xi=A'^T\operatorname{diag}(\tau(\bar p)-\tau(w))A'
+       -\operatorname{diag}_{D\cap I}(D'^Tz),\quad
+ \mathcal E=E_c+\Xi,\quad S_{\rm hijo}(\bar p)=P_c+\mathcal E.
+\]
+Aquí $D'$ es la incidencia casilla--diagonal del hijo.
+Para $y\perp v_I$, minimizar sobre las cuatro coordenadas eliminadas da
+\[
+ y^TP_cy=\min_a(a,y)^TS(a,y)\ge c_*\|y\|^2.
+\]
+En efecto, $\operatorname{dist}((a,y),\operatorname{span}v)\ge\|y\|$.
+Por tanto, el núcleo de $P_c$ es exactamente $\operatorname{span}v_I$.
+
+\paragraph{Determinante exacto.}
+Escogemos la coordenada RC del gauge dentro de $I$ y definimos
+\[
+ W_c=P_c^{+1/2}\mathcal E P_c^{+1/2}\big|_{v_I^\perp}.
+\]
+El complemento de Schur y, después, la identidad de cofactores sobre un mismo núcleo dan
+\[
+ \boxed{\frac{\det S_{{\rm hijo},\rm gf}(\bar p)}{\det S_{{\rm padre},\rm gf}(p)}
+ =\frac{\det_{v_I^\perp}(I+W_c)}{\det S_{JJ}}.}
+\]
+Si se usan pseudodeterminantes, el segundo miembro debe multiplicarse por $(k-1)/k$,
+pues $\operatorname{pdet}S=2k\det S_{\rm gf}$ y el hijo tiene $k-1$ filas.
+No se añade ese factor una segunda vez al trabajar con cofactores.
+
+\paragraph{La misma eliminación en $N$.}
+Con un gauge retenido, $N=\left(\begin{smallmatrix}T^{-1}&A_{\rm gf}\\
+A_{\rm gf}^T&-\operatorname{diag}h_{\rm gf}\end{smallmatrix}\right)$.
+El bloque eliminado $(F,J)$ y su inverso parcial son
+\[
+ K_N=\begin{pmatrix}T_F^{-1}&A_{F,J}\\A_{F,J}^T&-\operatorname{diag}h_J\end{pmatrix},
+ \quad \det K_N=\Big(\prod_F\tau_e^{-1}\Big)\det S_{JJ},
+\]
+\[
+ (K_N^{-1})_{FF}=T_F-T_FA_{F,J}S_{JJ}^{-1}A_{F,J}^TT_F.
+\]
+El complemento de Schur retenido tiene bloque inferior $-\operatorname{diag}h_I-U+Q$.
+Para pasar a $N_{\rm hijo}(w)$ se resta $E_c$ de ese bloque inferior.
+Para $\bar p$, se cambian además $T_{E'}^{-1}$ y las vacancias.
+Se recupera $\mathcal D=\prod_e[(1-4p_e)/q_e^4]\det S_{\rm gf}$.
+No se ha usado ningún desarrollo de Taylor que lleve una coordenada eliminada hasta cero o uno.
+
+\paragraph{Resto matricial uniforme.}
+Las incidencias geométricas y la Sección~\ref{sec:B3T07} dan
+$\|\mathcal E\|_2=O(k^{-1})$ y $\|\mathcal E\|_F^2=O(k^{-1})$:
+$\Delta-U$ es dispersa por filas; $Q$ tiene rango a lo sumo cuatro y norma $O(k^{-1})$;
+$\Xi$ tiene suma absoluta por fila $O(k^{-1})$ y dimensión $O(k)$.
+Así $\|W_c\|_2=O(k^{-1})$, $\operatorname{tr}W_c^2=O(k^{-1})$ y
+\[
+ \boxed{\log\det(I+W_c)=\operatorname{tr}W_c
+       -\tfrac12\operatorname{tr}W_c^2+O(k^{-2}).}
+\]
+El resto se acota por $C\|W_c\|_2\operatorname{tr}W_c^2$.
+El término cuadrático no puede descartarse como $O(k^{-2})$.

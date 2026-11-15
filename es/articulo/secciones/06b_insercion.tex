@@ -1,0 +1,64 @@
+\subsection{La restricción del padre es aproximadamente estacionaria en el hijo}\label{sec:B3T04}
+Sea $E$ el soporte de un residual legal del tablero ordinario, no periódico,
+con $k$ filas y $k$ columnas vacías.
+Sea $c\in E$. Denotamos por $F_c$ las casillas de $E$ en la unión de las
+cuatro líneas que pasan por $c$, y por $E'=E\setminus F_c$ el soporte hijo.
+Conservamos las coordenadas originales. Supongamos que el padre cumple
+$0<p_e<1$ y $p_e\le C/k$, tiene vacancias diagonales $h_\ell\ge\eta>0$ y satisface las
+ecuaciones estacionarias con restricciones de fila y columna.
+\paragraph{Pérdida por línea.}
+Una línea retenida es paralela a la línea eliminada de su misma familia
+y corta a cada una de las otras tres líneas eliminadas en a lo sumo
+una casilla. Por tanto
+\[
+ |\ell\cap F_c|\le3,\qquad
+ d_\ell:=\sum_{e\in\ell\cap F_c}p_e\le3C/k.
+\]
+Cada una de las cuatro líneas eliminadas contiene a lo sumo $k$ casillas
+y sus intersecciones mutuas son la casilla $c$; así $|F_c|\le4k-3$.
+\paragraph{Defecto de factibilidad y vacancias.}
+Restrinjamos $p$ sin renormalizar: $p^-=p|_{E'}$.
+En toda fila o columna retenida,
+\[
+ \sum_{e\in\ell\cap E'}p_e^-=1-d_\ell,\qquad 0\le d_\ell\le3C/k.
+\]
+En cada diagonal retenida,
+\[
+ h_\ell^-=1-\sum_{e\in\ell\cap E'}p_e^-=h_\ell+d_\ell\ge\eta.
+\]
+Los déficits satisfacen la compatibilidad global exacta
+\[
+ \sum_{\text{filas retenidas}}d_\ell
+ =\sum_{\text{columnas retenidas}}d_\ell
+ =\sum_{e\in F_c}p_e-1,
+\]
+porque la fila y la columna eliminadas tienen masa uno. No se controlan
+con ello nuevas dependencias de un soporte hijo no conexo.
+Para $k>3C$, ninguna fila o columna retenida puede quedarse sin casillas,
+pues su suma restringida es positiva. Las estimaciones de esta subsección, por sí solas,
+controlan los defectos. La Sección~\ref{sec:B3T07} construye el reequilibrado factible usando
+además la brecha RC, y la Sección~\ref{sec:B4T02} prueba la existencia del punto estacionario del
+hijo bajo las hipótesis de la clase macroscópica.
+
+\paragraph{Defecto de estacionariedad.}
+Representamos los multiplicadores del padre en las familias RC completas
+(con cualquier fijación del gauge) y los restringimos a las líneas retenidas.
+Una casilla superviviente $e$ pertenece a diagonales $d(e),a(e)$ retenidas.
+En la extensión de $H_B$ con vacancias RC fijadas a cero, la componente del gradiente en esa
+casilla es
+\[
+ -\log p_e-1-3(\log(1-p_e)+1)
+ +\log h_{d(e)}+\log h_{a(e)}+2.
+\]
+Al evaluar en $p^-$ el gradiente correspondiente del hijo, las probabilidades de
+casilla no cambian; sólo cambian sus dos vacancias diagonales.
+Por tanto, tras restar los multiplicadores RC y conservar las actividades,
+el residuo es exactamente
+\[
+ v_e=\log\frac{h_{d(e)}+d_{d(e)}}{h_{d(e)}}
+     +\log\frac{h_{a(e)}+d_{a(e)}}{h_{a(e)}},
+ \qquad 0\le v_e\le\frac{6C}{\eta k}.
+\]
+Es un residuo KKT aproximado: $p^-$ no satisface aún las igualdades RC.
+Las diagonales que se quedan sin casillas tienen vacancia uno y no afectan a
+ninguna casilla superviviente; pueden mantenerse o eliminarse.

@@ -1,0 +1,85 @@
+\subsection{El determinante de diagonal uno: contribuciones del modo cero}\label{sec:B4T08}
+Conservamos la notación de las Secciones~\ref{sec:B4T06} y~\ref{sec:B4T07}. Escribimos
+$y=p^*_{\rm hijo}-w$ y
+\[
+ f_i=\sum_{\{a,b\}\subset a_i}\Gamma_{ab},\qquad
+ f_i^I=\sum_{\{a,b\}\subset a_i\cap I}\Gamma_{ab},
+ \qquad K_0=\Gamma-I.
+\]
+Las sumas recorren los pares no ordenados de líneas distintas.
+Todas las $f_i$ son $O(k^{-1})$.
+La perturbación $\Delta_0=S_{0,\rm hijo}-S_{0,II}$ tiene diagonal cero y
+\[
+ \operatorname{tr}(\Gamma_{II}\Delta_0)
+ =-2\sum_Fp_i f_i^I+2\sum_{E'}y_i f_i.
+\]
+La identidad es exacta: cada par de líneas tiene a lo sumo una casilla de intersección.
+
+\paragraph{Schur positivo y covolumen.}
+Para controlar el modo cero sin una inversa de gauge mal condicionada,
+ponemos $\Pi=vv^T/(2k)$ y $\widetilde S_0=S_0+\Pi$.
+Su inversa es $\Gamma+\Pi$. Sean
+\[
+ C_J=S_{0,JJ}+\Pi_{JJ},\quad V_J=S_{0,IJ}+\Pi_{IJ},\quad
+ P_*=\widetilde S_{0,II}-V_J C_J^{-1}V_J^T,
+\]
+\[
+ H_*=P_*^{-1}=(\Gamma+\Pi)_{II},\quad
+ \Pi'=v_Iv_I^T/[2(k-1)],\quad
+ D_*=\Delta_0+(\Pi'-\Pi_{II})+V_JC_J^{-1}V_J^T.
+\]
+Las identidades exactas de Schur y cofactor son
+\[
+ \frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
+ =\frac{k}{k-1}\frac{\det(I+H_*D_*)}{\det C_J}.
+\]
+El factor $k/(k-1)$ sólo aparece al introducir estas matrices regularizadas;
+es compatible con la identidad directa de cofactores de la Sección~\ref{sec:B4T01}.
+
+\paragraph{Cuatro cálculos de primer orden.}
+Como $S_{0,JJ}=I+p_c(\mathbf1\mathbf1^T-I)$,
+\[
+ \log[k/(k-1)]-\log\det C_J=O(k^{-2}).
+\]
+Las dos correcciones de proyectores satisfacen
+\[
+ \operatorname{tr}(\Pi_{II}\Delta_0)=-1/k+O(k^{-2}),\qquad
+ \operatorname{tr}\big[H_*(\Pi'-\Pi_{II})\big]=1/k+O(k^{-2}).
+\]
+Se usan $\Delta_0v_I=S_{0,IJ}v_J$ y $\Gamma v=0$.
+Para el término de rango cuatro, la inversa por bloques da
+\[
+ \operatorname{tr}(H_*V_JC_J^{-1}V_J^T)
+ =\operatorname{tr}\big[C_J(\Gamma+\Pi)_{JJ}-I\big]
+ =\sum_{j\in J}(K_0)_{jj}+2/k+O(k^{-2}).
+\]
+
+\paragraph{Contribución del término cuadrático.}
+La parte principal de $\Delta_0$ es la matriz dispersa con entrada $-p_i$
+en cada par de las tres líneas retenidas de una casilla $i\in F\setminus c$.
+Su norma $\infty$ es $O(k^{-1})$. Las demás entradas de $D_*$ son
+$O(k^{-2})$, con suma absoluta por fila $O(k^{-1})$.
+Como $H_*=I+O_{\max}(k^{-1})$ y $\|H_*\|_\infty=O(1)$,
+\[
+ \operatorname{tr}(H_*D_*H_*D_*)=6\sum_Fp_i^2+O(k^{-2}).
+\]
+No se superponen pares de líneas de casillas distintas. La contribución
+de $c$ es sólo $O(k^{-2})$. Los términos cruzados con la parte densa son
+$O(k^{-2})$, y el resto cúbico del logaritmo del determinante también lo es.
+Reuniendo estos cálculos,
+\[
+ \boxed{\log\frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
+ =\sum_{j\in J}(K_0)_{jj}+\frac2k+
+ \operatorname{tr}(\Gamma_{II}\Delta_0)-3\sum_Fp_i^2+O(k^{-2}).}
+\]
+
+\paragraph{Identidad para la cancelación de primer orden.}
+Sumar las cuatro entradas diagonales de $S_0\Gamma=I-\Pi$ da
+\[
+ \boxed{\sum_Fp_i(f_i-f_i^I)
+ =-\sum_{j\in J}(K_0)_{jj}-\frac1k-p_cf_c.}
+\]
+Cada casilla de $F\setminus c$ toca exactamente una línea de $J$.
+La casilla $c$ cuenta cada par dos veces en la resolvente en vez de una;
+la diferencia exacta es $p_cf_c=O(k^{-2})$.
+Esta identidad utiliza el modo cero exacto, no una independencia supuesta.

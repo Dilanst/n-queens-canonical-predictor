@@ -1,0 +1,96 @@
+\section{El predictor canónico}\label{sec:predictor}
+
+En el conteo exacto, cada colocación es una lista de casillas ocupadas. Para construir
+el predictor se trabaja con otra variable: un peso $p_{ij}$ en cada casilla. Las sumas por
+fila, columna y diagonal expresan las restricciones que el modelo conserva. Entre todos los
+repartos de pesos admisibles se escoge uno solo: el que maximiza el funcional que sigue.
+
+\paragraph{El funcional canónico.}
+Sea $\mathcal D$ la unión de las dos familias diagonales, con $|\mathcal D|=4n-2$. Consideramos el
+politopo y el funcional
+\begin{equation}\label{eq:Kn}
+ K_n=\Bigl\{p\in[0,1/4]^{n^2}:\ \sum_jp_{ij}=\sum_ip_{ij}=1,\ m_d(p)\le1\ (d\in\mathcal D)\Bigr\},
+\end{equation}
+\begin{equation}\label{eq:Hn}
+ H_n(p)=\sum_{ij}\bigl\{-p_{ij}\log p_{ij}+3(1-p_{ij})\log(1-p_{ij})\bigr\}-\sum_{d\in\mathcal D}h_d(p)\log h_d(p),
+\end{equation}
+con $0\log0=0$. Este funcional es la entropía de Bethe~\cite{YFW} del sistema de filas, columnas y
+diagonales, escrita en las variables de casilla y restringida a las colocaciones fraccionarias de
+masa total $n$.
+El tope $p\le1/4$ es el que hace cóncavo el término de casilla.
+
+\begin{lema}[El maximizador canónico]\label{lem:maximizador}
+Para $n\ge4$, $K_n$ es un convexo compacto no vacío y $H_n$ es continua en $K_n$ y estrictamente cóncava
+a lo largo de todo segmento de $K_n$. En consecuencia, $H_n$ tiene un único maximizador en $K_n$, que
+denotamos por $\pi^{(n)}$ y llamamos maximizador canónico.
+\end{lema}
+\begin{proof}
+La colocación uniforme $p\equiv1/n$ está en $K_n$ si $n\ge4$, porque cada diagonal tiene a lo sumo $n$
+casillas. Escribimos $H_n(p)=\sum_cf(p_c)+\sum_{d\in\mathcal D}G(m_d(p))$, con
+$f(t)=-t\log t+3(1-t)\log(1-t)$ en $[0,1/4]$ y $G(z)=-(1-z)\log(1-z)$ en $[0,1]$. Ambas son continuas en
+sus intervalos cerrados, y $f''(t)=-1/t+3/(1-t)<0$ en $(0,1/4)$.
+
+Sean $p^0\ne p^1$ en $K_n$, $p^t=(1-t)p^0+tp^1$ e $I=\{c:p^0_c\ne p^1_c\}\ne\emptyset$. Para $c\in I$ y
+$t\in(0,1)$, $p^t_c$ está estrictamente entre $p^0_c$ y $p^1_c$, luego en $(0,1/4)$; así
+$t\mapsto f(p^t_c)$ es de clase $C^2$ en $(0,1)$ con segunda derivada $f''(p^t_c)(p^1_c-p^0_c)^2<0$.
+Las casillas fuera de $I$ dan constantes. Cada $t\mapsto G(m_d(p^t))$ es cóncava, porque $G$ es cóncava
+en $[0,1]$ y $m_d$ es afín. La suma $\varphi(t)=H_n(p^t)$ es continua en $[0,1]$ y estrictamente cóncava
+en $(0,1)$, luego cóncava en $[0,1]$. Si fallara la desigualdad estricta entre dos puntos
+$t_0<t_1$ de $[0,1]$, $\varphi$ tocaría su cuerda en un punto interior de $[t_0,t_1]$ y sería afín en
+ese intervalo, en contra de la concavidad estricta en $(t_0,t_1)$. La existencia del maximizador se sigue
+de la compacidad, y la unicidad, de la concavidad estricta.
+\end{proof}
+
+\begin{definicion}\label{def:Hinf}
+Decimos que se cumple $(H_\infty)$ si el maximizador canónico es interior:
+$0<\pi^{(n)}_c<1/4$ para toda casilla $c$ y $h_d(\pi^{(n)})>0$ para toda diagonal $d$.
+\end{definicion}
+
+La Sección~\ref{sec:P02} prueba que $(H_\infty)$ se cumple para todo $n\ge n_0$, con
+$c/n\le\pi^{(n)}_{ij}\le M/n$ y $h_d\ge\eta$ para constantes positivas $c$, $M$ y $\eta$
+(véase~(P2.7)). En lo que sigue escribimos $\pi=\pi^{(n)}$ cuando no haya ambigüedad.
+
+\paragraph{El pseudodeterminante y el término local.}
+Sea $n\ge4$ tal que su maximizador cumpla $(H_\infty)$. Ponemos
+\begin{equation}\label{eq:gS}
+ g_c=\frac{\pi_c(1-\pi_c)}{1-4\pi_c},\qquad
+ S_n=\operatorname{diag}(0_R,0_C,h_D,h_A)+A^T\operatorname{diag}(g)A,
+\end{equation}
+una matriz simétrica indexada por las $6n-2$ líneas, y $v_0=(\mathbf1_R,-\mathbf1_C,0_D,0_A)$. La
+forma cuadrática de $S_n$ es una suma de cuadrados cuyos pesos, $h_d$ y $g_c$, son positivos por
+$(H_\infty)$. Si se anula en un vector
+$x=(x_R,x_C,x_D,x_A)$, entonces $x_D=0$, $x_A=0$ y $x_{R,i}+x_{C,j}=0$ para cada casilla $(i,j)$. Por
+tanto su núcleo es la recta generada por $v_0$ y $S_n$ es definida positiva en $v_0^\perp$. Para
+$n\ge n_0$ la Sección~\ref{sec:P03}
+da además una brecha uniforme. Llamamos \emph{gauge} a la dirección $v_0$, análoga discreta del modo neutro $(1,-1,0,0)$
+de~\cite[Sección~7.2]{Perfil}, y a su análoga en los tableros
+residuales: como $Av_0=0$, sumar un múltiplo de $v_0$ a un vector indexado por las líneas no cambia sus
+sumas por casilla. Fijar el gauge es elegir un representante, por ejemplo en $v_0^\perp$. El pseudodeterminante
+$\operatorname{pdet}S_n$ es el producto de sus autovalores no nulos. El término local es
+\[
+ L_n=-\frac12\sum_{ij}\bigl[\log(1-4\pi_{ij})-4\log(1-\pi_{ij})\bigr],
+\]
+como en~(LC1).
+
+\begin{definicion}[Predictor canónico]\label{def:Qpred}
+Para $n\ge4$ que cumpla $(H_\infty)$,
+\begin{equation}\label{eq:Qpred}
+ \log Q_{\rm pred}(n)=H_n(\pi^{(n)})+L_n-\tfrac12\log\operatorname{pdet}S_n+\tfrac12\log(4\pi n).
+\end{equation}
+\end{definicion}
+
+\begin{observacion}[Origen de la definición]
+De los cuatro términos de la definición, el primero es la entropía de Bethe en su máximo. Los otros
+tres corresponden, heurísticamente, a dos ingredientes más: la corrección de un lazo de la
+aproximación de Bethe, escrita como determinante de la matriz hessiana mediante la fórmula de
+Ihara--Bass en la forma de Watanabe y Fukumizu~\cite{Bass,WF}, y la normalización gaussiana del modo
+cero que impone la igualdad entre el número de filas vacías y el de columnas vacías. Sobre estas
+aproximaciones para permanentes y sistemas en grafos pueden verse~\cite{CC,Vontobel}. En el modelo
+de torres, una fórmula con los mismos tres ingredientes aproxima el logaritmo del conteo con error
+$O(1/k)$ hasta el tablero lleno (Apéndice~\ref{sec:torres}). En este artículo \eqref{eq:Qpred} es
+sólo una definición: ninguna prueba usa esa interpretación ni el apéndice.
+\end{observacion}
+
+Para los tableros residuales que aparecen al colocar reinas una a una, el predictor $L(B)$ se define en
+la Sección~\ref{sec:B3T01}, con el mismo funcional, el determinante canónico del residual y la
+normalización $\tfrac12\log(2\pi)$ por componente.

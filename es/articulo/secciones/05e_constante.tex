@@ -1,0 +1,44 @@
+\subsection{El término constante del predictor}\label{sec:D05}
+Recordamos la Definición~\ref{def:Qpred}:
+\[
+ \log Q_{\rm pred}(n)=H(\pi^{(n)})+L_n
+           -\tfrac12\log\operatorname{pdet}S_n
+           +\tfrac12\log(4\pi n),                    \tag{D5.1}
+\]
+donde $L_n\to3I_2$ por (LC4).
+Aquí $\pi=3{,}14159\ldots$ sólo en el logaritmo de normalización y en la fórmula de Stirling.
+Como en la Sección~\ref{sec:preliminares}, $\Phi=s_1+1$, donde $s_1$ es el valor óptimo en
+masa uno.
+El teorema siguiente es el Teorema~\ref{thm:intro-constante} de la introducción: $J$ es el operador
+de~(D3.6), $\mathcal D(J)=\log\det_2(I+J)$ por~(D4.1), e $I+J\ge aI$ con $a>0$ por la
+Sección~\ref{sec:D04}.
+
+\begin{teorema}[Término constante del predictor]\label{thm:constante}
+Cuando $n\to\infty$,
+\[
+ \log Q_{\rm pred}(n)-\log n!-n\Phi\longrightarrow C_{\rm pred},
+                                                        \tag{D5.2}
+\]
+\[
+ C_{\rm pred}=\tfrac12\log2-\tfrac12
+             -\tfrac32 I_2-\tfrac12\mathcal D(J).     \tag{D5.3}
+\]
+\end{teorema}
+\begin{proof}
+Reunimos las tres expansiones necesarias, manteniendo en cada línea los términos de orden uno:
+\[
+\begin{aligned}
+ H(\pi^{(n)}) &= n\log n+ns_1+\tfrac32 I_2+o(1) &&\text{por (D2.5)},\\
+ L_n &= 3I_2+o(1) &&\text{por (LC4)},\\
+ \log\operatorname{pdet}S_n &=1+12I_2+\mathcal D(J)+o(1) &&\text{por (D4.3)}.
+\end{aligned}
+\]
+Por Stirling,
+\[
+ \log n!=n\log n-n+\tfrac12\log(2\pi n)+o(1).
+\]
+Al sustituir en (D5.1), los términos principales se cancelan porque
+$\Phi=s_1+1$. La normalización deja $\tfrac12\log2$,
+y $\tfrac32I_2+3I_2-6I_2=-\tfrac32I_2$.
+Así se obtiene (D5.3).
+\end{proof}

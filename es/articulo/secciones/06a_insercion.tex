@@ -1,0 +1,96 @@
+\subsection{El predictor de un residual y su identidad diferencial}\label{sec:B3T01}
+En las fórmulas de esta sección la letra $B$ designa, además del tablero residual, la matriz de
+restricciones de filas y columnas; escribimos RC por «filas y columnas». En cada componente una
+ecuación de masa es redundante: al sumar por filas o por columnas se obtiene la misma masa total.
+Esta redundancia es el gauge de la Sección~\ref{sec:predictor}, que aquí es la dirección
+$(\mathbf1_R,-\mathbf1_C)$ de cada componente; lo fijamos omitiendo una restricción de columna por
+componente.
+
+Sea $p\in(0,1)^E$ con $Bp=\mathbf1$, donde $B$ contiene las restricciones RC independientes que
+quedan tras esa omisión. Sean $D$ la incidencia casilla--diagonal, $h=\mathbf1-D^Tp>0$,
+$q=\mathbf1-p$ y
+\[
+ H_B(p)=-\sum p\log p+3\sum q\log q-\sum h\log h.
+\]
+Introducimos actividades auxiliares $\lambda_c>0$, una por casilla, y escribimos $u=\log\lambda$,
+componente a componente. Sea $p(u)$ una rama estacionaria de
+$H_B(p)+u^Tp$ con hessiana definida negativa sobre $\ker B$.
+Un máximo local estricto pero degenerado no basta.
+Si $Z$ es una base ortonormal de $\ker B$, ponemos
+\[
+ a_c=1/p_c-3/q_c,\quad
+ K=\operatorname{diag}a+D\operatorname{diag}(h^{-1})D^T,\quad
+ K_T=Z^TKZ\succ0,\quad R=ZK_T^{-1}Z^T.
+\]
+El teorema de la función implícita da una rama diferenciable local, no un máximo global.
+Al derivar $Z^T(\nabla H_B+u)=0$ se obtiene $-K_T\,dz+Z^Tdu=0$.
+Por tanto $dp/du=R=R^T$ y $BR=0$.
+
+Sea $d$ el número de componentes, constante mientras el soporte no cambia.
+Usamos el determinante canónico del residual:
+\[
+ N=\begin{pmatrix}
+ \operatorname{diag}a&D&B^T\\ D^T&-\operatorname{diag}h&0\\ B&0&0
+ \end{pmatrix},\quad
+ \mathcal D=(-1)^{s+r}\prod_c(p_c/q_c^3)\det N>0,
+\]
+donde $s$ es el número de diagonales y $r=\operatorname{rank}B$.
+Definimos $\ell=-\tfrac12\log\mathcal D$, $g=\nabla_p\ell$ y
+\[
+ L(u)=H_B(p(u))+u^Tp(u)+\ell(p(u))+\tfrac d2\log(2\pi).
+\]
+El predictor del residual sin actividades auxiliares es $L(B)=L(0)$, con el mismo cofactor y la
+misma normalización por componente.
+\paragraph{Derivada total.}
+La estacionariedad anula $(\nabla H_B+u)^Tdp$ porque $dp\in\ker B$.
+Así,
+\[
+ \boxed{\nabla_uL=p+Rg},\qquad
+ \boxed{\delta_c=(Rg)_c/p_c},\qquad
+ \partial_{u_c}L=p_c(1+\delta_c).
+\]
+La derivada total del lazo es $p_c\delta_c$, no $\delta_c$.
+La «marginal corregida» de la última igualdad es la derivada del predictor; no se identifica
+con la marginal exacta del conteo.
+
+\paragraph{Fórmula de Jacobi para el gradiente, sin polos en $p=1/4$.}
+Sea $a'_c=-p_c^{-2}-3q_c^{-2}$ y pongamos los índices de las diagonales a continuación de los $E$
+índices de casilla. Como $\partial_{p_c}(-h_\alpha)=D_{c\alpha}$,
+\[
+ \boxed{g_c=-\frac12\left[
+ p_c^{-1}+3q_c^{-1}+a'_c(N^{-1})_{cc}
+ +\sum_\alpha D_{c\alpha}(N^{-1})_{E+\alpha,E+\alpha}
+ \right].}
+\]
+Esta expresión resulta de aplicar la fórmula de Jacobi a $\log|\det N|$, donde el determinante
+tiene signo constante en la rama. En ella no se divide por $1-4p_c$. Además, $(N^{-1})_{pp}=R$
+por el complemento de Schur diagonal y las restricciones RC.
+Se puede obtener $Rg$ resolviendo $Nw=(g,0,0)^T$ y tomando su bloque inicial.
+Una extensión del gradiente fuera de $Bp=1$ sólo añade componentes normales,
+que $R$ anula; la identidad usada es intrínseca al espacio factible.
+
+\paragraph{Normalización exacta.}
+Bajo la traslación $u\mapsto u+B^T\eta$, el objetivo cambia en la constante
+$\eta^TBp=\eta^T\mathbf1$. La rama correspondiente mantiene $p$, $h$,
+el determinante y el número de componentes. Por tanto
+\[
+ L(u+B^T\eta)=L(u)+\eta^T\mathbf1,
+ \quad B\nabla_uL=\mathbf1,
+ \quad B(p\odot\delta)=BRg=0.
+\]
+La restricción eliminada en cada componente se reconstruye por la
+igualdad de las sumas de filas y columnas. En toda fila original,
+\[
+ \boxed{\sum_{c\in\mathrm{fila}}p_c\delta_c=0.}
+\]
+Esta identidad no dice sólo que la suma sea $O(k^{-2})$, ni exige una aproximación asintótica.
+Tampoco significa que $\sum_c\delta_c=0$.
+
+\paragraph{Condiciones suficientes para una tasa uniforme.}
+Para obtener $\|\delta\|_\infty=O(k^{-1})$ basta, por ejemplo,
+\[
+ \|\operatorname{diag}(p)^{-1}R\|_{\infty\to\infty}\le C_R,
+ \qquad \inf_\eta\|g-B^T\eta\|_\infty\le C_g/k.
+\]
+Las Secciones~\ref{sec:B3T05} y~\ref{sec:B3T06} prueban estas cotas en la clase con brecha RC
+ponderada uniforme.

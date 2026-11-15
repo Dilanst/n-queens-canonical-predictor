@@ -1,0 +1,32 @@
+\begin{abstract}
+\noindent Al contar las colocaciones de $n$ reinas sin ataques, las restricciones de fila y
+columna dejan $n!$ permutaciones candidatas y las diagonales reducen ese número a $Q(n)$.
+Construimos un predictor determinista $Q_{\rm pred}(n)$ a partir de una entropía de Bethe sobre
+pesos de casilla. Probamos que su término constante viene dado por
+\[
+\begin{aligned}
+ \log Q_{\rm pred}(n)-\log n!-n\Phi &\longrightarrow C_{\rm pred},\\
+ C_{\rm pred} &=\tfrac12\log2-\tfrac12-\tfrac32I_2-\tfrac12\log{\det}_2(I+J).
+\end{aligned}
+\]
+Aquí $\Phi=s_1+1$, donde $s_1$ es el valor óptimo en masa uno, que alcanza el perfil de masa uno;
+$I_2$ es la integral del cuadrado de ese perfil y $J$ es el operador de Hilbert--Schmidt
+construido a partir de él.
+
+\smallskip\noindent Al colocar una reina en una fila vacía, las posibles elecciones dividen el conteo
+en una suma de conteos residuales. Probamos que el predictor satisface esa recursión salvo un factor
+$e^{O(k^{-2})}$ en dos clases explícitas de tableros con $k$ filas vacías, definidas por cotas sobre los
+pesos, las vacancias diagonales y una brecha espectral: cuando $k\ge\delta_0 n$ y, con constantes
+independientes de $n/k$, bajo una hipótesis de masa diagonal pequeña.
+Identificar $C_{\rm pred}$ como constante del conteo exacto requeriría además que
+$\log Q(n)-\log Q_{\rm pred}(n)\to0$; esta cuestión queda abierta.
+
+\smallskip\noindent Numéricamente, $C_{\rm pred}\approx0{,}9401$: la extrapolación del predictor en tableros finitos da $0{,}9401$ y una evaluación directa de la fórmula da $0{,}94014$, ambas sin cota de error certificada. En un apéndice probamos que, en el modelo de torres, una fórmula con los mismos ingredientes aproxima el logaritmo del conteo con error $O(1/k)$, uniformemente desde densidades positivas hasta el tablero lleno.
+
+\medskip\noindent
+\textbf{Palabras clave:} problema de las $n$ reinas; enumeración asintótica; aproximación de Bethe;
+determinante regularizado; término constante; consistencia.
+
+\noindent
+\textbf{MSC 2020:} 05A16; 05A05; 47B10; 82B20.
+\end{abstract}

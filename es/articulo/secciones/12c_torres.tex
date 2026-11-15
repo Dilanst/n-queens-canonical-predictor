@@ -1,0 +1,112 @@
+\subsection{La ley \texorpdfstring{$D$}{D} y sus momentos}
+
+\begin{lema}[Legendre]\label{lem:torres-legendre}
+Sean $\cos\alpha_1>\dots>\cos\alpha_k$ los ceros del polinomio de Legendre $P_k$, con
+$0<\alpha_1<\dots<\alpha_k<\pi$. Entonces, para todo $x$,
+\[
+ f_k(x):=\sum_{q=0}^k\binom kq^2x^q=\prod_{i=1}^k(1+xc_i),\qquad c_i=\cot^2(\alpha_i/2)>0.
+\]
+\end{lema}
+\begin{proof}
+Por la fórmula de Rodrigues, $P_k(t)=(2^kk!)^{-1}(d/dt)^k[(t-1)^k(t+1)^k]$, y por la regla de Leibniz
+\[
+ \Bigl(\frac{d}{dt}\Bigr)^k\bigl[(t-1)^k(t+1)^k\bigr]
+ =\sum_q\binom kq\frac{k!}{q!}(t-1)^q\,\frac{k!}{(k-q)!}(t+1)^{k-q}.
+\]
+Por tanto $P_k(t)=\sum_q\binom kq^2\bigl(\frac{t-1}2\bigr)^q\bigl(\frac{t+1}2\bigr)^{k-q}$. Para $x\ne1$, sea
+$t=(1+x)/(1-x)$. Entonces $(t-1)/2=x/(1-x)$ y $(t+1)/2=1/(1-x)$, y queda
+$f_k(x)=(1-x)^kP_k\bigl((1+x)/(1-x)\bigr)$; ambos lados son polinomios en $x$, así que la identidad vale
+para todo $x$. El polinomio $P_k$ tiene $k$ ceros simples $t_i=\cos\alpha_i$ en $(-1,1)$~\cite[Teorema~3.3.1]{Szego}. Si
+$\kappa_k$ es su coeficiente principal, $f_k(x)=\kappa_k\prod_i[(1-t_i)+x(1+t_i)]$. Como $f_k(0)=1$, se
+tiene $\kappa_k\prod_i(1-t_i)=1$. Con $(1+\cos\alpha)/(1-\cos\alpha)=\cot^2(\alpha/2)$ se obtiene el producto
+del enunciado.
+\end{proof}
+
+\begin{corolario}\label{cor:torres-pb}
+Sea $x=(\theta/y)^2$, de modo que $D(q)=\binom kq^2x^q/f_k(x)$.
+\begin{enumerate}[(a)]
+\item La función generatriz es $\mathbb E_D[\tau^q]=f_k(x\tau)/f_k(x)=\prod_i(1-r_i+r_i\tau)$, con
+ $r_i=xc_i/(1+xc_i)\in(0,1)$. Es decir, $D$ es la ley de una suma de $k$ variables de Bernoulli
+ independientes de parámetros $r_i$.
+\item Para $v\in\mathbb R$, la ley inclinada $D_v(q)\propto D(q)e^{vq}$ es de la misma familia, con $x$
+ sustituido por $xe^v$.
+\item La función $K(v)=\log\mathbb E_D[e^{vq}]=\sum_i\log(1-r_i+r_ie^v)$ cumple
+ \[
+ \begin{aligned}
+  K'(v)&=\sum_ir_i(v)=:\mu(v),\qquad K''(v)=\sum_ir_i(v)(1-r_i(v))=:\sigma^2(v),\\
+  K'''(v)&=\sum_ir_i(v)(1-r_i(v))(1-2r_i(v)),\\
+  K''''(v)&=\sum_ir_i(v)(1-r_i(v))\bigl(1-6r_i(v)(1-r_i(v))\bigr),
+ \end{aligned}
+ \]
+ con $r_i(v)=r_ie^v/(1-r_i+r_ie^v)$.
+\item En consecuencia, $|K'''|\le K''$, $|K''''|\le K''$, $0\le K''\le k/4$,
+ $K''(0)e^{-|v|}\le K''(v)\le K''(0)e^{|v|}$, y $K(v)\le0$ para $v\le0$.
+\end{enumerate}
+\end{corolario}
+\begin{proof}
+(a) sale del Lema~\ref{lem:torres-legendre}, y (b) de que $\binom kq^2(xe^v)^q\propto D(q)e^{vq}$. Las
+derivadas de (c) son las de una suma de logaritmos de funciones generatrices de Bernoulli. Las
+desigualdades $|1-2r|\le1$ y $|1-6r(1-r)|\le1$ dan las dos primeras cotas de (d), y $r(1-r)\le\frac14$ da
+$K''\le k/4$. Para la cuarta basta $|(\log K'')'|=|K'''/K''|\le1$. Por último, $K(v)\le0$ para $v\le0$
+porque $q\ge0$.
+\end{proof}
+
+\begin{lema}\label{lem:torres-momentos}
+Sean $x>0$, $s=\sqrt x$, $\theta_x=s/(1+s)$ e $y_x=1-\theta_x$, y sean $\mu_D$ y $\sigma_D^2$ la media y la
+varianza de la ley $q\mapsto\binom kq^2x^q/f_k(x)$. Entonces
+\[
+ \bigl|\mu_D-(k+\tfrac12)\theta_x\bigr|\le1,\qquad \bigl|\sigma_D^2-(k+\tfrac12)\theta_xy_x/2\bigr|\le1.
+\]
+Con $x=(\theta/y)^2$ la ley es $D$ y se tiene $\theta_x=\theta$ e $y_x=y$. Por el
+Corolario~\ref{cor:torres-pb}(b), para la ley inclinada $D_v$, cuya media es $\mu(v)$ y cuya varianza es
+$\sigma^2(v)$, basta poner $s_v=se^{v/2}$, $\theta_v=s_v/(1+s_v)$ e $y_v=1-\theta_v$.
+\end{lema}
+\begin{proof}
+Por el Corolario~\ref{cor:torres-pb}, $\mu_D=\sum_iF(\alpha_i)$ y $\sigma_D^2=\sum_iG(\alpha_i)$, con
+$F(\alpha)=s^2/(s^2+\tan^2(\alpha/2))$ y $G=F(1-F)$. La función $F$ es continua y decreciente en
+$[0,\pi]$, de $1$ a $0$. La función $G$ toma valores en $[0,\frac14]$, se anula en los extremos y es
+unimodal: crece mientras $F>\frac12$ y decrece mientras $F<\frac12$. Por la desigualdad de
+Bruns~\cite{Bruns} (véase también~\cite[\S6.21]{Szego}), con $h=\pi/(k+\frac12)$,
+\[
+ (i-\tfrac12)h\le\alpha_i\le ih\qquad(i=1,\dots,k).
+\]
+Por el Lema~\ref{lem:torres-riemann}, que se prueba a continuación, con $m_0=1$ para $F$ y
+$m_0=\frac14$ para $G$, cada suma difiere de $h^{-1}\int_0^\pi$ a lo sumo en $1$. Con $t=\tan(\alpha/2)$ y
+$d\alpha=2\,dt/(1+t^2)$,
+\[
+\begin{aligned}
+ \int_0^\pi F\,d\alpha&=2\int_0^\infty\frac{s^2\,dt}{(t^2+s^2)(1+t^2)}=\frac{\pi s}{1+s}=\pi\theta_x,\\
+ \int_0^\pi G\,d\alpha&=2\int_0^\infty\frac{s^2t^2\,dt}{(t^2+s^2)^2(1+t^2)}=\frac{\pi s}{2(1+s)^2}
+ =\frac\pi2\,\theta_xy_x;
+\end{aligned}
+\]
+ambas salen por fracciones simples (en $s=1$, por continuidad). Como $h^{-1}=(k+\frac12)/\pi$, quedan
+las cotas del enunciado.
+\end{proof}
+
+\begin{lema}[Sumas de Riemann en puntos entrelazados]\label{lem:torres-riemann}
+Sean $h=\pi/(k+\frac12)$, $\alpha_i\in[(i-\frac12)h,ih]$ para $i=1,\dots,k$, y $m_0>0$.
+\begin{enumerate}[(a)]
+\item Si $F:[0,\pi]\to[0,m_0]$ es no creciente, entonces
+ $\bigl|\sum_iF(\alpha_i)-h^{-1}\int_0^\pi F\bigr|\le m_0$.
+\item Si $G:[0,\pi]\to[0,m_0]$ es unimodal, entonces
+ $\bigl|\sum_iG(\alpha_i)-h^{-1}\int_0^\pi G\bigr|\le4m_0$.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+(a) Extendemos $F$ por $0$ fuera de $[0,\pi]$; sigue siendo no creciente en $[0,\infty)$. Por un lado,
+$F(\alpha_i)\le F((i-\frac12)h)$, que para $i\ge2$ es a lo sumo $h^{-1}\int_{(i-3/2)h}^{(i-1/2)h}F$ y para
+$i=1$ es a lo sumo $m_0$; por tanto $\sum_iF(\alpha_i)\le m_0+h^{-1}\int_0^\pi F$. Por otro,
+$F(\alpha_i)\ge F(ih)\ge h^{-1}\int_{ih}^{(i+1)h}F$; como $(k+1)h\ge\pi$, se tiene
+$\sum_iF(\alpha_i)\ge h^{-1}\int_h^\pi F\ge h^{-1}\int_0^\pi F-m_0$.
+
+(b) Ponemos $I_i=[(i-1)h,ih]$. Como $\alpha_i\in I_i$,
+\[
+ \left|G(\alpha_i)-h^{-1}\int_{I_i}G\right|
+ \le\operatorname{osc}_{I_i}G .
+\]
+Por unimodalidad y $0\le G\le m_0$, la suma de las oscilaciones en estos intervalos
+es a lo sumo la variación total de $G$ en $[0,kh]$, que es a lo sumo $2m_0$.
+Como $\pi-kh=h/2$, el resto $h^{-1}\int_{kh}^{\pi}G$ aporta a lo sumo $m_0/2$.
+La desigualdad triangular da la cota $5m_0/2\le4m_0$, también cuando la moda está en un extremo.
+\end{proof}

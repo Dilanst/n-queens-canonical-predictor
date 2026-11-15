@@ -1,0 +1,96 @@
+\subsection{Consistencia en la clase débil}\label{sec:B5T05}
+\begin{teorema}[Consistencia mesoscópica]\label{thm:meso}
+Para $C,\eta,\gamma$ fijos existen $\varepsilon_0,k_0,C_*$ independientes
+de $n/k$ con la siguiente propiedad. Si el padre satisface las condiciones de la Sección~\ref{sec:B5T01} con
+$\varepsilon\le\varepsilon_0$, $k\ge k_0$, entonces todos sus hijos legales
+tienen el punto estacionario pequeño construido en la Sección~\ref{sec:B5T03} y
+\[
+ \boxed{\left|\log\rho(B)\right|\le C_*/k^2,\qquad
+ \rho(B)=\sum_{c\in r}\exp[L(B+c)-L(B)].}
+\]
+\end{teorema}
+En el enunciado se fija una fila $r$ y se incluyen todos sus hijos; $L$ es exactamente
+el predictor canónico: término de árbol, factor local, cofactor RC y covolumen.
+No se identifica su marginal corregida con la marginal verdadera de las soluciones.
+El predictor selecciona la rama pequeña: la hessiana cambiada de signo
+es definida positiva en la región convexa $p<1/4$, con vacancias positivas.
+Así, el punto de Newton es su único punto estacionario en esa rama, y no una selección nueva.
+El desplazamiento total es $y=z+s+O_{\rm rel}(k^{-2})$, donde $s$ es el paso de Newton desde $\bar p$.
+Se reserva margen en $\varepsilon_0,C,\eta,\gamma$ para todos los hijos.
+
+\begin{proof}
+\emph{Adaptación de la prueba macroscópica.}
+La prueba sigue la de la Sección~\ref{sec:macro}; sus identidades algebraicas y su normalización se
+conservan. Se sustituyen sus usos de $k\ge\delta_0n$ por la Sección~\ref{sec:B5T02} para la inversa de
+líneas y la respuesta, la Sección~\ref{sec:B5T03} para el paso de Newton, la masa de la diferencia de
+Schur y los restos cúbicos, y la Sección~\ref{sec:B5T04} para las trazas, sus cambios y la resolvente.
+El reequilibrado utiliza sólo las $2k$ líneas RC.
+En ningún punto se exige un número $O(k)$ de diagonales.
+
+\par\emph{Cambio exacto de soporte y gauge.}
+Sean $\Gamma=S_0^+$, $v=(\mathbf1_R,-\mathbf1_C,0_D)$,
+$\Pi=vv^T/(2k)$ y $\widetilde S_0=S_0+\Pi$.
+Sean $J$ las cuatro líneas retiradas e $I=J^c$. Ponemos
+\[
+ C_J=S_{0,JJ}+\Pi_{JJ},\quad V_J=S_{0,IJ}+\Pi_{IJ},
+ \quad P_*=(\widetilde S_0)_{II}-V_JC_J^{-1}V_J^T,
+\]
+\[
+ H_*=P_*^{-1}=(\Gamma+\Pi)_{II},\quad
+ D_*=\Delta_0+(\Pi'-\Pi_{II})+V_JC_J^{-1}V_J^T.
+\]
+La identidad exacta de cofactores es
+\[
+ \frac{\det S'_{0,\rm gf}}{\det S_{0,\rm gf}}
+ =\frac{k}{k-1}\frac{\det(I+H_*D_*)}{\det C_J}.
+\]
+La Sección~\ref{sec:B5T04} controla sus términos cuadrático y cúbico. No se usa ningún desarrollo
+de Taylor hasta $p=0$ o $1$.
+
+\par\emph{Conservación de la cancelación, con sus coeficientes.}
+Sea $a_i$ el indicador de las cuatro líneas de $i$. Definimos
+$f_i=\sum_{a<b\in i}\Gamma_{ab}$ y, con sólo los pares retenidos, $f_i^I$.
+La respuesta cuadrática del hijo satisface
+\[
+ y_i/p_i=-a_i^T\Gamma a_c+O(k^{-2}),\qquad
+ \mathcal Q(y)=a_c^T\Gamma a_c-4+12p_c+O(k^{-2}).
+\]
+La derivada exacta de Jacobi, y no la derivación de un resto asintótico, da
+\[
+ \delta_c=-6p_c-f_c+\sum_Fp_i(6p_i+f_i)
+             -\sum_{E'}y_i(6p_i+f_i)+O(k^{-2}).
+\]
+La identidad de frontera de la acción, el cambio del prefactor y el cofactor dan
+\[
+ \begin{aligned}
+ e_c:={}&L(B+c)-L(B)-\log p_c\\
+ ={}&-6p_c-f_c+6\sum_Fp_i^2-6\sum_{E'}p_iy_i-\sum_{E'}y_if_i\\
+ &+\sum_Fp_if_i^I-\sum_{j\in J}(\Gamma_{jj}-1)-1/k+O(k^{-2}).
+ \end{aligned}
+\]
+La identidad final de la Sección~\ref{sec:B4T08}, antes de aproximar, implica
+\[
+ \sum_Fp_i(f_i-f_i^I)
+ =-\sum_{j\in J}(\Gamma_{jj}-1)-1/k-p_cf_c.
+\]
+Como $p_cf_c=O(k^{-2})$, resulta $e_c-\delta_c=O(k^{-2})$.
+Todas las sumas de errores usan $\sum_Ep=k$, $\sum_Fp=O(1)$ y la Sección~\ref{sec:B5T04}.
+Este paso retiene y cancela los términos de orden $k^{-1}$.
+
+La identidad de conservación de la fila da exactamente
+\[
+ \sum_{c\in r}p_c\delta_c=0,\quad
+ w_c=p_c(1+\delta_c)>0,\quad\sum_{c\in r}w_c=1.
+\]
+La Sección~\ref{sec:B5T02} implica $\delta_c=O(k^{-1})$. Por tanto
+\[
+ r_c=e_c-\log(1+\delta_c)=O(k^{-2}),\quad
+ \rho=\mathbb E_w e^{r_c},\quad|\log\rho|\le\sup_c|r_c|.
+\]
+Con esto queda probada la extensión determinista, bajo las hipótesis del teorema.
+\end{proof}
+
+\paragraph{Alcance.}
+El caso de torres con máscara queda incluido mediante la representación con dos diagonales
+de una sola casilla por casilla de la Sección~\ref{sec:B5T01}. La herencia es de un padre interior a una clase
+exterior con margen; no se afirma que una trayectoria permanezca en ella.

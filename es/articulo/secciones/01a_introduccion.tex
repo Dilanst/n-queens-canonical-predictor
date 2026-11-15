@@ -1,0 +1,126 @@
+\section{Introducción}\label{sec:intro}
+
+El problema de las $n$ reinas pregunta cuántas maneras hay de colocar $n$ reinas en un tablero de
+$n\times n$ sin que dos se ataquen. Denotamos ese número por $Q(n)$. En una solución, cada fila
+contiene una reina; si anotamos su columna y leemos las filas de arriba abajo, obtenemos una
+permutación, porque ninguna columna se repite. La Figura~\ref{fig:permutaciones} muestra por qué,
+entre las $n!$ permutaciones posibles, sólo algunas son soluciones.
+
+\input{figuras/permutaciones}
+
+¿Cuánto reducen las diagonales esas $n!$ posibilidades cuando crece el tablero?
+Simkin~\cite[Teorema~1.1]{Simkin} determinó el orden principal mediante un principio variacional:
+existe una constante $\alpha$ tal que
+\[
+ Q(n)=\bigl((1+o(1))\,n\,e^{-\alpha}\bigr)^n .
+\]
+Nobel, Agrawal y Boyd~\cite{NAB} acotaron $\alpha$ en $[1{,}944000752,\,1{,}944001082]$.
+Al tomar logaritmos y aplicar la fórmula de Stirling, el resultado de Simkin da
+\[
+ \log Q(n)-\log n!=n(1-\alpha)+o(n).
+\]
+El resto $o(n)$ no está determinado. La pregunta que motiva este artículo es la del término
+siguiente: si, tras restar el término lineal, la diferencia converge, y hacia qué constante.
+
+Construimos una cantidad determinista $Q_{\rm pred}(n)$, que llamamos predictor, cuyo término
+constante sí podemos calcular. La construcción asigna un peso a cada casilla, de manera que cada fila
+y cada columna sumen uno y ninguna diagonal reciba más de uno. Entre los pesos admisibles del modelo
+se eligen los que maximizan la entropía de Bethe (Sección~\ref{sec:predictor}). Esa entropía aporta
+el primer término del predictor. Los otros tres términos de la Definición~\ref{def:Qpred} son un
+término local, que depende de los pesos por casilla; un pseudodeterminante, en el que interviene además cómo
+se cortan las líneas; y una normalización. La definición exige que el maximizador sea interior, lo
+que ocurre para todo $n$ suficientemente grande (Sección~\ref{sec:P02}).
+
+Al pasar del tablero al cuadrado unidad aparece el perfil de masa uno $\nu_1$ de~\cite{Perfil}.
+Escribimos $s_1$ para el valor óptimo en masa uno, que alcanza ese perfil, y $\Phi=s_1+1$. Bajo
+la identificación con el problema de Simkin que se discute en la Sección~\ref{sec:preliminares}, y
+que no usamos en ninguna prueba, $\Phi=1-\alpha$. La integral $I_2=\int\nu_1^2$ se toma sobre
+el cuadrado unidad. Como $\nu_1$ tiene masa total uno, $I_2\ge1$, con igualdad sólo para la densidad
+constante: $I_2$ mide cuánto se aparta el perfil de ella.
+
+\begin{teorema}[Término constante del predictor]\label{thm:intro-constante}
+Cuando $n\to\infty$,
+\[
+\begin{aligned}
+ \log Q_{\rm pred}(n)-\log n!-n\Phi &\longrightarrow C_{\rm pred},\\
+ C_{\rm pred} &=\tfrac12\log2-\tfrac12-\tfrac32I_2-\tfrac12\log{\det}_2(I+J),
+\end{aligned}
+\]
+donde $J$ es el operador de Hilbert--Schmidt construido a partir de $\nu_1$ en la
+Sección~\ref{sec:D03} e $I+J$ es definido positivo.
+\end{teorema}
+
+La prueba sigue la definición término a término. Primero se aproxima el maximizador discreto por
+el perfil continuo con error $O(1/n)$ (Sección~\ref{sec:perfil}). Después se identifican por
+separado las contribuciones de la entropía y del pseudodeterminante, y se suman al término local
+(Sección~\ref{sec:constante}). El teorema se demuestra en la Sección~\ref{sec:D05}
+(Teorema~\ref{thm:constante}).
+
+El segundo resultado responde a una pregunta que ya se puede formular en un tablero pequeño.
+Una colocación parcial deja un tablero residual $B$. Elegimos una fila vacía $r$ y llamamos
+$B+c$ al residual que queda tras ocupar en ella una casilla legal $c$. Si $Q(B)$ cuenta las
+completaciones de $B$, entonces
+\[
+ Q(B)=\sum_{c\in r} Q(B+c).
+\]
+En efecto, cada completación usa exactamente una de esas casillas. Una elección legal que luego
+no pueda completarse aporta cero a la suma. La Figura~\ref{fig:residual} muestra esta partición
+en un tablero de $5\times5$ con una reina en la fila~1 y la columna~2: en la segunda fila quedan dos
+casillas legales, las de las columnas 4 y~5, y cada una da un sumando.
+
+\input{figuras/residual}
+
+El predictor asigna a $B$ el valor $e^{L(B)}$ (Sección~\ref{sec:B3T01}).
+Dividimos la suma de las predicciones de los hijos por la predicción del padre:
+\[
+ \rho(B)=\frac{\sum_{c\in r}e^{L(B+c)}}{e^{L(B)}}
+        =\sum_{c\in r}e^{L(B+c)-L(B)} .
+\]
+Si el predictor cumpliera exactamente la misma identidad que el conteo, este cociente valdría uno.
+El siguiente teorema acota el defecto en escala logarítmica y especifica para qué residuales vale
+esa cota.
+
+Su enunciado usa nociones que se precisan en las Secciones~\ref{sec:insercion} y~\ref{sec:B5T01}.
+Un residual con $k$ filas vacías tiene también $k$ columnas vacías y le faltan $k$ reinas; en
+\cite{Completabilidad} ese número se denota $h$.
+El \emph{punto de Bethe} de $B$ es el vector de pesos $p=(p_e)$, con un peso por casilla disponible
+$e$, en el que se evalúa $L(B)$: un punto estacionario de la entropía de Bethe del residual bajo las
+restricciones de fila y de columna. La \emph{masa} de una diagonal, de cualquiera de las dos
+familias, es la suma de los pesos de sus casillas disponibles; su \emph{vacancia} es uno menos la
+masa. El \emph{laplaciano de filas y columnas} es el del grafo cuyos vértices son las filas y las
+columnas vacías y en el que cada casilla disponible $e$ es una arista de peso $p_e$ entre su fila y
+su columna; su \emph{brecha} es su segundo autovalor más pequeño, contado con multiplicidad.
+
+\begin{teorema}[Consistencia de segundo orden]\label{thm:intro-consistencia}
+Sean $C,\eta,\gamma>0$ y sea $B$ un residual con $k$ filas vacías cuyo punto de Bethe $p$ es
+estacionario e interior, con masas de fila y columna iguales a uno, $p_e\le C/k$, vacancias diagonales
+al menos $\eta$ y brecha al menos $\gamma$ del laplaciano de filas y columnas ponderado por $p$.
+\begin{enumerate}[(a)]
+\item Para cada $\delta_0>0$ existen $k_0$ y $C_*$, que dependen sólo de $\delta_0,C,\eta,\gamma$, tales
+que, si $k\ge\max(k_0,\delta_0n)$, entonces $|\log\rho(B)|\le C_*/k^2$ para toda fila vacía $r$
+(Teorema~\ref{thm:macro} y Corolario~\ref{cor:rho}).
+\item Existen $\varepsilon_0$, $k_0$ y $C_*$, que no dependen de $n/k$, tales que la misma conclusión
+vale para $k\ge k_0$ sin la condición $k\ge\delta_0n$ si la masa de cada diagonal es a lo sumo
+$\varepsilon_0$ (Teorema~\ref{thm:meso}).
+\end{enumerate}
+\end{teorema}
+
+Ambas partes incluyen todos los hijos legales de la fila elegida. Para cada hijo se obtiene un
+único punto estacionario en la rama pequeña, es decir, con todos sus pesos menores que $1/4$. La
+primera parte pide que quede una fracción fija de las filas originales. La segunda prescinde de esa
+condición cuando la masa de cada diagonal es pequeña. En los dos casos las hipótesis recaen sobre el
+residual. El teorema es determinista: no afirma que los residuales que aparecen al colocar reinas al azar cumplan esas hipótesis.
+
+Para trasladar el primer teorema al conteo exacto falta controlar una diferencia:
+\[
+ R_Q(n)=\log Q(n)-\log Q_{\rm pred}(n).
+\]
+Si $R_Q(n)\to0$, se obtiene
+\[
+ \log Q(n)=\log n!+n\Phi+C_{\rm pred}+o(1).
+\]
+No probamos que $R_Q(n)\to0$. La Sección~\ref{sec:discusion} explica qué estimaciones adicionales
+sobre las trayectorias y los residuales con pocas filas vacías exigiría ese paso.
+
+Numéricamente, $C_{\rm pred}\approx0{,}9401$: en todo el intervalo de $\alpha$ citado, los ajustes del predictor desde $n=40$ o $60$ dan entre $0{,}9400$ y $0{,}9402$, y una evaluación directa de la fórmula da $0{,}94014$ (Sección~\ref{sec:numerico}); ninguna de estas cifras está certificada.
+Con la referencia $\Phi_0$ de esa sección, los conteos exactos para $16\le n\le27$ dan $\log Q(n)-\log n!-n\Phi_0$ entre $0{,}913$ y $0{,}941$.

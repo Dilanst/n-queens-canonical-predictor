@@ -1,0 +1,21 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=5.6mm,y=5.6mm]
+  \begin{scope}
+    \bcuadricula{4}
+    \foreach \r/\c in {1/2,2/4,3/1,4/3} {\breina{4}{\r}{\c}}
+    \node[font=\small,anchor=north] at (2,-.35) {(a) Solución};
+  \end{scope}
+  \begin{scope}[shift={(9,0)}]
+    \bcuadricula{4}
+    \draw[btinta,densely dashed,line width=1.1pt] (.5,3.5)--(3.5,.5);
+    \foreach \r/\c in {1/1,2/2,3/3,4/4} {\breina{4}{\r}{\c}}
+    \node[font=\small,anchor=north] at (2,-.35) {(b) Diagonal compartida};
+  \end{scope}
+\end{tikzpicture}
+\caption{Dos permutaciones en el mismo tablero. Las filas se numeran de arriba abajo y las columnas
+de izquierda a derecha, empezando en uno. En (a) se leen las columnas $(2,4,1,3)$: las cuatro
+reinas están también en diagonales distintas de cada orientación. En (b) se leen $(1,2,3,4)$:
+cada fila y cada columna sigue teniendo una reina, pero la diagonal trazada contiene las cuatro.}
+\label{fig:permutaciones}
+\end{figure}

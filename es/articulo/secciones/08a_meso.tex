@@ -1,0 +1,53 @@
+\subsection{Clase débil intrínseca y diagonales de una sola casilla}\label{sec:B5T01}
+Un residual conserva las coordenadas originales del tablero ordinario de reinas.
+Su soporte $E$ tiene $k$ filas y $k$ columnas; cada casilla pertenece a
+cuatro líneas y dos líneas distintas se cortan en a lo sumo una casilla.
+Sea $p$ un punto estacionario interior de Bethe, con masas RC iguales a uno.
+Para constantes fijas $C,\gamma,\eta$, definimos la clase determinista
+\[
+ p_e\le C/k,\quad \operatorname{gap}_{RC}(p)\ge\gamma,
+ \quad h_d=1-m_d\ge\eta,\quad
+ m_d=\sum_{e\in d}p_e\le\varepsilon\le\varepsilon_0.
+\]
+El gauge RC es $(\mathbf1_R,-\mathbf1_C)$, y la brecha se toma fuera de él. Se exige además la
+conectividad RC. Para $k\ge k_0$ se tiene $p<1/4$. A diferencia de la clase macroscópica, no se
+exige $k\ge\delta_0n$, y las constantes no dependen del número de diagonales. La cota de $p$ obliga
+a que cada fila y cada columna tengan al menos $k/C$ casillas. Una densidad global de máscara,
+por sí sola, no sustituye esas condiciones.
+
+La geometría original sigue siendo parte del problema: que la clase sea intrínseca no significa
+olvidar cuáles casillas comparten diagonal.
+
+\paragraph{Cota inferior discreta de la masa diagonal.}
+Como cada fila suma uno y tiene a lo sumo $k$ casillas, resulta
+\[
+ \max_e p_e\ge1/k,\qquad \max_d m_d\ge1/k.
+\]
+En particular, una cota de la forma $\ell_{\max}\le Ak/n$ exigiría $k^2\ge n/A$.
+
+\paragraph{Eliminación exacta de una diagonal con una sola casilla.}
+Escribamos $q=1-p$ y permitamos una multiplicidad $d\in\{2,3,4\}$:
+\[
+ \tau_d=\frac{pq}{1-dp},\qquad b_d=\frac{1-dp}{q^d}.
+\]
+La línea con una sola casilla tiene vacancia $q$. Su pivote y su complemento de Schur son
+\[
+ q+\tau_d=q\frac{1-(d-1)p}{1-dp},\quad
+ \tau_d-\frac{\tau_d^2}{q+\tau_d}=\tau_{d-1},\quad
+ b_d(q+\tau_d)=b_{d-1}.
+\]
+Por ello el producto del factor local por el determinante se conserva exactamente.
+La entropía de Bernoulli de ese factor cancela el cambio de multiplicidad
+en la entropía de Bethe. El gauge RC no cambia y tiene coordenada cero
+en la línea eliminada. Dos líneas de una sola casilla llevan de $d=4$ a $d=2$.
+Una línea sin casillas aporta un pivote igual a uno.
+
+No se puede borrar la fila matricial manteniendo $\tau_4,b_4$. Para evitar una nueva contabilidad
+de multiplicidades variables, las Secciones~\ref{sec:B5T02}--\ref{sec:B5T05} mantienen las cuatro
+incidencias de cada casilla, incluso con líneas de una sola casilla. El número de estas líneas no
+perjudica las cotas por masa. El caso de torres se puede representar añadiendo a cada casilla dos
+diagonales de una sola casilla y eliminándolas con esta identidad.
+
+\paragraph{Alcance.}
+El predictor y el cofactor RC son los de las Secciones~\ref{sec:B3T01} y~\ref{sec:B4T01}.
+No se afirma la pertenencia típica a esta clase ni la completabilidad de sus miembros.

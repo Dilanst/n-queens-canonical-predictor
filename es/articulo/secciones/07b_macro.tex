@@ -1,0 +1,73 @@
+\subsection{El punto estacionario del hijo}\label{sec:B4T02}
+Conservamos la notación de la Sección~\ref{sec:B4T01}. Ahora $B$ es la matriz RC línea--casilla del
+hijo y $D$ es su incidencia casilla--diagonal. La Sección~\ref{sec:B3T07} construye
+\[
+ \bar p=w+z,\quad B\bar p=\mathbf1,\quad
+ a=z/w\in\operatorname{im}B^T,\quad \|a\|_\infty=O(k^{-1}).
+\]
+Sean $d$ el vector de pérdidas en las diagonales retenidas y $u=d-D^Tz$.
+Las vacancias de $\bar p$ son $h+u\ge\eta/2$.
+
+\paragraph{Residuo de estacionariedad tras el reequilibrado.}
+Por la estacionariedad del padre y las expresiones exactas de los logaritmos,
+\[
+ \nabla H_{\rm hijo}(\bar p)\equiv
+ D\log(1+u/h)+a-\log(1+a)-3\log(1-z/(1-w))
+ \pmod{\operatorname{im}B^T}.
+\]
+En particular existe un representante $e$ del gradiente tangente tal que
+\[
+ e=D(u/h)+O_\infty(k^{-2}),\qquad \|e\|_\infty=O(k^{-1}).
+\]
+Corregir las masas RC no anula en general el primer término diagonal.
+No se afirma que $p^*-\bar p=O_{\rm rel}(k^{-2})$.
+
+\paragraph{Paso de Newton y control uniforme.}
+Sean $Z$ una base ortonormal de $\ker B$ y
+\[
+ K=\operatorname{diag}(1/\bar p-3/(1-\bar p))
+       +D\operatorname{diag}((h+u)^{-1})D^T,\quad
+ R=Z(Z^TKZ)^{-1}Z^T,\quad s=Re.
+\]
+Aplicamos la estimación matricial de la Sección~\ref{sec:B3T05} al punto factible $\bar p$ con la
+brecha heredada. El hijo tiene $k-1\ge\delta_0 n/2$ filas para $k\ge2$, por lo que podemos usar
+$\delta_0/2$ incluso en el extremo $k=\delta_0n$. Así obtenemos
+$\|\operatorname{diag}(\bar p)^{-1}R\|_{\infty\to\infty}\le M$.
+Denotamos $\|v\|_{\bar p}=\|v/\bar p\|_\infty$ y
+$\sigma=\|s\|_{\bar p}=O(k^{-1})$.
+
+Para $v\in\ker B$ y $\|v\|_{\bar p}\le r$ suficientemente pequeño,
+\[
+ \nabla H(\bar p+v)=\nabla H(\bar p)-Kv+\mathcal N(v),
+\]
+\[
+ \|\mathcal N(v)\|_\infty\le Cr^2,\quad
+ \|\mathcal N(v)-\mathcal N(w)\|_\infty\le Cr\|v-w\|_{\bar p}.
+\]
+Las constantes no dependen de una cota inferior de $\bar p$:
+$|(D^Tv)_d|\le r\sum_{e\in d}\bar p_e\le r$, y el logaritmo de cada
+casilla se desarrolla en $v_e/\bar p_e$, no en $v_e$ solo.
+La estacionariedad es equivalente a $v=s+R\mathcal N(v)$.
+Para $k$ grande, el segundo miembro define una aplicación que preserva la bola de radio $2\sigma$
+y tiene constante de Lipschitz menor que uno; si $\sigma=0$, $\bar p$ ya es estacionario.
+Existe por ello un punto $p^*$ con
+\[
+ \boxed{\|(p^*-\bar p)/\bar p\|_\infty=O(k^{-1}),\qquad
+ \|(p^*-\bar p-s)/\bar p\|_\infty=O(k^{-2}).}
+\]
+Este punto permanece factible y positivo, con vacancias uniformes y $p^*<1/4$.
+La hessiana cambiada de signo es definida positiva en la región convexa $p<1/4$,
+así que el punto estacionario es único en esa rama. No se afirma unicidad fuera de ella.
+El punto $\widehat p=\bar p+s$ ya aproxima al hijo con error relativo $O(k^{-2})$.
+Todos los controles son uniformes en los hijos de un padre de la clase.
+
+\paragraph{Incremento de la acción desde $\bar p$.}
+En $\bar p$, el término lineal $e^Ts=s^TKs$ no se anula en general. Se combina con
+el término cuadrático negativo de la entropía:
+\[
+ \boxed{H(p^*)-H(\bar p)=\tfrac12 e^TRe+O(k^{-2}).}
+\]
+El término principal es $O(k^{-1})$. El resto cúbico es
+$O(k\|v\|_{\bar p}^3)=O(k^{-2})$, pues $\sum\bar p=k-1$
+y hay $O(k)$ diagonales. Los errores al reemplazar $v$ por $s$ también son
+$O(k^{-2})$; las partes normales RC se anulan contra todos los incrementos.

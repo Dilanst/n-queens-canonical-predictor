@@ -1,0 +1,70 @@
+\subsection{Límite del pseudodeterminante}\label{sec:D04}
+Se usan las definiciones y la convergencia de Hilbert--Schmidt de la Sección~\ref{sec:D03}.
+Fuera de la imagen de $E_n$, $\widehat J_n$ es cero.
+Por la brecha en dimensión finita,
+\[
+ I+\widehat J_n\ge aI,\qquad a=\min(1,\gamma)>0.
+\]
+La convergencia en norma de operadores, consecuencia de la
+convergencia Hilbert--Schmidt, da también $I+J\ge aI$.
+
+\paragraph{Logaritmo regularizado.}
+Para $B$ autoadjunto Hilbert--Schmidt y $I+B\ge aI>0$, definimos
+\[
+ \mathcal D(B)=-\int_0^1 t\,
+       \operatorname{tr}\bigl[B^2(I+tB)^{-1}\bigr]\,dt
+             =\log\det{}_2(I+B).                    \tag{D4.1}
+\]
+La integral está bien definida: $B^2$ es de clase traza y
+$\|(I+tB)^{-1}\|\le\min(1,a)^{-1}$.
+En dimensión finita, integrar la identidad escalar
+$\log(1+\lambda)-\lambda
+=-\int_0^1 t\lambda^2/(1+t\lambda)\,dt$ prueba
+\[
+ \log\det(I+B)=\operatorname{tr}B+\mathcal D(B).       \tag{D4.2}
+\]
+La misma identidad espectral define el determinante regularizado
+en dimensión infinita, pues sus sumandos son $O(\lambda^2)$ cerca de cero.
+
+\begin{lema}[Continuidad del logaritmo regularizado]\label{lem:continuidad}
+Si $B_n\to B$ en Hilbert--Schmidt, todos son autoadjuntos y
+$I+B_n\ge aI>0$ uniformemente, entonces
+$\mathcal D(B_n)\to\mathcal D(B)$.
+\end{lema}
+\begin{proof}
+La desigualdad de productos Hilbert--Schmidt da
+\[
+ \|B_n^2-B^2\|_1\le
+       (\|B_n\|_2+\|B\|_2)\|B_n-B\|_2\longrightarrow0.
+\]
+Por la identidad de la resolvente, las inversas $(I+tB_n)^{-1}$
+convergen en norma de operadores uniformemente para $0\le t\le1$.
+Separar la diferencia de los productos de (D4.1) en dos sumandos,
+y usar $|\operatorname{tr}(UV)|\le\|U\|_1\|V\|$,
+prueba la convergencia uniforme de los integrandos y la convergencia de sus integrales.
+\end{proof}
+
+\begin{teorema}[Límite del pseudodeterminante canónico]\label{thm:pdet}
+Con $I_2=\int\nu^2$ y $J=\mathcal K+P_0$ definido en la Sección~\ref{sec:D03},
+\[
+ \log\operatorname{pdet}S_n
+ \longrightarrow C_S:=1+12I_2+\mathcal D(J).           \tag{D4.3}
+\]
+\end{teorema}
+\begin{proof}
+El único autovalor cero de $S_n$ es reemplazado por uno en
+$I+J_n=S_n+P_n$, por lo que (D4.2) da exactamente
+\[
+ \log\operatorname{pdet}S_n
+       =\operatorname{tr}J_n+\mathcal D(\widehat J_n).
+\]
+Los ceros adicionales del espectro de $\widehat J_n$ no contribuyen a
+$\mathcal D$. La fórmula (D3.2) da el límite de la traza;
+(D3.6) y el Lema~\ref{lem:continuidad} dan el segundo límite.
+\end{proof}
+
+\paragraph{Observación.}
+El término $12I_2$ conserva la traza de una diagonal que desaparece
+en norma de Hilbert--Schmidt: no puede obtenerse tomando la traza del operador límite.
+La identidad integral (D4.1) sólo usa la positividad en el segmento $I+tJ$;
+no presupone $\|J\|<1$.

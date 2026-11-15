@@ -1,0 +1,58 @@
+\subsection{La corrección relativa es \texorpdfstring{$O(k^{-1})$}{O(1/k)} en la clase con brecha}\label{sec:B3T06}
+Conservamos la notación de la Sección~\ref{sec:B3T05} y ponemos $q=1-p$.
+La fórmula de Jacobi de la Sección~\ref{sec:B3T01} se puede escribir, en esta rama pequeña,
+\[
+ (\nabla\ell)_e=\frac{6p_e}{q_e(1-4p_e)}
+ -\frac12\left[
+ \frac{q_e^2+3p_e^2}{(1-4p_e)^2}A_eGA_e^T
+ -\sum_{d\ni e}G_{dd}\right].
+\]
+La suma final contiene las dos diagonales, no las restricciones RC.
+Esta expresión se sigue también de derivar el factor local y $S_{\rm gf}$:
+$\partial_{p_e}\tau_e=(q_e^2+3p_e^2)/(1-4p_e)^2$,
+mientras que el bloque diagonal RC de $S$ permanece idénticamente cero.
+La Sección~\ref{sec:B3T05} implica $A_eGA_e^T=4+O(k^{-1})$ y
+$\sum_{d\ni e}G_{dd}=2+O(k^{-1})$.
+Además $p_e=O(k^{-1})$, por lo que
+\[
+ \boxed{\nabla_p\ell=-\mathbf1+O_\infty(k^{-1}).}
+\]
+El término constante es una dirección normal RC, no una corrección
+efectiva a las probabilidades.
+
+\paragraph{Respuesta relativa.}
+El complemento de Schur del bloque $N$ da, usando formas invariantes
+bajo el gauge,
+\[
+ R=T-TAG A^TT.
+\]
+Como $\|P^{-1}T\|_\infty\le2$, $\|A\|_\infty=4$ y
+$\|A^TT\|_\infty=\max_\ell\sum_{e\in\ell}\tau_e\le2$ para $k$ grande,
+\[
+ \|P^{-1}R\|_\infty
+ \le2(1+8\|G\|_\infty)=O_{\delta_0}(1).
+\]
+El vector constante $\mathbf1$ está en el espacio normal de las restricciones
+RC, por lo que $R\mathbf1=0$. La Sección~\ref{sec:B3T01} y las dos estimaciones anteriores dan
+\[
+ \boxed{\delta=P^{-1}R(\nabla\ell+\mathbf1)=O_\infty(k^{-1}).}
+\]
+En particular, $1+\delta_e>0$ para $k$ suficientemente grande en esta clase.
+La prueba no necesita una cota inferior adicional para $p_e$, pero sí
+$p_e>0$, las vacancias y la brecha ponderada uniformes de la Sección~\ref{sec:B3T05}.
+
+\paragraph{Cancelación de primer orden en la parte derivativa.}
+La identidad exacta $\sum_{c\in r}p_c\delta_c=0$ de la Sección~\ref{sec:B3T01} implica
+\[
+ \sum_{c\in r}p_c\log(1+\delta_c)
+ =-\frac12\sum_{c\in r}p_c\delta_c^2+O(k^{-3})=O(k^{-2}).
+\]
+Así se cancela el primer orden de la parte derivativa. Para el defecto
+real de inserción sigue siendo necesario añadir $r_c$:
+\[
+ \mathbb E_p\epsilon
+ =\mathbb E_p r-\tfrac12\mathbb E_p\delta^2+O(k^{-3}).
+\]
+La Sección~\ref{sec:macro} controla $r_c$. El resultado vale
+uniformemente en la clase declarada; no se afirma que todo residual legal
+de reinas pertenezca a ella.

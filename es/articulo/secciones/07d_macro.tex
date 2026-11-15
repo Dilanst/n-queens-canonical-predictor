@@ -1,0 +1,90 @@
+\subsection{Frontera exacta y escalar reducido}\label{sec:B4T04}
+Se usan las Secciones~\ref{sec:B4T01}--\ref{sec:B4T03}, con $z=\bar p-w$, $u=d-D^Tz$ y
+\[
+ \mathcal K(a,t)=(a+t)\log\frac{a+t}{a}-t,
+ \qquad \mathcal K(a,-a)=a.
+\]
+Las convenciones de $0\log0$ se toman por continuidad.
+El padre es estacionario para $H_B$, no para $H_B+\ell$.
+
+\paragraph{Identidad de acción sin desarrollo de Taylor en las casillas eliminadas.}
+Extendamos $\bar p$ al soporte padre poniendo uno en $c$ y cero en
+$F\setminus\{c\}$. El incremento conserva todas las restricciones RC,
+de modo que el término lineal del gradiente parental se anula exactamente.
+La identidad de Bregman de cada sumando de $H_B$ da
+\[
+ \boxed{\begin{aligned}
+ H_{\rm hijo}(\bar p)-H_{\rm padre}(p)-\log p_c
+ ={}&-3\sum_{F\setminus c}(\log q_e+p_e)
+ -\sum_{E'}\mathcal K(p_e,z_e)\\
+ &+3\sum_{E'}\mathcal K(q_e,-z_e)
+ -\sum_{D\cap I}\mathcal K(h_d,u_d).
+ \end{aligned}}
+\]
+Los términos de frontera se verifican directamente: la casilla $c$ aporta $\log p_c+4q_c$,
+las demás casillas eliminadas aportan $-3\log q_e-4p_e$ y las dos
+diagonales eliminadas aportan $-h_{D_+}-h_{D_-}$.
+Se usa la identidad exacta
+$\sum_{F\setminus c}p_e=4q_c-h_{D_+}-h_{D_-}$.
+Las cuatro líneas ordinarias sólo se cortan en $c$.
+
+\paragraph{Cancelación local de primer orden.}
+Con $b(p)=(1-4p)/(1-p)^4$, el factor local y el bloque retirado dan
+\[
+ -3\sum_{F\setminus c}(\log q_e+p_e)
+ +\tfrac12\sum_F\log b(p_e)+\tfrac12\log\det S_{JJ}=O(k^{-2}).
+\]
+En efecto, los tres términos principales son, respectivamente,
+$\tfrac32\sum_Fp_e^2$, $-3\sum_Fp_e^2$ y $\tfrac32\sum_Fp_e^2$.
+La multiplicidad cuatro de $c$ sólo produce un cambio $O(p_c^2)=O(k^{-2})$.
+Los restos se acotan por $\sum_Fp_e^3=O(k^{-2})$ y
+$\|S_{JJ}-I\|^2=O(k^{-2})$, pues $J$ tiene tamaño cuatro.
+
+\paragraph{Expansión en el punto reequilibrado.}
+Sean $L=H+\ell+\tfrac12\log(2\pi)$ en ambos soportes conexos y
+\[
+ R_{c0}=L_{\rm hijo}(\bar p)-L_{\rm padre}(p)-\log p_c.
+\]
+Un desarrollo de Taylor sólo en las coordenadas supervivientes y en las vacancias positivas,
+junto con la Sección~\ref{sec:B4T01}, produce
+\[
+ \boxed{R_{c0}=-\tfrac12\left(\sum_{E'}\frac{z_e^2}{p_e}
+                  +\sum_{D\cap I}\frac{u_d^2}{h_d}\right)
+ +6\sum_{E'}p_ez_e-\tfrac12\operatorname{tr}W_c
+ +\tfrac14\operatorname{tr}W_c^2+O(k^{-2}).}
+\]
+Se han usado $\sum z^2=O(k^{-2})$, $\sum z^2/p=O(k^{-1})$ y
+$\sum u^2/h=O(k^{-1})$. Los restos cúbicos son $O(k^{-2})$.
+El cambio del factor local en las casillas supervivientes satisface
+$-\tfrac12\sum_{E'}\log[b(p+z)/b(p)]=6\sum pz+O(k^{-2})$.
+
+También se tiene $\operatorname{tr}W_c=O(k^{-1})$:
+la diagonal de $\mathcal E$ es $O(k^{-2})$ después de corregir las masas RC,
+$\|\mathcal E\|_\infty=O(k^{-1})$, y
+$P_c^+=\Pi_I^\perp G_{II}\Pi_I^\perp=I+O_{\max}(k^{-1})$.
+Aquí $\Pi_I$ proyecta sobre $v_I$; la igualdad se verifica resolviendo
+$S(a,y)=(0,f)$ para $f\perp v_I$ y proyectando $y$.
+Hay $O(k)$ líneas, por lo que $\sum_{ij}|\mathcal E_{ij}|=O(1)$.
+
+\paragraph{Escalar reducido.}
+Sean $e$ el residuo de la Sección~\ref{sec:B4T02}, $\bar R$ su respuesta, $\bar g=\nabla\ell(\bar p)$
+y $\delta_c=(R_{\rm padre}\nabla\ell(p))_c/p_c$.
+Las Secciones~\ref{sec:B4T02}--\ref{sec:B4T03} y $\log(1+\delta_c)=\delta_c+O(k^{-2})$ dan
+\[
+ r_c=L_{\rm hijo}(p^*)-L_{\rm padre}(p)-\log[p_c(1+\delta_c)]
+       =\mathcal C_c+O(k^{-2}),
+\]
+\[
+ \boxed{\begin{aligned}
+ \mathcal C_c={}&-\tfrac12\left(\sum_{E'}z_e^2/p_e+
+                                \sum_{D\cap I}u_d^2/h_d\right)
+ +6\sum_{E'}p_ez_e\\
+ &-\tfrac12\operatorname{tr}W_c+\tfrac14\operatorname{tr}W_c^2
+ +\tfrac12e^T\bar R e+\bar g^T\bar R e-\delta_c.
+ \end{aligned}}
+\]
+Todos sus términos se definen a partir del padre, del reequilibrado de la Sección~\ref{sec:B3T07} y
+de un paso de Newton, sin resolver de nuevo el hijo. Estas estimaciones dan
+$\mathcal C_c=O(k^{-1})$. Las Secciones~\ref{sec:B4T06}--\ref{sec:B4T09} prueban
+$\mathcal C_c=O(k^{-2})$ mediante la resolvente de diagonal uno.
+Esta cancelación total es distinta de la cancelación local probada más arriba.

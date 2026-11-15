@@ -1,0 +1,108 @@
+\appendix
+\section{Un caso modelo: las torres}\label{sec:torres}
+
+En este apéndice estudiamos la construcción del predictor en el modelo de torres, en el que sólo hay
+filas y columnas. Allí todo es explícito, y se puede probar que la fórmula de Bethe con la corrección de
+un lazo y la normalización exacta del modo cero aproxima el logaritmo del conteo con error $O(1/k)$,
+uniformemente desde densidades positivas hasta el tablero lleno. Ninguna prueba del resto del artículo
+usa este apéndice, que tiene notación propia: aquí $p$ es la probabilidad de casilla de Bethe,
+$\pi=3{,}14159\ldots$ y $D$ es una ley de probabilidad.
+
+\subsection{Definiciones y enunciado}
+
+\paragraph{El modelo.}
+Sea $k\ge3$. En el tablero de $k\times k$, las líneas son las $k$ filas y las $k$ columnas. Para
+$\lambda>0$ ponemos
+\[
+ Z_k(\lambda)=\sum_{q=0}^{k}\binom kq^2q!\,\lambda^q,
+\]
+que es la suma, sobre todas las colocaciones de torres que no se atacan, del peso $\lambda^q$, donde $q$
+es el número de torres. Para obtener
+el coeficiente se eligen primero las $q$ filas ocupadas y las $q$ columnas ocupadas; después, cada
+biyección entre los dos conjuntos coloca una torre en cada fila elegida y da lugar a una de las $q!$
+colocaciones posibles para esa elección. Escribimos $\Lambda=\lambda(k-1)$.
+
+\paragraph{El punto fijo de Bethe uniforme.}
+La probabilidad de casilla $p\in(0,1/k)$ y la probabilidad de línea vacía $y\in(0,1)$ cumplen
+\begin{equation}\label{eq:torres-punto}
+ p(1-p)=\lambda y^2,\qquad y=1-kp.
+\end{equation}
+Es la ecuación general $p_c(1-p_c)^{d-1}=\lambda\prod_{L\ni c}y_L$, con $y_L=1-\sum_{c\in L}p_c$
+y $d$ el número de líneas que pasan por cada casilla, para $d=2$ y todas las variables iguales. Ponemos $\theta=1-y=kp$, la media de Bethe del número de torres por fila,
+$w=p/(1-p)$ y $u=k\theta/(1-p)$.
+
+\paragraph{Las tres piezas de la fórmula.}
+En ese punto fijo definimos:
+\begin{itemize}
+\item el término de árbol
+ \[
+  \log Z_B=(\log\lambda)\sum_cp-\sum_Ly\log y-\sum_cp\log p+\sum_c(1-p)\log(1-p),
+ \]
+ donde $c$ recorre las $k^2$ casillas y $L$ las $2k$ líneas;
+\item la matriz de un lazo $M$, que actúa sobre los $2k^2$ estados $(c,f)$, con
+ $f\in\{\text{fila},\text{columna}\}$: $M[(c,f),(c',f')]=w$ si $f'\ne f$, $c'$ está en la línea de la
+ familia $f'$ que pasa por $c$ y $c'\ne c$, y $M[(c,f),(c',f')]=0$ en otro caso;
+\item el factor del modo cero $\rho_0=\mathsf P/P_G$, donde $\mathsf P=\mathbb P(N_R=N_C)$ para dos variables
+ independientes $N_R$ y $N_C$ con ley $\mathrm{Bin}(k,y)$, que representan los números auxiliares de filas y
+ columnas vacías en el modelo de Bethe, y $P_G=(2\pi(V_R+V_C))^{-1/2}$, con $V_R=V_C=ky(1-y)$.
+\end{itemize}
+La fórmula y su resto son
+\begin{equation}\label{eq:torres-formula}
+ F_k(\lambda)=\log Z_B-\tfrac12\log\det(I+M)+\log\rho_0,\qquad R'_k(\lambda)=\log Z_k(\lambda)-F_k(\lambda).
+\end{equation}
+
+\begin{teorema}[Modelo de torres]\label{thm:torres}
+El resto $R'_k$ de~\eqref{eq:torres-formula} cumple lo siguiente.
+\begin{enumerate}[(i)]
+\item \emph{Cota uniforme.} Para cada $\Lambda_0>0$ existe una constante $C=C(\Lambda_0)$ tal que, para
+ todo $k\ge3$ y todo $\lambda$ con $\Lambda=\lambda(k-1)\ge\Lambda_0$, se tiene $|R'_k(\lambda)|\le C/k$.
+ Además, $R'_k(\lambda)$ tiene un límite $R'_k(\infty)$ cuando $\lambda\to\infty$, y la misma cota vale
+ para él.
+\item \emph{Tablero lleno.}
+ \[
+ \begin{aligned}
+  R'_k(\infty)={}&\log k!-k\log k-k(k-1)\log\bigl(1-\tfrac1k\bigr)
+  +\tfrac12(k-1)^2\log\bigl(1-(k-1)^{-2}\bigr)\\
+  &+\tfrac12\log\frac{2k}{k-1}+(k-1)\log\frac k{k-1}-\tfrac12\log(4\pi k),
+ \end{aligned}
+ \]
+ y $R'_k(\infty)=-\frac1{12k}-\frac1{4k^2}+O(k^{-3})$.
+\item \emph{Hace falta $\Lambda_0>0$.} Para cada $k$ fijo, $R'_k(\lambda)=-\frac12\log(4\pi k^2\lambda)+o(1)$
+ cuando $\lambda\to0^+$. En particular, $R'_k$ no está acotado en $\lambda\in(0,\infty)$.
+\end{enumerate}
+\end{teorema}
+
+Los tres primeros términos de (ii) son $\log k!-\log\operatorname{perm}_B(J_k)$, donde $J_k$ es la matriz
+$k\times k$ de unos y $\operatorname{perm}_B$ es el permanente de Bethe~\cite{Vontobel}.
+
+\begin{observacion}[Por qué $k\ge3$]
+Para $k=2$ coinciden los factores $1-(k-1)^2w^2$ y $(1-w^2)^{(k-1)^2}$ del Lema~\ref{lem:torres-lazo}, y
+$\det(I+M)=(1-w^2)^2(1+w^2)^2$ se anula como $y^2$ cuando $y\to0$. Entonces
+$-\frac12\log\det(I+M)\sim-\log y$ no se compensa con el $\frac12\log y$ de $\log\rho_0$, y $R'_2\to-\infty$
+como $-\frac14\log\Lambda$. Para $k\ge3$ sólo el factor $1-(k-1)^2w^2$ se anula cuando $y\to0$, lo hace
+como $y$, y la cancelación es exacta (Sección~\ref{sec:torres-i}).
+\end{observacion}
+
+\begin{observacion}[La constante $C(\Lambda_0)$]
+Por (iii), para cada $k$ fijo, $\sup\{|R'_k(\lambda)|:\lambda(k-1)\ge\Lambda_0\}\to\infty$ cuando
+$\Lambda_0\to0$, así que $C(\Lambda_0)$ tiende necesariamente a infinito cuando $\Lambda_0\to0$. La prueba de (i) da una
+cota explícita sólo para $k\ge k_2(\Lambda_0)$, con $k_2$ muy grande; para $3\le k<k_2$ la cota sale de un
+argumento de compacidad.
+\end{observacion}
+
+\paragraph{Idea de la prueba.}
+Una identidad exacta (Lema~\ref{lem:torres-identidad}) escribe
+$Z_k=Z_B\,(1-p)^{-k^2}\,\mathsf P\,\mathbb E_D[q!\,u^{-q}]$, donde $\mathbb E_D$ es un promedio sobre la ley
+$D$ del número de filas ocupadas condicionada a $N_R=N_C$; el factor
+$(1-p)^{-k^2}\approx e^{k\theta+\theta^2/2}$ no es despreciable. En el límite del tablero lleno se
+tiene $\mathsf P\to1$ y $D$ se concentra en $q=k$. Tras dividir por $\lambda^k$, la identidad se
+convierte en el caso de la matriz de unos de la fórmula de Watanabe y Chertkov~\cite{WC}, que expresa
+el permanente de una matriz no negativa como el producto de su permanente de Bethe, del permanente de
+la matriz de entradas $\beta_{ij}(1-\beta_{ij})$ y del factor $\prod_{i,j}(1-\beta_{ij})^{-1}$, donde
+$\beta$ es la matriz doblemente estocástica del punto fijo de Bethe. Para la matriz de unos,
+$\beta_{ij}=1/k$, y esos tres factores son los límites de $Z_B/\lambda^k$, de
+$\mathbb E_D[q!\,u^{-q}]$ y de $(1-p)^{-k^2}$. El factor discreto $\mathsf P$, que es el
+modo cero, se cancela exactamente con el de la fórmula. Queda el promedio $\mathbb E_D[q!\,u^{-q}]$ de una
+función que varía despacio, y ese promedio se evalúa con el método de Laplace en una variable. Las cotas
+necesarias salen de que $D$ es una ley de Poisson binomial, cuyos parámetros vienen de los ceros de los
+polinomios de Legendre, y de la desigualdad de Bruns.

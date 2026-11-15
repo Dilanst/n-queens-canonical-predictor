@@ -1,0 +1,71 @@
+\subsection{Resolvente de líneas en la clase con brecha RC}\label{sec:B3T05}
+Consideramos residuales del tablero ordinario con $k\ge\delta_0 n$. Además de las hipótesis de la
+Sección~\ref{sec:B3T01}, suponemos, con constantes independientes de $k$:
+\[
+ p_e\le C/k,\quad h_D\ge\eta>0,\quad
+ \lambda_2(\mathscr L_p)\ge\gamma>0.
+\]
+Aquí $\mathscr L_p$ es el laplaciano RC ponderado por $p$ del grafo
+conexo de filas y columnas. La brecha corresponde a los pesos,
+no solamente al soporte. No se demuestra aquí que todo residual
+relevante cumpla estas hipótesis. El número de líneas satisface
+$m\le6n-2\le6k/\delta_0$.
+
+Para $k$ grande, $p_e<1/4$. Ponemos $P=\operatorname{diag}p$ y
+\[
+ \tau_e=\frac{p_e(1-p_e)}{1-4p_e},\quad T=\operatorname{diag}\tau,
+ \quad S=\operatorname{diag}(0_{RC},h_D)+A^TTA,
+\]
+donde $A$ es la incidencia casilla--línea completa.
+El núcleo de $S$ es la recta generada por $V=(\mathbf1_R,-\mathbf1_C,0_D)^T$;
+$\Pi=VV^T/(2k)$ es el proyector ortogonal sobre ella y $G=S^+$ es la pseudoinversa de $S$.
+\paragraph{Brecha de $S$.}
+Para variables de líneas $(y,z)$ con $y\perp V$, como $\tau\ge p$,
+\[
+ (y,z)^TS(y,z)\ge
+ \|P^{1/2}(A_{RC}y+A_Dz)\|_2^2+\eta\|z\|_2^2.
+\]
+La brecha RC da $\|P^{1/2}A_{RC}y\|^2\ge\gamma\|y\|^2$.
+Las dos incidencias diagonales por casilla y las masas diagonales, que son a lo sumo uno, dan
+$\|P^{1/2}A_Dz\|^2\le2\|z\|^2$.
+Usando $\|a+b\|^2\ge\theta\|a\|^2-\theta\|b\|^2/(1-\theta)$,
+con $\theta=\eta/(\eta+4)$, resulta
+\[
+ S|_{V^\perp}\succeq c_* I,\quad
+ c_*=\min\{\eta\gamma/(\eta+4),\eta/2\}>0.
+\]
+En particular $\|G\|_2\le c_*^{-1}$.
+
+\paragraph{Control por entradas.}
+Puesto que $\tau-p=3p^2/(1-4p)$ y la masa de cada línea es a lo sumo uno,
+$S_{\ell\ell}=1+O(k^{-1})$ para todas las líneas.
+Dos líneas distintas se cortan en a lo sumo una casilla, de modo que
+$S_{\ell j}=O(k^{-1})$ si $\ell\ne j$. Cada línea contiene a lo sumo
+$k$ casillas y tiene a lo sumo $3k$ vecinas con entrada no nula.
+Así, para $W=I-S$, $\|W_{\ell,*}\|_2=O(k^{-1/2})$.
+La identidad exacta
+\[
+ G=I+W-2\Pi+WGW
+\]
+se comprueba en cada espacio propio de $S$, incluido su núcleo.
+No exige $\|W\|<1$ ni expansión en serie.
+Como $|\Pi_{ij}|\le1/(2k)$,
+\[
+ |(WGW)_{ij}|\le c_*^{-1}\|W_{i,*}\|_2\|W_{j,*}\|_2,
+ \qquad \boxed{G_{ij}=\mathbf1_{i=j}+O(k^{-1}).}
+\]
+Al haber $O_{\delta_0}(k)$ líneas, $\|G\|_{\infty\to\infty}=O_{\delta_0}(1)$.
+Todas las constantes dependen sólo de $\delta_0,C,\eta,\gamma$.
+
+\paragraph{Comparación con el gauge fijado.}
+El subíndice «gf» indica que el gauge se ha fijado como en la Sección~\ref{sec:B3T01}: en las matrices
+y los vectores indexados por las líneas se suprime la coordenada de la línea de columna cuya
+restricción se omitió.
+La inversa con gauge fijado no coincide con $G$ en todas sus entradas RC,
+pero sí coinciden las formas sobre vectores ortogonales a $V$.
+En particular, la fila de incidencia $A_e$ cumple $A_eV=0$ y
+\[
+ A_{e,\rm gf}S_{\rm gf}^{-1}A_{e,\rm gf}^T=A_eGA_e^T=4+O(k^{-1}).
+\]
+Para una línea diagonal $d$ se tiene $e_d\perp V$ y
+$(S_{\rm gf}^{-1})_{dd}=G_{dd}=1+O(k^{-1})$.

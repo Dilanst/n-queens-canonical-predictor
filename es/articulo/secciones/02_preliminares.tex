@@ -1,0 +1,84 @@
+\section{Preliminares}\label{sec:preliminares}
+
+\paragraph{Tablero y líneas.}
+Las casillas del tablero son los pares $(i,j)$ con $1\le i,j\le n$; $i$ es la fila y $j$ la columna.
+Hay cuatro familias de líneas: las filas $R_i$, las columnas $C_j$, las diagonales
+$D_k=\{i-j=k\}$, $-n<k<n$, y las antidiagonales $A_l=\{i+j-1=l\}$, $0<l<2n$. Son $n$, $n$,
+$2n-1$ y $2n-1$ líneas, $6n-2$ en total. Cada casilla está en exactamente cuatro líneas, una de cada
+familia, y dos líneas de familias distintas se cortan en a lo sumo una casilla.
+Numeramos filas y columnas desde uno, y no desde cero como en~\cite{Perfil}
+y~\cite{Completabilidad}: la casilla $(i,j)$ de este artículo es allí la $(i-1,j-1)$, la diagonal
+$D_k$ es la de diferencia $k$ y la antidiagonal $A_l$ es la de suma $l-1$.
+En la Figura~\ref{fig:incidencia} se pueden leer las cuatro etiquetas de una sola casilla.
+\input{figuras/incidencia}
+
+Escribimos $A$ para la matriz de incidencia, con una fila por casilla y una columna por línea.
+Para $p\in\mathbb R^{n^2}$ y una línea $L$ ponemos
+\[
+ m_L(p)=\sum_{c\in L}p_c,\qquad h_L(p)=1-m_L(p).
+\]
+
+La cantidad $m_L$ es la masa asignada a $L$, y $h_L$, lo que le falta para llegar a uno, es su vacancia.
+Por ejemplo, si se reparte uniformemente $1/5$ en cada casilla del tablero de la figura, cada
+fila suma uno y la diagonal $D_{-1}$ suma $4/5$: su vacancia es $1/5$.
+
+\paragraph{El perfil continuo de masa uno.}
+Para comparar tableros de tamaños distintos se divide cada coordenada por $n$ y se
+trabaja en un cuadrado fijo. Las líneas discretas dan entonces proyecciones del perfil.
+Seguimos la notación de~\cite{Perfil}. En el cuadrado $[0,1]^2$, con coordenadas $(r,c)$, las
+proyecciones de las cuatro familias son $\ell_R=r$, $\ell_C=c$, $\ell_D=r-c$ y $\ell_A=r+c$, con
+valores en $I_R=I_C=[0,1]$, $I_D=[-1,1]$ e $I_A=[0,2]$. Para una densidad $\nu\ge0$, $m_f$ es su
+proyección sobre la familia $f$ y $u_f=1-m_f$ su vacancia. La clase admisible de masa uno,
+$\mathcal A_1$, está formada por las densidades de masa uno con $m_f\le1$ en casi todo punto, y
+\[
+ s[\nu]=-3-\int_{[0,1]^2}\nu\log\nu-\sum_{f}\int_{I_f}u_f\log u_f
+\]
+es el funcional de~\cite[(1.1)]{Perfil} en masa uno. Por~\cite[Teorema~1.1]{Perfil}, $s$ alcanza su
+supremo en $\mathcal A_1$ en una única densidad $\nu=\nu_1$. Definimos el valor óptimo en masa
+uno, que en~\cite{Perfil} se escribe $s^*(1)$ y aquí, como en~\cite{Completabilidad}, $s_1$, y dos
+cantidades asociadas:
+\begin{equation}\label{eq:s1}
+ s_1=s[\nu_1]=\sup_{\nu\in\mathcal A_1}s[\nu],\qquad \Phi=s_1+1,\qquad I_2=\int_{[0,1]^2}\nu_1^2 .
+\end{equation}
+En masa uno las vacancias de filas y columnas son nulas, de modo que sólo contribuyen las de las
+diagonales. Según~\cite[Observación~2.3]{Perfil}, $s$ tiene entonces, sobre las densidades admisibles,
+la misma expresión que la entropía del problema variacional de
+Simkin~\cite[Definición~2.9]{Simkin}. En~\cite{Simkin}, $-\alpha$ es el máximo de esa entropía en
+una clase de medidas definida por clausura (Teorema~2.24 y Lema~2.22), y la Observación~2.7 de ese
+artículo precisa, para las medidas absolutamente continuas, la relación entre esa clase y la
+definida por las restricciones de proyección. Con la correspondencia anterior y esa observación se
+seguiría $\alpha=-s_1$, es decir, $\Phi=1-\alpha$ y $\log Q(n)=\log n!+n\Phi+o(n)$. Llamamos a esto
+la identificación con el problema de Simkin. No la usamos en ninguna prueba: la definición
+$\Phi=s_1+1$ y los teoremas del predictor son independientes de ella.
+
+Por~\cite[Teoremas~1.2 y~1.3 y Proposición~5.2]{Perfil}, el perfil de masa uno se factoriza como
+\begin{equation}\label{eq:factorizacion}
+ \nu_1(r,c)=b_0\,r_R(r)\,r_C(c)\,u_D(r-c)\,u_A(r+c),
+\end{equation}
+con $b_0>0$ y funciones $r_R,r_C,u_D,u_A$ continuas, positivas y Lipschitz, $\int_0^1r_R=\int_0^1r_C=1$.
+En esos resultados, estos factores son los límites del perfil reescalado en el tablero lleno y
+se escriben $b_0$, $r_{R,0}$, $r_{C,0}$, $u_{D,0}$ y $u_{A,0}$; como en~\cite{Completabilidad},
+omitimos el subíndice salvo en la constante $b_0$.
+Las marginales de filas y columnas de $\nu_1$ valen uno, y $u_f+m_f=1$ para $f=D,A$, donde
+$m_f$ es la proyección de $\nu_1$ sobre la familia $f$. Existen constantes positivas
+$c_\nu\le C_\nu$, $\kappa_\nu\le1$ y $L_\nu$ tales que
+\[
+ c_\nu\le\nu_1\le C_\nu,\qquad \kappa_\nu\le u_D,u_A\le1,
+\]
+y $L_\nu$ es una constante de Lipschitz de $\nu_1$ para la distancia del máximo. Las Secciones~\ref{sec:perfil}
+y~\ref{sec:constante} usan del perfil continuo sólo estas propiedades. En ellas escribimos $\nu$
+por $\nu_1$.
+
+\paragraph{Convenciones.}
+Las constantes $C,c,M,\eta,\kappa,\dots$ no dependen de $n$ salvo que se indique lo contrario;
+$O(\cdot)$ y $o(\cdot)$ se refieren a $n\to\infty$. En las Secciones~\ref{sec:insercion}
+a~\ref{sec:meso} el parámetro es el número $k$ de filas vacías: allí $O(\cdot)$ se refiere a
+$k\to\infty$, y cada sección indica de qué dependen las constantes. La letra $h$, que
+en~\cite{Completabilidad} designa ese número, se usa aquí para las vacancias. En las Secciones~\ref{sec:perfil}
+y~\ref{sec:constante} las ecuaciones llevan rótulos propios de cada subsección, como (P1.3) o (D2.5).
+En los logaritmos de normalización $\log(4\pi n)$ y $\log(2\pi)$, en la fórmula de Stirling, en el
+punto de Slater de la Sección~\ref{sec:P01} y en el Apéndice~\ref{sec:torres}, $\pi$ denota
+$3{,}14159\ldots$; en el resto, $\pi=\pi^{(n)}$ es el maximizador canónico y $\pi_c$ el peso de la
+casilla $c$. Algunas letras que en~\cite{Perfil} tienen un significado fijo, como $\rho$, $x$, $\lambda$,
+$\ell$, $u$, $F$, $J$, $L$ o $\mathcal H$, designan en algunas secciones de este artículo otros objetos,
+que se definen donde aparecen; por ejemplo, $\rho(B)$ no es una masa.

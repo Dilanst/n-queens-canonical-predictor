@@ -1,0 +1,90 @@
+\begin{proposicion}\label{prop:torres-laplace}
+Para cada $\theta_0\in(0,1]$ existen $k_2(\theta_0)$ y $C_1(\theta_0)$ tales que, si $\theta\in[\theta_0,1)$ y
+$k\ge k_2$,
+\[
+ \log\mathbb E_D[q!\,u^{-q}]=\log u-u+\tfrac12\log(2\pi)-\tfrac12\log(u-\sigma_D^2)+\varepsilon',\qquad
+ |\varepsilon'|\le C_1/k.
+\]
+\end{proposicion}
+\begin{proof}
+\emph{Hipótesis del Lema~\ref{lem:torres-laplace}.} Tomamos $\delta=0{,}3$, $a=0{,}08\,k\theta_0$, $b=2k$,
+$r=a/b=0{,}04\,\theta_0$ y $V=u$. Las hipótesis (L1)--(L3) se cumplen por el Lema~\ref{lem:torres-psi}, y
+(L5) vale porque $\Psi(v^*)\ge\Psi(0)=-u$. En cuanto a (L4), $\Psi'$ es estrictamente decreciente en
+$[-\delta,\infty)$, con pendiente a lo sumo $-a$; por tanto $\Psi'(\delta/2)\le\Psi'(0)-a\delta/2$ y
+$\Psi'(-\delta/2)\ge\Psi'(0)+a\delta/2$. Como $|\Psi'(0)|\le4{,}5<a\delta/2$ si $k\theta_0>375$, el primero
+es negativo y el segundo positivo. Hay entonces un único $v^*$ con $\Psi'(v^*)=0$, y
+$|v^*|\le|\Psi'(0)|/a\le4{,}5/a\le\delta/2$.
+
+\emph{Tamaño del error.} Como $K''\ge0$ y $|v^*|\le\delta/2$,
+$A=ue^{v^*}-K''(v^*)\le ue^{\delta/2}\le1{,}1\,e^{0{,}15}k\le1{,}28k$; junto con $A\ge a$, se tiene
+$a\le A\le1{,}28k$. Los dos primeros términos de la cota de $|\varepsilon|$ son $O(1/k)$:
+$b/(8A^2)\le2k/(8a^2)$ y $6b^2/A^3\le6b^2/a^3=46875/(\theta_0^3k)$. Con $\theta_0$ fijo, $r$ es constante,
+$V=O(k)$ y $A$ es de orden $k$; por tanto, los términos de cola son
+$O_{\theta_0}(k^{3/2}e^{-c(\theta_0)k})$, con $c(\theta_0)>0$. Tomando $0<c'<c(\theta_0)$ se absorbe el
+prefactor en $O_{\theta_0}(e^{-c'k})$. Al sumar los dos términos algebraicos y las colas se ve que existe
+$k_2(\theta_0)$ tal que $|\varepsilon|\le1/2$ para $k\ge k_2$. Entonces
+$|\log(1+\varepsilon)|\le2|\varepsilon|$.
+
+\emph{Valor en el máximo.} Por Taylor en $0$ con $\Psi''\le-a$,
+$\Psi(v^*)\le\Psi(0)+\Psi'(0)v^*-av^{*2}/2\le\Psi(0)+\Psi'(0)^2/(2a)$. Por tanto
+$0\le\Psi(v^*)-\Psi(0)\le\Psi'(0)^2/(2a)\le10{,}2/a=O(1/k)$.
+
+\emph{Curvatura.} Como $A=ue^{v^*}-K''(v^*)$,
+\[
+ |A-(u-\sigma_D^2)|\le ue^{\delta}|v^*|+\sigma_D^2\bigl(e^{|v^*|}-1\bigr)\le1{,}35\,(u+\sigma_D^2)\cdot4{,}5/a=O(1),
+\]
+porque $u+\sigma_D^2\le1{,}35k$. Como $u-\sigma_D^2\ge k\theta_0/2-3{,}1$, se tiene
+$|\log A-\log(u-\sigma_D^2)|=O(1/k)$.
+
+\emph{Conclusión.} Por~\eqref{eq:torres-laplace},
+$\log\mathbb E_D[q!\,u^{-q}]=\log u+\Psi(v^*)+\frac12\log(2\pi/A)+\log(1+\varepsilon)$, de donde sale el
+enunciado.
+\end{proof}
+
+El umbral $k\ge93750/\theta_0^3$ hace que $46875/(\theta_0^3k)\le1/2$; para acotar $|\varepsilon|$ por $1/2$
+se elige $k_2$ considerando la suma completa. La constante $C(\Lambda_0)$ del Teorema~\ref{thm:torres}(i)
+se obtiene además con un argumento de compacidad para $3\le k<k_2$.
+
+\subsection{Prueba del Teorema~\ref{thm:torres}}\label{sec:torres-i}
+
+\paragraph{Parte (i).}
+Sea $\Lambda_0\le\Lambda<\infty$, de modo que $\theta\in[\theta_0,1)$ por el Lema~\ref{lem:torres-punto}; el
+caso $\lambda=\infty$ se trata al final por paso al límite. Sustituimos en~\eqref{eq:torres-identidad} la
+Proposición~\ref{prop:torres-laplace} y el Lema~\ref{lem:torres-lazo}. El término $\frac12\log y$ del
+Lema~\ref{lem:torres-lazo} se cancela con el $-\frac12\log y$ de $-\frac12\log(4\pi ky\theta)$: es la
+cancelación del modo cero. Usando además $\log u=\log(k\theta)-\log(1-p)$ y el
+Lema~\ref{lem:torres-psi}(d) para $\log(u-\sigma_D^2)=\log(k\theta(1+\theta)/2)+O(1/k)$, queda
+\[
+\begin{aligned}
+ R'_k={}&-u-2\log(1-p)-k^2\log(1-p)-\tfrac12\log(1+\theta)+\tfrac12(k-1)^2\log(1-w^2)\\
+ &+\tfrac12\log(1+(k-2)p)+(k-1)\log(1+(k-1)w^2)+O(1/k).
+\end{aligned}
+\]
+Hacemos los desarrollos con $p=\theta/k\le1/k$, $w\le1/(k-1)\le\frac12$ y $k\ge3$; todas las cotas son
+uniformes en $\theta\in[0,1]$.
+\begin{enumerate}[(a)]
+\item $-k^2\log(1-p)=k\theta+\theta^2/2+e_1$, con $0\le e_1\le\frac23k^2p^3\le\frac2{3k}$.
+\item $-u=-k\theta-\theta^2/(1-p)=-k\theta-\theta^2-e_2$, con $0\le e_2=\theta^2p/(1-p)\le2/k$.
+\item $0\le-2\log(1-p)\le2p/(1-p)\le4/k$.
+\item $\frac12(k-1)^2\log(1-w^2)=-\theta^2/2+e_4$, con $|e_4|\le2/k$. En efecto, si
+ $\zeta=(1-1/k)/(1-\theta/k)\in[1-1/k,1]$, entonces $(k-1)^2w^2=\theta^2\zeta^2$ y
+ $|\theta^2\zeta^2-\theta^2|\le2/k$; además $0\le-\log(1-w^2)-w^2\le\frac43w^4$ y $(k-1)^2w^4\le(k-1)^{-2}$.
+\item $1+(k-2)p=1+\theta-2\theta/k$, y
+ $\bigl|\frac12\log(1+\theta-2\theta/k)-\frac12\log(1+\theta)\bigr|\le\theta/k\le1/k$.
+\item $(k-1)\log(1+(k-1)w^2)=\theta^2+e_6$, con $|e_6|\le3/k$; se usa $0\le z-\log(1+z)\le z^2/2$ con
+ $z=(k-1)w^2\le1/(k-1)$, y lo mismo que en (d).
+\end{enumerate}
+Al sumar, los términos de orden $k$ se cancelan ($k\theta-k\theta$) y los de orden uno también:
+\[
+ -\theta^2+\tfrac12\theta^2-\tfrac12\log(1+\theta)-\tfrac12\theta^2+\tfrac12\log(1+\theta)+\theta^2=0.
+\]
+Por tanto $|R'_k|\le C(\theta_0)/k$ para $k\ge k_2(\theta_0)$.
+
+Para $3\le k<k_2$, $R'_k$ es continua en $\lambda\in[\Lambda_0/(k-1),\infty)$, porque todas las piezas son
+funciones continuas de $y\in(0,1)$ y $\lambda\mapsto y$ es continua, y tiene límite finito cuando
+$\lambda\to\infty$ (véase el párrafo siguiente; es finito porque $k\ge3$). Por tanto está acotada, y como
+sólo hay un número finito de esos $k$, basta tomar $C\ge\max_{3\le k<k_2}k\sup|R'_k|$.
+
+En el límite $\lambda\to\infty$, el único término de~\eqref{eq:torres-identidad} que es singular cuando
+$y\to0$ es $\frac12\log y$, y se cancela idénticamente. Los demás términos son continuos hasta $y=0$, donde $D$ es la
+masa unidad en $q=k$. La cota uniforme pasa al límite.

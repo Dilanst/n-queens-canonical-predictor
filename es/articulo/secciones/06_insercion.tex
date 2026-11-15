@@ -1,0 +1,17 @@
+\section{Inserción de una reina en un tablero residual}\label{sec:insercion}
+
+Un tablero residual es el soporte $E$ de las casillas disponibles que deja una colocación legal
+parcial, con $k$ filas y $k$ columnas vacías; conservamos las coordenadas originales, de modo que
+cada casilla sigue en cuatro líneas y dos líneas se cortan en a lo sumo una casilla. Para cada
+residual $B$ consideramos la entropía de Bethe $H_B$ sobre $E$ y un punto estacionario $p$ con masas
+de fila y de columna iguales a uno. Insertar una reina en $c\in E$ retira las cuatro líneas de $c$ y
+produce el residual hijo $B+c$.
+
+La Figura~\ref{fig:residual} de la introducción da un ejemplo: con una reina en $(1,2)$, sus dos
+diagonales excluyen las columnas 1 y 3 de la segunda fila y su columna excluye la 2; quedan las
+casillas $(2,4)$ y $(2,5)$, y cada una produce un hijo.
+
+La Sección~\ref{sec:B3T01} define el predictor $L(B)$ y prueba su identidad diferencial. Las
+Secciones~\ref{sec:B3T04} a~\ref{sec:B3T07} reúnen las estimaciones uniformes que usan las
+Secciones~\ref{sec:macro} y~\ref{sec:meso}: la restricción del padre al hijo, la resolvente de
+líneas, la corrección relativa y el reequilibrado de las masas de filas y columnas.

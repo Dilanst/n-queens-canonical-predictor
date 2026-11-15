@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Si utilizas este código, cita el artículo del predictor y este paquete."
+title: "Verificación numérica del predictor canónico del problema de las n reinas"
+version: "2.1.0"
+license: MIT
+authors:
+  - family-names: "Mejia"
+    given-names: "Dilan Steven"
+references:
+  - type: article
+    title: "El predictor canónico del problema de las n reinas: término constante y consistencia"
+    authors:
+      - family-names: "Mejia"
+        given-names: "Dilan Steven"
+    year: 2026
+    doi: "10.5281/zenodo.24241043"
+    url: "https://github.com/Dilanst/n-queens-canonical-predictor"
+  - type: article
+    title: "El perfil variacional de las colocaciones parciales de reinas: existencia, ecuaciones de Euler y regularidad hasta el tablero lleno"
+    authors:
+      - family-names: "Mejia"
+        given-names: "Dilan Steven"
+    year: 2026
+    doi: "10.5281/zenodo.24220042"
+    url: "https://github.com/Dilanst/n-queens-variational-profile"

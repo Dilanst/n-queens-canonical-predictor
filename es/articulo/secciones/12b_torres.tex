@@ -1,0 +1,102 @@
+\subsection{El punto fijo uniforme y las formas cerradas}
+
+\begin{lema}\label{lem:torres-punto}
+Para cada $\lambda>0$ hay un único $y\in(0,1)$ que cumple~\eqref{eq:torres-punto}. La aplicación
+$\lambda\mapsto y$ es una biyección continua y decreciente de $(0,\infty)$ en $(0,1)$, con $y\to0$ cuando
+$\lambda\to\infty$ e $y\to1$ cuando $\lambda\to0$. Además $\Lambda\le\theta/y^2$; por tanto,
+$\Lambda\ge\Lambda_0$ implica $\theta\ge\theta_0$, donde $\theta_0\in(0,1)$ es la raíz de
+$\theta_0=\Lambda_0(1-\theta_0)^2$.
+\end{lema}
+\begin{proof}
+Con $p=(1-y)/k$, la ecuación~\eqref{eq:torres-punto} dice $\lambda=\varphi(y)$, con
+$\varphi(y)=(1-y)(k-1+y)/(k^2y^2)$. La función $\varphi$ es suave en $(0,1]$, tiende a $\infty$ cuando
+$y\to0^+$ y vale $\varphi(1)=0$. Sea $\mathcal N(y)=(1-y)(k-1+y)=(k-1)-(k-2)y-y^2$. Entonces
+$\varphi'(y)=(\mathcal N'(y)y-2\mathcal N(y))/(k^2y^3)$ y
+\[
+ \mathcal N'(y)y-2\mathcal N(y)=(k-2)y-2(k-1)<0\qquad\text{en }(0,1).
+\]
+Así $\varphi$ es estrictamente decreciente, lo que da la biyección y los límites. Para la cota,
+\[
+ \Lambda=(k-1)\varphi(y)=\frac{\theta}{y^2}\cdot\frac{k-1}k\cdot\frac{k-1+y}k\le\frac\theta{y^2}.
+\]
+Si $\Lambda\ge\Lambda_0$, entonces $\theta\ge\Lambda_0y^2=\Lambda_0(1-\theta)^2$. La función
+$\theta\mapsto\theta-\Lambda_0(1-\theta)^2$ es creciente en $[0,1]$, de $-\Lambda_0$ a $1$; por tanto
+$\theta\ge\theta_0$.
+\end{proof}
+
+\begin{lema}[Árbol]\label{lem:torres-arbol}
+En el punto fijo uniforme, $\log Z_B=-2k\log y+k^2\log(1-p)$.
+\end{lema}
+\begin{proof}
+Hay $k^2$ casillas y $2k$ líneas, y $\sum_cp=k^2p=k\theta$. Por tanto
+\[
+ \log Z_B=k\theta\log\lambda-2ky\log y-k^2p\log p+k^2(1-p)\log(1-p).
+\]
+Por~\eqref{eq:torres-punto}, $\log\lambda=\log p+\log(1-p)-2\log y$. Al sustituir, el término
+$k\theta\log p$ se cancela con $-k^2p\log p$, y queda
+$\log Z_B=-2k(\theta+y)\log y+(k\theta+k^2-k^2p)\log(1-p)$. Como $\theta+y=1$ y $k^2p=k\theta$, eso es
+$-2k\log y+k^2\log(1-p)$.
+\end{proof}
+
+\begin{lema}[Un lazo]\label{lem:torres-lazo}
+Se tiene
+\[
+ \det(I+M)=\bigl(1-(k-1)^2w^2\bigr)\bigl(1+(k-1)w^2\bigr)^{2(k-1)}\bigl(1-w^2\bigr)^{(k-1)^2}
+\]
+y $1-(k-1)^2w^2=y\,(1+(k-2)p)/(1-p)^2$. Para $k\ge3$, todos los factores son positivos cuando
+$y\in(0,1)$.
+\end{lema}
+\begin{proof}
+Ordenamos los estados en dos bloques, $(c,\text{fila})$ y $(c,\text{columna})$; dentro de cada bloque,
+la casilla $c=(i,j)$ va en el orden de Kronecker, con $i$ por fuera y $j$ por dentro. Sea $J$ la matriz
+$k\times k$ de unos. Desde $(c,\text{fila})$ la familia siguiente es la de las columnas: $c'=(i',j)$ con
+$i'\ne i$. Eso da el bloque $wE$ de las filas a las columnas, con $E=(J-I)\otimes I$. Desde
+$(c,\text{columna})$ se pasa a $c'=(i,j')$ con $j'\ne j$, lo que da el bloque $wE'$, con
+$E'=I\otimes(J-I)$. Los bloques diagonales son nulos, porque $f'\ne f$. Así, por el complemento de Schur,
+\[
+ I+M=\begin{pmatrix}I&wE\\ wE'&I\end{pmatrix},\qquad \det(I+M)=\det(I-w^2E'E),
+\]
+y $E'E=(J-I)\otimes(J-I)$. La matriz $J-I$ es simétrica, con autovalores $k-1$ (una vez) y $-1$ ($k-1$
+veces). Los autovalores del producto de Kronecker son los productos: $(k-1)^2$ (una vez), $-(k-1)$
+($2(k-1)$ veces) y $1$ ($(k-1)^2$ veces). De ahí la fórmula. Para la segunda identidad,
+\[
+ 1-(k-1)^2w^2=\frac{\bigl[(1-p)-(k-1)p\bigr]\bigl[(1-p)+(k-1)p\bigr]}{(1-p)^2}
+ =\frac{(1-kp)(1+(k-2)p)}{(1-p)^2}.
+\]
+Para la positividad, $p=\theta/k\le1/k$, así que $w\le1/(k-1)\le\frac12$ si $k\ge3$. Por tanto
+$1-w^2\ge\frac34$, y el primer factor es proporcional a $y>0$.
+\end{proof}
+
+\begin{lema}[Modo cero]\label{lem:torres-cero}
+Sea $\beta(q)=\binom kq\theta^qy^{k-q}$, la ley $\mathrm{Bin}(k,\theta)$ del número de filas ocupadas.
+Entonces $\mathsf P=\sum_{q=0}^k\beta(q)^2$ y $\log\rho_0=\log\mathsf P+\frac12\log(4\pi ky\theta)$.
+\end{lema}
+\begin{proof}
+La igualdad $N_R=N_C$ equivale a $k-N_R=k-N_C$, y $k-N_R$ tiene ley $\mathrm{Bin}(k,\theta)$. Además
+$V_R+V_C=2ky\theta$.
+\end{proof}
+
+\subsection{La identidad exacta}
+
+\begin{lema}\label{lem:torres-identidad}
+Para todo $\lambda>0$, con $y=y(\lambda)$,
+\[
+ Z_k(\lambda)=y^{-2k}\sum_{q=0}^k\beta(q)^2q!\,u^{-q}.
+\]
+Sea $D$ la ley de probabilidad $D(q)=\beta(q)^2/\mathsf P$ en $\{0,\dots,k\}$. Entonces
+\begin{equation}\label{eq:torres-identidad}
+ R'_k(\lambda)=\log\mathbb E_D[q!\,u^{-q}]-k^2\log(1-p)+\tfrac12\log\det(I+M)-\tfrac12\log(4\pi ky\theta).
+\end{equation}
+\end{lema}
+\begin{proof}
+Como $\binom kq^2=\beta(q)^2\theta^{-2q}y^{-2(k-q)}$, se tiene
+$Z_k=y^{-2k}\sum_q\beta(q)^2q!\,(\lambda y^2/\theta^2)^q$. Por~\eqref{eq:torres-punto} y $p=\theta/k$,
+$\lambda y^2/\theta^2=p(1-p)/\theta^2=(1-p)/(k\theta)=1/u$, lo que da la primera fórmula. Por tanto
+$\log Z_k=-2k\log y+\log\mathsf P+\log\mathbb E_D[q!\,u^{-q}]$. Al restar $F_k$, escrito con los
+Lemas~\ref{lem:torres-arbol} y~\ref{lem:torres-cero}, los términos $-2k\log y$ y $\log\mathsf P$ se
+cancelan exactamente, y queda~\eqref{eq:torres-identidad}.
+\end{proof}
+
+Así, toda la parte discreta del modo cero, que es la probabilidad exacta de $N_R=N_C$, aparece igual en
+$Z_k$ y en la fórmula. Lo que queda es el promedio bajo $D$ de $q!\,u^{-q}$, una función que varía
+despacio: la segunda diferencia de su logaritmo es $\log((q+1)/q)$, del orden de $1/q$.
