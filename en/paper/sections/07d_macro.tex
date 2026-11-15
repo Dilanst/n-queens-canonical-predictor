@@ -11,7 +11,7 @@ The parent is stationary for $H_B$, not for $H_B+\ell$.
 Extend $\bar p$ to the parent support by assigning one to $c$ and zero to $F\setminus\{c\}$. The increment preserves all RC constraints, so the linear term from the parent gradient vanishes exactly. The Bregman identity for each summand of $H_B$ gives
 \[
  \boxed{\begin{aligned}
- H_{\rm hijo}(\bar p)-H_{\rm padre}(p)-\log p_c
+ H_{\rm child}(\bar p)-H_{\rm parent}(p)-\log p_c
  ={}&-3\sum_{F\setminus c}(\log q_e+p_e)
  -\sum_{E'}\mathcal K(p_e,z_e)\\
  &+3\sum_{E'}\mathcal K(q_e,-z_e)
@@ -33,7 +33,7 @@ The multiplicity four of $c$ produces a change of only $O(p_c^2)=O(k^{-2})$. The
 \paragraph{Expansion at the rebalanced point.}
 Let $L=H+\ell+\tfrac12\log(2\pi)$ on both connected supports and set
 \[
- R_{c0}=L_{\rm hijo}(\bar p)-L_{\rm padre}(p)-\log p_c.
+ R_{c0}=L_{\rm child}(\bar p)-L_{\rm parent}(p)-\log p_c.
 \]
 A Taylor expansion confined to the surviving coordinates and the positive vacancies, together with Section~\ref{sec:B4T01}, gives
 \[
@@ -50,10 +50,10 @@ Here $\Pi_I$ projects onto the span of $v_I$. The equality follows by solving $S
 There are $O(k)$ lines, so $\sum_{ij}|\mathcal E_{ij}|=O(1)$.
 
 \paragraph{Reduced scalar.}
-Let $e$ be the residual from Section~\ref{sec:B4T02}, let $\bar R$ denote its response, and set $\bar g=\nabla\ell(\bar p)$ and $\delta_c=(R_{\rm padre}\nabla\ell(p))_c/p_c$.
+Let $e$ be the residual from Section~\ref{sec:B4T02}, let $\bar R$ denote its response, and set $\bar g=\nabla\ell(\bar p)$ and $\delta_c=(R_{\rm parent}\nabla\ell(p))_c/p_c$.
 Sections~\ref{sec:B4T02}--\ref{sec:B4T03} and the expansion $\log(1+\delta_c)=\delta_c+O(k^{-2})$ give
 \[
- r_c=L_{\rm hijo}(p^*)-L_{\rm padre}(p)-\log[p_c(1+\delta_c)]
+ r_c=L_{\rm child}(p^*)-L_{\rm parent}(p)-\log[p_c(1+\delta_c)]
        =\mathcal C_c+O(k^{-2}),
 \]
 \[

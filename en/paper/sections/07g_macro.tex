@@ -1,12 +1,12 @@
 \subsection{Zero-mode contributions to the determinant of the unit-diagonal matrix}\label{sec:B4T08}
-Retain the notation of Sections~\ref{sec:B4T06} and~\ref{sec:B4T07}. Write $y=p^*_{\rm hijo}-w$ and
+Retain the notation of Sections~\ref{sec:B4T06} and~\ref{sec:B4T07}. Write $y=p^*_{\rm child}-w$ and
 \[
  f_i=\sum_{\{a,b\}\subset a_i}\Gamma_{ab},\qquad
  f_i^I=\sum_{\{a,b\}\subset a_i\cap I}\Gamma_{ab},
  \qquad K_0=\Gamma-I.
 \]
 The sums run over unordered pairs of distinct lines. Each $f_i$ is $O(k^{-1})$.
-The perturbation $\Delta_0=S_{0,\rm hijo}-S_{0,II}$ has zero diagonal and satisfies
+The perturbation $\Delta_0=S_{0,\rm child}-S_{0,II}$ has zero diagonal and satisfies
 \[
  \operatorname{tr}(\Gamma_{II}\Delta_0)
  =-2\sum_Fp_i f_i^I+2\sum_{E'}y_i f_i.
@@ -27,7 +27,7 @@ The latter has inverse $\Gamma+\Pi$. Let
 \]
 The exact Schur and cofactor identities give
 \[
- \frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
+ \frac{\det S_{0,\rm child,gf}}{\det S_{0,\rm parent,gf}}
  =\frac{k}{k-1}\frac{\det(I+H_*D_*)}{\det C_J}.
 \]
 The factor $k/(k-1)$ appears only when these regularized matrices are introduced. It is consistent with the direct cofactor identity of Section~\ref{sec:B4T01}.
@@ -58,7 +58,7 @@ Since $H_*=I+O_{\max}(k^{-1})$ and $\|H_*\|_\infty=O(1)$,
 \]
 Distinct squares give disjoint sets of line pairs. The contribution of $c$ is only $O(k^{-2})$. The cross terms involving the dense part are $O(k^{-2})$, as is the cubic remainder in the logarithm of the determinant. Combining these calculations gives
 \[
- \boxed{\log\frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
+ \boxed{\log\frac{\det S_{0,\rm child,gf}}{\det S_{0,\rm parent,gf}}
  =\sum_{j\in J}(K_0)_{jj}+\frac2k+
  \operatorname{tr}(\Gamma_{II}\Delta_0)-3\sum_Fp_i^2+O(k^{-2}).}
 \]

@@ -18,13 +18,13 @@ Let $J$ denote the four lines through $c$, let $I=J^c$, let $F$ denote the squar
 \[
  Q=S_{IJ}S_{JJ}^{-1}S_{JI},\quad P_c=S_{II}-Q,\quad E_c=Q+\Delta-U.
 \]
-Then the exact identities $S_{\rm hijo}(w)=P_c+E_c$ and $P_cv_I=E_cv_I=0$ hold. The matrix $Q$ has rank at most four, whereas $\Delta-U$ need not have bounded rank.
+Then the exact identities $S_{\rm child}(w)=P_c+E_c$ and $P_cv_I=E_cv_I=0$ hold. The matrix $Q$ has rank at most four, whereas $\Delta-U$ need not have bounded rank.
 
 For the feasible point $\bar p=w+z$ from Section~\ref{sec:B3T07}, we include the additional term given by
 \[
  \Xi=A'^T\operatorname{diag}(\tau(\bar p)-\tau(w))A'
        -\operatorname{diag}_{D\cap I}(D'^Tz),\quad
- \mathcal E=E_c+\Xi,\quad S_{\rm hijo}(\bar p)=P_c+\mathcal E.
+ \mathcal E=E_c+\Xi,\quad S_{\rm child}(\bar p)=P_c+\mathcal E.
 \]
 Here $D'$ is the square--diagonal incidence matrix of the child.
 For $y\perp v_I$, minimizing over the four removed coordinates gives
@@ -40,7 +40,7 @@ Choose the RC gauge coordinate in $I$ and define
 \]
 The Schur complement followed by the cofactor identity for matrices with a common kernel gives
 \[
- \boxed{\frac{\det S_{{\rm hijo},\rm gf}(\bar p)}{\det S_{{\rm padre},\rm gf}(p)}
+ \boxed{\frac{\det S_{{\rm child},\rm gf}(\bar p)}{\det S_{{\rm parent},\rm gf}(p)}
  =\frac{\det_{v_I^\perp}(I+W_c)}{\det S_{JJ}}.}
 \]
 When using pseudodeterminants, the right-hand side must be multiplied by $(k-1)/k$, since $\operatorname{pdet}S=2k\det S_{\rm gf}$ and the child has $k-1$ rows.
@@ -58,7 +58,7 @@ The eliminated block indexed by $(F,J)$ and the indicated block of its inverse a
  (K_N^{-1})_{FF}=T_F-T_FA_{F,J}S_{JJ}^{-1}A_{F,J}^TT_F.
 \]
 The retained Schur complement has lower block $-\operatorname{diag}h_I-U+Q$.
-To obtain $N_{\rm hijo}(w)$, subtract $E_c$ from this lower block. For $\bar p$, also change $T_{E'}^{-1}$ and the vacancies.
+To obtain $N_{\rm child}(w)$, subtract $E_c$ from this lower block. For $\bar p$, also change $T_{E'}^{-1}$ and the vacancies.
 This recovers $\mathcal D=\prod_e[(1-4p_e)/q_e^4]\det S_{\rm gf}$. We have used no Taylor expansion taking a removed coordinate to zero or one.
 
 \paragraph{Uniform matrix remainder.}
