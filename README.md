@@ -4,7 +4,7 @@
 
 Dilan Steven Mejia
 
-DOI: [10.5281/zenodo.24241043](https://doi.org/10.5281/zenodo.24241043)
+DOI: [10.5281/zenodo.24509033](https://doi.org/10.5281/zenodo.24509033)
 
 Este repositorio reúne el artículo y los programas de verificación numérica.
 
