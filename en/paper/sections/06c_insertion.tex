@@ -1,10 +1,14 @@
 \subsection{The line resolvent in the RC-gap class}\label{sec:B3T05}
-Consider residual boards on the ordinary board with $k\ge\delta_0 n$. In addition to the hypotheses of Section~\ref{sec:B3T01}, suppose that, with constants independent of $k$,
+Consider residual boards on the ordinary board with $k\ge\delta_0 n$. In addition to the hypotheses of
+Section~\ref{sec:B3T01}, suppose that, with constants independent of $k$,
 \[
  p_e\le C/k,\quad h_D\ge\eta>0,\quad
  \lambda_2(\mathscr L_p)\ge\gamma>0.
 \]
-Here $\mathscr L_p$ is the RC Laplacian of the connected row--column graph with weights $p$. The gap assumption concerns the weights and goes beyond a condition on the support alone. We do not prove here that every relevant residual board satisfies these hypotheses. The number of lines satisfies $m\le6n-2\le6k/\delta_0$.
+Here $\mathscr L_p$ is the RC Laplacian of the connected row--column graph with weights $p$. The gap
+assumption concerns the weights and goes beyond a condition on the support alone. We do not prove here that
+every relevant residual board satisfies these hypotheses. The number of lines satisfies
+$m\le6n-2\le6k/\delta_0$.
 
 For large $k$, we have $p_e<1/4$. Set $P=\operatorname{diag}p$ and
 \[
@@ -12,7 +16,8 @@ For large $k$, we have $p_e<1/4$. Set $P=\operatorname{diag}p$ and
  \quad S=\operatorname{diag}(0_{RC},h_D)+A^TTA,
 \]
 where $A$ is the full square--line incidence matrix.
-The kernel of $S$ is the line spanned by $V=(\mathbf1_R,-\mathbf1_C,0_D)^T$. The matrix $\Pi=VV^T/(2k)$ is the orthogonal projector onto this line, and $G=S^+$ is the pseudoinverse of $S$.
+The kernel of $S$ is the line spanned by $V=(\mathbf1_R,-\mathbf1_C,0_D)^T$. The matrix $\Pi=VV^T/(2k)$ is
+the orthogonal projector onto this line, and $G=S^+$ is the pseudoinverse of $S$.
 
 \paragraph{Gap of $S$.}
 For line variables $(y,z)$ with $y\perp V$, since $\tau\ge p$,
@@ -21,7 +26,11 @@ For line variables $(y,z)$ with $y\perp V$, since $\tau\ge p$,
  \|P^{1/2}(A_{RC}y+A_Dz)\|_2^2+\eta\|z\|_2^2.
 \]
 The RC gap gives $\|P^{1/2}A_{RC}y\|^2\ge\gamma\|y\|^2$.
-The two diagonal incidences per square and the diagonal masses, each at most one, give $\|P^{1/2}A_Dz\|^2\le2\|z\|^2$.
+Indeed, $\|P^{1/2}A_{RC}y\|^2=\sum_ep_e(y_{r(e)}+y_{c(e)})^2$, where $r(e)$ and $c(e)$ are the row
+and the column of $e$, is the quadratic form of $\mathscr L_p$ at the vector $(y_R,-y_C)$, because the
+RC graph is bipartite, and $y\perp V$ is equivalent to $(y_R,-y_C)\perp\mathbf1$.
+The two diagonal incidences per square and the diagonal masses, each at most one, give
+$\|P^{1/2}A_Dz\|^2\le2\|z\|^2$.
 Applying $\|a+b\|^2\ge\theta\|a\|^2-\theta\|b\|^2/(1-\theta)$ with $\theta=\eta/(\eta+4)$ yields
 \[
  S|_{V^\perp}\succeq c_* I,\quad
@@ -32,22 +41,61 @@ In particular, $\|G\|_2\le c_*^{-1}$.
 \paragraph{Entrywise bounds.}
 Since $\tau-p=3p^2/(1-4p)$ and each line has mass at most one, $S_{\ell\ell}=1+O(k^{-1})$ for all lines.
 Two distinct lines intersect in at most one square, so $S_{\ell j}=O(k^{-1})$ if $\ell\ne j$.
-Each line contains at most $k$ squares and has at most $3k$ neighbors with a nonzero entry. Thus, for $W=I-S$, we have $\|W_{\ell,*}\|_2=O(k^{-1/2})$.
+Each line contains at most $k$ squares and has at most $3k$ neighbors with a nonzero entry. Thus, for
+$W=I-S$, we have $\|W_{\ell,*}\|_2=O(k^{-1/2})$.
 The exact identity
 \[
  G=I+W-2\Pi+WGW
 \]
-can be checked on every eigenspace of $S$, including its kernel. It requires neither $\|W\|<1$ nor a series expansion.
+can be checked on every eigenspace of $S$, including its kernel. It requires neither $\|W\|<1$ nor a series
+expansion.
 Since $|\Pi_{ij}|\le1/(2k)$,
 \[
  |(WGW)_{ij}|\le c_*^{-1}\|W_{i,*}\|_2\|W_{j,*}\|_2,
  \qquad \boxed{G_{ij}=\mathbf1_{i=j}+O(k^{-1}).}
 \]
-There are $O_{\delta_0}(k)$ lines, so $\|G\|_{\infty\to\infty}=O_{\delta_0}(1)$. All constants depend only on $\delta_0,C,\eta,\gamma$.
+There are $O_{\delta_0}(k)$ lines, so $\|G\|_{\infty\to\infty}=O_{\delta_0}(1)$. All constants depend only
+on $\delta_0,C,\eta,\gamma$.
 
 \paragraph{Comparison with the gauge-fixed matrix.}
-The subscript “gf” indicates gauge fixing as in Section~\ref{sec:B3T01}. In matrices and vectors indexed by lines, we delete the coordinate of the column whose constraint was omitted. The gauge-fixed inverse does not agree with $G$ in every RC entry, but the associated forms agree on vectors orthogonal to $V$. In particular, the incidence row $A_e$ satisfies $A_eV=0$ and
+The subscript “gf” indicates gauge fixing as in Section~\ref{sec:B3T01}. In matrices and vectors indexed by
+lines, we delete the coordinate of the column whose constraint was omitted. The gauge-fixed inverse does not
+agree with $G$ in every RC entry, but the associated forms agree on vectors orthogonal to $V$.
+Indeed, if $x\perp V$ and $y=Gx$, subtracting from $y$ the multiple of $V$ that cancels its coordinate
+on the deleted line gives $y'$ with $Sy'=x$ and $S_{\rm gf}y'_{\rm gf}=x_{\rm gf}$; hence, for every
+$z\perp V$, $z_{\rm gf}^TS_{\rm gf}^{-1}x_{\rm gf}=z^Ty'=z^TGx$.
+In particular, the incidence row $A_e$ satisfies $A_eV=0$ and
 \[
  A_{e,\rm gf}S_{\rm gf}^{-1}A_{e,\rm gf}^T=A_eGA_e^T=4+O(k^{-1}).
 \]
 For a diagonal line $d$, we have $e_d\perp V$ and $(S_{\rm gf}^{-1})_{dd}=G_{dd}=1+O(k^{-1})$.
+
+\begin{lema}[The two determinants]\label{lem:puente}
+Let $p$ be as in Section~\ref{sec:B3T01}, with $p_e<1/4$ for every square and a connected RC graph, and
+let $T$, $S$ and $V$ be as above. Then:
+\begin{enumerate}[(a)]
+\item $\mathfrak D=\prod_e\dfrac{1-4p_e}{q_e^4}\,\det S_{\rm gf}>0$;
+\item $\operatorname{pdet}S=2k\det S_{\rm gf}$;
+\item if $B$ is the full $n\times n$ board and its canonical maximizer satisfies $(H_\infty)$,
+ then $L(B)=\log Q_{\rm pred}(n)$.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+(a) Since $a_e=1/p_e-3/q_e=1/\tau_e>0$, the square block of $N$ is $T^{-1}$ and its Schur complement
+is $-S_{\rm gf}$, of size $r+s$. Hence $\det N=(-1)^{r+s}\prod_ea_e\det S_{\rm gf}$, and
+$(p_e/q_e^3)\,a_e=(1-4p_e)/q_e^4$. The quadratic form of $S$ is a sum of squares with positive
+weights that vanishes only on the line spanned by $V$; since $V$ does not vanish on the deleted line,
+$S_{\rm gf}$ is positive definite.
+
+(b) The matrix $S$ is symmetric and positive semidefinite, with kernel $\mathbb RV$ and $\|V\|^2=2k$.
+Its adjugate is $(\operatorname{pdet}S)\,VV^T/\|V\|^2$, and the diagonal entry of the latter on the
+deleted line, where $V$ equals $-1$, is the cofactor $\det S_{\rm gf}$.
+
+(c) The canonical maximizer is interior, so it is the stationary point of $H_B$ with RC masses one;
+moreover, $S$ is the matrix $S_n$ of~\eqref{eq:gS} and $d=1$. By (a) and (b), with $k=n$,
+\[
+ \ell=-\tfrac12\log\mathfrak D=L_n-\tfrac12\log\operatorname{pdet}S_n+\tfrac12\log(2n),
+\]
+and $\tfrac12\log(2n)+\tfrac12\log(2\pi)=\tfrac12\log(4\pi n)$. Adding $H_n(\pi^{(n)})$
+gives~\eqref{eq:Qpred}.
+\end{proof}

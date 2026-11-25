@@ -1,4 +1,5 @@
-\subsection{The relative correction is \texorpdfstring{$O(k^{-1})$}{O(1/k)} in the class with a gap}\label{sec:B3T06}
+\subsection{The relative correction is \texorpdfstring{$O(k^{-1})$}{O(1/k)} in the class with a
+gap}\label{sec:B3T06}
 Retain the notation of Section~\ref{sec:B3T05} and set $q=1-p$.
 On this small branch, Jacobi's formula from Section~\ref{sec:B3T01} takes the form
 \[
@@ -8,29 +9,36 @@ On this small branch, Jacobi's formula from Section~\ref{sec:B3T01} takes the fo
  -\sum_{d\ni e}G_{dd}\right].
 \]
 The final sum includes only the two diagonals and excludes the RC constraints.
-The expression also follows by differentiating the local factor and $S_{\rm gf}$. Indeed, $\partial_{p_e}\tau_e=(q_e^2+3p_e^2)/(1-4p_e)^2$, while the RC diagonal block of $S$ remains identically zero.
+The expression also follows by differentiating the local factor and $S_{\rm gf}$. Indeed,
+$\partial_{p_e}\tau_e=(q_e^2+3p_e^2)/(1-4p_e)^2$, while the RC diagonal block of $S$ remains identically
+zero.
 Section~\ref{sec:B3T05} gives $A_eGA_e^T=4+O(k^{-1})$ and $\sum_{d\ni e}G_{dd}=2+O(k^{-1})$.
 Moreover, $p_e=O(k^{-1})$, so
 \[
  \boxed{\nabla_p\ell=-\mathbf1+O_\infty(k^{-1}).}
 \]
-The constant term lies in an RC normal direction and contributes no effective correction to the probabilities.
+The constant term lies in an RC normal direction and contributes no effective correction to the
+probabilities.
 
 \paragraph{Relative response.}
 Using gauge-invariant forms, the Schur complement of the block $N$ gives
 \[
  R=T-TAG A^TT.
 \]
-Since $\|P^{-1}T\|_\infty\le2$, $\|A\|_\infty=4$, and $\|A^TT\|_\infty=\max_\ell\sum_{e\in\ell}\tau_e\le2$ for large $k$,
+Since $\|P^{-1}T\|_\infty\le2$, $\|A\|_\infty=4$, and $\|A^TT\|_\infty=\max_\ell\sum_{e\in\ell}\tau_e\le2$
+for large $k$,
 \[
  \|P^{-1}R\|_\infty
  \le2(1+8\|G\|_\infty)=O_{\delta_0}(1).
 \]
-The constant vector $\mathbf1$ belongs to the normal space of the RC constraints, so $R\mathbf1=0$. Section~\ref{sec:B3T01} and the preceding two estimates give
+The constant vector $\mathbf1$ belongs to the normal space of the RC constraints, so $R\mathbf1=0$.
+Section~\ref{sec:B3T01} and the preceding two estimates give
 \[
  \boxed{\delta=P^{-1}R(\nabla\ell+\mathbf1)=O_\infty(k^{-1}).}
 \]
-In particular, $1+\delta_e>0$ for sufficiently large $k$ in this class. The proof requires no additional lower bound on $p_e$. It does require $p_e>0$ and the uniform vacancy and weighted gap bounds of Section~\ref{sec:B3T05}.
+In particular, $1+\delta_e>0$ for sufficiently large $k$ in this class. The proof requires no additional
+lower bound on $p_e$. It does require $p_e>0$ and the uniform vacancy and weighted gap bounds of
+Section~\ref{sec:B3T05}.
 
 \paragraph{First-order cancellation in the derivative term.}
 The exact identity $\sum_{c\in r}p_c\delta_c=0$ from Section~\ref{sec:B3T01} implies
@@ -38,9 +46,11 @@ The exact identity $\sum_{c\in r}p_c\delta_c=0$ from Section~\ref{sec:B3T01} imp
  \sum_{c\in r}p_c\log(1+\delta_c)
  =-\frac12\sum_{c\in r}p_c\delta_c^2+O(k^{-3})=O(k^{-2}).
 \]
-Thus the first-order contribution of the derivative term cancels. For the actual insertion defect we must still add $r_c$, giving
+Thus the first-order contribution of the derivative term cancels. For the actual insertion defect we must
+still add $r_c$, giving
 \[
  \mathbb E_p\epsilon
  =\mathbb E_p r-\tfrac12\mathbb E_p\delta^2+O(k^{-3}).
 \]
-Section~\ref{sec:macro} controls $r_c$. The result holds uniformly in the specified class. We make no claim that every legal residual board in the queens problem belongs to this class.
+Section~\ref{sec:macro} controls $r_c$. The result holds uniformly in the specified class. We make no claim
+that every legal residual board in the queens problem belongs to this class.

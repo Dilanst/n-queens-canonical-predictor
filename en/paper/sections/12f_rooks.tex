@@ -1,6 +1,8 @@
 \paragraph{Part (ii).}
-As $\lambda\to\infty$, we have $y\to0$, $\theta\to1$, $p\to1/k$, $w\to1/(k-1)$, and $u\to k^2/(k-1)$, and $D$
-tends to the unit point mass at $q=k$, since $r_i\to1$ as $x\to\infty$. In~\eqref{eq:torres-identidad}, after
+As $\lambda\to\infty$, we have $y\to0$, $\theta\to1$, $p\to1/k$, $w\to1/(k-1)$, and $u\to k^2/(k-1)$, and
+$D$
+tends to the unit point mass at $q=k$, since $r_i\to1$ as $x\to\infty$. In~\eqref{eq:torres-identidad},
+after
 cancellation of $\frac12\log y$, we are left with
 \[
 \begin{aligned}
@@ -12,7 +14,8 @@ cancellation of $\frac12\log y$, we are left with
 \]
 Since $-k\log(k^2/(k-1))-k^2\log(1-1/k)=-k\log k-k(k-1)\log(1-1/k)$ and
 $\frac12\log((2k-2)/k)-\log((k-1)/k)=\frac12\log(2k/(k-1))$, this gives the stated expression. For the
-expansion we use Stirling's formula, which has no term of order $k^{-2}$, together with the expansions below.
+expansion we use Stirling's formula, which has no term of order $k^{-2}$, together with the expansions
+below.
 \[
 \begin{aligned}
  \log k!&=k\log k-k+\tfrac12\log(2\pi k)+\tfrac1{12k}+O(k^{-3}),\\
@@ -24,7 +27,8 @@ expansion we use Stirling's formula, which has no term of order $k^{-2}$, togeth
  (k-1)\log\frac k{k-1}&=1-\tfrac1{2k}-\tfrac1{6k^2}+O(k^{-3}).
 \end{aligned}
 \]
-On summing, we have $\frac12\log(2\pi k)+\frac12\log2-\frac12\log(4\pi k)=0$ and $-\frac12-\frac12+1=0$. The coefficient
+On summing, we have $\frac12\log(2\pi k)+\frac12\log2-\frac12\log(4\pi k)=0$ and $-\frac12-\frac12+1=0$. The
+coefficient
 of $1/k$ is $\frac1{12}-\frac16+\frac12-\frac12=-\frac1{12}$, and that of $1/k^2$ is
 $-\frac1{12}-\frac14+\frac14-\frac16=-\frac14$. Hence $R'_k(\infty)=-\frac1{12k}-\frac1{4k^2}+O(k^{-3})$.
 
@@ -37,13 +41,15 @@ $\frac12\log(4\pi ky\theta)=\frac12\log(4\pi k^2\lambda)+o(1)\to-\infty$. Hence
 $R'_k=-\frac12\log(4\pi k^2\lambda)+o(1)$.
 
 \begin{observacion}[Interpretation]
-When there are very few rooks, the Gaussian $P_G$ for the balance $N_R-N_C$ is very narrow because its variance
+When there are very few rooks, the Gaussian $P_G$ for the balance $N_R-N_C$ is very narrow because its
+variance
 $2ky\theta$ tends to zero, but the determinant has no small factor there to compensate for it. The
 zero-mode factor overcorrects. In the dense regime the factor of $\det(I+M)$ that tends to zero
 is proportional to $y$ (Lemma~\ref{lem:torres-lazo}) and cancels against the variance.
 
 The argument uses the fact that the number of perfect matchings between $q$ occupied rows and $q$ occupied
 columns is $q!$, which makes the average in Lemma~\ref{lem:torres-identidad} explicit. For queens, the
-corresponding factor is the number of placements that also respect the diagonal constraints. Counting them is the
+corresponding factor is the number of placements that also respect the diagonal constraints. Counting them
+is the
 entire problem, so the argument of this appendix does not carry over to queens.
 \end{observacion}

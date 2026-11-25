@@ -34,7 +34,8 @@ There are $k^2$ squares and $2k$ lines, and $\sum_cp=k^2p=k\theta$. Hence
 \]
 By~\eqref{eq:torres-punto}, $\log\lambda=\log p+\log(1-p)-2\log y$. On substitution, the term
 $k\theta\log p$ cancels with $-k^2p\log p$, leaving
-$\log Z_B=-2k(\theta+y)\log y+(k\theta+k^2-k^2p)\log(1-p)$. Since $\theta+y=1$ and $k^2p=k\theta$, this equals
+$\log Z_B=-2k(\theta+y)\log y+(k\theta+k^2-k^2p)\log(1-p)$. Since $\theta+y=1$ and $k^2p=k\theta$, this
+equals
 $-2k\log y+k^2\log(1-p)$.
 \end{proof}
 
@@ -48,7 +49,8 @@ $y\in(0,1)$.
 \end{lema}
 \begin{proof}
 Order the states in two blocks, $(c,\text{row})$ and $(c,\text{column})$. Within each block,
-the squares $c=(i,j)$ are in Kronecker order, with $i$ the outer index and $j$ the inner index. Let $J$ denote the
+the squares $c=(i,j)$ are in Kronecker order, with $i$ the outer index and $j$ the inner index. Let $J$
+denote the
 $k\times k$ all-ones matrix. From $(c,\text{row})$ the next family is the column family, so $c'=(i',j)$ with
 $i'\ne i$. This gives the row-to-column block $wE$, with $E=(J-I)\otimes I$. From
 $(c,\text{column})$ the transition is to $c'=(i,j')$ with $j'\ne j$, giving the block $wE'$, with
@@ -57,7 +59,8 @@ $E'=I\otimes(J-I)$. The diagonal blocks vanish because $f'\ne f$. Thus the Schur
  I+M=\begin{pmatrix}I&wE\\ wE'&I\end{pmatrix},\qquad \det(I+M)=\det(I-w^2E'E),
 \]
 and $E'E=(J-I)\otimes(J-I)$. The matrix $J-I$ is symmetric, with eigenvalues $k-1$ (once) and $-1$ ($k-1$
-times). The eigenvalues of the Kronecker product are the pairwise products, namely $(k-1)^2$ (once), $-(k-1)$
+times). The eigenvalues of the Kronecker product are the pairwise products, namely $(k-1)^2$ (once),
+$-(k-1)$
 ($2(k-1)$ times), and $1$ ($(k-1)^2$ times). This gives the formula. For the second identity, we have
 \[
  1-(k-1)^2w^2=\frac{\bigl[(1-p)-(k-1)p\bigr]\bigl[(1-p)+(k-1)p\bigr]}{(1-p)^2}
@@ -68,11 +71,13 @@ $1-w^2\ge\frac34$, and the first factor is proportional to $y>0$.
 \end{proof}
 
 \begin{lema}[Zero mode]\label{lem:torres-cero}
-Let $\beta(q)=\binom kq\theta^qy^{k-q}$ denote the $\mathrm{Bin}(k,\theta)$ law of the number of occupied rows.
+Let $\beta(q)=\binom kq\theta^qy^{k-q}$ denote the $\mathrm{Bin}(k,\theta)$ law of the number of occupied
+rows.
 Then $\mathsf P=\sum_{q=0}^k\beta(q)^2$ and $\log\rho_0=\log\mathsf P+\frac12\log(4\pi ky\theta)$.
 \end{lema}
 \begin{proof}
-The equality $N_R=N_C$ is equivalent to $k-N_R=k-N_C$, and $k-N_R$ has law $\mathrm{Bin}(k,\theta)$. Moreover,
+The equality $N_R=N_C$ is equivalent to $k-N_R=k-N_C$, and $k-N_R$ has law $\mathrm{Bin}(k,\theta)$.
+Moreover,
 $V_R+V_C=2ky\theta$.
 \end{proof}
 

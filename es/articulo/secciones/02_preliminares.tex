@@ -43,13 +43,19 @@ cantidades asociadas:
 En masa uno las vacancias de filas y columnas son nulas, de modo que sólo contribuyen las de las
 diagonales. Según~\cite[Observación~2.3]{Perfil}, $s$ tiene entonces, sobre las densidades admisibles,
 la misma expresión que la entropía del problema variacional de
-Simkin~\cite[Definición~2.9]{Simkin}. En~\cite{Simkin}, $-\alpha$ es el máximo de esa entropía en
-una clase de medidas definida por clausura (Teorema~2.24 y Lema~2.22), y la Observación~2.7 de ese
-artículo precisa, para las medidas absolutamente continuas, la relación entre esa clase y la
-definida por las restricciones de proyección. Con la correspondencia anterior y esa observación se
-seguiría $\alpha=-s_1$, es decir, $\Phi=1-\alpha$ y $\log Q(n)=\log n!+n\Phi+o(n)$. Llamamos a esto
-la identificación con el problema de Simkin. No la usamos en ninguna prueba: la definición
-$\Phi=s_1+1$ y los teoremas del predictor son independientes de ella.
+Simkin~\cite[Definición~2.9]{Simkin}, que vale $-\infty$ en las medidas sin densidad.
+En~\cite{Simkin}, $-\alpha$ es el máximo de esa entropía sobre las \emph{queenons}, que forman el
+cierre débil de los permutones escalonados con marginales diagonales subuniformes (Definición~2.4,
+Teorema~2.24, Lema~2.22 y Sección~2.2). Ese máximo es $s_1$, como se deduce
+en~\cite[Sección~2.4]{Completabilidad}. Por un lado, tener marginales de
+filas y columnas uniformes y marginales diagonales subuniformes se conserva por límites débiles;
+así, una queenon con densidad tiene, tras trasladar el cuadrado a $[0,1]^2$, una densidad admisible
+de masa uno, y su entropía es a lo sumo $s_1$. Por otro, $\nu_1$ es una
+queenon~\cite[Lema~2.4]{Completabilidad}, y su entropía es $s_1$. Por tanto $\alpha=-s_1$, es
+decir, $\Phi=1-\alpha$ y $\log Q(n)=\log n!+n\Phi+o(n)$. No hace falta la Observación~2.7
+de~\cite{Simkin}, que compara las queenons con la clase definida por las restricciones de
+proyección. Ninguna prueba usa esta igualdad: la definición $\Phi=s_1+1$ y los teoremas del
+predictor son independientes de ella, y sólo la usan las tablas de la Sección~\ref{sec:numerico}.
 
 Por~\cite[Teoremas~1.2 y~1.3 y Proposición~5.2]{Perfil}, el perfil de masa uno se factoriza como
 \begin{equation}\label{eq:factorizacion}
@@ -65,7 +71,8 @@ $c_\nu\le C_\nu$, $\kappa_\nu\le1$ y $L_\nu$ tales que
 \[
  c_\nu\le\nu_1\le C_\nu,\qquad \kappa_\nu\le u_D,u_A\le1,
 \]
-y $L_\nu$ es una constante de Lipschitz de $\nu_1$ para la distancia del máximo. Las Secciones~\ref{sec:perfil}
+y $L_\nu$ es una constante de Lipschitz de $\nu_1$ para la distancia del máximo. Las
+Secciones~\ref{sec:perfil}
 y~\ref{sec:constante} usan del perfil continuo sólo estas propiedades. En ellas escribimos $\nu$
 por $\nu_1$.
 
@@ -74,7 +81,8 @@ Las constantes $C,c,M,\eta,\kappa,\dots$ no dependen de $n$ salvo que se indique
 $O(\cdot)$ y $o(\cdot)$ se refieren a $n\to\infty$. En las Secciones~\ref{sec:insercion}
 a~\ref{sec:meso} el parámetro es el número $k$ de filas vacías: allí $O(\cdot)$ se refiere a
 $k\to\infty$, y cada sección indica de qué dependen las constantes. La letra $h$, que
-en~\cite{Completabilidad} designa ese número, se usa aquí para las vacancias. En las Secciones~\ref{sec:perfil}
+en~\cite{Completabilidad} designa ese número, se usa aquí para las vacancias. En las
+Secciones~\ref{sec:perfil}
 y~\ref{sec:constante} las ecuaciones llevan rótulos propios de cada subsección, como (P1.3) o (D2.5).
 En los logaritmos de normalización $\log(4\pi n)$ y $\log(2\pi)$, en la fórmula de Stirling, en el
 punto de Slater de la Sección~\ref{sec:P01} y en el Apéndice~\ref{sec:torres}, $\pi$ denota
@@ -82,3 +90,32 @@ $3{,}14159\ldots$; en el resto, $\pi=\pi^{(n)}$ es el maximizador canónico y $\
 casilla $c$. Algunas letras que en~\cite{Perfil} tienen un significado fijo, como $\rho$, $x$, $\lambda$,
 $\ell$, $u$, $F$, $J$, $L$ o $\mathcal H$, designan en algunas secciones de este artículo otros objetos,
 que se definen donde aparecen; por ejemplo, $\rho(B)$ no es una masa.
+Para un vector $x$ que depende de $k$, $x=O_\infty(k^{-a})$ significa $\|x\|_\infty=O(k^{-a})$; para
+una matriz $X$, $X=O_{\max}(k^{-a})$ significa $\max_{ij}|X_{ij}|=O(k^{-a})$. Para un vector indexado
+por las casillas, $x=O_{\rm rel}(k^{-a})$ significa $\max_e|x_e|/p_e=O(k^{-a})$, donde $p$ es el punto
+de referencia del contexto. El símbolo $\odot$ denota el producto componente a componente.
+
+\paragraph{Notación principal.}
+Símbolos que se usan en varias secciones, con el lugar donde se define cada uno:
+\begin{center}
+\small
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.56\textwidth}l@{}}
+\toprule
+Símbolo & Significado & Dónde se define\\
+\midrule
+$Q(n)$, $Q(B)$ & número de colocaciones de $n$ reinas que no se atacan; número de completaciones del
+tablero residual $B$ & Sección~\ref{sec:intro}\\
+$Q_{\rm pred}(n)$ & predictor canónico & Definición~\ref{def:Qpred}\\
+$C_{\rm pred}$ & término constante del predictor & Teorema~\ref{thm:intro-constante}\\
+$\nu_1$, $s_1$, $\Phi$, $I_2$ & perfil de masa uno, su valor óptimo, $\Phi=s_1+1$ e
+$I_2=\int\nu_1^2$ & \eqref{eq:s1}\\
+$\pi^{(n)}$ & maximizador canónico, que también se escribe $\pi$ (para el otro significado de $\pi$,
+véanse las convenciones) & Lema~\ref{lem:maximizador}\\
+$B$, $k$ & tablero residual y su número de filas vacías & Sección~\ref{sec:insercion}\\
+$L(B)$ & predictor del tablero residual $B$, que le asigna el valor $e^{L(B)}$ &
+Sección~\ref{sec:B3T01}\\
+$\rho(B)$ & suma de las predicciones de los hijos de $B$ dividida por la predicción de $B$ &
+Sección~\ref{sec:intro}\\
+\bottomrule
+\end{tabular}
+\end{center}

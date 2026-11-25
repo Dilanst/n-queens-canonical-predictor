@@ -1,7 +1,16 @@
 \section{Inserting a queen into a residual board}\label{sec:insercion}
 
-A residual board is the support $E$ consisting of the available squares left by a legal partial placement, with $k$ empty rows and $k$ empty columns. We retain the original coordinates, so each square still lies on four lines and two distinct lines intersect in at most one square. For each residual board $B$, we consider the Bethe entropy $H_B$ on $E$ and a stationary point $p$ with row and column masses equal to one. Inserting a queen at $c\in E$ removes the four lines through $c$ and produces the child residual board $B+c$.
+A residual board is the support $E$ consisting of the available squares left by a legal partial placement,
+with $k$ empty rows and $k$ empty columns. We retain the original coordinates, so each square still lies on
+four lines and two distinct lines intersect in at most one square. For each residual board $B$, we consider
+the Bethe entropy $H_B$ on $E$ and a stationary point $p$ with row and column masses equal to one. Inserting
+a queen at $c\in E$ removes the four lines through $c$ and produces the child residual board $B+c$.
 
-Figure~\ref{fig:residual} in the introduction gives an example. With a queen at $(1,2)$, its two diagonals rule out columns 1 and 3 in the second row, and its column rules out column 2. The remaining squares are $(2,4)$ and $(2,5)$, each of which produces a child.
+Figure~\ref{fig:residual} in the introduction gives an example. With a queen at $(1,2)$, its two diagonals
+rule out columns 1 and 3 in the second row, and its column rules out column 2. The remaining squares are
+$(2,4)$ and $(2,5)$, each of which produces a child.
 
-Section~\ref{sec:B3T01} defines the predictor $L(B)$ and proves its differential identity. Sections~\ref{sec:B3T04} through~\ref{sec:B3T07} give the uniform estimates used in Sections~\ref{sec:macro} and~\ref{sec:meso} for the restriction of the parent to the child, the line resolvent, the relative correction, and the rebalancing of the row and column masses.
+Section~\ref{sec:B3T01} defines the predictor $L(B)$ and proves its differential identity.
+Sections~\ref{sec:B3T04} through~\ref{sec:B3T07} give the uniform estimates used in Sections~\ref{sec:macro}
+and~\ref{sec:meso} for the restriction of the parent to the child, the line resolvent, the relative
+correction, and the rebalancing of the row and column masses.

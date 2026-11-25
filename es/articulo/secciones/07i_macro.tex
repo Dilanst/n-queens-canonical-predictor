@@ -8,7 +8,8 @@ $p$ es estacionario para $H_B$, interior, con masas RC uno y
  \lambda_2(\mathscr L_p)\ge\gamma.
 \]
 El grafo RC es conexo. El predictor usa el cofactor RC del determinante
-canónico, el factor local y $\tfrac12\log(2\pi)$ con las convenciones de las Secciones~\ref{sec:B3T01} y~\ref{sec:B4T01}.
+canónico, el factor local y $\tfrac12\log(2\pi)$ con las convenciones de las Secciones~\ref{sec:B3T01}
+y~\ref{sec:B4T01}.
 Entonces existen $k_0$ y $C_*$ dependientes sólo de estas cuatro constantes
 tales que para $k\ge k_0$ cada hijo legal tiene un punto estacionario
 interior único en la rama pequeña y
@@ -20,8 +21,11 @@ Aquí $\delta_c=(R\nabla\ell)_c/p_c=O(k^{-1})$.
 No se excluyen hijos desfavorables ni se exige una cota inferior por casilla.
 \end{teorema}
 \begin{proof}
-La existencia y el control del hijo se prueban en la Sección~\ref{sec:B4T02}, y la cancelación en las
-Secciones~\ref{sec:B4T06}--\ref{sec:B4T09}, cuyo resultado final es la cota de $r_c$.
+La existencia y el control del hijo son el Lema~\ref{lem:hijo}. La Sección~\ref{sec:B4T09} combina
+la acción y la energía de las Secciones~\ref{sec:B4T04} y~\ref{sec:B4T06} con los
+Lemas~\ref{lem:prefactor} y~\ref{lem:modocero}, y su resultado final es la cota de $r_c$, que por el
+Lema~\ref{lem:escalar} equivale a $\mathcal C_c=O(k^{-2})$. La tabla de esa sección reúne los términos
+de orden $1/k$ y su cancelación.
 \end{proof}
 
 \begin{corolario}\label{cor:rho}
@@ -30,7 +34,8 @@ $|\log\rho(B)|\le C_*/k^2$, donde $\rho(B)=\sum_{c\in r}e^{L(B+c)-L(B)}$.
 \end{corolario}
 \begin{proof}
 La identidad diferencial de la Sección~\ref{sec:B3T01} da la suma uno en cada fila.
-La positividad se sigue de $p_c>0$ y de $|\delta_c|=O(k^{-1})$ para $k$ grande (Sección~\ref{sec:B3T06}). Así,
+La positividad se sigue de $p_c>0$ y de $|\delta_c|=O(k^{-1})$ para $k$ grande (Sección~\ref{sec:B3T06}).
+Así,
 \[
  w_c=p_c(1+\delta_c)>0,\qquad\sum_{c\in r}w_c=1,
  \quad \rho(B)=\sum_{c\in r}e^{L(B+c)-L(B)}=\mathbb E_w e^r.
@@ -48,6 +53,21 @@ con las mismas constantes y $k\ge\delta_0n$, entonces
 \]
 No se itera sin control la pérdida de parámetros de una herencia de un paso:
 la pertenencia de toda la trayectoria es una hipótesis independiente.
+
+\begin{corolario}[El tablero completo]\label{cor:completo}
+Existen $n_1$ y $C_*$ tales que, para todo $n\ge n_1$ y toda fila $r$ del tablero completo $B$ de
+$n\times n$, se tiene $|\log\rho(B)|\le C_*/n^2$.
+\end{corolario}
+\begin{proof}
+Para $n\ge n_0$, (P2.7) da $c/n\le\pi_e\le M/n$ y $h_d\ge\eta$, y el maximizador canónico es el punto
+estacionario interior de $H_B$ con masas RC uno. El laplaciano $\mathscr L_\pi$ es mayor o igual, como
+forma cuadrática, que $c/n$ veces el del grafo bipartito completo $K_{n,n}$, porque la diferencia es
+el laplaciano de un grafo con pesos no negativos. El segundo autovalor del laplaciano de $K_{n,n}$
+es $n$, de modo que $\lambda_2(\mathscr L_\pi)\ge c$. Se aplican el Teorema~\ref{thm:macro} y el
+Corolario~\ref{cor:rho} con $k=n$, $\delta_0=1$, $C=M$ y $\gamma=c$.
+\end{proof}
+La clase del Teorema~\ref{thm:macro} no es, pues, vacía, y en el tablero completo el predictor es
+$Q_{\rm pred}(n)$ (Lema~\ref{lem:puente}).
 
 \paragraph{Alcance.}
 El teorema es determinista en la clase declarada. Que las trayectorias típicas

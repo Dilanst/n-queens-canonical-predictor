@@ -2,15 +2,21 @@
 
 Nobel, Agrawal y Boyd~\cite{NAB} dan $\alpha\in[1{,}944000752,\,1{,}944001082]$.
 Para las dos tablas usamos como referencia $\alpha_0=1{,}944001$ y $\Phi_0=1-\alpha_0$,
-bajo la identificación $\alpha=-s_1$ (Sección~\ref{sec:preliminares}). Las extrapolaciones carecen de cota de error certificada.
+porque $\alpha=-s_1$ (Sección~\ref{sec:preliminares}). Las extrapolaciones carecen de cota de error
+certificada, y la forma de los ajustes, en potencias de $1/n$, es una hipótesis de trabajo: el
+Teorema~\ref{thm:intro-constante} da el límite, pero no la velocidad de convergencia.
 
 \paragraph{El predictor.}
-Pongamos $C'_{{\rm pred},0}(n)=\log Q_{\rm pred}(n)-\log n!-n\Phi_0$. Una resolución numérica del maximizador
+Pongamos $C'_{{\rm pred},0}(n)=\log Q_{\rm pred}(n)-\log n!-n\Phi_0$. Una resolución numérica del
+maximizador
 canónico encuentra interioridad en los diez tamaños tabulados, en aritmética de punto flotante.
 El pseudodeterminante de $S_n$ completa el cálculo de la Tabla~\ref{tab:predictor}.
-Con $\alpha_0$ y $40\le n\le240$, el ajuste $C+a/n+b/n^2$ da $C=0{,}94015$ y el que añade $c/n^3$ da $C=0{,}94013$.
-En el intervalo completo de $\alpha$, los ajustes que empiezan en $40$ o $60$ dan extremos redondeados de $0{,}9400$ y $0{,}9402$.
-Al incluir $20$ y $27$ los extremos redondeados son $0{,}9397$ y $0{,}9404$. Así se obtiene la estimación $C_{\rm pred}\approx0{,}9401$.
+Con $\alpha_0$ y $40\le n\le240$, el ajuste $C+a/n+b/n^2$ da $C=0{,}94015$ y el que añade $c/n^3$ da
+$C=0{,}94013$.
+En el intervalo completo de $\alpha$, los ajustes que empiezan en $40$ o $60$ dan extremos redondeados de
+$0{,}9400$ y $0{,}9402$.
+Al incluir $20$ y $27$ los extremos redondeados son $0{,}9397$ y $0{,}9404$. Así se obtiene la estimación
+$C_{\rm pred}\approx0{,}9401$.
 
 \begin{table}[ht]
 \centering
@@ -27,11 +33,18 @@ $C'_{{\rm pred},0}(n)$ & 0,9333 & 0,9348 & 0,9358 & 0,9367 & 0,9372\\
 \end{table}
 
 \paragraph{Evaluación directa de la fórmula.}
-Por separado, calculamos el perfil continuo $\nu_1$ resolviendo numéricamente sus ecuaciones de masa uno, y con él $I_2$ y $\det_2(I+J)$ mediante una discretización de Nyström~\cite{Bornemann} del operador de la Sección~\ref{sec:D03}, en mallas sucesivas y con extrapolación en el paso. Se obtiene $I_2\approx1{,}02638534$ y $\det_2(I+J)\approx0{,}005162694$, y la fórmula del Teorema~\ref{thm:intro-constante} da $C_{\rm pred}\approx0{,}940144$, dentro de las bandas anteriores. Este cálculo no usa $\alpha$ ni la Tabla~\ref{tab:predictor}, y tampoco tiene cota de error certificada.
-En las parejas de mallas de tamaños $192$ y $384$ (pares), y $193$ y $385$ (impares), las extrapolaciones dieron, respectivamente, $0{,}94014395698$ y $0{,}94014395711$.
+Por separado, calculamos el perfil continuo $\nu_1$ resolviendo numéricamente sus ecuaciones de masa uno, y
+con él $I_2$ y $\det_2(I+J)$ mediante una discretización de Nyström~\cite{Bornemann} del operador de la
+Sección~\ref{sec:D03}, en mallas sucesivas y con extrapolación en el paso. Se obtiene
+$I_2\approx1{,}02638534$ y $\det_2(I+J)\approx0{,}005162694$, y la fórmula del
+Teorema~\ref{thm:intro-constante} da $C_{\rm pred}\approx0{,}940144$, dentro de las bandas anteriores. Este
+cálculo no usa $\alpha$ ni la Tabla~\ref{tab:predictor}, y tampoco tiene cota de error certificada.
+En las parejas de mallas de tamaños $192$ y $384$ (pares), y $193$ y $385$ (impares), las extrapolaciones
+dieron, respectivamente, $0{,}94014395698$ y $0{,}94014395711$.
 
 \paragraph{El conteo exacto.}
-Los valores exactos de $Q(n)$ se conocen hasta $n=27$~\cite{OEIS,PE} desde 2016. Con los valores de
+Los valores exactos de $Q(n)$ se conocen hasta $n=27$~\cite{OEIS,PE} desde 2016; el de $n=27$ se
+confirmó en 2025 con otro programa~\cite{YaoLi}. Con los valores de
 $16\le n\le27$, $C'_0(n)=\log Q(n)-\log n!-n\Phi_0$ toma los valores de la Tabla~\ref{tab:exacto}.
 
 \begin{table}[ht]
@@ -49,10 +62,12 @@ $C'_0(n)$ & 0,9178 & 0,9241 & 0,9295 & 0,9272 & 0,9265 & 0,9285\\
 \end{table}
 
 En noviembre de 2026 se publicó, en una prepublicación, el valor de $Q(28)$~\cite{Cherepanov},
-obtenido con un algoritmo nuevo de conteo exacto. Hasta donde sabemos, ese valor aún no se ha
-comprobado de forma independiente, por lo que no lo incluimos en la Tabla~\ref{tab:exacto} ni en la
-Figura~\ref{fig:comparacion}. A título informativo, con él resulta $C'_0(28)\approx0{,}9305$, dentro
-del intervalo de los valores de la tabla.
+obtenido con un algoritmo nuevo de conteo exacto. Poco después la OEIS~\cite{OEIS} incorporó también
+$Q(29)$, calculado por P.~A.~Webb con una implementación de la descomposición por colores que, según
+esa entrada, se usó para $Q(28)$ y $Q(29)$. Hasta donde sabemos, ninguno de los dos valores se ha
+comprobado con un algoritmo distinto, por lo que no los incluimos en la Tabla~\ref{tab:exacto} ni en
+la Figura~\ref{fig:comparacion}. A título informativo, con el primero resulta
+$C'_0(28)\approx0{,}9305$, dentro del intervalo de los valores de la tabla.
 
 La Figura~\ref{fig:comparacion} permite leer las dos tablas en la misma escala.
 Al aumentar $n$ los puntos se acercan al eje vertical porque la abscisa es $1/n$.
@@ -63,4 +78,4 @@ En $n=20$ y $n=27$ se tiene $\log Q(n)-\log Q_{\rm pred}(n)=0{,}0208$ y $0{,}011
 son compatibles con una diferencia de orden $1/n$, pero no permiten estimar su límite.
 
 Los programas y los datos con los que se obtuvieron las cifras de esta sección forman el paquete de
-verificación numérica que acompaña al artículo\ifx\DOIcodigo\empty\else~\cite{Codigo}\fi.
+verificación numérica que acompaña al artículo~\cite{Codigo}.

@@ -67,19 +67,25 @@ No se superponen pares de líneas de casillas distintas. La contribución
 de $c$ es sólo $O(k^{-2})$. Los términos cruzados con la parte densa son
 $O(k^{-2})$, y el resto cúbico del logaritmo del determinante también lo es.
 Reuniendo estos cálculos,
-\[
+\begin{equation}\label{eq:det-S0}
  \boxed{\log\frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
  =\sum_{j\in J}(K_0)_{jj}+\frac2k+
  \operatorname{tr}(\Gamma_{II}\Delta_0)-3\sum_Fp_i^2+O(k^{-2}).}
-\]
+\end{equation}
 
 \paragraph{Identidad para la cancelación de primer orden.}
 Sumar las cuatro entradas diagonales de $S_0\Gamma=I-\Pi$ da
-\[
+\begin{equation}\label{eq:identidad-F}
  \boxed{\sum_Fp_i(f_i-f_i^I)
  =-\sum_{j\in J}(K_0)_{jj}-\frac1k-p_cf_c.}
-\]
+\end{equation}
 Cada casilla de $F\setminus c$ toca exactamente una línea de $J$.
 La casilla $c$ cuenta cada par dos veces en la resolvente en vez de una;
 la diferencia exacta es $p_cf_c=O(k^{-2})$.
 Esta identidad utiliza el modo cero exacto, no una independencia supuesta.
+
+Reunimos lo probado en esta sección.
+\begin{lemasub}[Modo cero]\label{lem:modocero}
+En las hipótesis de la Sección~\ref{sec:B4T01} y con la notación de esta sección, valen
+\eqref{eq:det-S0} y la identidad exacta~\eqref{eq:identidad-F}.
+\end{lemasub}

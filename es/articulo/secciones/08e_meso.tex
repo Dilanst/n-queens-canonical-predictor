@@ -25,7 +25,30 @@ conservan. Se sustituyen sus usos de $k\ge\delta_0n$ por la Sección~\ref{sec:B5
 líneas y la respuesta, la Sección~\ref{sec:B5T03} para el paso de Newton, la masa de la diferencia de
 Schur y los restos cúbicos, y la Sección~\ref{sec:B5T04} para las trazas, sus cambios y la resolvente.
 El reequilibrado utiliza sólo las $2k$ líneas RC.
-En ningún punto se exige un número $O(k)$ de diagonales.
+En ningún punto se exige un número $O(k)$ de diagonales. La correspondencia es la siguiente.
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.52\textwidth}
+                >{\raggedright\arraybackslash}p{0.43\textwidth}@{}}
+\toprule
+Paso de la prueba macroscópica & Lo sustituye\\
+\midrule
+$G=I+O_{\max}(k^{-1})$ y $\|G\|_\infty=O(1)$ (Sección~\ref{sec:B3T05}) &
+ Sección~\ref{sec:B5T02}, complemento de Schur\\
+$\|P^{-1}R\|_\infty=O(1)$ (Sección~\ref{sec:B3T06}) &
+ Sección~\ref{sec:B5T02}, respuesta ponderada\\
+Paso de Newton y resto cúbico de la acción (Sección~\ref{sec:B4T02}) &
+ Sección~\ref{sec:B5T03}\\
+$\|\mathcal E\|_F^2$, $\sum_{ij}|\mathcal E_{ij}|$ y $\operatorname{tr}W_c$
+ (Secciones~\ref{sec:B4T01} y~\ref{sec:B4T04}) &
+ Sección~\ref{sec:B5T03}, diferencia de Schur completa\\
+Cambios de $\sum p_i^3$, $\sum p_i^2\kappa_i$ y $\sum_am_{2,a}^2$ (Sección~\ref{sec:B4T07}) &
+ Sección~\ref{sec:B5T04}, prefactor y resolvente por entradas\\
+Término cuadrático y resto cúbico del determinante (Sección~\ref{sec:B4T08}) &
+ Sección~\ref{sec:B5T04}, cambio de soporte\\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \par\emph{Cambio exacto de soporte y gauge.}
 Sean $\Gamma=S_0^+$, $v=(\mathbf1_R,-\mathbf1_C,0_D)$,
@@ -63,7 +86,7 @@ La derivada exacta de Jacobi, y no la derivación de un resto asintótico, da
 La identidad de frontera de la acción, el cambio del prefactor y el cofactor dan
 \[
  \begin{aligned}
- e_c:={}&L(B+c)-L(B)-\log p_c\\
+ \epsilon_c:={}&L(B+c)-L(B)-\log p_c\\
  ={}&-6p_c-f_c+6\sum_Fp_i^2-6\sum_{E'}p_iy_i-\sum_{E'}y_if_i\\
  &+\sum_Fp_if_i^I-\sum_{j\in J}(\Gamma_{jj}-1)-1/k+O(k^{-2}).
  \end{aligned}
@@ -73,7 +96,7 @@ La identidad final de la Sección~\ref{sec:B4T08}, antes de aproximar, implica
  \sum_Fp_i(f_i-f_i^I)
  =-\sum_{j\in J}(\Gamma_{jj}-1)-1/k-p_cf_c.
 \]
-Como $p_cf_c=O(k^{-2})$, resulta $e_c-\delta_c=O(k^{-2})$.
+Como $p_cf_c=O(k^{-2})$, resulta $\epsilon_c-\delta_c=O(k^{-2})$.
 Todas las sumas de errores usan $\sum_Ep=k$, $\sum_Fp=O(1)$ y la Sección~\ref{sec:B5T04}.
 Este paso retiene y cancela los términos de orden $k^{-1}$.
 
@@ -84,7 +107,7 @@ La identidad de conservación de la fila da exactamente
 \]
 La Sección~\ref{sec:B5T02} implica $\delta_c=O(k^{-1})$. Por tanto
 \[
- r_c=e_c-\log(1+\delta_c)=O(k^{-2}),\quad
+ r_c=\epsilon_c-\log(1+\delta_c)=O(k^{-2}),\quad
  \rho=\mathbb E_w e^{r_c},\quad|\log\rho|\le\sup_c|r_c|.
 \]
 Con esto queda probada la extensión determinista, bajo las hipótesis del teorema.
@@ -92,5 +115,8 @@ Con esto queda probada la extensión determinista, bajo las hipótesis del teore
 
 \paragraph{Alcance.}
 El caso de torres con máscara queda incluido mediante la representación con dos diagonales
-de una sola casilla por casilla de la Sección~\ref{sec:B5T01}. La herencia es de un padre interior a una clase
-exterior con margen; no se afirma que una trayectoria permanezca en ella.
+de una sola casilla por casilla de la Sección~\ref{sec:B5T01}. La herencia es de un padre interior a una
+clase
+exterior con margen; no se afirma que una trayectoria permanezca en ella. No exhibimos aquí ningún
+residual de reinas de esta clase con $k=o(n)$; el Corolario~\ref{cor:completo} sólo muestra que la
+clase macroscópica contiene al tablero completo.

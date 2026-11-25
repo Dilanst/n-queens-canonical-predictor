@@ -32,15 +32,17 @@ Usamos el determinante canónico del residual:
  N=\begin{pmatrix}
  \operatorname{diag}a&D&B^T\\ D^T&-\operatorname{diag}h&0\\ B&0&0
  \end{pmatrix},\quad
- \mathcal D=(-1)^{s+r}\prod_c(p_c/q_c^3)\det N>0,
+ \mathfrak D=(-1)^{s+r}\prod_c(p_c/q_c^3)\det N>0,
 \]
 donde $s$ es el número de diagonales y $r=\operatorname{rank}B$.
-Definimos $\ell=-\tfrac12\log\mathcal D$, $g=\nabla_p\ell$ y
+Definimos $\ell=-\tfrac12\log\mathfrak D$, $g=\nabla_p\ell$ y
 \[
  L(u)=H_B(p(u))+u^Tp(u)+\ell(p(u))+\tfrac d2\log(2\pi).
 \]
 El predictor del residual sin actividades auxiliares es $L(B)=L(0)$, con el mismo cofactor y la
 misma normalización por componente.
+El Lema~\ref{lem:puente} expresa $\mathfrak D$ mediante la matriz de líneas de la
+Sección~\ref{sec:B3T05} y muestra que, en el tablero completo, $L(B)=\log Q_{\rm pred}(n)$.
 \paragraph{Derivada total.}
 La estacionariedad anula $(\nabla H_B+u)^Tdp$ porque $dp\in\ker B$.
 Así,

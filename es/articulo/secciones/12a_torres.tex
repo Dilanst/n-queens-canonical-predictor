@@ -28,7 +28,8 @@ La probabilidad de casilla $p\in(0,1/k)$ y la probabilidad de línea vacía $y\i
  p(1-p)=\lambda y^2,\qquad y=1-kp.
 \end{equation}
 Es la ecuación general $p_c(1-p_c)^{d-1}=\lambda\prod_{L\ni c}y_L$, con $y_L=1-\sum_{c\in L}p_c$
-y $d$ el número de líneas que pasan por cada casilla, para $d=2$ y todas las variables iguales. Ponemos $\theta=1-y=kp$, la media de Bethe del número de torres por fila,
+y $d$ el número de líneas que pasan por cada casilla, para $d=2$ y todas las variables iguales. Ponemos
+$\theta=1-y=kp$, la media de Bethe del número de torres por fila,
 $w=p/(1-p)$ y $u=k\theta/(1-p)$.
 
 \paragraph{Las tres piezas de la fórmula.}
@@ -42,7 +43,8 @@ En ese punto fijo definimos:
 \item la matriz de un lazo $M$, que actúa sobre los $2k^2$ estados $(c,f)$, con
  $f\in\{\text{fila},\text{columna}\}$: $M[(c,f),(c',f')]=w$ si $f'\ne f$, $c'$ está en la línea de la
  familia $f'$ que pasa por $c$ y $c'\ne c$, y $M[(c,f),(c',f')]=0$ en otro caso;
-\item el factor del modo cero $\rho_0=\mathsf P/P_G$, donde $\mathsf P=\mathbb P(N_R=N_C)$ para dos variables
+\item el factor del modo cero $\rho_0=\mathsf P/P_G$, donde $\mathsf P=\mathbb P(N_R=N_C)$ para dos
+variables
  independientes $N_R$ y $N_C$ con ley $\mathrm{Bin}(k,y)$, que representan los números auxiliares de filas y
  columnas vacías en el modelo de Bethe, y $P_G=(2\pi(V_R+V_C))^{-1/2}$, con $V_R=V_C=ky(1-y)$.
 \end{itemize}
@@ -67,13 +69,16 @@ El resto $R'_k$ de~\eqref{eq:torres-formula} cumple lo siguiente.
  \end{aligned}
  \]
  y $R'_k(\infty)=-\frac1{12k}-\frac1{4k^2}+O(k^{-3})$.
-\item \emph{Hace falta $\Lambda_0>0$.} Para cada $k$ fijo, $R'_k(\lambda)=-\frac12\log(4\pi k^2\lambda)+o(1)$
+\item \emph{Hace falta $\Lambda_0>0$.} Para cada $k$ fijo,
+$R'_k(\lambda)=-\frac12\log(4\pi k^2\lambda)+o(1)$
  cuando $\lambda\to0^+$. En particular, $R'_k$ no está acotado en $\lambda\in(0,\infty)$.
 \end{enumerate}
 \end{teorema}
 
 Los tres primeros términos de (ii) son $\log k!-\log\operatorname{perm}_B(J_k)$, donde $J_k$ es la matriz
-$k\times k$ de unos y $\operatorname{perm}_B$ es el permanente de Bethe~\cite{Vontobel}.
+$k\times k$ de unos y $\operatorname{perm}_B$ es el permanente de Bethe~\cite{Vontobel}. Su suma es
+no negativa por la desigualdad de Gurvits~\cite{Gurvits}, que se apoya en la de
+Schrijver~\cite{Schrijver}, aplicada a la matriz doblemente estocástica $J_k/k$.
 
 \begin{observacion}[Por qué $k\ge3$]
 Para $k=2$ coinciden los factores $1-(k-1)^2w^2$ y $(1-w^2)^{(k-1)^2}$ del Lema~\ref{lem:torres-lazo}, y
@@ -85,7 +90,8 @@ como $y$, y la cancelación es exacta (Sección~\ref{sec:torres-i}).
 
 \begin{observacion}[La constante $C(\Lambda_0)$]
 Por (iii), para cada $k$ fijo, $\sup\{|R'_k(\lambda)|:\lambda(k-1)\ge\Lambda_0\}\to\infty$ cuando
-$\Lambda_0\to0$, así que $C(\Lambda_0)$ tiende necesariamente a infinito cuando $\Lambda_0\to0$. La prueba de (i) da una
+$\Lambda_0\to0$, así que $C(\Lambda_0)$ tiende necesariamente a infinito cuando $\Lambda_0\to0$. La prueba
+de (i) da una
 cota explícita sólo para $k\ge k_2(\Lambda_0)$, con $k_2$ muy grande; para $3\le k<k_2$ la cota sale de un
 argumento de compacidad.
 \end{observacion}

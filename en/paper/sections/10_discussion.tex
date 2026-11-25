@@ -17,13 +17,27 @@ Section~\ref{sec:numerico} gives $R_Q(20)\approx0.021$ and $R_Q(27)\approx0.012$
 
 \paragraph{The role of consistency.}
 Theorem~\ref{thm:intro-consistencia} states that, on residual boards in its classes, the predictor satisfies
-the exact recursion for the count at each step up to a factor $e^{O(k^{-2})}$. Along a trajectory of residual boards that
+the exact recursion for the count at each step up to a factor $e^{O(k^{-2})}$. Along a trajectory of
+residual boards that
 stays in a single class with $k\ge\delta_0n$, the errors sum to $O_{\delta_0}(1/n)$
 (Section~\ref{sec:B4T05}). To pass from this to $R_Q(n)\to0$ requires three ingredients that this paper
 does not provide: membership of typical residual boards of a random placement in these classes; control of
-the end of the process, when few empty rows remain (for the exact count,~\cite{Completabilidad} studies the case of
+the end of the process, when few empty rows remain (for the exact count,~\cite{Completabilidad} studies the
+case of
 a fixed number of queens left to place, without uniformity as this number grows); and a comparison between
 the count and the predictor along random trajectories.
+
+The comparison is exact at each step. Let $R(B)=\log Q(B)-L(B)$, so that $R_Q(n)$ is its value on
+the full board (Lemma~\ref{lem:puente}), and let $\tilde w_c=e^{L(B+c)-L(B)}/\rho(B)$, which are positive
+weights summing to one over the children of row $r$. If $Q(B)>0$ and the predictor is defined at $B$
+and at these children, the recursion for the count gives
+\[
+ R(B)=\log\rho(B)+\log\sum_{c\in r}\tilde w_c\,e^{R(B+c)},
+\]
+where a child without completions contributes zero to the sum. This identity indicates what would have
+to be controlled to bound $R_Q(n)$: the values of $\log\rho$ along the tree of insertions, averaged
+with these weights, and the value of $R$ on the residual boards where the predictor ceases to be
+defined.
 
 \paragraph{Finite activity.}
 The predictor is defined directly on the full board, on the polytope $K_n$. At finite
@@ -34,5 +48,6 @@ logarithmically between $\Lambda=\lambda(n-1)=10^{-3}$ and $10^{12}$, for $n=6$,
 $16$, $20$, $27$, $40$, $60$, $80$, $120$ and $160$. For $n=4$, $K_4$ reduces to the point
 $\pi\equiv1/4$, because each row has four squares with $p_c\le1/4$ and sums to one; hence
 $(H_\infty)$ does not hold. For $n=5$, the calculation indicates $\max_c\pi^{(5)}_c=1/4$. In both cases, a
-barrier optimizer suggests that the branch ceases to exist for large $\Lambda$, but this has not been proved.
+barrier optimizer suggests that the branch ceases to exist for large $\Lambda$, but this has not been
+proved.
 Nothing in this paragraph is used in the rest of the paper.

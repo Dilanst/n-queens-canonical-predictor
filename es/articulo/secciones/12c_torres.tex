@@ -13,12 +13,15 @@ Por la fórmula de Rodrigues, $P_k(t)=(2^kk!)^{-1}(d/dt)^k[(t-1)^k(t+1)^k]$, y p
  \Bigl(\frac{d}{dt}\Bigr)^k\bigl[(t-1)^k(t+1)^k\bigr]
  =\sum_q\binom kq\frac{k!}{q!}(t-1)^q\,\frac{k!}{(k-q)!}(t+1)^{k-q}.
 \]
-Por tanto $P_k(t)=\sum_q\binom kq^2\bigl(\frac{t-1}2\bigr)^q\bigl(\frac{t+1}2\bigr)^{k-q}$. Para $x\ne1$, sea
+Por tanto $P_k(t)=\sum_q\binom kq^2\bigl(\frac{t-1}2\bigr)^q\bigl(\frac{t+1}2\bigr)^{k-q}$. Para $x\ne1$,
+sea
 $t=(1+x)/(1-x)$. Entonces $(t-1)/2=x/(1-x)$ y $(t+1)/2=1/(1-x)$, y queda
 $f_k(x)=(1-x)^kP_k\bigl((1+x)/(1-x)\bigr)$; ambos lados son polinomios en $x$, así que la identidad vale
-para todo $x$. El polinomio $P_k$ tiene $k$ ceros simples $t_i=\cos\alpha_i$ en $(-1,1)$~\cite[Teorema~3.3.1]{Szego}. Si
+para todo $x$. El polinomio $P_k$ tiene $k$ ceros simples $t_i=\cos\alpha_i$ en
+$(-1,1)$~\cite[Teorema~3.3.1]{Szego}. Si
 $\kappa_k$ es su coeficiente principal, $f_k(x)=\kappa_k\prod_i[(1-t_i)+x(1+t_i)]$. Como $f_k(0)=1$, se
-tiene $\kappa_k\prod_i(1-t_i)=1$. Con $(1+\cos\alpha)/(1-\cos\alpha)=\cot^2(\alpha/2)$ se obtiene el producto
+tiene $\kappa_k\prod_i(1-t_i)=1$. Con $(1+\cos\alpha)/(1-\cos\alpha)=\cot^2(\alpha/2)$ se obtiene el
+producto
 del enunciado.
 \end{proof}
 
@@ -27,7 +30,7 @@ Sea $x=(\theta/y)^2$, de modo que $D(q)=\binom kq^2x^q/f_k(x)$.
 \begin{enumerate}[(a)]
 \item La función generatriz es $\mathbb E_D[\tau^q]=f_k(x\tau)/f_k(x)=\prod_i(1-r_i+r_i\tau)$, con
  $r_i=xc_i/(1+xc_i)\in(0,1)$. Es decir, $D$ es la ley de una suma de $k$ variables de Bernoulli
- independientes de parámetros $r_i$.
+ independientes de parámetros $r_i$ (véase~\cite{Pitman} sobre esta representación).
 \item Para $v\in\mathbb R$, la ley inclinada $D_v(q)\propto D(q)e^{vq}$ es de la misma familia, con $x$
  sustituido por $xe^v$.
 \item La función $K(v)=\log\mathbb E_D[e^{vq}]=\sum_i\log(1-r_i+r_ie^v)$ cumple

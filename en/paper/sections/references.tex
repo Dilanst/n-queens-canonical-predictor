@@ -1,3 +1,5 @@
+% The bookmark anchor goes inside the title, so that the PDF bookmark leads to the title.
+\renewcommand*{\refname}{\phantomsection References}
 \begin{thebibliography}{99}
 \addcontentsline{toc}{section}{References}
 \raggedright
@@ -6,12 +8,19 @@
 Math. \textbf{3} (1992), 717--797.
 \href{https://doi.org/10.1142/S0129167X92000357}{doi:10.1142/S0129167X92000357}.
 
+\bibitem{BellStevens} J.~Bell and B.~Stevens, \emph{A survey of known results and research areas
+for $n$-queens}, Discrete Math. \textbf{309} (2009), 1--31.
+\href{https://doi.org/10.1016/j.disc.2007.12.043}{doi:10.1016/j.disc.2007.12.043}.
+
 \bibitem{Bornemann} F.~Bornemann, \emph{On the numerical evaluation of Fredholm determinants}, Math.
 Comp. \textbf{79} (2010), 871--915.
 \href{https://doi.org/10.1090/S0025-5718-09-02280-7}{doi:10.1090/S0025-5718-09-02280-7}.
 
 \bibitem{BK} C.~Bowtell and P.~Keevash, \emph{The $n$-queens problem}, arXiv:2109.08083v1 (2021).
 \href{https://doi.org/10.48550/arXiv.2109.08083}{doi:10.48550/arXiv.2109.08083}.
+
+\bibitem{BV} S.~Boyd and L.~Vandenberghe, \emph{Convex Optimization}, Cambridge University Press, 2004.
+\href{https://doi.org/10.1017/CBO9780511804441}{doi:10.1017/CBO9780511804441}.
 
 \bibitem{Bruns} H.~Bruns, \emph{Zur Theorie der Kugelfunctionen}, J. Reine Angew. Math. \textbf{90}
 (1881), 322--328.
@@ -25,6 +34,10 @@ board into colors}, preprint, Zenodo, 2026, version~1.
 graphs}, J. Stat. Mech. Theory Exp. (2006), P06009.
 \href{https://doi.org/10.1088/1742-5468/2006/06/P06009}{doi:10.1088/1742-5468/2006/06/P06009}.
 
+\bibitem{ChertkovYedidia} M.~Chertkov and A.~B.~Yedidia, \emph{Approximating the permanent with
+fractional belief propagation}, J. Mach. Learn. Res. \textbf{14} (2013), 2029--2066.
+arXiv:1108.0065. \href{https://doi.org/10.48550/arXiv.1108.0065}{doi:10.48550/arXiv.1108.0065}.
+
 \bibitem{EMM19} S.~Eberhard, F.~Manners and R.~Mrazović, \emph{Additive triples of bijections, or the
 toroidal semiqueens problem}, J. Eur. Math. Soc. \textbf{21} (2019), 441--463.
 \href{https://doi.org/10.4171/JEMS/841}{doi:10.4171/JEMS/841}; arXiv:1510.05987.
@@ -34,9 +47,17 @@ Proc. London Math. Soc. \textbf{127} (2023), 84--115.
 \href{https://doi.org/10.1112/plms.12538}{doi:10.1112/plms.12538};
 arXiv:2209.02180.
 
+\bibitem{Gurvits} L.~Gurvits, \emph{Unleashing the power of Schrijver's permanental inequality with
+the help of the Bethe approximation}, arXiv:1106.2844 (2011).
+\href{https://doi.org/10.48550/arXiv.1106.2844}{doi:10.48550/arXiv.1106.2844}.
+
 \bibitem{LLW} Z.-Y.~Liu, H.-J.~Liao and L.~Wang, \emph{Statistical mechanics of the $N$-queens problem},
 Phys. Rev. E \textbf{114} (2026), 034125.
 \href{https://doi.org/10.1103/cx7m-n3d5}{doi:10.1103/cx7m-n3d5}; arXiv:2605.10326.
+
+\bibitem{Luria} Z.~Luria, \emph{New bounds on the number of $n$-queens configurations},
+arXiv:1705.05225v2 (2017).
+\href{https://doi.org/10.48550/arXiv.1705.05225}{doi:10.48550/arXiv.1705.05225}.
 
 \bibitem{LS} Z.~Luria and M.~Simkin, \emph{A lower bound for the $n$-queens problem}, in
 \emph{Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)}, SIAM, 2022,
@@ -44,36 +65,57 @@ Phys. Rev. E \textbf{114} (2026), 034125.
 \href{https://doi.org/10.1137/1.9781611977073.86}{doi:10.1137/1.9781611977073.86};
 arXiv:2105.11431.
 
-\bibitem{Completabilidad} D.~S.~Mejia, \emph{Completability of the Final Layers in the $n$-Queens Problem}, preprint, Zenodo, 2026, version~1.
-\href{https://doi.org/10.5281/zenodo.24221374}{doi:10.5281/zenodo.24221374}.
+\bibitem{Completabilidad} D.~S.~Mejia, \emph{Completability of the final layers in the $n$-queens problem},
+preprint, Zenodo, 2026, version~2.
+\href{https://doi.org/10.5281/zenodo.24513225}{doi:10.5281/zenodo.24513225}.
 
-\bibitem{Perfil} D.~S.~Mejia, \emph{The Variational Profile of Partial Queen Placements: Existence, Euler Equations, and Regularity up to the Full Board}, preprint, Zenodo, 2026, version~1.
-\href{https://doi.org/10.5281/zenodo.24220042}{doi:10.5281/zenodo.24220042}.
+\bibitem{Perfil} D.~S.~Mejia, \emph{The variational profile of partial queen placements: existence,
+Euler equations, and regularity up to the full board}, preprint, Zenodo, 2026, version~2.
+\href{https://doi.org/10.5281/zenodo.24509033}{doi:10.5281/zenodo.24509033}.
 
-\ifx\DOIcodigo\empty\else
-\bibitem{Codigo} D.~S.~Mejia, \emph{Numerical Verification of the Canonical Predictor for the $n$-Queens Problem}, version~2.1.0, 2026. \href{https://doi.org/\DOIcodigo}{doi:\DOIcodigo}.
-\fi
+\bibitem{Codigo} D.~S.~Mejia, \emph{Numerical verification of the canonical predictor for the $n$-queens
+problem}, version~2.1.0, 2026.
+\ifx\DOIcodigo\empty\else\href{https://doi.org/\DOIcodigo}{doi:\DOIcodigo}. \fi
+Repository:
+\href{https://github.com/Dilanst/n-queens-canonical-predictor/tree/main/en/numerical_verification}%
+{\nolinkurl{github.com/Dilanst/n-queens-canonical-predictor/tree/main/en/numerical_verification}}.
+
+\bibitem{MontanariRizzo} A.~Montanari and T.~Rizzo, \emph{How to compute loop corrections to the
+Bethe approximation}, J. Stat. Mech. Theory Exp. (2005), P10011.
+\href{https://doi.org/10.1088/1742-5468/2005/10/P10011}{doi:10.1088/1742-5468/2005/10/P10011};
+arXiv:cond-mat/0506769.
 
 \bibitem{NAB} P.~Nobel, A.~Agrawal and S.~Boyd, \emph{Computing tighter bounds on the $n$-queens
 constant via Newton's method}, Optim. Lett. \textbf{17} (2023), 1229--1240.
 \href{https://doi.org/10.1007/s11590-022-01933-2}{doi:10.1007/s11590-022-01933-2}.
 
 \bibitem{OEIS} OEIS Foundation Inc., \emph{The On-Line Encyclopedia of Integer Sequences},
-sequence A000170. \url{https://oeis.org/A000170} (accessed 15 November 2026).
+sequence A000170. \url{https://oeis.org/A000170} (accessed 24 November 2026).
+
+\bibitem{Pitman} J.~Pitman, \emph{Probabilistic bounds on the coefficients of polynomials with only
+real zeros}, J. Combin. Theory Ser. A \textbf{77} (1997), 279--303.
+\href{https://doi.org/10.1006/jcta.1997.2747}{doi:10.1006/jcta.1997.2747}.
 
 \bibitem{PE} T.~B.~Preußer and M.~R.~Engelhardt, \emph{Putting queens in carry chains, No.~27}, J. Signal
 Process. Syst. \textbf{88} (2017), 185--201.
 \href{https://doi.org/10.1007/s11265-016-1176-8}{doi:10.1007/s11265-016-1176-8}.
 
+\bibitem{Schrijver} A.~Schrijver, \emph{Counting 1-factors in regular bipartite graphs},
+J. Combin. Theory Ser. B \textbf{72} (1998), 122--135.
+\href{https://doi.org/10.1006/jctb.1997.1798}{doi:10.1006/jctb.1997.1798}.
+
 \bibitem{Simkin} M.~Simkin, \emph{The number of $n$-queens configurations}, Adv. Math.
 \textbf{427} (2023), 109127.
-\href{https://doi.org/10.1016/j.aim.2023.109127}{doi:10.1016/j.aim.2023.109127}. We cite the numbering of version arXiv:2107.13460v3.
+\href{https://doi.org/10.1016/j.aim.2023.109127}{doi:10.1016/j.aim.2023.109127}. We cite the numbering of
+version arXiv:2107.13460v3.
 
 \bibitem{Simon} B.~Simon, \emph{Trace Ideals and Their Applications}, 2nd ed., Mathematical Surveys
 and Monographs \textbf{120}, American Mathematical Society, 2005.
+\href{https://doi.org/10.1090/surv/120}{doi:10.1090/surv/120}.
 
 \bibitem{Szego} G.~Szegő, \emph{Orthogonal Polynomials}, 4th ed., American Mathematical Society Colloquium
 Publications \textbf{23}, American Mathematical Society, 1975.
+\href{https://doi.org/10.1090/coll/023}{doi:10.1090/coll/023}.
 
 \bibitem{Vontobel} P.~O.~Vontobel, \emph{The Bethe permanent of a nonnegative matrix}, IEEE Trans.
 Inform. Theory \textbf{59} (2013), 1866--1901.
@@ -84,7 +126,13 @@ non-negative matrix}, J. Phys. A: Math. Theor. \textbf{43} (2010), 242002.
 \href{https://doi.org/10.1088/1751-8113/43/24/242002}{doi:10.1088/1751-8113/43/24/242002}; arXiv:0911.1419.
 
 \bibitem{WF} Y.~Watanabe and K.~Fukumizu, \emph{Graph zeta function in the Bethe free energy and loopy
-belief propagation}, in \emph{Advances in Neural Information Processing Systems 22}, 2009. arXiv:1002.3307.
+belief propagation}, in \emph{Advances in Neural Information Processing Systems 22}, 2009,
+2017--2025. arXiv:1002.3307.
+\href{https://doi.org/10.48550/arXiv.1002.3307}{doi:10.48550/arXiv.1002.3307}.
+
+\bibitem{YaoLi} G.~Yao and Y.~Li, \emph{High-performance $N$-queens solver on GPU: iterative DFS with zero
+bank conflicts}, arXiv:2511.12009v1 (2025).
+\href{https://doi.org/10.48550/arXiv.2511.12009}{doi:10.48550/arXiv.2511.12009}.
 
 \bibitem{YFW} J.~S.~Yedidia, W.~T.~Freeman and Y.~Weiss, \emph{Constructing free-energy approximations and
 generalized belief propagation algorithms}, IEEE Trans. Inform. Theory \textbf{51} (2005), 2282--2312.

@@ -8,7 +8,9 @@ We interpret $0\log0$ by continuity.
 The parent is stationary for $H_B$, not for $H_B+\ell$.
 
 \paragraph{Action identity without a Taylor expansion in the removed squares.}
-Extend $\bar p$ to the parent support by assigning one to $c$ and zero to $F\setminus\{c\}$. The increment preserves all RC constraints, so the linear term from the parent gradient vanishes exactly. The Bregman identity for each summand of $H_B$ gives
+Extend $\bar p$ to the parent support by assigning one to $c$ and zero to $F\setminus\{c\}$. The increment
+preserves all RC constraints, so the linear term from the parent gradient vanishes exactly. The Bregman
+identity for each summand of $H_B$ gives
 \[
  \boxed{\begin{aligned}
  H_{\rm child}(\bar p)-H_{\rm parent}(p)-\log p_c
@@ -18,7 +20,9 @@ Extend $\bar p$ to the parent support by assigning one to $c$ and zero to $F\set
  -\sum_{D\cap I}\mathcal K(h_d,u_d).
  \end{aligned}}
 \]
-The boundary terms can be checked directly. The square $c$ contributes $\log p_c+4q_c$, the other removed squares contribute $-3\log q_e-4p_e$, and the two removed diagonals contribute $-h_{D_+}-h_{D_-}$. We use the exact identity $\sum_{F\setminus c}p_e=4q_c-h_{D_+}-h_{D_-}$.
+The boundary terms can be checked directly. The square $c$ contributes $\log p_c+4q_c$, the other removed
+squares contribute $-3\log q_e-4p_e$, and the two removed diagonals contribute $-h_{D_+}-h_{D_-}$. We use
+the exact identity $\sum_{F\setminus c}p_e=4q_c-h_{D_+}-h_{D_-}$.
 The four lines on the ordinary board intersect only at $c$.
 
 \paragraph{Local first-order cancellation.}
@@ -27,36 +31,45 @@ With $b(p)=(1-4p)/(1-p)^4$, the local factor and the removed block give
  -3\sum_{F\setminus c}(\log q_e+p_e)
  +\tfrac12\sum_F\log b(p_e)+\tfrac12\log\det S_{JJ}=O(k^{-2}).
 \]
-Indeed, the three leading terms are $\tfrac32\sum_Fp_e^2$, $-3\sum_Fp_e^2$, and $\tfrac32\sum_Fp_e^2$, respectively.
-The multiplicity four of $c$ produces a change of only $O(p_c^2)=O(k^{-2})$. The remainders are bounded by $\sum_Fp_e^3=O(k^{-2})$ and $\|S_{JJ}-I\|^2=O(k^{-2})$, since $J$ has size four.
+Indeed, the three leading terms are $\tfrac32\sum_Fp_e^2$, $-3\sum_Fp_e^2$, and $\tfrac32\sum_Fp_e^2$,
+respectively.
+The multiplicity four of $c$ produces a change of only $O(p_c^2)=O(k^{-2})$. The remainders are bounded by
+$\sum_Fp_e^3=O(k^{-2})$ and $\|S_{JJ}-I\|^2=O(k^{-2})$, since $J$ has size four.
 
 \paragraph{Expansion at the rebalanced point.}
 Let $L=H+\ell+\tfrac12\log(2\pi)$ on both connected supports and set
 \[
  R_{c0}=L_{\rm child}(\bar p)-L_{\rm parent}(p)-\log p_c.
 \]
-A Taylor expansion confined to the surviving coordinates and the positive vacancies, together with Section~\ref{sec:B4T01}, gives
+A Taylor expansion confined to the surviving coordinates and the positive vacancies, together with
+Section~\ref{sec:B4T01}, gives
 \[
  \boxed{R_{c0}=-\tfrac12\left(\sum_{E'}\frac{z_e^2}{p_e}
                   +\sum_{D\cap I}\frac{u_d^2}{h_d}\right)
  +6\sum_{E'}p_ez_e-\tfrac12\operatorname{tr}W_c
  +\tfrac14\operatorname{tr}W_c^2+O(k^{-2}).}
 \]
-Here we have used $\sum z^2=O(k^{-2})$, $\sum z^2/p=O(k^{-1})$, and $\sum u^2/h=O(k^{-1})$. The cubic remainders are $O(k^{-2})$.
-The change in the local factor on the surviving squares satisfies $-\tfrac12\sum_{E'}\log[b(p+z)/b(p)]=6\sum pz+O(k^{-2})$.
+Here we have used $\sum z^2=O(k^{-2})$, $\sum z^2/p=O(k^{-1})$, and $\sum u^2/h=O(k^{-1})$. The cubic
+remainders are $O(k^{-2})$.
+The change in the local factor on the surviving squares satisfies $-\tfrac12\sum_{E'}\log[b(p+z)/b(p)]=6\sum
+pz+O(k^{-2})$.
 
-We also have $\operatorname{tr}W_c=O(k^{-1})$. Indeed, the diagonal of $\mathcal E$ is $O(k^{-2})$ after correcting the RC masses, $\|\mathcal E\|_\infty=O(k^{-1})$, and $P_c^+=\Pi_I^\perp G_{II}\Pi_I^\perp=I+O_{\max}(k^{-1})$.
-Here $\Pi_I$ projects onto the span of $v_I$. The equality follows by solving $S(a,y)=(0,f)$ for $f\perp v_I$ and projecting $y$.
+We also have $\operatorname{tr}W_c=O(k^{-1})$. Indeed, the diagonal of $\mathcal E$ is $O(k^{-2})$ after
+correcting the RC masses, $\|\mathcal E\|_\infty=O(k^{-1})$, and $P_c^+=\Pi_I^\perp
+G_{II}\Pi_I^\perp=I+O_{\max}(k^{-1})$.
+Here $\Pi_I$ projects onto the span of $v_I$. The equality follows by solving $S(a,y)=(0,f)$ for $f\perp
+v_I$ and projecting $y$.
 There are $O(k)$ lines, so $\sum_{ij}|\mathcal E_{ij}|=O(1)$.
 
 \paragraph{Reduced scalar.}
-Let $e$ be the residual from Section~\ref{sec:B4T02}, let $\bar R$ denote its response, and set $\bar g=\nabla\ell(\bar p)$ and $\delta_c=(R_{\rm parent}\nabla\ell(p))_c/p_c$.
+Let $e$ be the residual from Section~\ref{sec:B4T02}, let $\bar R$ denote its response, and set $\bar
+g=\nabla\ell(\bar p)$ and $\delta_c=(R_{\rm parent}\nabla\ell(p))_c/p_c$.
 Sections~\ref{sec:B4T02}--\ref{sec:B4T03} and the expansion $\log(1+\delta_c)=\delta_c+O(k^{-2})$ give
-\[
+\begin{equation}\label{eq:rc}
  r_c=L_{\rm child}(p^*)-L_{\rm parent}(p)-\log[p_c(1+\delta_c)]
        =\mathcal C_c+O(k^{-2}),
-\]
-\[
+\end{equation}
+\begin{equation}\label{eq:Cc}
  \boxed{\begin{aligned}
  \mathcal C_c={}&-\tfrac12\left(\sum_{E'}z_e^2/p_e+
                                 \sum_{D\cap I}u_d^2/h_d\right)
@@ -64,5 +77,14 @@ Sections~\ref{sec:B4T02}--\ref{sec:B4T03} and the expansion $\log(1+\delta_c)=\d
  &-\tfrac12\operatorname{tr}W_c+\tfrac14\operatorname{tr}W_c^2
  +\tfrac12e^T\bar R e+\bar g^T\bar R e-\delta_c.
  \end{aligned}}
-\]
-All terms are defined using the parent, the rebalancing of Section~\ref{sec:B3T07}, and one Newton step, without solving the child problem anew. These estimates give $\mathcal C_c=O(k^{-1})$. Sections~\ref{sec:B4T06}--\ref{sec:B4T09} prove $\mathcal C_c=O(k^{-2})$ using the resolvent of the unit-diagonal matrix. This overall cancellation is distinct from the local cancellation proved above.
+\end{equation}
+All terms are defined using the parent, the rebalancing of Section~\ref{sec:B3T07}, and one Newton step,
+without solving the child problem anew. These estimates give $\mathcal C_c=O(k^{-1})$.
+Sections~\ref{sec:B4T06}--\ref{sec:B4T09} prove $\mathcal C_c=O(k^{-2})$ using the resolvent of the
+unit-diagonal matrix. This overall cancellation is distinct from the local cancellation proved above.
+
+We collect what this section proves.
+\begin{lemasub}[Reduced scalar]\label{lem:escalar}
+Under the hypotheses of Section~\ref{sec:B4T01}, for sufficiently large $k$, \eqref{eq:rc} holds,
+with $\delta_c$ as above and $\mathcal C_c$ given by~\eqref{eq:Cc}; moreover, $\mathcal C_c=O(k^{-1})$.
+\end{lemasub}

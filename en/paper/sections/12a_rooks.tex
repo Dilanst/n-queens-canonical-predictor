@@ -3,7 +3,8 @@
 
 In this appendix we study the construction of the predictor in the rook model, which has only
 rows and columns. Everything is explicit in this setting, and one can prove that the Bethe formula
-with the one-loop correction and the exact zero-mode normalization approximates the logarithm of the count with error $O(1/k)$,
+with the one-loop correction and the exact zero-mode normalization approximates the logarithm of the count
+with error $O(1/k)$,
 uniformly from positive densities up to the full board. No proof in the rest of the paper
 uses this appendix. We use separate notation here. In particular, $p$ is the Bethe square probability,
 $\pi=3.14159\ldots$, and $D$ is a probability law.
@@ -28,7 +29,8 @@ The square probability $p\in(0,1/k)$ and the empty-line probability $y\in(0,1)$ 
  p(1-p)=\lambda y^2,\qquad y=1-kp.
 \end{equation}
 This is the general equation $p_c(1-p_c)^{d-1}=\lambda\prod_{L\ni c}y_L$, with $y_L=1-\sum_{c\in L}p_c$
-and $d$ the number of lines through each square, specialized to $d=2$ with all variables equal. Set $\theta=1-y=kp$, the Bethe mean number of rooks per row,
+and $d$ the number of lines through each square, specialized to $d=2$ with all variables equal. Set
+$\theta=1-y=kp$, the Bethe mean number of rooks per row,
 $w=p/(1-p)$, and $u=k\theta/(1-p)$.
 
 \paragraph{The three components of the formula.}
@@ -40,10 +42,12 @@ At this fixed point we define
  \]
  where $c$ ranges over the $k^2$ squares and $L$ over the $2k$ lines,
 \item the one-loop matrix $M$, acting on the $2k^2$ states $(c,f)$, with
- $f\in\{\text{row},\text{column}\}$. Its entries are $M[(c,f),(c',f')]=w$ if $f'\ne f$, $c'$ lies on the line of
+ $f\in\{\text{row},\text{column}\}$. Its entries are $M[(c,f),(c',f')]=w$ if $f'\ne f$, $c'$ lies on the
+line of
  family $f'$ through $c$, and $c'\ne c$, and $M[(c,f),(c',f')]=0$ otherwise,
 \item the zero-mode factor $\rho_0=\mathsf P/P_G$, where $\mathsf P=\mathbb P(N_R=N_C)$ for two
- independent variables $N_R$ and $N_C$ with law $\mathrm{Bin}(k,y)$, representing the auxiliary numbers of empty rows and
+ independent variables $N_R$ and $N_C$ with law $\mathrm{Bin}(k,y)$, representing the auxiliary numbers of
+empty rows and
  columns in the Bethe model, and $P_G=(2\pi(V_R+V_C))^{-1/2}$, with $V_R=V_C=ky(1-y)$.
 \end{itemize}
 The formula and its remainder are
@@ -55,7 +59,8 @@ The formula and its remainder are
 The remainder $R'_k$ in~\eqref{eq:torres-formula} has the following properties.
 \begin{enumerate}[(i)]
 \item \emph{Uniform bound.} For each $\Lambda_0>0$ there is a constant $C=C(\Lambda_0)$ such that, for
- every $k\ge3$ and every $\lambda$ with $\Lambda=\lambda(k-1)\ge\Lambda_0$, we have $|R'_k(\lambda)|\le C/k$.
+ every $k\ge3$ and every $\lambda$ with $\Lambda=\lambda(k-1)\ge\Lambda_0$, we have $|R'_k(\lambda)|\le
+C/k$.
  Moreover, $R'_k(\lambda)$ has a limit $R'_k(\infty)$ as $\lambda\to\infty$, and the same bound holds
  for this limit.
 \item \emph{Full board.}
@@ -67,32 +72,39 @@ The remainder $R'_k$ in~\eqref{eq:torres-formula} has the following properties.
  \end{aligned}
  \]
  and $R'_k(\infty)=-\frac1{12k}-\frac1{4k^2}+O(k^{-3})$.
-\item \emph{The condition $\Lambda_0>0$ is necessary.} For each fixed $k$, $R'_k(\lambda)=-\frac12\log(4\pi k^2\lambda)+o(1)$
+\item \emph{The condition $\Lambda_0>0$ is necessary.} For each fixed $k$, $R'_k(\lambda)=-\frac12\log(4\pi
+k^2\lambda)+o(1)$
  as $\lambda\to0^+$. In particular, $R'_k$ is unbounded on $\lambda\in(0,\infty)$.
 \end{enumerate}
 \end{teorema}
 
 The first three terms in (ii) equal $\log k!-\log\operatorname{perm}_B(J_k)$, where $J_k$ is the
-$k\times k$ all-ones matrix and $\operatorname{perm}_B$ is the Bethe permanent~\cite{Vontobel}.
+$k\times k$ all-ones matrix and $\operatorname{perm}_B$ is the Bethe permanent~\cite{Vontobel}. Their sum is
+nonnegative by Gurvits's inequality~\cite{Gurvits}, which relies on Schrijver's~\cite{Schrijver}, applied
+to the doubly stochastic matrix $J_k/k$.
 
 \begin{observacion}[Why $k\ge3$ is needed]
 For $k=2$ the factors $1-(k-1)^2w^2$ and $(1-w^2)^{(k-1)^2}$ in Lemma~\ref{lem:torres-lazo} coincide, and
 $\det(I+M)=(1-w^2)^2(1+w^2)^2$ vanishes like $y^2$ as $y\to0$. Then
-$-\frac12\log\det(I+M)\sim-\log y$ is not canceled by the $\frac12\log y$ term in $\log\rho_0$, and $R'_2\to-\infty$
+$-\frac12\log\det(I+M)\sim-\log y$ is not canceled by the $\frac12\log y$ term in $\log\rho_0$, and
+$R'_2\to-\infty$
 like $-\frac14\log\Lambda$. For $k\ge3$ only the factor $1-(k-1)^2w^2$ vanishes as $y\to0$. It vanishes
 like $y$, and the cancellation is exact (Section~\ref{sec:torres-i}).
 \end{observacion}
 
 \begin{observacion}[The constant $C(\Lambda_0)$]
 By (iii), for each fixed $k$, $\sup\{|R'_k(\lambda)|:\lambda(k-1)\ge\Lambda_0\}\to\infty$ as
-$\Lambda_0\to0$, so $C(\Lambda_0)$ necessarily tends to infinity as $\Lambda_0\to0$. The proof of (i) gives an
-explicit bound only for $k\ge k_2(\Lambda_0)$, with $k_2$ very large. For $3\le k<k_2$ the bound follows from a
+$\Lambda_0\to0$, so $C(\Lambda_0)$ necessarily tends to infinity as $\Lambda_0\to0$. The proof of (i) gives
+an
+explicit bound only for $k\ge k_2(\Lambda_0)$, with $k_2$ very large. For $3\le k<k_2$ the bound follows
+from a
 compactness argument.
 \end{observacion}
 
 \paragraph{Idea of the proof.}
 An exact identity (Lemma~\ref{lem:torres-identidad}) gives
-$Z_k=Z_B\,(1-p)^{-k^2}\,\mathsf P\,\mathbb E_D[q!\,u^{-q}]$, where $\mathbb E_D$ denotes an average under the law
+$Z_k=Z_B\,(1-p)^{-k^2}\,\mathsf P\,\mathbb E_D[q!\,u^{-q}]$, where $\mathbb E_D$ denotes an average under
+the law
 $D$ of the number of occupied rows conditional on $N_R=N_C$. The factor
 $(1-p)^{-k^2}\approx e^{k\theta+\theta^2/2}$ is not negligible. In the full-board limit we
 have $\mathsf P\to1$, and $D$ concentrates on $q=k$. After division by $\lambda^k$, the identity becomes
@@ -102,7 +114,8 @@ the matrix with entries $\beta_{ij}(1-\beta_{ij})$, and the factor $\prod_{i,j}(
 $\beta$ is the doubly stochastic matrix at the Bethe fixed point. For the all-ones matrix,
 $\beta_{ij}=1/k$, and these three factors are the limits of $Z_B/\lambda^k$,
 $\mathbb E_D[q!\,u^{-q}]$, and $(1-p)^{-k^2}$. The discrete factor $\mathsf P$, which is the
-zero mode, cancels exactly with its counterpart in the formula. What remains is $\mathbb E_D[q!\,u^{-q}]$, the average of a
+zero mode, cancels exactly with its counterpart in the formula. What remains is $\mathbb E_D[q!\,u^{-q}]$,
+the average of a
 slowly varying function. This average is evaluated by the one-dimensional Laplace method. The necessary
 bounds follow from the fact that $D$ is a Poisson binomial law whose parameters come from the zeros of the
 Legendre polynomials, and from Bruns's inequality.

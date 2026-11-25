@@ -51,10 +51,10 @@ La estacionariedad es equivalente a $v=s+R\mathcal N(v)$.
 Para $k$ grande, el segundo miembro define una aplicación que preserva la bola de radio $2\sigma$
 y tiene constante de Lipschitz menor que uno; si $\sigma=0$, $\bar p$ ya es estacionario.
 Existe por ello un punto $p^*$ con
-\[
+\begin{equation}\label{eq:hijo-control}
  \boxed{\|(p^*-\bar p)/\bar p\|_\infty=O(k^{-1}),\qquad
  \|(p^*-\bar p-s)/\bar p\|_\infty=O(k^{-2}).}
-\]
+\end{equation}
 Este punto permanece factible y positivo, con vacancias uniformes y $p^*<1/4$.
 La hessiana cambiada de signo es definida positiva en la región convexa $p<1/4$,
 así que el punto estacionario es único en esa rama. No se afirma unicidad fuera de ella.
@@ -64,10 +64,18 @@ Todos los controles son uniformes en los hijos de un padre de la clase.
 \paragraph{Incremento de la acción desde $\bar p$.}
 En $\bar p$, el término lineal $e^Ts=s^TKs$ no se anula en general. Se combina con
 el término cuadrático negativo de la entropía:
-\[
+\begin{equation}\label{eq:hijo-accion}
  \boxed{H(p^*)-H(\bar p)=\tfrac12 e^TRe+O(k^{-2}).}
-\]
+\end{equation}
 El término principal es $O(k^{-1})$. El resto cúbico es
 $O(k\|v\|_{\bar p}^3)=O(k^{-2})$, pues $\sum\bar p=k-1$
 y hay $O(k)$ diagonales. Los errores al reemplazar $v$ por $s$ también son
 $O(k^{-2})$; las partes normales RC se anulan contra todos los incrementos.
+
+Reunimos lo probado en esta sección.
+\begin{lemasub}[Punto estacionario del hijo]\label{lem:hijo}
+En las hipótesis de la Sección~\ref{sec:B4T01}, para $k$ suficientemente grande el hijo tiene un
+punto estacionario $p^*$ de $H_{\rm hijo}$ con masas RC uno, único en la rama $p<1/4$ y con
+vacancias uniformes, que cumple~\eqref{eq:hijo-control} y~\eqref{eq:hijo-accion}, con $\bar p$,
+$e$, $R$ y $s$ como arriba. Los controles son uniformes en los hijos de un padre de la clase.
+\end{lemasub}

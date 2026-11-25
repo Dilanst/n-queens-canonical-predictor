@@ -6,19 +6,24 @@ Define
  b(p)=\frac{1-4p}{(1-p)^4},\qquad
  \ell(p)=-\tfrac12\sum_e\log b(p_e)-\tfrac12\log\det S_{\rm gf}(p).
 \]
-We retain the full combination of terms in the prefactor, without expanding a determinant of dimension $O(k^2)$ in isolation.
+We retain the full combination of terms in the prefactor, without expanding a determinant of dimension
+$O(k^2)$ in isolation.
 
 \paragraph{Derivative of the line inverse.}
-Let $\xi$ be a vector tangent to the RC constraints and set $\varepsilon=\|\xi/p\|_\infty$ and $B_1=DS[\xi]$. Since $\tau'-1=O(p)$,
+Let $\xi$ be a vector tangent to the RC constraints and set $\varepsilon=\|\xi/p\|_\infty$ and
+$B_1=DS[\xi]$. Since $\tau'-1=O(p)$,
 \[
  (B_1)_{ii}=\sum_{e\in i}(\tau'_e-1)\xi_e=O(\varepsilon/k).
 \]
-For RC lines we use $\sum_{e\in i}\xi_e=0$. For diagonal lines the derivative of $h_i$ cancels the corresponding sum. The unique intersections and the mass per line give
+For RC lines we use $\sum_{e\in i}\xi_e=0$. For diagonal lines the derivative of $h_i$ cancels the
+corresponding sum. The unique intersections and the mass per line give
 \[
  \|B_1\|_{\max}=O(\varepsilon/k),\quad
  \|B_1\|_\infty=\|B_1\|_1=O(\varepsilon).
 \]
-The fixed kernel allows us to write $DG[\xi]=-GB_1G$. Writing $G=I+Q$ with $\|Q\|_{\max}=O(k^{-1})$ and $\|Q\|_\infty=O(1)$, we find that each term of $B_1+QB_1+B_1Q+QB_1Q$ has maximum-entry norm $O(\varepsilon/k)$.
+The fixed kernel allows us to write $DG[\xi]=-GB_1G$. Writing $G=I+Q$ with $\|Q\|_{\max}=O(k^{-1})$ and
+$\|Q\|_\infty=O(1)$, we find that each term of $B_1+QB_1+B_1Q+QB_1Q$ has maximum-entry norm
+$O(\varepsilon/k)$.
 
 \paragraph{Hessian of the loop term.}
 The exact formula from Section~\ref{sec:B3T06} is
@@ -31,14 +36,19 @@ Since $\tau''=O(1)$, $A_e$ has four nonzero entries, and $|\xi_e|=O(\varepsilon/
 \[
  \boxed{\|D\nabla\ell[\xi]\|_\infty=O(\varepsilon/k).}
 \]
-Tangency to the RC constraints is essential. Omitting the mass derivatives does not extend the bound to an infeasible segment.
+Tangency to the RC constraints is essential. Omitting the mass derivatives does not extend the bound to an
+infeasible segment.
 
 \paragraph{Replacing the solution by a single Newton step.}
 Let $g=\nabla\ell(\bar p)$ and $v=p^*-\bar p=s+t$.
-Section~\ref{sec:B4T02} gives $\|v/\bar p\|_\infty=O(k^{-1})$ and $\|t/\bar p\|_\infty=O(k^{-2})$. Hence $\|v\|_1=O(1)$ and $\|t\|_1=O(k^{-1})$.
-The Taylor remainder for $\ell$ is $O(k^{-2})$. Moreover, $g=-\mathbf1+O_\infty(k^{-1})$ by Section~\ref{sec:B3T06}, and $\sum t=0$, so $g^Tt=(g+\mathbf1)^Tt=O(k^{-2})$.
+Section~\ref{sec:B4T02} gives $\|v/\bar p\|_\infty=O(k^{-1})$ and $\|t/\bar p\|_\infty=O(k^{-2})$. Hence
+$\|v\|_1=O(1)$ and $\|t\|_1=O(k^{-1})$.
+The Taylor remainder for $\ell$ is $O(k^{-2})$. Moreover, $g=-\mathbf1+O_\infty(k^{-1})$ by
+Section~\ref{sec:B3T06}, and $\sum t=0$, so $g^Tt=(g+\mathbf1)^Tt=O(k^{-2})$.
 We conclude that
 \[
  \boxed{\ell(p^*)-\ell(\bar p)=g^TRe+O(k^{-2}).}
 \]
-The linear term $g^TRe$ may be of order $1/k$. It enters the reduced scalar of Section~\ref{sec:B4T04}. Together with Section~\ref{sec:B4T02}, this gives a uniform remainder of $O(k^{-2})$ for the entire stationary response from $\bar p$, including the action and the loop term.
+The linear term $g^TRe$ may be of order $1/k$. It enters the reduced scalar of Section~\ref{sec:B4T04}.
+Together with Section~\ref{sec:B4T02}, this gives a uniform remainder of $O(k^{-2})$ for the entire
+stationary response from $\bar p$, including the action and the loop term.

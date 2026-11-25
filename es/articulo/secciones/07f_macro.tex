@@ -1,17 +1,18 @@
-\subsection{Sustitución del prefactor conservando los términos de orden \texorpdfstring{$1/k$}{1/k}}\label{sec:B4T07}
+\subsection{Sustitución del prefactor conservando los términos de orden
+\texorpdfstring{$1/k$}{1/k}}\label{sec:B4T07}
 Se usan $S_0,\Gamma$ de la Sección~\ref{sec:B4T06} y se define
 \[
  m_{2,a}=\sum_{i\ni a}p_i^2,\quad
  \kappa_i=a_i^T\Gamma a_i-4=O(k^{-1}).
 \]
 En un soporte fijo de la clase cuantitativa,
-\[
+\begin{equation}\label{eq:ell-exp}
  \boxed{\begin{aligned}
  \ell={}&-\tfrac12\log\det S_{0,\rm gf}-3\sum p_i^2-14\sum p_i^3
  -\tfrac32\sum p_i^2\kappa_i
  +\tfrac94\sum_a m_{2,a}^2+O(k^{-2}).
  \end{aligned}}
-\]
+\end{equation}
 \paragraph{Demostración de la expansión.}
 Se tiene $S-S_0=A^T\operatorname{diag}(3p^2+12p^3+O(p^4))A=E$,
 con $\|E\|_\infty=O(k^{-1})$, diagonal $3m_{2,a}+O(k^{-2})$
@@ -54,10 +55,16 @@ cambian cada uno en $O(k^{-2})$: hay $O(k)$ casillas eliminadas;
 en las supervivientes, $y/p=O(k^{-1})$; por línea retenida,
 $m'_{2,a}-m_{2,a}=O(k^{-2})$; y se eliminan sólo cuatro líneas.
 Por tanto
-\[
+\begin{equation}\label{eq:ell-hijo}
  \boxed{\ell_{\rm hijo}-\ell_{\rm padre}
  =-\tfrac12\log\frac{\det S_{0,\rm hijo,gf}}{\det S_{0,\rm padre,gf}}
  -3\left[\sum_{E'}(p_i+y_i)^2-\sum_Ep_i^2\right]+O(k^{-2}).}
-\]
+\end{equation}
 La sustitución no consiste en omitir un error global $O(k^{-1})$:
 se han identificado sus términos y se ha probado que su cambio es $O(k^{-2})$.
+
+Reunimos lo probado en esta sección.
+\begin{lemasub}[Sustitución del prefactor]\label{lem:prefactor}
+En un soporte fijo de la clase cuantitativa vale~\eqref{eq:ell-exp}. En las hipótesis de la
+Sección~\ref{sec:B4T01}, con $y=p^*_{\rm hijo}-w$, vale además~\eqref{eq:ell-hijo}.
+\end{lemasub}

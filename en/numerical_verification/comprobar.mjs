@@ -207,7 +207,7 @@ export function comprobar(contenidos, datos) {
     const q28 = anunciados?.['28']?.valor;
     registrar('Conteos · valor anunciado de Q(28), entero positivo', typeof q28==='string' && /^[1-9]\d*$/.test(q28));
     if (typeof q28==='string') cotejar(num,'valor anunciado de Q(28), sólo informativo',
-      (ingles ? R`reported a value for Q\(28\) REF,.*?not yet been independently verified,.*?For information, it gives C'_0\(@\)\\approx\s*@`
+      (ingles ? R`gives C'_0\(@\)\\approx\s*@`
         : R`resulta C'_0\(@\)\\approx\s*@`),[28,decimal(Math.log(Number(q28))-lf(28)-28*(1-alpha0),4)]);
     cotejar(num,'diferencias exacto menos predictor',
       (ingles ? R`At n\s*=\s*@ and n\s*=\s*@ we have \\log Q\(n\)-\\log Q_\{\\rm pred\}\(n\)\s*=\s*@ and @`

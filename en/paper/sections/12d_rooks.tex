@@ -44,7 +44,8 @@ $1-y/2=(1+\theta)/2$.
 \end{proof}
 
 \begin{lema}[Laplace's method with an explicit error bound]\label{lem:torres-laplace}
-Let $\Psi\in C^4(\mathbb R)$ and let the constants $a,b>0$, $\delta\in(0,1]$, $r\in(0,\delta/2]$ with $r\le1$ and
+Let $\Psi\in C^4(\mathbb R)$ and let the constants $a,b>0$, $\delta\in(0,1]$, $r\in(0,\delta/2]$ with
+$r\le1$ and
 $br\le a$, and $V\ge0$ satisfy the following conditions.
 \begin{enumerate}[label=(L\arabic*)]
 \item $\Psi''\le-a$ on $[-\delta,\infty)$.
@@ -64,7 +65,8 @@ $\int_{\mathbb R}e^{\Psi}=e^{\Psi(v^*)}\sqrt{2\pi/A}\,(1+\varepsilon)$, where
 \emph{Global maximum.} By (L1) and (L2), $\Psi$ is increasing on $(-\infty,-\delta]$ and strictly concave on
 $[-\delta,\infty)$, so $v^*$ is the global maximizer.
 
-\emph{Central region $|t|\le r$, with $t=v-v^*$.} Taylor's theorem gives $\Psi(v^*+t)=\Psi(v^*)-At^2/2+S(t)$, with
+\emph{Central region $|t|\le r$, with $t=v-v^*$.} Taylor's theorem gives
+$\Psi(v^*+t)=\Psi(v^*)-At^2/2+S(t)$, with
 $S(t)=\Psi'''(v^*)t^3/6+T(t)$ and $|T(t)|\le bt^4/24$. Since $|t|\le r\le1$,
 $|S|\le b|t|^3/4\le(br/4)t^2\le(A/4)t^2$. Write $e^S=1+S+R_2$, with $|R_2|\le S^2e^{|S|}/2$. The cubic
 term integrates to zero on $[-r,r]$, and
@@ -75,18 +77,23 @@ term integrates to zero on $[-r,r]$, and
  \Bigl|\int e^{-At^2/2}R_2\Bigr|\le\frac{b^2}{32}\int t^6e^{-At^2/4}\,dt
  =\sqrt{\frac{2\pi}A}\,\frac{15\cdot2^{7/2}}{32}\,\frac{b^2}{A^3}\le\sqrt{\frac{2\pi}A}\,\frac{6b^2}{A^3}.
 \]
-Truncating the Gaussian on $|t|>r$ incurs an error of at most $2e^{-Ar^2/2}/(Ar)$, that is, a relative error of at
+Truncating the Gaussian on $|t|>r$ incurs an error of at most $2e^{-Ar^2/2}/(Ar)$, that is, a relative error
+of at
 most $e^{-Ar^2/2}/(r\sqrt A)$.
 
 \emph{Parts of $[-\delta,\infty)$ outside the central region.} By concavity (L1), for $v\ge v^*+r$,
-$\Psi(v)\le\Psi(v^*)-ar^2/2-ar(v-v^*-r)$, and the analogous bound holds on $[-\delta,v^*-r]$. Their contribution is at
+$\Psi(v)\le\Psi(v^*)-ar^2/2-ar(v-v^*-r)$, and the analogous bound holds on $[-\delta,v^*-r]$. Their
+contribution is at
 most $2e^{\Psi(v^*)-ar^2/2}/(ar)$.
 
-\emph{Tail $(-\infty,-\delta]$.} Let $V'=V+a\delta^2/8$. If $V'<\delta$, there is no need to split the integral,
+\emph{Tail $(-\infty,-\delta]$.} Let $V'=V+a\delta^2/8$. If $V'<\delta$, there is no need to split the
+integral,
 since (L2) gives $\int_{-\infty}^{-\delta}e^\Psi\le\int_{-\infty}^{-\delta}e^v\,dv=e^{-\delta}\le e^{-V'}$.
 Now suppose $V'\ge\delta$, as is the case in Proposition~\ref{prop:torres-laplace}, where
-$V'\ge u\ge k\theta_0>375$. By (L2) and (L5), $\int_{-\infty}^{-V'}e^\Psi\le e^{-V'}\le e^{\Psi(v^*)-a\delta^2/8}$.
-Since $\Psi$ is increasing on $[-V',-\delta]$, we have $\int_{-V'}^{-\delta}e^\Psi\le V'e^{\Psi(-\delta)}$, and by
+$V'\ge u\ge k\theta_0>375$. By (L2) and (L5), $\int_{-\infty}^{-V'}e^\Psi\le e^{-V'}\le
+e^{\Psi(v^*)-a\delta^2/8}$.
+Since $\Psi$ is increasing on $[-V',-\delta]$, we have $\int_{-V'}^{-\delta}e^\Psi\le V'e^{\Psi(-\delta)}$,
+and by
 concavity and $|v^*|\le\delta/2$, we have $\Psi(-\delta)\le\Psi(v^*)-a\delta^2/8$.
 
 Dividing by $e^{\Psi(v^*)}\sqrt{2\pi/A}$ and using $(2\pi)^{-1/2}\le1$ gives the bound.

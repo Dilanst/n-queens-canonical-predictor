@@ -26,6 +26,9 @@ Para variables de líneas $(y,z)$ con $y\perp V$, como $\tau\ge p$,
  \|P^{1/2}(A_{RC}y+A_Dz)\|_2^2+\eta\|z\|_2^2.
 \]
 La brecha RC da $\|P^{1/2}A_{RC}y\|^2\ge\gamma\|y\|^2$.
+En efecto, $\|P^{1/2}A_{RC}y\|^2=\sum_ep_e(y_{r(e)}+y_{c(e)})^2$, donde $r(e)$ y $c(e)$ son la fila
+y la columna de $e$, es la forma cuadrática de $\mathscr L_p$ en el vector $(y_R,-y_C)$, porque el
+grafo RC es bipartito, e $y\perp V$ equivale a $(y_R,-y_C)\perp\mathbf1$.
 Las dos incidencias diagonales por casilla y las masas diagonales, que son a lo sumo uno, dan
 $\|P^{1/2}A_Dz\|^2\le2\|z\|^2$.
 Usando $\|a+b\|^2\ge\theta\|a\|^2-\theta\|b\|^2/(1-\theta)$,
@@ -63,9 +66,42 @@ y los vectores indexados por las líneas se suprime la coordenada de la línea d
 restricción se omitió.
 La inversa con gauge fijado no coincide con $G$ en todas sus entradas RC,
 pero sí coinciden las formas sobre vectores ortogonales a $V$.
+En efecto, si $x\perp V$ e $y=Gx$, al restar a $y$ el múltiplo de $V$ que anula su coordenada en la
+línea suprimida se obtiene $y'$ con $Sy'=x$ y $S_{\rm gf}y'_{\rm gf}=x_{\rm gf}$; para todo
+$z\perp V$ resulta entonces $z_{\rm gf}^TS_{\rm gf}^{-1}x_{\rm gf}=z^Ty'=z^TGx$.
 En particular, la fila de incidencia $A_e$ cumple $A_eV=0$ y
 \[
  A_{e,\rm gf}S_{\rm gf}^{-1}A_{e,\rm gf}^T=A_eGA_e^T=4+O(k^{-1}).
 \]
 Para una línea diagonal $d$ se tiene $e_d\perp V$ y
 $(S_{\rm gf}^{-1})_{dd}=G_{dd}=1+O(k^{-1})$.
+
+\begin{lema}[Los dos determinantes]\label{lem:puente}
+Sea $p$ como en la Sección~\ref{sec:B3T01}, con $p_e<1/4$ para toda casilla y grafo RC conexo, y
+sean $T$, $S$ y $V$ como arriba. Entonces:
+\begin{enumerate}[(a)]
+\item $\mathfrak D=\prod_e\dfrac{1-4p_e}{q_e^4}\,\det S_{\rm gf}>0$;
+\item $\operatorname{pdet}S=2k\det S_{\rm gf}$;
+\item si $B$ es el tablero completo de $n\times n$ y su maximizador canónico cumple $(H_\infty)$,
+ entonces $L(B)=\log Q_{\rm pred}(n)$.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+(a) Como $a_e=1/p_e-3/q_e=1/\tau_e>0$, el bloque de casillas de $N$ es $T^{-1}$ y su complemento de
+Schur es $-S_{\rm gf}$, de tamaño $r+s$. Por tanto $\det N=(-1)^{r+s}\prod_ea_e\det S_{\rm gf}$, y
+$(p_e/q_e^3)\,a_e=(1-4p_e)/q_e^4$. La forma cuadrática de $S$ es una suma de cuadrados con pesos
+positivos que sólo se anula en la recta de $V$; como $V$ no se anula en la línea suprimida,
+$S_{\rm gf}$ es definida positiva.
+
+(b) La matriz $S$ es simétrica y semidefinida positiva, con núcleo $\mathbb RV$ y $\|V\|^2=2k$. Su
+matriz adjunta es $(\operatorname{pdet}S)\,VV^T/\|V\|^2$, y la entrada diagonal de ésta en la línea
+suprimida, donde $V$ vale $-1$, es el cofactor $\det S_{\rm gf}$.
+
+(c) El maximizador canónico es interior, luego es el punto estacionario de $H_B$ con masas RC uno;
+además $S$ es la matriz $S_n$ de~\eqref{eq:gS} y $d=1$. Por (a) y (b), con $k=n$,
+\[
+ \ell=-\tfrac12\log\mathfrak D=L_n-\tfrac12\log\operatorname{pdet}S_n+\tfrac12\log(2n),
+\]
+y $\tfrac12\log(2n)+\tfrac12\log(2\pi)=\tfrac12\log(4\pi n)$. Al sumar $H_n(\pi^{(n)})$ se
+obtiene~\eqref{eq:Qpred}.
+\end{proof}

@@ -16,7 +16,8 @@
  \begin{scope}[shift={(8.5,0)}]
   \bcuadricula{5}
   \foreach \r in {1,...,5}{\foreach \c in {1,...,5}{
-    \pgfmathtruncatemacro{\ataque}{(\r==1)||(\c==2)||(abs(\r-1)==abs(\c-2))||(\r==2)||(\c==4)||(abs(\r-2)==abs(\c-4))}
+    \pgfmathtruncatemacro{\ataque}{(\r==1)||(\c==2)||(abs(\r-1)==abs(\c-2))||(\r==2)||(\c==4)||%
+(abs(\r-2)==abs(\c-4))}
     \ifnum\ataque=1\relax\bmarca{5}{\r}{\c}\fi
   }}
   \breina{5}{1}{2}\breina{5}{2}{4}

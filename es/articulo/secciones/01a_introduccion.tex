@@ -1,7 +1,8 @@
 \section{Introducción}\label{sec:intro}
 
 El problema de las $n$ reinas pregunta cuántas maneras hay de colocar $n$ reinas en un tablero de
-$n\times n$ sin que dos se ataquen. Denotamos ese número por $Q(n)$. En una solución, cada fila
+$n\times n$ sin que dos se ataquen. Denotamos ese número por $Q(n)$. El panorama de Bell y
+Stevens~\cite{BellStevens} recoge la historia del problema y sus variantes. En una solución, cada fila
 contiene una reina; si anotamos su columna y leemos las filas de arriba abajo, obtenemos una
 permutación, porque ninguna columna se repite. La Figura~\ref{fig:permutaciones} muestra por qué,
 entre las $n!$ permutaciones posibles, sólo algunas son soluciones.
@@ -32,9 +33,9 @@ se cortan las líneas; y una normalización. La definición exige que el maximiz
 que ocurre para todo $n$ suficientemente grande (Sección~\ref{sec:P02}).
 
 Al pasar del tablero al cuadrado unidad aparece el perfil de masa uno $\nu_1$ de~\cite{Perfil}.
-Escribimos $s_1$ para el valor óptimo en masa uno, que alcanza ese perfil, y $\Phi=s_1+1$. Bajo
-la identificación con el problema de Simkin que se discute en la Sección~\ref{sec:preliminares}, y
-que no usamos en ninguna prueba, $\Phi=1-\alpha$. La integral $I_2=\int\nu_1^2$ se toma sobre
+Escribimos $s_1$ para el valor óptimo en masa uno, que alcanza ese perfil, y $\Phi=s_1+1$. En la
+Sección~\ref{sec:preliminares} se deduce que $\Phi=1-\alpha$, donde $\alpha$ es la constante de
+Simkin; ninguna prueba de los teoremas usa esta igualdad. La integral $I_2=\int\nu_1^2$ se toma sobre
 el cuadrado unidad. Como $\nu_1$ tiene masa total uno, $I_2\ge1$, con igualdad sólo para la densidad
 constante: $I_2$ mide cuánto se aparta el perfil de ella.
 
@@ -54,7 +55,11 @@ La prueba sigue la definición término a término. Primero se aproxima el maxim
 el perfil continuo con error $O(1/n)$ (Sección~\ref{sec:perfil}). Después se identifican por
 separado las contribuciones de la entropía y del pseudodeterminante, y se suman al término local
 (Sección~\ref{sec:constante}). El teorema se demuestra en la Sección~\ref{sec:D05}
-(Teorema~\ref{thm:constante}).
+(Teorema~\ref{thm:constante}). Del perfil continuo, la prueba usa sólo las propiedades tomadas
+de~\cite{Perfil} que recoge la Sección~\ref{sec:preliminares}: existencia y unicidad de $\nu_1$, la
+factorización~\eqref{eq:factorizacion}, sus cotas y una constante de Lipschitz. Aquí $\det_2$ es el
+determinante regularizado de los operadores de
+Hilbert--Schmidt, que se define en la Sección~\ref{sec:D04} (véase~\cite[cap.~9]{Simon}).
 
 El segundo resultado responde a una pregunta que ya se puede formular en un tablero pequeño.
 Una colocación parcial deja un tablero residual $B$. Elegimos una fila vacía $r$ y llamamos
@@ -77,6 +82,7 @@ Dividimos la suma de las predicciones de los hijos por la predicción del padre:
         =\sum_{c\in r}e^{L(B+c)-L(B)} .
 \]
 Si el predictor cumpliera exactamente la misma identidad que el conteo, este cociente valdría uno.
+El cociente depende también de la fila $r$ elegida, que no indicamos en la notación.
 El siguiente teorema acota el defecto en escala logarítmica y especifica para qué residuales vale
 esa cota.
 
@@ -109,7 +115,11 @@ Ambas partes incluyen todos los hijos legales de la fila elegida. Para cada hijo
 único punto estacionario en la rama pequeña, es decir, con todos sus pesos menores que $1/4$. La
 primera parte pide que quede una fracción fija de las filas originales. La segunda prescinde de esa
 condición cuando la masa de cada diagonal es pequeña. En los dos casos las hipótesis recaen sobre el
-residual. El teorema es determinista: no afirma que los residuales que aparecen al colocar reinas al azar cumplan esas hipótesis.
+residual. El teorema es determinista: no afirma que los residuales que aparecen al colocar reinas al azar
+cumplan esas hipótesis.
+La clase de la parte~(a) no es vacía: para $n$ grande contiene al tablero completo
+(Corolario~\ref{cor:completo}). Para la clase de la parte~(b) no exhibimos ningún residual de reinas
+con $k=o(n)$ (Sección~\ref{sec:B5T05}).
 
 Para trasladar el primer teorema al conteo exacto falta controlar una diferencia:
 \[
@@ -122,5 +132,8 @@ Si $R_Q(n)\to0$, se obtiene
 No probamos que $R_Q(n)\to0$. La Sección~\ref{sec:discusion} explica qué estimaciones adicionales
 sobre las trayectorias y los residuales con pocas filas vacías exigiría ese paso.
 
-Numéricamente, $C_{\rm pred}\approx0{,}9401$: en todo el intervalo de $\alpha$ citado, los ajustes del predictor desde $n=40$ o $60$ dan entre $0{,}9400$ y $0{,}9402$, y una evaluación directa de la fórmula da $0{,}94014$ (Sección~\ref{sec:numerico}); ninguna de estas cifras está certificada.
-Con la referencia $\Phi_0$ de esa sección, los conteos exactos para $16\le n\le27$ dan $\log Q(n)-\log n!-n\Phi_0$ entre $0{,}913$ y $0{,}941$.
+Numéricamente, $C_{\rm pred}\approx0{,}9401$: en todo el intervalo de $\alpha$ citado, los ajustes del
+predictor desde $n=40$ o $60$ dan entre $0{,}9400$ y $0{,}9402$, y una evaluación directa de la fórmula da
+$0{,}94014$ (Sección~\ref{sec:numerico}); ninguna de estas cifras está certificada.
+Con la referencia $\Phi_0$ de esa sección, los conteos exactos para $16\le n\le27$ dan
+$\log Q(n)-\log n!-n\Phi_0$ entre $0{,}913$ y $0{,}941$.

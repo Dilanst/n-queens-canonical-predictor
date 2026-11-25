@@ -1,7 +1,8 @@
 \section{The canonical predictor}\label{sec:predictor}
 
 In the exact count, each placement is a list of occupied squares. The predictor uses a different variable:
-a weight $p_{ij}$ at each square. The row, column and diagonal sums express the constraints retained by the model.
+a weight $p_{ij}$ at each square. The row, column and diagonal sums express the constraints retained by the
+model.
 Among all admissible assignments of weights, we choose just one: the maximizer of the functional below.
 
 \paragraph{The canonical functional.}
@@ -11,7 +12,8 @@ polytope and the functional
  K_n=\Bigl\{p\in[0,1/4]^{n^2}:\ \sum_jp_{ij}=\sum_ip_{ij}=1,\ m_d(p)\le1\ (d\in\mathcal D)\Bigr\},
 \end{equation}
 \begin{equation}\label{eq:Hn}
- H_n(p)=\sum_{ij}\bigl\{-p_{ij}\log p_{ij}+3(1-p_{ij})\log(1-p_{ij})\bigr\}-\sum_{d\in\mathcal D}h_d(p)\log h_d(p),
+ H_n(p)=\sum_{ij}\bigl\{-p_{ij}\log p_{ij}+3(1-p_{ij})\log(1-p_{ij})\bigr\}-\sum_{d\in\mathcal D}h_d(p)\log
+h_d(p),
 \end{equation}
 with $0\log0=0$. This functional is the Bethe entropy~\cite{YFW} of the system of rows, columns and
 diagonals, expressed in the square variables and restricted to fractional placements of total mass $n$.
@@ -25,7 +27,8 @@ denote by $\pi^{(n)}$ and call the canonical maximizer.
 \begin{proof}
 The uniform placement $p\equiv1/n$ lies in $K_n$ if $n\ge4$, because each diagonal has at most $n$
 squares. We write $H_n(p)=\sum_cf(p_c)+\sum_{d\in\mathcal D}G(m_d(p))$, with
-$f(t)=-t\log t+3(1-t)\log(1-t)$ on $[0,1/4]$ and $G(z)=-(1-z)\log(1-z)$ on $[0,1]$. Both functions are continuous on
+$f(t)=-t\log t+3(1-t)\log(1-t)$ on $[0,1/4]$ and $G(z)=-(1-z)\log(1-z)$ on $[0,1]$. Both functions are
+continuous on
 their closed intervals, and $f''(t)=-1/t+3/(1-t)<0$ on $(0,1/4)$.
 
 Let $p^0\ne p^1$ in $K_n$, $p^t=(1-t)p^0+tp^1$ and $I=\{c:p^0_c\ne p^1_c\}\ne\emptyset$. For $c\in I$ and
@@ -34,7 +37,8 @@ $t\mapsto f(p^t_c)$ is of class $C^2$ on $(0,1)$ with second derivative $f''(p^t
 Squares outside $I$ give constants. Each $t\mapsto G(m_d(p^t))$ is concave because $G$ is concave
 on $[0,1]$ and $m_d$ is affine. The sum $\varphi(t)=H_n(p^t)$ is continuous on $[0,1]$ and strictly concave
 on $(0,1)$, hence concave on $[0,1]$. If the strict inequality failed between two points
-$t_0<t_1$ of $[0,1]$, $\varphi$ would touch its chord at an interior point of $[t_0,t_1]$ and would be affine on
+$t_0<t_1$ of $[0,1]$, $\varphi$ would touch its chord at an interior point of $[t_0,t_1]$ and would be
+affine on
 that interval, contrary to strict concavity on $(t_0,t_1)$. Existence of the maximizer follows
 from compactness, and uniqueness from strict concavity.
 \end{proof}
@@ -46,7 +50,11 @@ $0<\pi^{(n)}_c<1/4$ for every square $c$ and $h_d(\pi^{(n)})>0$ for every diagon
 
 Section~\ref{sec:P02} proves that $(H_\infty)$ holds for every $n\ge n_0$, with
 $c/n\le\pi^{(n)}_{ij}\le M/n$ and $h_d\ge\eta$ for positive constants $c$, $M$ and $\eta$
-(see~(P2.7)). Below we write $\pi=\pi^{(n)}$ when there is no ambiguity.
+(see~(P2.7)). The threshold $n_0$ given by that proof is very large (end of Section~\ref{sec:P02}).
+For $n=4$ the hypothesis fails, and for $n=5$ the numerical computation indicates that it fails as well
+(Section~\ref{sec:discusion}); for $6\le n<n_0$ it is not proved, and for the sizes of
+Section~\ref{sec:numerico} it is checked numerically.
+Below we write $\pi=\pi^{(n)}$ when there is no ambiguity.
 
 \paragraph{The pseudodeterminant and the local term.}
 Let $n\ge4$ be such that its maximizer satisfies $(H_\infty)$. Set
@@ -59,10 +67,12 @@ quadratic form of $S_n$ is a sum of squares whose weights, $h_d$ and $g_c$, are 
 $(H_\infty)$. If it vanishes at a vector
 $x=(x_R,x_C,x_D,x_A)$, then $x_D=0$, $x_A=0$ and $x_{R,i}+x_{C,j}=0$ for each square $(i,j)$. Its
 kernel is therefore the line spanned by $v_0$, and $S_n$ is positive definite on $v_0^\perp$. For
-$n\ge n_0$, Section~\ref{sec:P03} also gives a uniform gap. We call the direction $v_0$, the discrete analogue of the neutral mode $(1,-1,0,0)$
+$n\ge n_0$, Section~\ref{sec:P03} also gives a uniform gap. We call the direction $v_0$, the discrete
+analogue of the neutral mode $(1,-1,0,0)$
 in~\cite[Section~7.2]{Perfil}, and its analogue on residual boards the \emph{gauge}:
 since $Av_0=0$, adding a multiple of $v_0$ to a vector indexed by the lines does not change its
-sums at the squares. Fixing the gauge means choosing a representative, for instance in $v_0^\perp$. The pseudodeterminant
+sums at the squares. Fixing the gauge means choosing a representative, for instance in $v_0^\perp$. The
+pseudodeterminant
 $\operatorname{pdet}S_n$ is the product of its nonzero eigenvalues. The local term is
 \[
  L_n=-\frac12\sum_{ij}\bigl[\log(1-4\pi_{ij})-4\log(1-\pi_{ij})\bigr],
@@ -80,9 +90,11 @@ For $n\ge4$ satisfying $(H_\infty)$,
 Of the four terms in the definition, the first is the Bethe entropy at its maximum. The other
 three correspond, heuristically, to two further ingredients: the one-loop correction to the
 Bethe approximation, expressed as a determinant of the Hessian matrix by the
-Ihara--Bass formula in the form of Watanabe and Fukumizu~\cite{Bass,WF}, and the Gaussian normalization of the
+Ihara--Bass formula in the form of Watanabe and Fukumizu~\cite{Bass,WF}, and the Gaussian normalization of
+the
 zero mode that imposes equality between the number of empty rows and the number of empty columns. For these
-approximations for permanents and systems on graphs, see~\cite{CC,Vontobel}. In the rook model,
+approximations for permanents and systems on graphs, see~\cite{CC,ChertkovYedidia,Vontobel}, and for
+loop corrections to the Bethe approximation,~\cite{MontanariRizzo}. In the rook model,
 a formula with the same three ingredients approximates the logarithm of the count with error
 $O(1/k)$ up to the full board (Appendix~\ref{sec:torres}). In this paper \eqref{eq:Qpred} is
 only a definition: no proof uses this interpretation or the appendix.
@@ -90,4 +102,5 @@ only a definition: no proof uses this interpretation or the appendix.
 
 For the residual boards that arise as queens are placed one at a time, the predictor $L(B)$ is defined in
 Section~\ref{sec:B3T01}, with the same functional, the canonical determinant of the residual board and the
-normalization $\tfrac12\log(2\pi)$ per component.
+normalization $\tfrac12\log(2\pi)$ per component. On the full board, $L(B)$ coincides with
+$\log Q_{\rm pred}(n)$ (Lemma~\ref{lem:puente}).

@@ -1,27 +1,40 @@
 \subsection{Second-order consistency on residual boards}\label{sec:B4T05}
 \begin{teorema}[Macroscopic consistency]\label{thm:macro}
-Fix $\delta_0,C,\eta,\gamma>0$. Let $B$ be a realizable ordinary residual board with $k\ge\delta_0n$ empty rows and as many empty columns. Suppose its Bethe point $p$ is stationary for $H_B$ and lies in the interior, with all RC masses equal to one and
+Fix $\delta_0,C,\eta,\gamma>0$. Let $B$ be a realizable ordinary residual board with $k\ge\delta_0n$ empty
+rows and as many empty columns. Suppose its Bethe point $p$ is stationary for $H_B$ and lies in the
+interior, with all RC masses equal to one and
 \[
  p_e\le C/k,\qquad h_D\ge\eta,\qquad
  \lambda_2(\mathscr L_p)\ge\gamma.
 \]
-The RC graph is connected. The predictor uses the RC cofactor of the canonical determinant, the local factor, and $\tfrac12\log(2\pi)$ with the conventions of Sections~\ref{sec:B3T01} and~\ref{sec:B4T01}. Then there exist $k_0$ and $C_*$ depending only on these four constants such that, for $k\ge k_0$, every legal child has a unique interior stationary point on the small branch and
+The RC graph is connected. The predictor uses the RC cofactor of the canonical determinant, the local
+factor, and $\tfrac12\log(2\pi)$ with the conventions of Sections~\ref{sec:B3T01} and~\ref{sec:B4T01}. Then
+there exist $k_0$ and $C_*$ depending only on these four constants such that, for $k\ge k_0$, every legal
+child has a unique interior stationary point on the small branch and
 \[
  \boxed{\left|L(B+c)-L(B)-\log[p_c(1+\delta_c)]\right|
  \le C_*/k^2\quad\hbox{for every child }c.}
 \]
-Here $\delta_c=(R\nabla\ell)_c/p_c=O(k^{-1})$. No unfavorable children are excluded, and no per-square lower bound is required.
+Here $\delta_c=(R\nabla\ell)_c/p_c=O(k^{-1})$. No unfavorable children are excluded, and no per-square lower
+bound is required.
 \end{teorema}
 \begin{proof}
-Section~\ref{sec:B4T02} proves the existence and the bounds for the child stationary point. Sections~\ref{sec:B4T06}--\ref{sec:B4T09} establish the cancellation, culminating in the bound on $r_c$.
+The existence and the bounds for the child stationary point are Lemma~\ref{lem:hijo}.
+Section~\ref{sec:B4T09}
+combines the action and the energy of Sections~\ref{sec:B4T04} and~\ref{sec:B4T06} with
+Lemmas~\ref{lem:prefactor} and~\ref{lem:modocero}, and its final result is the bound on $r_c$, which by
+Lemma~\ref{lem:escalar} is equivalent to $\mathcal C_c=O(k^{-2})$. The table in that section collects the
+terms of order $1/k$ and their cancellation.
 \end{proof}
 
 \begin{corolario}\label{cor:rho}
-Under the hypotheses of Theorem~\ref{thm:macro}, for each empty row $r$ we have $|\log\rho(B)|\le C_*/k^2$, where $\rho(B)=\sum_{c\in r}e^{L(B+c)-L(B)}$.
+Under the hypotheses of Theorem~\ref{thm:macro}, for each empty row $r$ we have $|\log\rho(B)|\le C_*/k^2$,
+where $\rho(B)=\sum_{c\in r}e^{L(B+c)-L(B)}$.
 \end{corolario}
 \begin{proof}
 The differential identity of Section~\ref{sec:B3T01} gives a sum of one in each row.
-Positivity follows from $p_c>0$ and from $|\delta_c|=O(k^{-1})$ for large $k$ (Section~\ref{sec:B3T06}). Thus,
+Positivity follows from $p_c>0$ and from $|\delta_c|=O(k^{-1})$ for large $k$ (Section~\ref{sec:B3T06}).
+Thus,
 \[
  w_c=p_c(1+\delta_c)>0,\qquad\sum_{c\in r}w_c=1,
  \quad \rho(B)=\sum_{c\in r}e^{L(B+c)-L(B)}=\mathbb E_w e^r.
@@ -31,12 +44,30 @@ Therefore $\min r\le\log\rho\le\max r$, which implies
  \boxed{|\log\rho(B)|\le C_*/k^2.}
 \]
 \end{proof}
-If a trajectory of parents stays in the same quantitative class, with the same constants and $k\ge\delta_0n$, then
+If a trajectory of parents stays in the same quantitative class, with the same constants and
+$k\ge\delta_0n$, then
 \[
  \sum_{k\ge\delta_0n}|\log\rho(B_k)|\le C_*\sum_{k\ge\delta_0n}k^{-2}
  =O_{\delta_0,C,\eta,\gamma}(n^{-1}).
 \]
-Membership of the entire trajectory in the class is a separate hypothesis. We do not iterate the parameter loss from one-step inheritance without controlling it.
+Membership of the entire trajectory in the class is a separate hypothesis. We do not iterate the parameter
+loss from one-step inheritance without controlling it.
+
+\begin{corolario}[The full board]\label{cor:completo}
+There exist $n_1$ and $C_*$ such that, for every $n\ge n_1$ and every row $r$ of the full $n\times n$
+board $B$, we have $|\log\rho(B)|\le C_*/n^2$.
+\end{corolario}
+\begin{proof}
+For $n\ge n_0$, (P2.7) gives $c/n\le\pi_e\le M/n$ and $h_d\ge\eta$, and the canonical maximizer is the
+interior stationary point of $H_B$ with RC masses one. As a quadratic form, the Laplacian $\mathscr L_\pi$
+is at least $c/n$ times that of the complete bipartite graph $K_{n,n}$, because the difference is the
+Laplacian of a graph with nonnegative weights. The second eigenvalue of the Laplacian of $K_{n,n}$ is
+$n$, so $\lambda_2(\mathscr L_\pi)\ge c$. Theorem~\ref{thm:macro} and Corollary~\ref{cor:rho} apply with
+$k=n$, $\delta_0=1$, $C=M$ and $\gamma=c$.
+\end{proof}
+The class of Theorem~\ref{thm:macro} is therefore not empty, and on the full board the predictor is
+$Q_{\rm pred}(n)$ (Lemma~\ref{lem:puente}).
 
 \paragraph{Scope.}
-The theorem is deterministic within the stated class. We do not study here whether typical trajectories remain in it.
+The theorem is deterministic within the stated class. We do not study here whether typical trajectories
+remain in it.

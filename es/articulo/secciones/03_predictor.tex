@@ -12,7 +12,8 @@ politopo y el funcional
  K_n=\Bigl\{p\in[0,1/4]^{n^2}:\ \sum_jp_{ij}=\sum_ip_{ij}=1,\ m_d(p)\le1\ (d\in\mathcal D)\Bigr\},
 \end{equation}
 \begin{equation}\label{eq:Hn}
- H_n(p)=\sum_{ij}\bigl\{-p_{ij}\log p_{ij}+3(1-p_{ij})\log(1-p_{ij})\bigr\}-\sum_{d\in\mathcal D}h_d(p)\log h_d(p),
+ H_n(p)=\sum_{ij}\bigl\{-p_{ij}\log p_{ij}+3(1-p_{ij})\log(1-p_{ij})\bigr\}-\sum_{d\in\mathcal D}h_d(p)\log
+h_d(p),
 \end{equation}
 con $0\log0=0$. Este funcional es la entropía de Bethe~\cite{YFW} del sistema de filas, columnas y
 diagonales, escrita en las variables de casilla y restringida a las colocaciones fraccionarias de
@@ -48,7 +49,11 @@ $0<\pi^{(n)}_c<1/4$ para toda casilla $c$ y $h_d(\pi^{(n)})>0$ para toda diagona
 
 La Sección~\ref{sec:P02} prueba que $(H_\infty)$ se cumple para todo $n\ge n_0$, con
 $c/n\le\pi^{(n)}_{ij}\le M/n$ y $h_d\ge\eta$ para constantes positivas $c$, $M$ y $\eta$
-(véase~(P2.7)). En lo que sigue escribimos $\pi=\pi^{(n)}$ cuando no haya ambigüedad.
+(véase~(P2.7)). El umbral $n_0$ que da esa prueba es muy grande (final de la Sección~\ref{sec:P02}).
+Para $n=4$ la hipótesis no se cumple y para $n=5$ el cálculo numérico indica que tampoco
+(Sección~\ref{sec:discusion}); para $6\le n<n_0$ no está demostrada, y en los tamaños de la
+Sección~\ref{sec:numerico} se comprueba numéricamente.
+En lo que sigue escribimos $\pi=\pi^{(n)}$ cuando no haya ambigüedad.
 
 \paragraph{El pseudodeterminante y el término local.}
 Sea $n\ge4$ tal que su maximizador cumpla $(H_\infty)$. Ponemos
@@ -62,10 +67,12 @@ $(H_\infty)$. Si se anula en un vector
 $x=(x_R,x_C,x_D,x_A)$, entonces $x_D=0$, $x_A=0$ y $x_{R,i}+x_{C,j}=0$ para cada casilla $(i,j)$. Por
 tanto su núcleo es la recta generada por $v_0$ y $S_n$ es definida positiva en $v_0^\perp$. Para
 $n\ge n_0$ la Sección~\ref{sec:P03}
-da además una brecha uniforme. Llamamos \emph{gauge} a la dirección $v_0$, análoga discreta del modo neutro $(1,-1,0,0)$
+da además una brecha uniforme. Llamamos \emph{gauge} a la dirección $v_0$, análoga discreta del modo neutro
+$(1,-1,0,0)$
 de~\cite[Sección~7.2]{Perfil}, y a su análoga en los tableros
 residuales: como $Av_0=0$, sumar un múltiplo de $v_0$ a un vector indexado por las líneas no cambia sus
-sumas por casilla. Fijar el gauge es elegir un representante, por ejemplo en $v_0^\perp$. El pseudodeterminante
+sumas por casilla. Fijar el gauge es elegir un representante, por ejemplo en $v_0^\perp$. El
+pseudodeterminante
 $\operatorname{pdet}S_n$ es el producto de sus autovalores no nulos. El término local es
 \[
  L_n=-\frac12\sum_{ij}\bigl[\log(1-4\pi_{ij})-4\log(1-\pi_{ij})\bigr],
@@ -85,7 +92,8 @@ tres corresponden, heurísticamente, a dos ingredientes más: la corrección de 
 aproximación de Bethe, escrita como determinante de la matriz hessiana mediante la fórmula de
 Ihara--Bass en la forma de Watanabe y Fukumizu~\cite{Bass,WF}, y la normalización gaussiana del modo
 cero que impone la igualdad entre el número de filas vacías y el de columnas vacías. Sobre estas
-aproximaciones para permanentes y sistemas en grafos pueden verse~\cite{CC,Vontobel}. En el modelo
+aproximaciones para permanentes y sistemas en grafos pueden verse~\cite{CC,ChertkovYedidia,Vontobel},
+y sobre las correcciones de lazos a la aproximación de Bethe,~\cite{MontanariRizzo}. En el modelo
 de torres, una fórmula con los mismos tres ingredientes aproxima el logaritmo del conteo con error
 $O(1/k)$ hasta el tablero lleno (Apéndice~\ref{sec:torres}). En este artículo \eqref{eq:Qpred} es
 sólo una definición: ninguna prueba usa esa interpretación ni el apéndice.
@@ -93,4 +101,5 @@ sólo una definición: ninguna prueba usa esa interpretación ni el apéndice.
 
 Para los tableros residuales que aparecen al colocar reinas una a una, el predictor $L(B)$ se define en
 la Sección~\ref{sec:B3T01}, con el mismo funcional, el determinante canónico del residual y la
-normalización $\tfrac12\log(2\pi)$ por componente.
+normalización $\tfrac12\log(2\pi)$ por componente. En el tablero completo, $L(B)$ coincide con
+$\log Q_{\rm pred}(n)$ (Lema~\ref{lem:puente}).

@@ -16,7 +16,8 @@ By Rodrigues' formula, $P_k(t)=(2^kk!)^{-1}(d/dt)^k[(t-1)^k(t+1)^k]$, and by the
 Hence $P_k(t)=\sum_q\binom kq^2\bigl(\frac{t-1}2\bigr)^q\bigl(\frac{t+1}2\bigr)^{k-q}$. For $x\ne1$, let
 $t=(1+x)/(1-x)$. Then $(t-1)/2=x/(1-x)$ and $(t+1)/2=1/(1-x)$, giving
 $f_k(x)=(1-x)^kP_k\bigl((1+x)/(1-x)\bigr)$. Both sides are polynomials in $x$, so the identity holds
-for every $x$. The polynomial $P_k$ has $k$ simple zeros $t_i=\cos\alpha_i$ in $(-1,1)$~\cite[Theorem~3.3.1]{Szego}. If
+for every $x$. The polynomial $P_k$ has $k$ simple zeros $t_i=\cos\alpha_i$ in
+$(-1,1)$~\cite[Theorem~3.3.1]{Szego}. If
 $\kappa_k$ is its leading coefficient, then $f_k(x)=\kappa_k\prod_i[(1-t_i)+x(1+t_i)]$. Since $f_k(0)=1$, we
 have $\kappa_k\prod_i(1-t_i)=1$. Using $(1+\cos\alpha)/(1-\cos\alpha)=\cot^2(\alpha/2)$ gives the product
 in the statement.
@@ -27,7 +28,7 @@ Let $x=(\theta/y)^2$, so that $D(q)=\binom kq^2x^q/f_k(x)$.
 \begin{enumerate}[(a)]
 \item The generating function is $\mathbb E_D[\tau^q]=f_k(x\tau)/f_k(x)=\prod_i(1-r_i+r_i\tau)$, with
  $r_i=xc_i/(1+xc_i)\in(0,1)$. Thus $D$ is the law of a sum of $k$ independent Bernoulli
- variables with parameters $r_i$.
+ variables with parameters $r_i$ (see~\cite{Pitman} on this representation).
 \item For $v\in\mathbb R$, the tilted law $D_v(q)\propto D(q)e^{vq}$ is in the same family, with $x$
  replaced by $xe^v$.
 \item The function $K(v)=\log\mathbb E_D[e^{vq}]=\sum_i\log(1-r_i+r_ie^v)$ satisfies
@@ -44,15 +45,19 @@ Let $x=(\theta/y)^2$, so that $D(q)=\binom kq^2x^q/f_k(x)$.
 \end{enumerate}
 \end{corolario}
 \begin{proof}
-Part (a) follows from Lemma~\ref{lem:torres-legendre}, and (b) from $\binom kq^2(xe^v)^q\propto D(q)e^{vq}$. The
+Part (a) follows from Lemma~\ref{lem:torres-legendre}, and (b) from $\binom kq^2(xe^v)^q\propto D(q)e^{vq}$.
+The
 derivatives in (c) are those of a sum of logarithms of Bernoulli generating functions. The
-inequalities $|1-2r|\le1$ and $|1-6r(1-r)|\le1$ give the first two bounds in (d), and $r(1-r)\le\frac14$ gives
-$K''\le k/4$. For the fourth bound it suffices to use $|(\log K'')'|=|K'''/K''|\le1$. Finally, $K(v)\le0$ for $v\le0$
+inequalities $|1-2r|\le1$ and $|1-6r(1-r)|\le1$ give the first two bounds in (d), and $r(1-r)\le\frac14$
+gives
+$K''\le k/4$. For the fourth bound it suffices to use $|(\log K'')'|=|K'''/K''|\le1$. Finally, $K(v)\le0$
+for $v\le0$
 because $q\ge0$.
 \end{proof}
 
 \begin{lema}\label{lem:torres-momentos}
-Let $x>0$, $s=\sqrt x$, $\theta_x=s/(1+s)$, and $y_x=1-\theta_x$, and let $\mu_D$ and $\sigma_D^2$ be the mean and
+Let $x>0$, $s=\sqrt x$, $\theta_x=s/(1+s)$, and $y_x=1-\theta_x$, and let $\mu_D$ and $\sigma_D^2$ be the
+mean and
 variance of the law $q\mapsto\binom kq^2x^q/f_k(x)$. Then
 \[
  \bigl|\mu_D-(k+\tfrac12)\theta_x\bigr|\le1,\qquad \bigl|\sigma_D^2-(k+\tfrac12)\theta_xy_x/2\bigr|\le1.
@@ -71,7 +76,8 @@ inequality~\cite{Bruns} (see also~\cite[\S6.21]{Szego}), with $h=\pi/(k+\frac12)
  (i-\tfrac12)h\le\alpha_i\le ih\qquad(i=1,\dots,k).
 \]
 By Lemma~\ref{lem:torres-riemann}, proved below, with $m_0=1$ for $F$ and
-$m_0=\frac14$ for $G$, each sum differs from the corresponding $h^{-1}\int_0^\pi$ by at most $1$. With $t=\tan(\alpha/2)$ and
+$m_0=\frac14$ for $G$, each sum differs from the corresponding $h^{-1}\int_0^\pi$ by at most $1$. With
+$t=\tan(\alpha/2)$ and
 $d\alpha=2\,dt/(1+t^2)$, we obtain
 \[
 \begin{aligned}
@@ -80,7 +86,8 @@ $d\alpha=2\,dt/(1+t^2)$, we obtain
  =\frac\pi2\,\theta_xy_x;
 \end{aligned}
 \]
-Both integrals follow by partial fractions (at $s=1$, by continuity). Since $h^{-1}=(k+\frac12)/\pi$, this gives
+Both integrals follow by partial fractions (at $s=1$, by continuity). Since $h^{-1}=(k+\frac12)/\pi$, this
+gives
 the stated bounds.
 \end{proof}
 
@@ -95,7 +102,8 @@ Let $h=\pi/(k+\frac12)$, $\alpha_i\in[(i-\frac12)h,ih]$ for $i=1,\dots,k$, and $
 \end{lema}
 \begin{proof}
 (a) Extend $F$ by $0$ outside $[0,\pi]$. It remains nonincreasing on $[0,\infty)$. First,
-$F(\alpha_i)\le F((i-\frac12)h)$, whose right-hand side for $i\ge2$ is at most $h^{-1}\int_{(i-3/2)h}^{(i-1/2)h}F$ and for
+$F(\alpha_i)\le F((i-\frac12)h)$, whose right-hand side for $i\ge2$ is at most
+$h^{-1}\int_{(i-3/2)h}^{(i-1/2)h}F$ and for
 $i=1$ is at most $m_0$. Hence $\sum_iF(\alpha_i)\le m_0+h^{-1}\int_0^\pi F$. Conversely,
 $F(\alpha_i)\ge F(ih)\ge h^{-1}\int_{ih}^{(i+1)h}F$. Since $(k+1)h\ge\pi$, we have
 $\sum_iF(\alpha_i)\ge h^{-1}\int_h^\pi F\ge h^{-1}\int_0^\pi F-m_0$.

@@ -1,5 +1,6 @@
 \subsection{Uniform cancellation between insertion and the corrected marginal}\label{sec:B4T09}
-Retain the hypotheses, normalizations, and small branch of Sections~\ref{sec:B4T01}--\ref{sec:B4T08}. The parent correction is $\delta_c=(R\nabla\ell)_c/p_c$.
+Retain the hypotheses, normalizations, and small branch of Sections~\ref{sec:B4T01}--\ref{sec:B4T08}. The
+parent correction is $\delta_c=(R\nabla\ell)_c/p_c$.
 We do not identify the corrected marginal with the true marginal of the count.
 
 \paragraph{Derivative of the prefactor in the variables of the unit-diagonal matrix.}
@@ -7,7 +8,8 @@ The exact identity of Section~\ref{sec:B4T03} and the resolvent identity for $S=
 \[
  G_{ab}-\Gamma_{ab}=-3m_{2,a}\mathbf1_{a=b}+O(k^{-2}).
 \]
-Indeed, $E_{aa}=3m_{2,a}+O(k^{-2})$, $E_{ab}=O(k^{-2})$ off the diagonal, $\|E\|_\infty=O(k^{-1})$, $\Gamma=I+O_{\max}(k^{-1})$, and $\|\Gamma\|_\infty=O(1)$.
+Indeed, $E_{aa}=3m_{2,a}+O(k^{-2})$, $E_{ab}=O(k^{-2})$ off the diagonal, $\|E\|_\infty=O(k^{-1})$,
+$\Gamma=I+O_{\max}(k^{-1})$, and $\|\Gamma\|_\infty=O(1)$.
 Expanding the exact formula for $g=\nabla\ell$ gives
 \[
  g_i+1=-6p_i-f_i+\xi_{r_i}+\zeta_{c_i}+O(k^{-2}),
@@ -18,7 +20,8 @@ where we may take
  \zeta_c=-\tfrac12(\Gamma_{cc}-1)+\tfrac32m_{2,c}.
 \]
 Applying the tangent response annihilates the RC functions.
-Also, with $R_0=P_p-P_pA\Gamma A^TP_p$, we have $\|P_p^{-1}(R-R_0)\|_\infty=O(k^{-1})$ by the resolvent identity.
+Also, with $R_0=P_p-P_pA\Gamma A^TP_p$, we have $\|P_p^{-1}(R-R_0)\|_\infty=O(k^{-1})$ by the resolvent
+identity.
 Since $-6p-f=O(k^{-1})$, we may replace $R$ by $R_0$ with relative accuracy $O(k^{-2})$. Therefore
 \[
  \delta_c=-6p_c-f_c+
@@ -34,7 +37,8 @@ The exceptional term at $c$ changes the result by only $O(k^{-2})$, so
 All sums of errors take into account the mass bounds $\sum_Ep=k$ and $\sum_Fp=O(1)$.
 
 \paragraph{Comparison with the child.}
-Let $\epsilon_c=L(B+c)-L(B)-\log p_c$. Combining the energy from Section~\ref{sec:B4T06}, the substitution from Section~\ref{sec:B4T07}, and the determinant expansion from Section~\ref{sec:B4T08} gives
+Let $\epsilon_c=L(B+c)-L(B)-\log p_c$. Combining the energy from Section~\ref{sec:B4T06}, the substitution
+from Section~\ref{sec:B4T07}, and the determinant expansion from Section~\ref{sec:B4T08} gives
 \[
  \begin{aligned}
  \epsilon_c={}&-6p_c-f_c+6\sum_Fp_i^2-6\sum_{E'}p_iy_i
@@ -42,7 +46,25 @@ Let $\epsilon_c=L(B+c)-L(B)-\log p_c$. Combining the energy from Section~\ref{se
  &+\sum_Fp_i f_i^I-\sum_{j\in J}(K_0)_{jj}-1/k+O(k^{-2}).
  \end{aligned}
 \]
-The $\tfrac12\log(2\pi)$ terms agree because both supports have connected RC graphs. The cofactors already account for the covolume.
+The following table shows where each term comes from; the second row uses
+$a_c^T\Gamma a_c-4=\sum_{j\in J}(K_0)_{jj}+2f_c$.
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Origin & Contribution to $\epsilon_c$, up to $O(k^{-2})$\\
+\midrule
+Boundary of the action (Section~\ref{sec:B4T04}) & $\tfrac32\sum_Fp_i^2$\\
+Energy $-\tfrac12\mathcal Q(y_0)$ (Section~\ref{sec:B4T06}) &
+ $-\tfrac12\sum_{j\in J}(K_0)_{jj}-f_c-6p_c$\\
+Local factor (Section~\ref{sec:B4T07}) & $3\sum_Fp_i^2-6\sum_{E'}p_iy_i$\\
+Determinant (Section~\ref{sec:B4T08}) &
+ $-\tfrac12\sum_{j\in J}(K_0)_{jj}-\tfrac1k+\sum_Fp_if_i^I-\sum_{E'}y_if_i+\tfrac32\sum_Fp_i^2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The $\tfrac12\log(2\pi)$ terms agree because both supports have connected RC graphs. The cofactors already
+account for the covolume.
 Subtracting the formula for $\delta_c$ leaves
 \[
  \epsilon_c-\delta_c=-\sum_{j\in J}(K_0)_{jj}-1/k
@@ -53,8 +75,10 @@ Since $\delta_c=O(k^{-1})$,
 \[
  \boxed{r_c=L(B+c)-L(B)-\log[p_c(1+\delta_c)]=O(k^{-2}).}
 \]
-The constants depend only on $\delta_0,C,\eta,\gamma$, and there exists $k_0(\delta_0,C,\eta,\gamma)$ such that the result holds for every $k\ge k_0$ and every legal child of the parent, without selecting children.
+The constants depend only on $\delta_0,C,\eta,\gamma$, and there exists $k_0(\delta_0,C,\eta,\gamma)$ such
+that the result holds for every $k\ge k_0$ and every legal child of the parent, without selecting children.
 
 \paragraph{Scope.}
-The child stationary point used here lies on the branch $p<1/4$. Section~\ref{sec:B4T02} proves existence and uniqueness on this branch.
+The child stationary point used here lies on the branch $p<1/4$. Section~\ref{sec:B4T02} proves existence
+and uniqueness on this branch.
 We do not assert that the quantitative hypotheses hold for every residual board in the counting problem.

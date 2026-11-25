@@ -70,11 +70,11 @@ Hay $O(k)$ líneas, por lo que $\sum_{ij}|\mathcal E_{ij}|=O(1)$.
 Sean $e$ el residuo de la Sección~\ref{sec:B4T02}, $\bar R$ su respuesta, $\bar g=\nabla\ell(\bar p)$
 y $\delta_c=(R_{\rm padre}\nabla\ell(p))_c/p_c$.
 Las Secciones~\ref{sec:B4T02}--\ref{sec:B4T03} y $\log(1+\delta_c)=\delta_c+O(k^{-2})$ dan
-\[
+\begin{equation}\label{eq:rc}
  r_c=L_{\rm hijo}(p^*)-L_{\rm padre}(p)-\log[p_c(1+\delta_c)]
        =\mathcal C_c+O(k^{-2}),
-\]
-\[
+\end{equation}
+\begin{equation}\label{eq:Cc}
  \boxed{\begin{aligned}
  \mathcal C_c={}&-\tfrac12\left(\sum_{E'}z_e^2/p_e+
                                 \sum_{D\cap I}u_d^2/h_d\right)
@@ -82,9 +82,15 @@ Las Secciones~\ref{sec:B4T02}--\ref{sec:B4T03} y $\log(1+\delta_c)=\delta_c+O(k^
  &-\tfrac12\operatorname{tr}W_c+\tfrac14\operatorname{tr}W_c^2
  +\tfrac12e^T\bar R e+\bar g^T\bar R e-\delta_c.
  \end{aligned}}
-\]
+\end{equation}
 Todos sus términos se definen a partir del padre, del reequilibrado de la Sección~\ref{sec:B3T07} y
 de un paso de Newton, sin resolver de nuevo el hijo. Estas estimaciones dan
 $\mathcal C_c=O(k^{-1})$. Las Secciones~\ref{sec:B4T06}--\ref{sec:B4T09} prueban
 $\mathcal C_c=O(k^{-2})$ mediante la resolvente de diagonal uno.
 Esta cancelación total es distinta de la cancelación local probada más arriba.
+
+Reunimos lo probado en esta sección.
+\begin{lemasub}[Escalar reducido]\label{lem:escalar}
+En las hipótesis de la Sección~\ref{sec:B4T01}, para $k$ suficientemente grande vale~\eqref{eq:rc},
+con $\delta_c$ como arriba y $\mathcal C_c$ dado por~\eqref{eq:Cc}; además $\mathcal C_c=O(k^{-1})$.
+\end{lemasub}

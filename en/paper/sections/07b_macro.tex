@@ -1,5 +1,6 @@
 \subsection{The stationary point of the child}\label{sec:B4T02}
-Retain the notation of Section~\ref{sec:B4T01}. Now $B$ is the child's RC line--square matrix and $D$ is its square--diagonal incidence matrix. Section~\ref{sec:B3T07} constructs
+Retain the notation of Section~\ref{sec:B4T01}. Now $B$ is the child's RC line--square matrix and $D$ is its
+square--diagonal incidence matrix. Section~\ref{sec:B3T07} constructs
 \[
  \bar p=w+z,\quad B\bar p=\mathbf1,\quad
  a=z/w\in\operatorname{im}B^T,\quad \|a\|_\infty=O(k^{-1}).
@@ -18,7 +19,8 @@ In particular, the tangent gradient has a representative $e$ such that
 \[
  e=D(u/h)+O_\infty(k^{-2}),\qquad \|e\|_\infty=O(k^{-1}).
 \]
-Correcting the RC masses does not in general cancel the first diagonal term. We do not assert that $p^*-\bar p=O_{\rm rel}(k^{-2})$.
+Correcting the RC masses does not in general cancel the first diagonal term. We do not assert that $p^*-\bar
+p=O_{\rm rel}(k^{-2})$.
 
 \paragraph{Newton step and uniform bounds.}
 Let $Z$ be an orthonormal basis of $\ker B$ and set
@@ -27,7 +29,9 @@ Let $Z$ be an orthonormal basis of $\ker B$ and set
        +D\operatorname{diag}((h+u)^{-1})D^T,\quad
  R=Z(Z^TKZ)^{-1}Z^T,\quad s=Re.
 \]
-Apply the matrix estimate of Section~\ref{sec:B3T05} to the feasible point $\bar p$ with the inherited gap. The number of rows in the child satisfies $k-1\ge\delta_0 n/2$ for $k\ge2$, so we may use $\delta_0/2$ even at the endpoint $k=\delta_0n$. This gives $\|\operatorname{diag}(\bar p)^{-1}R\|_{\infty\to\infty}\le M$.
+Apply the matrix estimate of Section~\ref{sec:B3T05} to the feasible point $\bar p$ with the inherited gap.
+The number of rows in the child satisfies $k-1\ge\delta_0 n/2$ for $k\ge2$, so we may use $\delta_0/2$ even
+at the endpoint $k=\delta_0n$. This gives $\|\operatorname{diag}(\bar p)^{-1}R\|_{\infty\to\infty}\le M$.
 Write $\|v\|_{\bar p}=\|v/\bar p\|_\infty$ and $\sigma=\|s\|_{\bar p}=O(k^{-1})$.
 
 For $v\in\ker B$ with $\|v\|_{\bar p}\le r$ sufficiently small,
@@ -38,20 +42,37 @@ For $v\in\ker B$ with $\|v\|_{\bar p}\le r$ sufficiently small,
  \|\mathcal N(v)\|_\infty\le Cr^2,\quad
  \|\mathcal N(v)-\mathcal N(w)\|_\infty\le Cr\|v-w\|_{\bar p}.
 \]
-The constants do not depend on a lower bound for $\bar p$. Indeed, $|(D^Tv)_d|\le r\sum_{e\in d}\bar p_e\le r$, and the expansion of each square logarithm uses the relative increment $v_e/\bar p_e$. An expansion in $v_e$ alone would not give this control.
+The constants do not depend on a lower bound for $\bar p$. Indeed, $|(D^Tv)_d|\le r\sum_{e\in d}\bar p_e\le
+r$, and the expansion of each square logarithm uses the relative increment $v_e/\bar p_e$. An expansion in
+$v_e$ alone would not give this control.
 Stationarity is equivalent to $v=s+R\mathcal N(v)$.
-For large $k$, the right-hand side defines a map that takes the ball of radius $2\sigma$ into itself and has Lipschitz constant less than one. If $\sigma=0$, then $\bar p$ is already stationary.
+For large $k$, the right-hand side defines a map that takes the ball of radius $2\sigma$ into itself and has
+Lipschitz constant less than one. If $\sigma=0$, then $\bar p$ is already stationary.
 There is therefore a point $p^*$ with
-\[
+\begin{equation}\label{eq:hijo-control}
  \boxed{\|(p^*-\bar p)/\bar p\|_\infty=O(k^{-1}),\qquad
  \|(p^*-\bar p-s)/\bar p\|_\infty=O(k^{-2}).}
-\]
+\end{equation}
 This point remains feasible and positive, with uniformly bounded-below vacancies and $p^*<1/4$.
-The negative of the Hessian is positive definite in the convex region $p<1/4$, so the stationary point is unique on that branch. We do not assert uniqueness outside it. The point $\widehat p=\bar p+s$ already approximates the stationary point of the child with relative error $O(k^{-2})$. All bounds are uniform over the children of a parent in the class.
+The negative of the Hessian is positive definite in the convex region $p<1/4$, so the stationary point is
+unique on that branch. We do not assert uniqueness outside it. The point $\widehat p=\bar p+s$ already
+approximates the stationary point of the child with relative error $O(k^{-2})$. All bounds are uniform over
+the children of a parent in the class.
 
 \paragraph{Action increment from $\bar p$.}
-At $\bar p$, the linear term $e^Ts=s^TKs$ does not in general vanish. Combining it with the negative quadratic term of the entropy gives
-\[
+At $\bar p$, the linear term $e^Ts=s^TKs$ does not in general vanish. Combining it with the negative
+quadratic term of the entropy gives
+\begin{equation}\label{eq:hijo-accion}
  \boxed{H(p^*)-H(\bar p)=\tfrac12 e^TRe+O(k^{-2}).}
-\]
-The leading term is $O(k^{-1})$. The cubic remainder is $O(k\|v\|_{\bar p}^3)=O(k^{-2})$ because $\sum\bar p=k-1$ and there are $O(k)$ diagonals. The errors from replacing $v$ by $s$ are also $O(k^{-2})$. The RC normal components pair to zero with every increment.
+\end{equation}
+The leading term is $O(k^{-1})$. The cubic remainder is $O(k\|v\|_{\bar p}^3)=O(k^{-2})$ because $\sum\bar
+p=k-1$ and there are $O(k)$ diagonals. The errors from replacing $v$ by $s$ are also $O(k^{-2})$. The RC
+normal components pair to zero with every increment.
+
+We collect what this section proves.
+\begin{lemasub}[Stationary point of the child]\label{lem:hijo}
+Under the hypotheses of Section~\ref{sec:B4T01}, for sufficiently large $k$ the child has a
+stationary point $p^*$ of $H_{\rm child}$ with RC masses one, unique on the branch $p<1/4$ and with
+uniformly bounded-below vacancies, which satisfies~\eqref{eq:hijo-control} and~\eqref{eq:hijo-accion},
+with $\bar p$, $e$, $R$ and $s$ as above. The bounds are uniform over the children of a parent in the class.
+\end{lemasub}

@@ -25,7 +25,30 @@ In place of its uses of $k\ge\delta_0n$, we use Section~\ref{sec:B5T02} for the 
 and the response, Section~\ref{sec:B5T03} for the Newton step, the mass of the Schur difference,
 and the cubic remainders, and Section~\ref{sec:B5T04} for the traces, their changes, and the resolvent.
 Rebalancing uses only the $2k$ RC lines.
-At no point do we require the number of diagonals to be $O(k)$.
+At no point do we require the number of diagonals to be $O(k)$. The correspondence is as follows.
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.52\textwidth}
+                >{\raggedright\arraybackslash}p{0.43\textwidth}@{}}
+\toprule
+Step of the macroscopic proof & Replaced by\\
+\midrule
+$G=I+O_{\max}(k^{-1})$ and $\|G\|_\infty=O(1)$ (Section~\ref{sec:B3T05}) &
+ Section~\ref{sec:B5T02}, Schur complement\\
+$\|P^{-1}R\|_\infty=O(1)$ (Section~\ref{sec:B3T06}) &
+ Section~\ref{sec:B5T02}, weighted response\\
+Newton step and cubic remainder of the action (Section~\ref{sec:B4T02}) &
+ Section~\ref{sec:B5T03}\\
+$\|\mathcal E\|_F^2$, $\sum_{ij}|\mathcal E_{ij}|$ and $\operatorname{tr}W_c$
+ (Sections~\ref{sec:B4T01} and~\ref{sec:B4T04}) &
+ Section~\ref{sec:B5T03}, full Schur difference\\
+Changes of $\sum p_i^3$, $\sum p_i^2\kappa_i$ and $\sum_am_{2,a}^2$ (Section~\ref{sec:B4T07}) &
+ Section~\ref{sec:B5T04}, prefactor and entrywise resolvent\\
+Quadratic term and cubic remainder of the determinant (Section~\ref{sec:B4T08}) &
+ Section~\ref{sec:B5T04}, change of support\\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \par\emph{Exact change of support and gauge.}
 Let $\Gamma=S_0^+$, $v=(\mathbf1_R,-\mathbf1_C,0_D)$,
@@ -63,7 +86,7 @@ Using the exact Jacobi derivative avoids differentiating an asymptotic remainder
 The boundary identity for the action, the change in the prefactor, and the cofactor give
 \[
  \begin{aligned}
- e_c:={}&L(B+c)-L(B)-\log p_c\\
+ \epsilon_c:={}&L(B+c)-L(B)-\log p_c\\
  ={}&-6p_c-f_c+6\sum_Fp_i^2-6\sum_{E'}p_iy_i-\sum_{E'}y_if_i\\
  &+\sum_Fp_if_i^I-\sum_{j\in J}(\Gamma_{jj}-1)-1/k+O(k^{-2}).
  \end{aligned}
@@ -73,7 +96,7 @@ The final identity of Section~\ref{sec:B4T08}, before approximation, implies
  \sum_Fp_i(f_i-f_i^I)
  =-\sum_{j\in J}(\Gamma_{jj}-1)-1/k-p_cf_c.
 \]
-Since $p_cf_c=O(k^{-2})$, we obtain $e_c-\delta_c=O(k^{-2})$.
+Since $p_cf_c=O(k^{-2})$, we obtain $\epsilon_c-\delta_c=O(k^{-2})$.
 All error sums use $\sum_Ep=k$, $\sum_Fp=O(1)$, and Section~\ref{sec:B5T04}.
 This step retains and cancels the terms of order $k^{-1}$.
 
@@ -84,7 +107,7 @@ The row conservation identity gives exactly
 \]
 Section~\ref{sec:B5T02} implies $\delta_c=O(k^{-1})$. Hence
 \[
- r_c=e_c-\log(1+\delta_c)=O(k^{-2}),\quad
+ r_c=\epsilon_c-\log(1+\delta_c)=O(k^{-2}),\quad
  \rho=\mathbb E_w e^{r_c},\quad|\log\rho|\le\sup_c|r_c|.
 \]
 This proves the deterministic extension under the hypotheses of the theorem.
@@ -93,4 +116,7 @@ This proves the deterministic extension under the hypotheses of the theorem.
 \paragraph{Scope.}
 The case of masked rooks is included through the representation with two
 single-square diagonals per square in Section~\ref{sec:B5T01}. A child of an interior parent inherits
-membership in an outer class with a margin. We make no claim that a trajectory remains in that class.
+membership in an outer class with a margin. We make no claim that a trajectory remains in that class. We
+exhibit here no residual
+of queens in this class with $k=o(n)$; Corollary~\ref{cor:completo} only shows that the macroscopic
+class contains the full board.

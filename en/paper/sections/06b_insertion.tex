@@ -1,13 +1,19 @@
 \subsection{The restriction of the parent is approximately stationary on the child}\label{sec:B3T04}
-Let $E$ be the support of a legal residual board on the ordinary, nonperiodic board, with $k$ empty rows and $k$ empty columns. Let $c\in E$. Write $F_c$ for the squares of $E$ in the union of the four lines through $c$, and $E'=E\setminus F_c$ for the child support. We retain the original coordinates. Suppose the parent satisfies $0<p_e<1$ and $p_e\le C/k$, has diagonal vacancies $h_\ell\ge\eta>0$, and satisfies the stationarity equations with row and column constraints.
+Let $E$ be the support of a legal residual board on the ordinary, nonperiodic board, with $k$ empty rows and
+$k$ empty columns. Let $c\in E$. Write $F_c$ for the squares of $E$ in the union of the four lines through
+$c$, and $E'=E\setminus F_c$ for the child support. We retain the original coordinates. Suppose the parent
+satisfies $0<p_e<1$ and $p_e\le C/k$, has diagonal vacancies $h_\ell\ge\eta>0$, and satisfies the
+stationarity equations with row and column constraints.
 
 \paragraph{Loss per line.}
-A retained line is parallel to the removed line in its own family and meets each of the other three removed lines in at most one square. Hence
+A retained line is parallel to the removed line in its own family and meets each of the other three removed
+lines in at most one square. Hence
 \[
  |\ell\cap F_c|\le3,\qquad
  d_\ell:=\sum_{e\in\ell\cap F_c}p_e\le3C/k.
 \]
-Each of the four removed lines contains at most $k$ squares, and their pairwise intersections all consist of the square $c$. Thus $|F_c|\le4k-3$.
+Each of the four removed lines contains at most $k$ squares, and their pairwise intersections all consist of
+the square $c$. Thus $|F_c|\le4k-3$.
 
 \paragraph{Feasibility defect and vacancies.}
 Restrict $p$ without renormalizing, setting $p^-=p|_{E'}$. On every retained row or column,
@@ -24,20 +30,29 @@ The deficits satisfy the exact global compatibility condition
  =\sum_{\text{retained columns}}d_\ell
  =\sum_{e\in F_c}p_e-1,
 \]
-because the removed row and column each have mass one. This condition does not control new dependencies that may arise if the child support is disconnected.
-For $k>3C$, every retained row or column still contains squares, since its restricted sum is positive. The estimates in this subsection by themselves control the defects. Section~\ref{sec:B3T07} also uses the RC gap to construct a feasible rebalancing, and Section~\ref{sec:B4T02} proves the existence of a stationary point on the child under the hypotheses of the macroscopic class.
+because the removed row and column each have mass one. This condition does not control new dependencies that
+may arise if the child support is disconnected.
+For $k>3C$, every retained row or column still contains squares, since its restricted sum is positive. The
+estimates in this subsection by themselves control the defects. Section~\ref{sec:B3T07} also uses the RC gap
+to construct a feasible rebalancing, and Section~\ref{sec:B4T02} proves the existence of a stationary point
+on the child under the hypotheses of the macroscopic class.
 
 \paragraph{Stationarity defect.}
-Represent the parent multipliers on the full RC families (with any choice of gauge fixing) and restrict them to the retained lines. A surviving square $e$ lies on retained diagonals $d(e),a(e)$. In the extension of $H_B$ with the RC vacancies fixed at zero, the gradient component at that square is
+Represent the parent multipliers on the full RC families (with any choice of gauge fixing) and restrict them
+to the retained lines. A surviving square $e$ lies on retained diagonals $d(e),a(e)$. In the extension of
+$H_B$ with the RC vacancies fixed at zero, the gradient component at that square is
 \[
  -\log p_e-1-3(\log(1-p_e)+1)
  +\log h_{d(e)}+\log h_{a(e)}+2.
 \]
-When we evaluate the corresponding child gradient at $p^-$, the square probabilities remain the same. Only the two diagonal vacancies of the square change. Thus, after subtracting the RC multipliers and retaining the activities, the residual is exactly
+When we evaluate the corresponding child gradient at $p^-$, the square probabilities remain the same. Only
+the two diagonal vacancies of the square change. Thus, after subtracting the RC multipliers and retaining
+the activities, the residual is exactly
 \[
  v_e=\log\frac{h_{d(e)}+d_{d(e)}}{h_{d(e)}}
      +\log\frac{h_{a(e)}+d_{a(e)}}{h_{a(e)}},
  \qquad 0\le v_e\le\frac{6C}{\eta k}.
 \]
 This is an approximate KKT residual because $p^-$ does not yet satisfy the RC equalities.
-Diagonals left with no squares have vacancy one and do not affect any surviving square. They may be retained or removed.
+Diagonals left with no squares have vacancy one and do not affect any surviving square. They may be retained
+or removed.

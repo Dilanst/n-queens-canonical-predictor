@@ -18,7 +18,8 @@ La Sección~\ref{sec:numerico} da $R_Q(20)\approx0{,}021$ y $R_Q(27)\approx0{,}0
 
 \paragraph{El papel de la consistencia.}
 El Teorema~\ref{thm:intro-consistencia} dice que, en los residuales de sus clases, el predictor cumple
-paso a paso la recursión exacta del conteo salvo un factor $e^{O(k^{-2})}$. A lo largo de una trayectoria de residuales que
+paso a paso la recursión exacta del conteo salvo un factor $e^{O(k^{-2})}$. A lo largo de una trayectoria de
+residuales que
 permanezca en una misma clase con $k\ge\delta_0n$, los errores suman $O_{\delta_0}(1/n)$
 (Sección~\ref{sec:B4T05}). Para pasar de ahí a $R_Q(n)\to0$ hacen falta tres piezas que este artículo
 no contiene: que los residuales típicos de una colocación al azar estén en esas clases, el control del
@@ -26,6 +27,18 @@ final del proceso, cuando quedan pocas filas vacías (en~\cite{Completabilidad} 
 conteo exacto, el caso de un número fijo de reinas por colocar, sin uniformidad cuando ese número
 crece), y la comparación entre el conteo y el predictor a
 lo largo de trayectorias aleatorias.
+
+La comparación es exacta en cada paso. Sean $R(B)=\log Q(B)-L(B)$, de modo que $R_Q(n)$ es su valor
+en el tablero completo (Lema~\ref{lem:puente}), y $\tilde w_c=e^{L(B+c)-L(B)}/\rho(B)$, que son pesos
+positivos de suma uno sobre los hijos de la fila $r$. Si $Q(B)>0$ y el predictor está definido en $B$
+y en esos hijos, la recursión del conteo da
+\[
+ R(B)=\log\rho(B)+\log\sum_{c\in r}\tilde w_c\,e^{R(B+c)},
+\]
+donde un hijo sin completaciones aporta cero a la suma. Esta identidad indica qué habría que
+controlar para acotar $R_Q(n)$: los valores de $\log\rho$ a lo largo del árbol de inserciones,
+promediados con esos pesos, y el valor de $R$ en los residuales en los que el predictor deja de estar
+definido.
 
 \paragraph{Actividad finita.}
 El predictor se ha definido directamente en el tablero lleno, sobre el politopo $K_n$. Con una

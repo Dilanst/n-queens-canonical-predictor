@@ -1,16 +1,21 @@
 \subsection{Eliminating the four lines through the square of insertion}\label{sec:B4T01}
-The parent is an ordinary residual board with $k\ge\delta_0n$ and a stationary point of $H_B$ with $0<p_e\le C/k$, diagonal vacancies $h\ge\eta$, and weighted RC Laplacian gap at least $\gamma$. The constants are fixed.
+The parent is an ordinary residual board with $k\ge\delta_0n$ and a stationary point of $H_B$ with $0<p_e\le
+C/k$, diagonal vacancies $h\ge\eta$, and weighted RC Laplacian gap at least $\gamma$. The constants are
+fixed.
 Take $k$ sufficiently large that $p<1/4$.
 Set $q=1-p$, $\tau=pq/(1-4p)$, $T=\operatorname{diag}\tau$, and
 \[
  S=\operatorname{diag}(0_{RC},h)+A^TTA,\quad
  v=(\mathbf1_R,-\mathbf1_C,0_D),\quad G=S^+.
 \]
-From Sections~\ref{sec:B3T05}--\ref{sec:B3T07} we use the uniform gap of $S$, along with $G_{ij}=\delta_{ij}+O(k^{-1})$ and $\|G\|_\infty=O(1)$.
-We account for the gauge using an RC cofactor. An unnormalized pseudodeterminant would give a different factor.
+From Sections~\ref{sec:B3T05}--\ref{sec:B3T07} we use the uniform gap of $S$, along with
+$G_{ij}=\delta_{ij}+O(k^{-1})$ and $\|G\|_\infty=O(1)$.
+We account for the gauge using an RC cofactor. An unnormalized pseudodeterminant would give a different
+factor.
 
 \paragraph{The four removed lines and their squares.}
-Let $J$ denote the four lines through $c$, let $I=J^c$, let $F$ denote the squares in their union, and set $E'=E\setminus F$. We keep the original coordinates. Each retained line loses at most three squares. Write
+Let $J$ denote the four lines through $c$, let $I=J^c$, let $F$ denote the squares in their union, and set
+$E'=E\setminus F$. We keep the original coordinates. Each retained line loses at most three squares. Write
 \[
  d_\ell=\sum_{e\in F\cap\ell}p_e,\quad w=p|_{E'},\quad
  U=A_{F,I}^TT_FA_{F,I},\quad \Delta=\operatorname{diag}_{D\cap I}d,
@@ -18,7 +23,8 @@ Let $J$ denote the four lines through $c$, let $I=J^c$, let $F$ denote the squar
 \[
  Q=S_{IJ}S_{JJ}^{-1}S_{JI},\quad P_c=S_{II}-Q,\quad E_c=Q+\Delta-U.
 \]
-Then the exact identities $S_{\rm child}(w)=P_c+E_c$ and $P_cv_I=E_cv_I=0$ hold. The matrix $Q$ has rank at most four, whereas $\Delta-U$ need not have bounded rank.
+Then the exact identities $S_{\rm child}(w)=P_c+E_c$ and $P_cv_I=E_cv_I=0$ hold. The matrix $Q$ has rank at
+most four, whereas $\Delta-U$ need not have bounded rank.
 
 For the feasible point $\bar p=w+z$ from Section~\ref{sec:B3T07}, we include the additional term given by
 \[
@@ -31,7 +37,8 @@ For $y\perp v_I$, minimizing over the four removed coordinates gives
 \[
  y^TP_cy=\min_a(a,y)^TS(a,y)\ge c_*\|y\|^2.
 \]
-Indeed, $\operatorname{dist}((a,y),\operatorname{span}v)\ge\|y\|$. Thus the kernel of $P_c$ is exactly $\operatorname{span}v_I$.
+Indeed, $\operatorname{dist}((a,y),\operatorname{span}v)\ge\|y\|$. Thus the kernel of $P_c$ is exactly
+$\operatorname{span}v_I$.
 
 \paragraph{Exact determinant.}
 Choose the RC gauge coordinate in $I$ and define
@@ -43,7 +50,8 @@ The Schur complement followed by the cofactor identity for matrices with a commo
  \boxed{\frac{\det S_{{\rm child},\rm gf}(\bar p)}{\det S_{{\rm parent},\rm gf}(p)}
  =\frac{\det_{v_I^\perp}(I+W_c)}{\det S_{JJ}}.}
 \]
-When using pseudodeterminants, the right-hand side must be multiplied by $(k-1)/k$, since $\operatorname{pdet}S=2k\det S_{\rm gf}$ and the child has $k-1$ rows.
+When using pseudodeterminants, the right-hand side must be multiplied by $(k-1)/k$, since
+$\operatorname{pdet}S=2k\det S_{\rm gf}$ (Lemma~\ref{lem:puente}) and the child has $k-1$ rows.
 This factor is not included a second time when working with cofactors.
 
 \paragraph{The same elimination in $N$.}
@@ -58,14 +66,19 @@ The eliminated block indexed by $(F,J)$ and the indicated block of its inverse a
  (K_N^{-1})_{FF}=T_F-T_FA_{F,J}S_{JJ}^{-1}A_{F,J}^TT_F.
 \]
 The retained Schur complement has lower block $-\operatorname{diag}h_I-U+Q$.
-To obtain $N_{\rm child}(w)$, subtract $E_c$ from this lower block. For $\bar p$, also change $T_{E'}^{-1}$ and the vacancies.
-This recovers $\mathcal D=\prod_e[(1-4p_e)/q_e^4]\det S_{\rm gf}$. We have used no Taylor expansion taking a removed coordinate to zero or one.
+To obtain $N_{\rm child}(w)$, subtract $E_c$ from this lower block. For $\bar p$, also change $T_{E'}^{-1}$
+and the vacancies.
+This recovers $\mathfrak D=\prod_e[(1-4p_e)/q_e^4]\det S_{\rm gf}$ (Lemma~\ref{lem:puente}). We have used no
+Taylor expansion taking a removed coordinate to zero or one.
 
 \paragraph{Uniform matrix remainder.}
-The incidence geometry and Section~\ref{sec:B3T07} give $\|\mathcal E\|_2=O(k^{-1})$ and $\|\mathcal E\|_F^2=O(k^{-1})$. Indeed, $\Delta-U$ is sparse in each row, $Q$ has rank at most four and norm $O(k^{-1})$, and $\Xi$ has absolute row sums $O(k^{-1})$ and dimension $O(k)$.
+The incidence geometry and Section~\ref{sec:B3T07} give $\|\mathcal E\|_2=O(k^{-1})$ and $\|\mathcal
+E\|_F^2=O(k^{-1})$. Indeed, $\Delta-U$ is sparse in each row, $Q$ has rank at most four and norm
+$O(k^{-1})$, and $\Xi$ has absolute row sums $O(k^{-1})$ and dimension $O(k)$.
 Thus $\|W_c\|_2=O(k^{-1})$, $\operatorname{tr}W_c^2=O(k^{-1})$, and
 \[
  \boxed{\log\det(I+W_c)=\operatorname{tr}W_c
        -\tfrac12\operatorname{tr}W_c^2+O(k^{-2}).}
 \]
-The remainder is bounded by $C\|W_c\|_2\operatorname{tr}W_c^2$. The quadratic term cannot be absorbed into an $O(k^{-2})$ remainder.
+The remainder is bounded by $C\|W_c\|_2\operatorname{tr}W_c^2$. The quadratic term cannot be absorbed into
+an $O(k^{-2})$ remainder.

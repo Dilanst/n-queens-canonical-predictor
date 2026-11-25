@@ -1,46 +1,66 @@
-\subsection{Replacing the prefactor while retaining terms of order \texorpdfstring{$1/k$}{1/k}}\label{sec:B4T07}
+\subsection{Replacing the prefactor while retaining terms of order
+\texorpdfstring{$1/k$}{1/k}}\label{sec:B4T07}
 Use $S_0,\Gamma$ from Section~\ref{sec:B4T06} and define
 \[
  m_{2,a}=\sum_{i\ni a}p_i^2,\quad
  \kappa_i=a_i^T\Gamma a_i-4=O(k^{-1}).
 \]
 On a fixed support in the quantitative class,
-\[
+\begin{equation}\label{eq:ell-exp}
  \boxed{\begin{aligned}
  \ell={}&-\tfrac12\log\det S_{0,\rm gf}-3\sum p_i^2-14\sum p_i^3
  -\tfrac32\sum p_i^2\kappa_i
  +\tfrac94\sum_a m_{2,a}^2+O(k^{-2}).
  \end{aligned}}
-\]
+\end{equation}
 
 \paragraph{Proof of the expansion.}
-We have $S-S_0=A^T\operatorname{diag}(3p^2+12p^3+O(p^4))A=E$, with $\|E\|_\infty=O(k^{-1})$, diagonal entries $3m_{2,a}+O(k^{-2})$, and off-diagonal entries $O(k^{-2})$.
-On the orthogonal complement of the kernel, the cubic remainder in the logarithm of the determinant is $O(k^{-2})$. The linear term is
+We have $S-S_0=A^T\operatorname{diag}(3p^2+12p^3+O(p^4))A=E$, with $\|E\|_\infty=O(k^{-1})$, diagonal
+entries $3m_{2,a}+O(k^{-2})$, and off-diagonal entries $O(k^{-2})$.
+On the orthogonal complement of the kernel, the cubic remainder in the logarithm of the determinant is
+$O(k^{-2})$. The linear term is
 \[
  \operatorname{tr}(\Gamma E)=12\sum p^2+
  3\sum p^2\kappa+48\sum p^3+O(k^{-2}).
 \]
-The quadratic term is $\operatorname{tr}(\Gamma E\Gamma E)=9\sum_a m_{2,a}^2+O(k^{-2})$. To verify this, use $\Gamma=I+O_{\max}(k^{-1})$ with bounded $\infty$-norm and the structure of the diagonal and off-diagonal entries of $E$. In addition, $-\tfrac12\log b(p)=3p^2+10p^3+O(p^4)$ and $\sum p^4\le(C/k)^3\sum p=O(k^{-2})$. This proves the formulas for all coefficients, including $-14$.
+The quadratic term is $\operatorname{tr}(\Gamma E\Gamma E)=9\sum_a m_{2,a}^2+O(k^{-2})$. To verify this, use
+$\Gamma=I+O_{\max}(k^{-1})$ with bounded $\infty$-norm and the structure of the diagonal and off-diagonal
+entries of $E$. In addition, $-\tfrac12\log b(p)=3p^2+10p^3+O(p^4)$ and $\sum p^4\le(C/k)^3\sum
+p=O(k^{-2})$. This proves the formulas for all coefficients, including $-14$.
 
 \paragraph{Changes in the pseudoinverse on surviving lines.}
-Let $\Gamma'$ denote the pseudoinverse of $S_{0,\rm child}$ at $p^*_{\rm child}$ and set $\Delta_0=S_{0,\rm child}-S_{0,II}$.
+Let $\Gamma'$ denote the pseudoinverse of $S_{0,\rm child}$ at $p^*_{\rm child}$ and set $\Delta_0=S_{0,\rm
+child}-S_{0,II}$.
 The diagonal of $\Delta_0$ is zero and its $\infty$-norm is $O(k^{-1})$.
-The inverse of the parent Schur complement on the orthogonal complement of its kernel is $\Pi_I^\perp\Gamma_{II}\Pi_I^\perp=\Gamma_{II}+O_{\max}(k^{-2})$, using $\Gamma_{II}v_I=-\Gamma_{IJ}v_J=O_\infty(k^{-1})$.
+The inverse of the parent Schur complement on the orthogonal complement of its kernel is
+$\Pi_I^\perp\Gamma_{II}\Pi_I^\perp=\Gamma_{II}+O_{\max}(k^{-2})$, using
+$\Gamma_{II}v_I=-\Gamma_{IJ}v_J=O_\infty(k^{-1})$.
 The rank-four Schur term has entries $O(k^{-2})$.
 Applying the resolvent identity on the orthogonal complement of $v_I$ gives
 \[
  \boxed{\Gamma'_{ab}-\Gamma_{ab}=-(\Delta_0)_{ab}+O(k^{-2}),\quad a,b\in I.}
 \]
-For the entrywise remainder, observe that the $\infty$-norm of each perturbation factor is $O(k^{-1})$, so the quadratic products are $O(k^{-2})$.
+For the entrywise remainder, observe that the $\infty$-norm of each perturbation factor is $O(k^{-1})$, so
+the quadratic products are $O(k^{-2})$.
 In the linear term, replacing each inverse by $I$ produces a change of $O(k^{-2})$ per entry.
-If $a,b$ are two distinct lines through a surviving square $i$, their only intersection is $i$, so $(\Delta_0)_{ab}=y_i=O(k^{-2})$.
+If $a,b$ are two distinct lines through a surviving square $i$, their only intersection is $i$, so
+$(\Delta_0)_{ab}=y_i=O(k^{-2})$.
 Thus $\kappa'_i-\kappa_i=O(k^{-2})$ on $E'$.
 
-The terms $\sum p^3$, $\sum p^2\kappa$, and $\sum_a m_{2,a}^2$ each change by $O(k^{-2})$. Indeed, $O(k)$ squares are removed, $y/p=O(k^{-1})$ on the surviving squares, $m'_{2,a}-m_{2,a}=O(k^{-2})$ for each retained line, and only four lines are removed.
+The terms $\sum p^3$, $\sum p^2\kappa$, and $\sum_a m_{2,a}^2$ each change by $O(k^{-2})$. Indeed, $O(k)$
+squares are removed, $y/p=O(k^{-1})$ on the surviving squares, $m'_{2,a}-m_{2,a}=O(k^{-2})$ for each
+retained line, and only four lines are removed.
 Therefore
-\[
+\begin{equation}\label{eq:ell-hijo}
  \boxed{\ell_{\rm child}-\ell_{\rm parent}
  =-\tfrac12\log\frac{\det S_{0,\rm child,gf}}{\det S_{0,\rm parent,gf}}
  -3\left[\sum_{E'}(p_i+y_i)^2-\sum_Ep_i^2\right]+O(k^{-2}).}
-\]
-The substitution accounts for the terms of the global $O(k^{-1})$ error and proves that their change is $O(k^{-2})$.
+\end{equation}
+The substitution accounts for the terms of the global $O(k^{-1})$ error and proves that their change is
+$O(k^{-2})$.
+
+We collect what this section proves.
+\begin{lemasub}[Substitution of the prefactor]\label{lem:prefactor}
+On a fixed support in the quantitative class, \eqref{eq:ell-exp} holds. Under the hypotheses of
+Section~\ref{sec:B4T01}, with $y=p^*_{\rm child}-w$, \eqref{eq:ell-hijo} holds as well.
+\end{lemasub}
