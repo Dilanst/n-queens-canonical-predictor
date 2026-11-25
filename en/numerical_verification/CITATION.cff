@@ -13,7 +13,7 @@ references:
       - family-names: "Mejia"
         given-names: "Dilan Steven"
     year: 2026
-    doi: "10.5281/zenodo.24241043"
+    doi: "10.5281/zenodo.24519517"
     url: "https://github.com/Dilanst/n-queens-canonical-predictor"
   - type: article
     title: "The variational profile of partial queen placements: existence, Euler equations, and regularity up to the full board"
@@ -21,5 +21,5 @@ references:
       - family-names: "Mejia"
         given-names: "Dilan Steven"
     year: 2026
-    doi: "10.5281/zenodo.24220042"
+    doi: "10.5281/zenodo.24509033"
     url: "https://github.com/Dilanst/n-queens-variational-profile"
